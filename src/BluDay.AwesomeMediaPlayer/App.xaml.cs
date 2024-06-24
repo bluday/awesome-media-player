@@ -1,6 +1,4 @@
-﻿using Microsoft.UI.Xaml;
-
-namespace BluDay.AwesomeMediaPlayer;
+﻿namespace BluDay.AwesomeMediaPlayer;
 
 /// <summary>
 /// Provides application-specific behavior to supplement the default Application class.
