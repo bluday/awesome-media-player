@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "BluDay.AwesomeMediaPlayer": {
+      "commandName": "MsixPackage"
+    }
+  }
+}
