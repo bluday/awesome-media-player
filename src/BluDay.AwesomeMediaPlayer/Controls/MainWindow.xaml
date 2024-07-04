@@ -17,6 +17,7 @@
         
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -24,11 +25,22 @@
                            Icon="{StaticResource AppIconImageSource}"
                            Title="{x:Bind Title}"/>
 
+        <MenuBar Grid.Row="1">
+            <MenuBarItem Title="Media"/>
+            <MenuBarItem Title="Playback"/>
+            <MenuBarItem Title="Audio"/>
+            <MenuBarItem Title="Video"/>
+            <MenuBarItem Title="Subtitle"/>
+            <MenuBarItem Title="Tools"/>
+            <MenuBarItem Title="View"/>
+            <MenuBarItem Title="Help"/>
+        </MenuBar>
+
         <NavigationView x:Name="NavigationView"
                         PaneDisplayMode="Left"
                         OpenPaneLength="250"
                         IsBackButtonVisible="Collapsed"
-                        Grid.Row="1">
+                        Grid.Row="2">
             <NavigationView.MenuItems>
                 <NavigationViewItemHeader Content="My music"/>
 
