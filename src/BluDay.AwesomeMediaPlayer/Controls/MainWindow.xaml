@@ -9,8 +9,12 @@
     <Window.SystemBackdrop>
         <MicaBackdrop Kind="Base"/>
     </Window.SystemBackdrop>
-
+    
     <Grid x:Name="RootGrid">
+        <Grid.Resources>
+            <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml" />
+        </Grid.Resources>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
@@ -20,7 +24,11 @@
                            Icon="{StaticResource AppIconImageSource}"
                            Title="{x:Bind Title}"/>
 
-        <NavigationView x:Name="NavigationView" PaneDisplayMode="Left" IsBackButtonVisible="Collapsed" Grid.Row="1">
+        <NavigationView x:Name="NavigationView"
+                        PaneDisplayMode="Left"
+                        OpenPaneLength="250"
+                        IsBackButtonVisible="Collapsed"
+                        Grid.Row="1">
             <NavigationView.MenuItems>
                 <NavigationViewItemHeader Content="My music"/>
 
