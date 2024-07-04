@@ -9,6 +9,7 @@
                 <!-- Other merged dictionaries here -->
             </ResourceDictionary.MergedDictionaries>
             <!-- Other app resources here -->
+            <ImageSource x:Key="AppIconImageSource">../Assets/Square44x44Logo.scale-200.png</ImageSource>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
