@@ -42,15 +42,13 @@
                         IsBackButtonVisible="Collapsed"
                         Grid.Row="2">
             <NavigationView.MenuItems>
-                <NavigationViewItemHeader Content="My music"/>
-
                 <NavigationViewItem Content="Playlist">
                     <NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xe90b;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
-                <NavigationViewItemHeader Content="My computer"/>
+                <NavigationViewItemHeader Content="This computer"/>
 
                 <NavigationViewItem Content="Music">
                     <NavigationViewItem.Icon>
