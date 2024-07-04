@@ -26,12 +26,54 @@
                            Title="{x:Bind Title}"/>
 
         <MenuBar Grid.Row="1">
-            <MenuBarItem Title="Media"/>
+            <MenuBarItem Title="Media">
+                <MenuFlyoutItem Text="Open file">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="O"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Open multiple files">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control,Shift" Key="O"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Open folder">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="F"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutSubItem Text="Open recent media"/>
+
+                <MenuFlyoutSeparator/>
+
+                <MenuFlyoutItem Text="Save playlist to file">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="Y"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutSeparator/>
+
+                <MenuFlyoutItem Text="Quit">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="Q"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+            </MenuBarItem>
+
             <MenuBarItem Title="Playback"/>
+            
             <MenuBarItem Title="Audio"/>
+            
             <MenuBarItem Title="Video"/>
+            
             <MenuBarItem Title="Subtitle"/>
+            
             <MenuBarItem Title="Tools"/>
+            
             <MenuBarItem Title="View"/>
             
             <MenuBarItem Title="Help">
