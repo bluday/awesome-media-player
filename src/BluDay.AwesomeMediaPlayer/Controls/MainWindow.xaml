@@ -20,7 +20,7 @@
                            Icon="{StaticResource AppIconImageSource}"
                            Title="{x:Bind Title}"/>
 
-        <NavigationView x:Name="NavigationView" PaneDisplayMode="Left" Grid.Row="1">
+        <NavigationView x:Name="NavigationView" PaneDisplayMode="Left" IsBackButtonVisible="Collapsed" Grid.Row="1">
             <NavigationView.MenuItems>
                 <NavigationViewItemHeader Content="My music"/>
 

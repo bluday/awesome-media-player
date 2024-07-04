@@ -5,5 +5,14 @@ namespace BluDay.AwesomeMediaPlayer.Controls;
 /// </summary>
 public sealed partial class MainWindow : Window
 {
-    public MainWindow() => InitializeComponent();
+    public MainWindow()
+    {
+        Title = "Awesome Media Player";
+
+        ExtendsContentIntoTitleBar = true;
+
+        SetTitleBar(TitleBar);
+
+        InitializeComponent();
+    }
 }
