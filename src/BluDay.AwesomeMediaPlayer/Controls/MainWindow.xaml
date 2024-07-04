@@ -33,7 +33,24 @@
             <MenuBarItem Title="Subtitle"/>
             <MenuBarItem Title="Tools"/>
             <MenuBarItem Title="View"/>
-            <MenuBarItem Title="Help"/>
+            
+            <MenuBarItem Title="Help">
+                <MenuFlyoutItem Text="Help">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="F1"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+                
+                <MenuFlyoutItem Text="Check for updates"/>
+                
+                <MenuFlyoutSeparator/>
+                
+                <MenuFlyoutItem Text="About">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Shift" Key="F1"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+            </MenuBarItem>
         </MenuBar>
 
         <NavigationView x:Name="NavigationView"
