@@ -131,7 +131,7 @@
         </Grid>
 
         <Grid Padding="8,0" Grid.Column="1" Grid.Row="2">
-            <StackPanel Spacing="10">
+            <StackPanel Spacing="8">
                 <Button Background="Transparent" BorderBrush="Transparent">
                     <Viewbox>
                         <!-- e992 (Volume0) -->
