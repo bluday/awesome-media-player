@@ -106,14 +106,16 @@
                 <StackPanel>
                     <Button>
                         <Viewbox>
+                            <!-- e8ee (All) -->
+                            <!-- f5e7 (Off) -->
+                            
                             <FontIcon Glyph="&#xe8ed;"/>
                         </Viewbox>
                     </Button>
 
                     <Button>
                         <Viewbox>
-                            <!-- e8ee (All) -->
-                            <!-- f5e7 (Off) -->
+                            <!-- SystemAccentColor -->
                             
                             <FontIcon Glyph="&#xe8b1;"/>
                         </Viewbox>
