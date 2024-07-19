@@ -48,6 +48,7 @@ public sealed partial class MainWindow : Window
 
                 _appWindowTitleBar.BackgroundColor
                     = _appWindowTitleBar.ButtonBackgroundColor
+                    = _appWindowTitleBar.ButtonInactiveBackgroundColor
                     = Colors.Transparent;
 
                 SetTitleBar(TitleBar);
