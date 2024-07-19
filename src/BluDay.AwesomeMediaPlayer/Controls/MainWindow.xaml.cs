@@ -1,3 +1,4 @@
+using Microsoft.UI;
 using Microsoft.UI.Windowing;
 
 using Windows.Graphics;
@@ -13,6 +14,37 @@ public sealed partial class MainWindow : Window
 
     private readonly AppWindow _appWindow;
 
+    private readonly AppWindowTitleBar _appWindowTitleBar;
+
+    /// <summary>
+    /// Gets a value indicating whether the content extends into the title bar area.
+    /// </summary>
+    public new bool ExtendsContentIntoTitleBar
+    {
+        get => _appWindowTitleBar.ExtendsContentIntoTitleBar;
+        set
+        {
+            _appWindowTitleBar.ExtendsContentIntoTitleBar = value;
+
+            if (value)
+            {
+                TitleBar.Visibility = Visibility.Visible;
+
+                _appWindowTitleBar.BackgroundColor
+                    = _appWindowTitleBar.ButtonBackgroundColor
+                    = Colors.Transparent;
+
+                SetTitleBar(TitleBar);
+            }
+            else
+            {
+                TitleBar.Visibility = Visibility.Collapsed;
+
+                _appWindowTitleBar.ResetToDefault();
+            }
+        }
+    }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="MainWindow"/> class.
     /// </summary>
@@ -21,6 +53,8 @@ public sealed partial class MainWindow : Window
         _displayArea = null!;
 
         _appWindow = AppWindow;
+
+        _appWindowTitleBar = _appWindow.TitleBar;
 
         UpdateDisplayArea();
 
@@ -34,26 +68,6 @@ public sealed partial class MainWindow : Window
     private void UpdateDisplayArea()
     {
         _displayArea = DisplayArea.GetFromWindowId(_appWindow.Id, DisplayAreaFallback.Nearest);
-    }
-
-    /// <summary>
-    /// Disables the custom title bar control.
-    /// </summary>
-    public void DisableCustomTitleBar()
-    {
-        ExtendsContentIntoTitleBar = false;
-
-        SetTitleBar(null);
-    }
-
-    /// <summary>
-    /// Enables and configures the custom title bar control.
-    /// </summary>
-    public void EnableCustomTitleBar()
-    {
-        ExtendsContentIntoTitleBar = true;
-
-        SetTitleBar(TitleBar);
     }
 
     /// <summary>
@@ -104,5 +118,12 @@ public sealed partial class MainWindow : Window
     public void Resize(int width, int height)
     {
         _appWindow.Resize(new SizeInt32(width, height));
+    }
+
+    private void NavigationView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+    {
+        if (!args.IsSettingsInvoked) return;
+
+        ExtendsContentIntoTitleBar = !ExtendsContentIntoTitleBar;
     }
 }

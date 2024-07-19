@@ -102,6 +102,7 @@
                         PaneDisplayMode="Left"
                         OpenPaneLength="180"
                         IsBackButtonVisible="Collapsed"
+                        ItemInvoked="NavigationView_ItemInvoked"
                         Grid.Row="2">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Playlist">

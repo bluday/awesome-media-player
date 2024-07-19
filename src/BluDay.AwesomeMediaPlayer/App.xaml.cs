@@ -1,4 +1,6 @@
-﻿namespace BluDay.AwesomeMediaPlayer;
+﻿using Microsoft.Windows.ApplicationModel.Resources;
+
+namespace BluDay.AwesomeMediaPlayer;
 
 /// <summary>
 /// Provides application-specific behavior to supplement the default Application class.
@@ -6,6 +8,8 @@
 public partial class App : Application
 {
     private MainWindow? _mainWindow;
+
+    private readonly ResourceLoader _resourceLoader = new();
 
     /// <summary>
     /// Initializes the singleton application object.  This is the first line of authored code
@@ -19,9 +23,11 @@ public partial class App : Application
     /// <param name="args">Details about the launch request and process.</param>
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
-        _mainWindow = new MainWindow { Title = "Awesome Media Player" };
-
-        _mainWindow.EnableCustomTitleBar();
+        _mainWindow = new MainWindow
+        {
+            ExtendsContentIntoTitleBar = true,
+            Title                      = _resourceLoader.GetString("AppDisplayName")
+        };
 
         _mainWindow.Resize(1600, 1000);
 
