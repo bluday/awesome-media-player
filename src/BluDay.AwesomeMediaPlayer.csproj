@@ -20,6 +20,7 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <None Remove="Assets\Icon-64.ico" />
     <None Remove="BluDay.AwesomeMediaPlayer\Controls\MediaControlBar.xaml" />
     <None Remove="BluDay.AwesomeMediaPlayer\Controls\TitleBar.xaml" />
   </ItemGroup>

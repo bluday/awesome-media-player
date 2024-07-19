@@ -12,9 +12,25 @@ public sealed partial class MainWindow : Window
 {
     private DisplayArea _displayArea;
 
+    private string? _iconPath;
+
     private readonly AppWindow _appWindow;
 
     private readonly AppWindowTitleBar _appWindowTitleBar;
+
+    /// <summary>
+    /// Gets the app icon path for the title bar.
+    /// </summary>
+    public string? IconPath
+    {
+        get => _iconPath;
+        set
+        {
+            _iconPath = value;
+
+            _appWindow.SetIcon(_iconPath);
+        }
+    }
 
     /// <summary>
     /// Gets a value indicating whether the content extends into the title bar area.
@@ -41,6 +57,8 @@ public sealed partial class MainWindow : Window
                 TitleBar.Visibility = Visibility.Collapsed;
 
                 _appWindowTitleBar.ResetToDefault();
+
+                _appWindow.SetIcon(_iconPath);
             }
         }
     }

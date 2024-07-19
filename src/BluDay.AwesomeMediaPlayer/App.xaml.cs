@@ -26,6 +26,7 @@ public partial class App : Application
         _mainWindow = new MainWindow
         {
             ExtendsContentIntoTitleBar = true,
+            IconPath                   = "Assets/Icon-64.ico",
             Title                      = _resourceLoader.GetString("AppDisplayName")
         };
 
