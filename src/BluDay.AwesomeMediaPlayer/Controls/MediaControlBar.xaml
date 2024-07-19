@@ -70,19 +70,25 @@
                 <StackPanel>
                     <Button>
                         <Viewbox>
-                            <FontIcon Glyph="&#xeb9e;"/>
+                            <!-- eb9e (Rewind) -->
+                            
+                            <FontIcon Glyph="&#xf8ac;"/>
                         </Viewbox>
                     </Button>
 
                     <Button>
                         <Viewbox>
-                            <FontIcon Glyph="&#xe71a;"/>
+                            <!-- e71a (Stop) -->
+                            
+                            <FontIcon Glyph="&#xe73b;"/>
                         </Viewbox>
                     </Button>
 
                     <Button>
                         <Viewbox>
-                            <FontIcon Glyph="&#xeb9d;"/>
+                            <!-- eb9d (FastForward) -->
+                            
+                            <FontIcon Glyph="&#xf8ad;"/>
                         </Viewbox>
                     </Button>
                 </StackPanel>
