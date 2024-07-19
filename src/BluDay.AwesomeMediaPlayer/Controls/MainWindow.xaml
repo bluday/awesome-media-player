@@ -99,7 +99,7 @@
 
         <NavigationView x:Name="NavigationView"
                         PaneDisplayMode="Left"
-                        OpenPaneLength="250"
+                        OpenPaneLength="180"
                         IsBackButtonVisible="Collapsed"
                         Grid.Row="2">
             <NavigationView.MenuItems>
