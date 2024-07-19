@@ -19,6 +19,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <controls:TitleBar x:Name="TitleBar"
@@ -128,6 +129,12 @@
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{x:Bind}"/>
             </NavigationView.Content>
         </NavigationView>
+
+        <Grid BorderBrush="{StaticResource AccentControlElevationBorderBrush}"
+              BorderThickness="0,1,0,0"
+              Grid.Row="3">
+            <controls:MediaControlBar/>
+        </Grid>
 
         <ContentDialog Grid.RowSpan="2"/>
     </Grid>
