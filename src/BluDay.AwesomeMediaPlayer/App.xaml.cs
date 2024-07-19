@@ -19,7 +19,13 @@ public partial class App : Application
     /// <param name="args">Details about the launch request and process.</param>
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
-        _mainWindow = new MainWindow();
+        _mainWindow = new MainWindow { Title = "Awesome Media Player" };
+
+        _mainWindow.EnableCustomTitleBar();
+
+        _mainWindow.Resize(1600, 1000);
+
+        _mainWindow.MoveToCenter();
 
         _mainWindow.Activate();
     }
