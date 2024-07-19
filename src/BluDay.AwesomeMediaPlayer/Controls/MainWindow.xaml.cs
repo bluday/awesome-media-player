@@ -9,20 +9,31 @@ namespace BluDay.AwesomeMediaPlayer.Controls;
 /// </summary>
 public sealed partial class MainWindow : Window
 {
-    private readonly AppWindow _appWindow;
+    private DisplayArea _displayArea;
 
-    private readonly DisplayArea _displayArea;
+    private readonly AppWindow _appWindow;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MainWindow"/> class.
     /// </summary>
     public MainWindow()
     {
+        _displayArea = null!;
+
         _appWindow = AppWindow;
 
-        _displayArea = DisplayArea.GetFromWindowId(_appWindow.Id, DisplayAreaFallback.Primary);
+        UpdateDisplayArea();
 
         InitializeComponent();
+    }
+
+    /// <summary>
+    /// Gets the current <see cref="DisplayArea"/> for this window and updates
+    /// <see cref="_displayArea"/> with the new instance.
+    /// </summary>
+    private void UpdateDisplayArea()
+    {
+        _displayArea = DisplayArea.GetFromWindowId(_appWindow.Id, DisplayAreaFallback.Nearest);
     }
 
     /// <summary>
