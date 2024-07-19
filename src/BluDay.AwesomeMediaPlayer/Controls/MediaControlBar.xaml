@@ -88,6 +88,22 @@
                 </StackPanel>
 
                 <StackPanel>
+                    <Button IsEnabled="False">
+                        <Viewbox>
+                            <!-- e73f (Back to windowed mode) -->
+                            
+                            <FontIcon Glyph="&#xe740;"/>
+                        </Viewbox>
+                    </Button>
+
+                    <Button>
+                        <Viewbox>
+                            <FontIcon Glyph="&#xe9e9;"/>
+                        </Viewbox>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel>
                     <Button>
                         <Viewbox>
                             <FontIcon Glyph="&#xe8ed;"/>
