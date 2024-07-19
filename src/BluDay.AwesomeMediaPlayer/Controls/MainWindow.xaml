@@ -102,7 +102,6 @@
                         PaneDisplayMode="Left"
                         OpenPaneLength="180"
                         IsBackButtonVisible="Collapsed"
-                        ItemInvoked="NavigationView_ItemInvoked"
                         Grid.Row="2">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Playlist">
@@ -131,7 +130,7 @@
             </NavigationView.Content>
         </NavigationView>
 
-        <Grid BorderBrush="{StaticResource AccentControlElevationBorderBrush}"
+        <Grid BorderBrush="{ThemeResource AccentControlElevationBorderBrush}"
               BorderThickness="0,1,0,0"
               Grid.Row="3">
             <controls:MediaControlBar/>

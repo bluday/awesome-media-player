@@ -137,11 +137,4 @@ public sealed partial class MainWindow : Window
     {
         _appWindow.Resize(new SizeInt32(width, height));
     }
-
-    private void NavigationView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
-    {
-        if (!args.IsSettingsInvoked) return;
-
-        ExtendsContentIntoTitleBar = !ExtendsContentIntoTitleBar;
-    }
 }
