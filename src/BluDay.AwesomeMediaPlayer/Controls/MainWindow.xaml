@@ -50,7 +50,7 @@
 
                 <NavigationViewItem Content="Videos">
                     <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xe714;"/>
+                        <FontIcon Glyph="&#xe8b2;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
             </NavigationView.MenuItems>
