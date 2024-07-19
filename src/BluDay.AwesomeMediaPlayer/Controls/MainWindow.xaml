@@ -25,6 +25,7 @@
                            Icon="{StaticResource AppIconImageSource}"
                            Title="{x:Bind Title}"/>
 
+        <!--
         <MenuBar Grid.Row="1">
             <MenuBarItem Title="Media">
                 <MenuFlyoutItem Text="Open file">
@@ -94,6 +95,7 @@
                 </MenuFlyoutItem>
             </MenuBarItem>
         </MenuBar>
+        -->
 
         <NavigationView x:Name="NavigationView"
                         PaneDisplayMode="Left"

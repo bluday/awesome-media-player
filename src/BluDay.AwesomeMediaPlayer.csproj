@@ -18,6 +18,7 @@
     <RepositoryUrl>https://github.com/BluDay/awesome-media-player-winui3</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+  
   <ItemGroup>
     <None Remove="BluDay.AwesomeMediaPlayer\Controls\TitleBar.xaml" />
   </ItemGroup>
@@ -28,6 +29,12 @@
   
   <ItemGroup>
     <ApplicationDefinition Include="BluDay.AwesomeMediaPlayer\App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="BluDay.AwesomeMediaPlayer\Controls\TitleBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
@@ -50,11 +57,6 @@
   -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="BluDay.AwesomeMediaPlayer\Controls\TitleBar.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
 
   <!-- 
