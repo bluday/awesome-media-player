@@ -8,6 +8,7 @@
     <Grid Padding="4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -16,7 +17,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Grid Padding="4,0">
+        <Grid Padding="4,0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
@@ -102,6 +103,22 @@
                         </Viewbox>
                     </Button>
                 </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Padding="10,0" Grid.Column="1" Grid.Row="2">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Viewbox Height="16" Width="16">
+                    <!-- e992 (Volume0) -->
+                    <!-- e993 (Volume1) -->
+                    <!-- e994 (Volume2) -->
+                    <!-- e995 (Volume3) -->
+                    <!-- e74f (Mute) -->
+                    
+                    <FontIcon Glyph="&#xe767;"/>
+                </Viewbox>
+
+                <Slider Value="100" Width="128"/>
             </StackPanel>
         </Grid>
     </Grid>
