@@ -52,15 +52,15 @@ public sealed partial class MainWindow : Window
                     = Colors.Transparent;
 
                 SetTitleBar(TitleBar);
-            }
-            else
-            {
-                TitleBar.Visibility = Visibility.Collapsed;
 
-                _appWindowTitleBar.ResetToDefault();
-
-                _appWindow.SetIcon(_iconPath);
+                return;
             }
+
+            TitleBar.Visibility = Visibility.Collapsed;
+
+            _appWindowTitleBar.ResetToDefault();
+
+            _appWindow.SetIcon(_iconPath);
         }
     }
 
