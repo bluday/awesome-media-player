@@ -84,7 +84,7 @@
             </NavigationView.Content>
         </NavigationView>
 
-        <Grid BorderBrush="{ThemeResource AccentControlElevationBorderBrush}"
+        <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
               BorderThickness="0,1,0,0"
               Grid.Row="3">
             <controls:MediaControlBar/>
