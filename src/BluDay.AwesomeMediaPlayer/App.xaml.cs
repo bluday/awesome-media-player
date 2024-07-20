@@ -1,4 +1,6 @@
-﻿using Microsoft.Windows.ApplicationModel.Resources;
+﻿using BluDay.AwesomeMediaPlayer.Controls.Windows;
+
+using Microsoft.Windows.ApplicationModel.Resources;
 
 namespace BluDay.AwesomeMediaPlayer;
 

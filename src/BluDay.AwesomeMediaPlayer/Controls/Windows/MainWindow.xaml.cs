@@ -3,7 +3,7 @@ using Microsoft.UI.Windowing;
 
 using Windows.Graphics;
 
-namespace BluDay.AwesomeMediaPlayer.Controls;
+namespace BluDay.AwesomeMediaPlayer.Controls.Windows;
 
 /// <summary>
 /// An empty window that can be used on its own or navigated to within a Frame.
