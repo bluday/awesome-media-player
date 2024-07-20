@@ -9,7 +9,7 @@
     <Window.SystemBackdrop>
         <MicaBackdrop Kind="Base"/>
     </Window.SystemBackdrop>
-    
+
     <Grid x:Name="RootGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -29,7 +29,7 @@
                         Grid.Row="2">
             <NavigationView.MenuItems>
                 <NavigationViewItemHeader Content="Library"/>
-                
+
                 <NavigationViewItem Content="Playlist">
                     <NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xe90b;"/>
@@ -49,14 +49,6 @@
                         <FontIcon Glyph="&#xe8b2;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-
-                <!--
-                <NavigationViewItem Content="Settings">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xe713;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
-                -->
             </NavigationView.MenuItems>
 
             <NavigationView.FooterMenuItems>

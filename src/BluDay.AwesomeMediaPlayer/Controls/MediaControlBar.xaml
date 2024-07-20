@@ -6,13 +6,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              MaxHeight="80">
-    <Grid Padding="4" Grid.Column="2">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-
+    <Grid Padding="4">
         <Grid.Resources>
             <Style TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
                 <Setter Property="Height" Value="28"/>
@@ -37,7 +31,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Grid Padding="4,0" Grid.Column="1" Grid.ColumnSpan="2">
+        <Grid Padding="4,0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
@@ -59,12 +53,18 @@
                         Grid.Column="2"/>
         </Grid>
 
-        <Grid Grid.Column="1" Grid.Row="2">
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition MinWidth="16"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
             <StackPanel Spacing="16">
                 <Button Height="32" Width="32">
                     <Viewbox Height="20" Width="20">
                         <!-- f8ae (Pause) -->
-                        
+
                         <FontIcon Glyph="&#xf5b0;"/>
                     </Viewbox>
                 </Button>
@@ -73,7 +73,7 @@
                     <Button>
                         <Viewbox>
                             <!-- eb9e (Rewind) -->
-                            
+
                             <FontIcon Glyph="&#xf8ac;"/>
                         </Viewbox>
                     </Button>
@@ -81,7 +81,7 @@
                     <Button>
                         <Viewbox>
                             <!-- e71a (Stop) -->
-                            
+
                             <FontIcon Glyph="&#xe73b;"/>
                         </Viewbox>
                     </Button>
@@ -89,7 +89,7 @@
                     <Button>
                         <Viewbox>
                             <!-- eb9d (FastForward) -->
-                            
+
                             <FontIcon Glyph="&#xf8ad;"/>
                         </Viewbox>
                     </Button>
@@ -99,7 +99,7 @@
                     <Button IsEnabled="False">
                         <Viewbox>
                             <!-- e73f (Back to windowed mode) -->
-                            
+
                             <FontIcon Glyph="&#xe740;"/>
                         </Viewbox>
                     </Button>
@@ -116,7 +116,7 @@
                         <Viewbox>
                             <!-- e8ee (All) -->
                             <!-- f5e7 (Off) -->
-                            
+
                             <FontIcon Glyph="&#xe8ed;"/>
                         </Viewbox>
                     </Button>
@@ -124,16 +124,14 @@
                     <Button>
                         <Viewbox>
                             <!-- SystemAccentColor -->
-                            
+
                             <FontIcon Glyph="&#xe8b1;"/>
                         </Viewbox>
                     </Button>
                 </StackPanel>
             </StackPanel>
-        </Grid>
 
-        <Grid Padding="8,0" Grid.Column="2" Grid.Row="2">
-            <StackPanel Spacing="8">
+            <StackPanel HorizontalAlignment="Right" Margin="0,0,8,0"  Spacing="8" Grid.Column="2">
                 <Button Background="Transparent" BorderBrush="Transparent">
                     <Viewbox>
                         <!-- e992 (Volume0) -->
