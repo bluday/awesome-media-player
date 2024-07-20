@@ -49,6 +49,12 @@
                         <FontIcon Glyph="&#xe8b2;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+
+                <NavigationViewItem Content="Pictures">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xe8b9;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
             </NavigationView.MenuItems>
 
             <NavigationView.FooterMenuItems>
