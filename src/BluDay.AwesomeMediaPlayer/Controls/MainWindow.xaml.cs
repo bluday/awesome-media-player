@@ -44,23 +44,12 @@ public sealed partial class MainWindow : Window
 
             if (value)
             {
-                TitleBar.Visibility = Visibility.Visible;
-
-                _appWindowTitleBar.BackgroundColor
-                    = _appWindowTitleBar.ButtonBackgroundColor
-                    = _appWindowTitleBar.ButtonInactiveBackgroundColor
-                    = Colors.Transparent;
-
-                SetTitleBar(TitleBar);
+                ShowCustomTitleBar();
 
                 return;
             }
 
-            TitleBar.Visibility = Visibility.Collapsed;
-
-            _appWindowTitleBar.ResetToDefault();
-
-            _appWindow.SetIcon(_iconPath);
+            ShowDefaultTitleBar();
         }
     }
 
@@ -78,6 +67,33 @@ public sealed partial class MainWindow : Window
         UpdateDisplayArea();
 
         InitializeComponent();
+    }
+
+    /// <summary>
+    /// Shows the custom <see cref="TitleBar"/> control and hides the default Win32 title bar.
+    /// </summary>
+    private void ShowCustomTitleBar()
+    {
+        TitleBar.Visibility = Visibility.Visible;
+
+        _appWindowTitleBar.BackgroundColor
+            = _appWindowTitleBar.ButtonBackgroundColor
+            = _appWindowTitleBar.ButtonInactiveBackgroundColor
+            = Colors.Transparent;
+
+        SetTitleBar(TitleBar);
+    }
+
+    /// <summary>
+    /// Shows the defualt Win32 title bar and hides the custom <see cref="TitleBar"/> control.
+    /// </summary>
+    private void ShowDefaultTitleBar()
+    {
+        TitleBar.Visibility = Visibility.Collapsed;
+
+        _appWindowTitleBar.ResetToDefault();
+
+        _appWindow.SetIcon(_iconPath);
     }
 
     /// <summary>
