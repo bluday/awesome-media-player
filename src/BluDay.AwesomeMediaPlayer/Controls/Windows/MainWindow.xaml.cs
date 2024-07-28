@@ -7,6 +7,8 @@ public sealed partial class MainWindow : Window
 {
     private DisplayArea _displayArea;
 
+    private ContentAlignment? _defaultAlignment;
+
     private string? _iconPath;
 
     private readonly AppWindow _appWindow;
@@ -25,6 +27,36 @@ public sealed partial class MainWindow : Window
 
             _appWindow.SetIcon(_iconPath);
         }
+    }
+
+    /// <summary>
+    /// Gets the default alignment of the window.
+    /// </summary>
+    public ContentAlignment? DefaultAlignment
+    {
+        get => _defaultAlignment;
+        set
+        {
+            _defaultAlignment = value;
+
+            if (value is null) return;
+
+            RectInt32 workArea = _displayArea.WorkArea;
+
+            int x = GetXFromAlignment(value.Value, workArea);
+            int y = GetYFromAlignment(value.Value, workArea);
+
+            Move(x, y);
+        }
+    }
+
+    /// <summary>
+    /// Gets the size of the window.
+    /// </summary>
+    public SizeInt32 Size
+    {
+        get => _appWindow.Size;
+        set => _appWindow.Resize(value);
     }
 
     /// <summary>
@@ -98,6 +130,63 @@ public sealed partial class MainWindow : Window
     private void UpdateDisplayArea()
     {
         _displayArea = DisplayArea.GetFromWindowId(_appWindow.Id, DisplayAreaFallback.Nearest);
+    }
+
+    /// <summary>
+    /// The translated X value of the given <paramref name="alignment"/> value.
+    /// </summary>
+    /// <param name="alignment">
+    /// The alignment value.
+    /// </param>
+    /// <param name="workArea">
+    /// The targeted "work" area of a display.
+    /// </param>
+    /// <returns>
+    /// The translated X value.
+    /// </returns>
+    private int GetXFromAlignment(ContentAlignment alignment, RectInt32 workArea)
+    {
+        SizeInt32 windowSize = _appWindow.Size;
+
+        switch (alignment)
+        {
+            case ContentAlignment.TopCenter:
+            case ContentAlignment.MiddleCenter:
+            case ContentAlignment.BottomCenter:
+                return (workArea.Width - windowSize.Width) / 2;
+            case ContentAlignment.TopRight:
+            case ContentAlignment.MiddleRight:
+            case ContentAlignment.BottomRight:
+                return workArea.Width - windowSize.Width;
+        }
+
+        return 0;
+    }
+
+    /// <summary>
+    /// The translated X value of the given <paramref name="alignment"/> value.
+    /// </summary>
+    /// <returns>
+    /// The translated Y value.
+    /// </returns>
+    /// <inheritdoc cref="GetXFromAlignment(ContentAlignment, RectInt32)"/>
+    private int GetYFromAlignment(ContentAlignment alignment, RectInt32 workArea)
+    {
+        SizeInt32 windowSize = _appWindow.Size;
+
+        switch (alignment)
+        {
+            case ContentAlignment.MiddleLeft:
+            case ContentAlignment.MiddleCenter:
+            case ContentAlignment.MiddleRight:
+                return (workArea.Height - windowSize.Height) / 2;
+            case ContentAlignment.BottomLeft:
+            case ContentAlignment.BottomCenter:
+            case ContentAlignment.BottomRight:
+                return workArea.Height - windowSize.Height;
+        }
+
+        return 0;
     }
 
     /// <summary>

@@ -23,14 +23,12 @@ public partial class App : Application
     {
         _mainWindow = new MainWindow
         {
+            Title                      = _resourceLoader.GetString("MainWindow/Title"),
             ExtendsContentIntoTitleBar = true,
             IconPath                   = "Assets/Icon-64.ico",
-            Title                      = _resourceLoader.GetString("MainWindow/Title")
+            Size                       = new SizeInt32(1600, 1280),
+            DefaultAlignment           = ContentAlignment.MiddleCenter
         };
-
-        _mainWindow.Resize(1600, 1000);
-
-        _mainWindow.MoveToCenter();
 
         _mainWindow.Activate();
     }
