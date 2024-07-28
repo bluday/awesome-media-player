@@ -155,6 +155,21 @@ public sealed partial class ShellViewModel : ObservableObject
     }
 
     /// <summary>
+    /// Notifies the UI to update all observable properties.
+    /// </summary>
+    /// <remarks>
+    /// Used primarily when <see cref="SetShell(Shell, UIElement?)"/> gets invoked.
+    /// </remarks>
+    private void RefreshAllProperties()
+    {
+        OnPropertyChanged(nameof(ExtendsContentIntoTitleBar));
+        OnPropertyChanged(nameof(IconPath));
+        OnPropertyChanged(nameof(Title));
+        OnPropertyChanged(nameof(Alignment));
+        OnPropertyChanged(nameof(Size));
+    }
+
+    /// <summary>
     /// Attempts to activate the shell and bring it into the foreground.
     /// </summary>
     public void Activate()
@@ -243,12 +258,8 @@ public sealed partial class ShellViewModel : ObservableObject
 
         _titleBarControl = titleBar;
 
-        OnPropertyChanged(nameof(ExtendsContentIntoTitleBar));
-        OnPropertyChanged(nameof(IconPath));
-        OnPropertyChanged(nameof(Title));
-        OnPropertyChanged(nameof(Alignment));
-        OnPropertyChanged(nameof(Size));
-
         UpdateDisplayArea();
+
+        RefreshAllProperties();
     }
 }
