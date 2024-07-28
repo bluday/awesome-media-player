@@ -38,11 +38,9 @@ public sealed partial class ShellViewModel : ObservableObject
         get => _appWindowTitleBar?.ExtendsContentIntoTitleBar;
         set
         {
-            bool actualValue = value!.Value;
+            _appWindowTitleBar!.ExtendsContentIntoTitleBar = value!.Value;
 
-            _appWindowTitleBar!.ExtendsContentIntoTitleBar = actualValue;
-
-            if (actualValue)
+            if (value.Value)
             {
                 ShowCustomTitleBar();
 
