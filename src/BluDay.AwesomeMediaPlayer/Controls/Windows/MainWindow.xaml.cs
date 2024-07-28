@@ -204,28 +204,6 @@ public sealed partial class MainWindow : Window
     }
 
     /// <summary>
-    /// Centers the window on the default <see cref="_displayArea"/>.
-    /// </summary>
-    public void MoveToCenter()
-    {
-        MoveToCenter(_displayArea);
-    }
-
-    /// <summary>
-    /// Centers the window on the provided <paramref name="displayArea"/>.
-    /// </summary>
-    /// <param name="displayArea">
-    /// A <see cref="DisplayArea"/> instance of the targeted display.
-    /// </param>
-    public void MoveToCenter(DisplayArea displayArea)
-    {
-        int x = (displayArea.WorkArea.Width - _appWindow.Size.Width) / 2;
-        int y = (displayArea.WorkArea.Height - _appWindow.Size.Height) / 2;
-
-        Move(x, y);
-    }
-
-    /// <summary>
     /// Resizes the window using the provided width and height integer values.
     /// </summary>
     /// <param name="width">
