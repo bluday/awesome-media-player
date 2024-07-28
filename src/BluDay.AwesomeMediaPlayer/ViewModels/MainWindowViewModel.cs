@@ -277,15 +277,6 @@ public sealed partial class MainWindowViewModel : ObservableObject
     }
 
     /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="value"></param>
-    public void SetAlignment(ContentAlignment value)
-    {
-        
-    }
-
-    /// <summary>
     /// Sets the targeted window.
     /// </summary>
     /// <param name="window">
@@ -313,35 +304,4 @@ public sealed partial class MainWindowViewModel : ObservableObject
 
         UpdateDisplayArea();
     }
-}
-
-/// <summary>
-/// Represents initial configuration for a window.
-/// </summary>
-public sealed class WindowConfiguration
-{
-    /// <summary>
-    /// Gets a value indicating whether the content extends into the title bar area.
-    /// </summary>
-    public bool? ExtendsContentIntoTitleBar { get; init; }
-
-    /// <summary>
-    /// Gets the app icon path for the title bar.
-    /// </summary>
-    public string? IconPath { get; init; }
-
-    /// <summary>
-    /// Gets the window title.
-    /// </summary>
-    public string? Title { get; init; }
-
-    /// <summary>
-    /// Gets the alignment of the window.
-    /// </summary>
-    public ContentAlignment? Alignment { get; init; }
-
-    /// <summary>
-    /// Gets the size of the window.
-    /// </summary>
-    public SizeInt32? Size { get; init; }
 }

@@ -1,5 +1,6 @@
 ﻿global using CommunityToolkit.Mvvm.ComponentModel;
 
+global using BluDay.AwesomeMediaPlayer.ComponentModel;
 global using BluDay.AwesomeMediaPlayer.Controls.Windows;
 global using BluDay.AwesomeMediaPlayer.ViewModels;
 
