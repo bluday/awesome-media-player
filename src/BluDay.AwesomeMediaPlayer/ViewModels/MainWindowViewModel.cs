@@ -5,6 +5,8 @@
 /// </summary>
 public sealed partial class MainWindowViewModel : ObservableObject
 {
+    private WindowConfiguration? _defaultConfiguration;
+
     private AppWindow? _appWindow;
 
     private AppWindowTitleBar? _appWindowTitleBar;
@@ -21,15 +23,13 @@ public sealed partial class MainWindowViewModel : ObservableObject
 
     private ContentAlignment? _defaultAlignment;
 
-    private readonly WindowConfiguration? _defaultConfiguration;
-
     /// <summary>
     /// Gets the default configuration instance.
     /// </summary>
     public WindowConfiguration? DefaultConfiguration
     {
-        get  => _defaultConfiguration;
-        init => _defaultConfiguration = value;
+        get => _defaultConfiguration;
+        set => _defaultConfiguration = value;
     }
 
     /// <inheritdoc cref="WindowConfiguration.ExtendsContentIntoTitleBar"/>
