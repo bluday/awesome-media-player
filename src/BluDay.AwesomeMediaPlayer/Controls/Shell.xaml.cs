@@ -1,27 +1,27 @@
-namespace BluDay.AwesomeMediaPlayer.Controls.Windows;
+namespace BluDay.AwesomeMediaPlayer.Controls;
 
 /// <summary>
 /// An empty window that can be used on its own or navigated to within a Frame.
 /// </summary>
-public sealed partial class MainWindow : Window
+public sealed partial class Shell : Window
 {
     /// <summary>
     /// Gets the view model instance.
     /// </summary>
-    public MainWindowViewModel ViewModel { get; }
+    public ShellViewModel ViewModel { get; }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="MainWindow"/> class.
+    /// Initializes a new instance of the <see cref="Shell"/> class.
     /// </summary>
     /// <param name="viewModel">
     /// The view model instance.
     /// </param>
-    public MainWindow(MainWindowViewModel viewModel)
+    public Shell(ShellViewModel viewModel)
     {
         InitializeComponent();
 
         ViewModel = viewModel;
 
-        viewModel.SetWindow(this, TitleBar);
+        viewModel.SetShell(this, TitleBar);
     }
 }

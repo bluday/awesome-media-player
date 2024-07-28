@@ -1,9 +1,9 @@
 ﻿namespace BluDay.AwesomeMediaPlayer.ViewModels;
 
 /// <summary>
-/// Represents the view model for instances of the <see cref="MainWindow"/> class.
+/// Represents the view model for instances of the <see cref="Shell"/> class.
 /// </summary>
-public sealed partial class MainWindowViewModel : ObservableObject
+public sealed partial class ShellViewModel : ObservableObject
 {
     private WindowConfiguration? _defaultConfiguration;
 
@@ -17,7 +17,7 @@ public sealed partial class MainWindowViewModel : ObservableObject
 
     private UIElement? _titleBarControl;
 
-    private Window? _window;
+    private Window? _shell;
 
     private string? _iconPath;
 
@@ -126,7 +126,7 @@ public sealed partial class MainWindowViewModel : ObservableObject
             = _appWindowTitleBar.ButtonInactiveBackgroundColor
             = Colors.Transparent;
 
-        _window!.SetTitleBar(_titleBarControl);
+        _shell!.SetTitleBar(_titleBarControl);
     }
 
     /// <summary>
@@ -142,7 +142,7 @@ public sealed partial class MainWindowViewModel : ObservableObject
     }
 
     /// <summary>
-    /// Gets the current <see cref="DisplayArea"/> for this window and updates
+    /// Gets the current <see cref="DisplayArea"/> for this shell and updates
     /// <see cref="_displayArea"/> with the new instance.
     /// </summary>
     private void UpdateDisplayArea()
@@ -164,18 +164,18 @@ public sealed partial class MainWindowViewModel : ObservableObject
     /// </returns>
     private int GetXFromAlignment(ContentAlignment alignment, RectInt32 workArea)
     {
-        SizeInt32 windowSize = _appWindow!.Size;
+        SizeInt32 shellSize = _appWindow!.Size;
 
         switch (alignment)
         {
             case ContentAlignment.TopCenter:
             case ContentAlignment.MiddleCenter:
             case ContentAlignment.BottomCenter:
-                return (workArea.Width - windowSize.Width) / 2;
+                return (workArea.Width - shellSize.Width) / 2;
             case ContentAlignment.TopRight:
             case ContentAlignment.MiddleRight:
             case ContentAlignment.BottomRight:
-                return workArea.Width - windowSize.Width;
+                return workArea.Width - shellSize.Width;
         }
 
         return 0;
@@ -190,29 +190,29 @@ public sealed partial class MainWindowViewModel : ObservableObject
     /// <inheritdoc cref="GetXFromAlignment(ContentAlignment, RectInt32)"/>
     private int GetYFromAlignment(ContentAlignment alignment, RectInt32 workArea)
     {
-        SizeInt32 windowSize = _appWindow!.Size;
+        SizeInt32 shellSize = _appWindow!.Size;
 
         switch (alignment)
         {
             case ContentAlignment.MiddleLeft:
             case ContentAlignment.MiddleCenter:
             case ContentAlignment.MiddleRight:
-                return (workArea.Height - windowSize.Height) / 2;
+                return (workArea.Height - shellSize.Height) / 2;
             case ContentAlignment.BottomLeft:
             case ContentAlignment.BottomCenter:
             case ContentAlignment.BottomRight:
-                return workArea.Height - windowSize.Height;
+                return workArea.Height - shellSize.Height;
         }
 
         return 0;
     }
 
     /// <summary>
-    /// Attempts to activate the window and bring it into the foreground.
+    /// Attempts to activate the shell and bring it into the foreground.
     /// </summary>
     public void Activate()
     {
-        _window!.Activate();
+        _shell!.Activate();
     }
 
     /// <summary>
@@ -226,15 +226,15 @@ public sealed partial class MainWindowViewModel : ObservableObject
     }
 
     /// <summary>
-    /// Closes the window instance.
+    /// Closes the shell instance.
     /// </summary>
     public void Close()
     {
-        _window!.Close();
+        _shell!.Close();
     }
 
     /// <summary>
-    /// Configures the window using the provided properties.
+    /// Configures the shell using the provided properties.
     /// </summary>
     /// <param name="config">
     /// The configuration instance.
@@ -249,7 +249,7 @@ public sealed partial class MainWindowViewModel : ObservableObject
     }
 
     /// <summary>
-    /// Moves the window to the provided x and y coordinates on the screen.
+    /// Moves the shell to the provided x and y coordinates on the screen.
     /// </summary>
     /// <param name="x">
     /// The x coordinate.
@@ -263,13 +263,13 @@ public sealed partial class MainWindowViewModel : ObservableObject
     }
 
     /// <summary>
-    /// Resizes the window using the provided width and height integer values.
+    /// Resizes the shell using the provided width and height integer values.
     /// </summary>
     /// <param name="width">
-    /// The width of the window.
+    /// The width of the shell.
     /// </param>
     /// <param name="height">
-    /// The height of the window.
+    /// The height of the shell.
     /// </param>
     public void Resize(int width, int height)
     {
@@ -277,18 +277,18 @@ public sealed partial class MainWindowViewModel : ObservableObject
     }
 
     /// <summary>
-    /// Sets the targeted window.
+    /// Sets the targeted shell.
     /// </summary>
-    /// <param name="window">
-    /// The window instance.
+    /// <param name="shell">
+    /// The shell instance.
     /// </param>
-    public void SetWindow(MainWindow window, UIElement? titleBar)
+    public void SetShell(Shell shell, UIElement? titleBar)
     {
-        ArgumentNullException.ThrowIfNull(window);
+        ArgumentNullException.ThrowIfNull(shell);
 
-        _window = window;
+        _shell = shell;
         
-        _appWindow = window.AppWindow;
+        _appWindow = shell.AppWindow;
 
         _appWindowTitleBar = _appWindow.TitleBar;
 

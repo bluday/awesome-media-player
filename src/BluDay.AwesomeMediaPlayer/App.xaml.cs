@@ -5,7 +5,7 @@
 /// </summary>
 public partial class App : Application
 {
-    private MainWindow? _mainWindow;
+    private Shell? _mainWindow;
 
     private readonly ResourceLoader _resourceLoader = new();
 
@@ -22,7 +22,7 @@ public partial class App : Application
     {
         if (_mainWindow is not null) return;
 
-        MainWindowViewModel viewModel = new()
+        ShellViewModel viewModel = new()
         {
             DefaultConfiguration = new WindowConfiguration
             {
@@ -34,7 +34,7 @@ public partial class App : Application
             }
         };
 
-        _mainWindow = new MainWindow(viewModel);
+        _mainWindow = new Shell(viewModel);
 
         viewModel.ApplyDefaultConfiguration();
         viewModel.Activate();
