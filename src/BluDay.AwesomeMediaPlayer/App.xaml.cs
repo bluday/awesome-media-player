@@ -29,7 +29,7 @@ public partial class App : Application
                 ExtendsContentIntoTitleBar = true,
                 IconPath                   = "Assets/Icon-64.ico",
                 Size                       = new SizeInt32(1600, 1280),
-                DefaultAlignment           = ContentAlignment.MiddleCenter
+                Alignment                  = ContentAlignment.MiddleCenter
             }
         };
 

@@ -82,7 +82,7 @@ public sealed partial class MainWindowViewModel : ObservableObject
     }
 
     /// <inheritdoc cref="WindowConfiguration.DefaultAlignment"/>
-    public ContentAlignment? DefaultAlignment
+    public ContentAlignment? Alignment
     {
         get => _defaultAlignment;
         set
@@ -98,7 +98,7 @@ public sealed partial class MainWindowViewModel : ObservableObject
 
             _defaultAlignment = value;
 
-            OnPropertyChanged(nameof(DefaultAlignment));
+            OnPropertyChanged(nameof(Alignment));
         }
     }
 
@@ -245,7 +245,7 @@ public sealed partial class MainWindowViewModel : ObservableObject
         ExtendsContentIntoTitleBar = config.ExtendsContentIntoTitleBar;
         IconPath                   = config.IconPath;
         Size                       = config.Size;
-        DefaultAlignment           = config.DefaultAlignment;
+        Alignment                  = config.Alignment;
     }
 
     /// <summary>
@@ -277,6 +277,15 @@ public sealed partial class MainWindowViewModel : ObservableObject
     }
 
     /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="value"></param>
+    public void SetAlignment(ContentAlignment value)
+    {
+        
+    }
+
+    /// <summary>
     /// Sets the targeted window.
     /// </summary>
     /// <param name="window">
@@ -299,7 +308,7 @@ public sealed partial class MainWindowViewModel : ObservableObject
         OnPropertyChanged(nameof(ExtendsContentIntoTitleBar));
         OnPropertyChanged(nameof(IconPath));
         OnPropertyChanged(nameof(Title));
-        OnPropertyChanged(nameof(DefaultAlignment));
+        OnPropertyChanged(nameof(Alignment));
         OnPropertyChanged(nameof(Size));
 
         UpdateDisplayArea();
@@ -327,9 +336,9 @@ public sealed class WindowConfiguration
     public string? Title { get; init; }
 
     /// <summary>
-    /// Gets the default alignment of the window.
+    /// Gets the alignment of the window.
     /// </summary>
-    public ContentAlignment? DefaultAlignment { get; init; }
+    public ContentAlignment? Alignment { get; init; }
 
     /// <summary>
     /// Gets the size of the window.
