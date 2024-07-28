@@ -16,11 +16,12 @@ public partial class App : Application
     public App() => InitializeComponent();
 
     /// <summary>
-    /// Invoked when the application is launched.
+    /// Creates, configures and activates the main window.
     /// </summary>
-    /// <param name="args">Details about the launch request and process.</param>
-    protected override void OnLaunched(LaunchActivatedEventArgs args)
+    private void CreateMainWindow()
     {
+        if (_mainWindow is not null) return;
+
         MainWindowViewModel viewModel = new()
         {
             DefaultConfiguration = new WindowConfiguration
@@ -37,5 +38,14 @@ public partial class App : Application
 
         viewModel.ApplyDefaultConfiguration();
         viewModel.Activate();
+    }
+
+    /// <summary>
+    /// Invoked when the application is launched.
+    /// </summary>
+    /// <param name="args">Details about the launch request and process.</param>
+    protected override void OnLaunched(LaunchActivatedEventArgs args)
+    {
+        CreateMainWindow();
     }
 }
