@@ -14,13 +14,13 @@
             <SolidColorBrush x:Key="WindowCaptionBackgroundDisabled">Transparent</SolidColorBrush>
             <SolidColorBrush x:Key="WindowCaptionForeground">White</SolidColorBrush>
 
-            <Color x:Key="SystemAccentColor">#54aeff</Color>
-            <Color x:Key="SystemAccentColorDark1">#54aeff</Color>
-            <Color x:Key="SystemAccentColorDark2">#54aeff</Color>
-            <Color x:Key="SystemAccentColorDark3">#54aeff</Color>
-            <Color x:Key="SystemAccentColorLight1">#54aeff</Color>
-            <Color x:Key="SystemAccentColorLight2">#54aeff</Color>
-            <Color x:Key="SystemAccentColorLight3">#54aeff</Color>
+            <Color x:Key="SystemAccentColor">#54AEFF</Color>
+            <Color x:Key="SystemAccentColorDark1">#4A99E0</Color>
+            <Color x:Key="SystemAccentColorDark2">#458ED0</Color>
+            <Color x:Key="SystemAccentColorDark3">#3F83C0</Color>
+            <Color x:Key="SystemAccentColorLight1">#6AB9FF</Color>
+            <Color x:Key="SystemAccentColorLight2">#75BEFF</Color>
+            <Color x:Key="SystemAccentColorLight3">#7FC3FF</Color>
 
             <ImageSource x:Key="AppIconImageSource">../Assets/Square44x44Logo.scale-200.png</ImageSource>
         </ResourceDictionary>
