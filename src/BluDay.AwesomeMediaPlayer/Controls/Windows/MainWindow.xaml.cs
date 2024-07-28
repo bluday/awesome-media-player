@@ -1,8 +1,3 @@
-using Microsoft.UI;
-using Microsoft.UI.Windowing;
-
-using Windows.Graphics;
-
 namespace BluDay.AwesomeMediaPlayer.Controls.Windows;
 
 /// <summary>
