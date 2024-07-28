@@ -2,6 +2,7 @@
 
 global using BluDay.AwesomeMediaPlayer.ComponentModel;
 global using BluDay.AwesomeMediaPlayer.Controls;
+global using BluDay.AwesomeMediaPlayer.Extensions;
 global using BluDay.AwesomeMediaPlayer.ViewModels;
 
 global using Microsoft.UI;

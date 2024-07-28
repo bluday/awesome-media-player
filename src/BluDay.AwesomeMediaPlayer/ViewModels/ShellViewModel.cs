@@ -89,10 +89,14 @@ public sealed partial class ShellViewModel : ObservableObject
         {
             if (value is null) return;
 
+            ContentAlignment alignment = value.Value;
+
             RectInt32 workArea = _displayArea!.WorkArea;
 
-            int x = GetXFromAlignment(value.Value, workArea);
-            int y = GetYFromAlignment(value.Value, workArea);
+            SizeInt32 windowSize = _appWindow!.Size;
+
+            int x = windowSize.GetXFromAlignment(alignment, workArea);
+            int y = windowSize.GetYFromAlignment(alignment, workArea);
 
             Move(x, y);
 
@@ -148,63 +152,6 @@ public sealed partial class ShellViewModel : ObservableObject
     private void UpdateDisplayArea()
     {
         _displayArea = DisplayArea.GetFromWindowId(_appWindow!.Id, DisplayAreaFallback.Nearest);
-    }
-
-    /// <summary>
-    /// The translated X value of the given <paramref name="alignment"/> value.
-    /// </summary>
-    /// <param name="alignment">
-    /// The alignment value.
-    /// </param>
-    /// <param name="workArea">
-    /// The targeted "work" area of a display.
-    /// </param>
-    /// <returns>
-    /// The translated X value.
-    /// </returns>
-    private int GetXFromAlignment(ContentAlignment alignment, RectInt32 workArea)
-    {
-        SizeInt32 shellSize = _appWindow!.Size;
-
-        switch (alignment)
-        {
-            case ContentAlignment.TopCenter:
-            case ContentAlignment.MiddleCenter:
-            case ContentAlignment.BottomCenter:
-                return (workArea.Width - shellSize.Width) / 2;
-            case ContentAlignment.TopRight:
-            case ContentAlignment.MiddleRight:
-            case ContentAlignment.BottomRight:
-                return workArea.Width - shellSize.Width;
-        }
-
-        return 0;
-    }
-
-    /// <summary>
-    /// The translated X value of the given <paramref name="alignment"/> value.
-    /// </summary>
-    /// <returns>
-    /// The translated Y value.
-    /// </returns>
-    /// <inheritdoc cref="GetXFromAlignment(ContentAlignment, RectInt32)"/>
-    private int GetYFromAlignment(ContentAlignment alignment, RectInt32 workArea)
-    {
-        SizeInt32 shellSize = _appWindow!.Size;
-
-        switch (alignment)
-        {
-            case ContentAlignment.MiddleLeft:
-            case ContentAlignment.MiddleCenter:
-            case ContentAlignment.MiddleRight:
-                return (workArea.Height - shellSize.Height) / 2;
-            case ContentAlignment.BottomLeft:
-            case ContentAlignment.BottomCenter:
-            case ContentAlignment.BottomRight:
-                return workArea.Height - shellSize.Height;
-        }
-
-        return 0;
     }
 
     /// <summary>
