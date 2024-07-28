@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Window x:Class="BluDay.AwesomeMediaPlayer.Controls.Windows.MainWindow"
+        x:DefaultBindMode="OneWay"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="using:BluDay.AwesomeMediaPlayer.Controls"
-        mc:Ignorable="d">
+        mc:Ignorable="d"
+        ExtendsContentIntoTitleBar="{x:Bind ViewModel.ExtendsContentIntoTitleBar.Value}"
+        Title="{x:Bind ViewModel.Title}">
     <Window.SystemBackdrop>
         <MicaBackdrop Kind="Base"/>
     </Window.SystemBackdrop>
@@ -20,7 +23,7 @@
 
         <controls:TitleBar x:Name="TitleBar"
                            Icon="{StaticResource AppIconImageSource}"
-                           Title="{x:Bind Title}"/>
+                           Title="{x:Bind ViewModel.Title}"/>
 
         <NavigationView x:Name="NavigationView"
                         PaneDisplayMode="Left"
@@ -65,7 +68,8 @@
                         </ControlTemplate>
                     </NavigationViewItem.Template>
 
-                    <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
+                    <Grid x:Name="Haha"
+                          BorderBrush="{ThemeResource ControlElevationBorderBrush}"
                           BorderThickness="1"
                           CornerRadius="8"
                           HorizontalAlignment="Center"

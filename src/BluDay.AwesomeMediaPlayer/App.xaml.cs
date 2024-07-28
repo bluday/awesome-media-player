@@ -21,15 +21,21 @@ public partial class App : Application
     /// <param name="args">Details about the launch request and process.</param>
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
-        _mainWindow = new MainWindow
+        MainWindowViewModel viewModel = new()
         {
-            Title                      = _resourceLoader.GetString("MainWindow/Title"),
-            ExtendsContentIntoTitleBar = true,
-            IconPath                   = "Assets/Icon-64.ico",
-            Size                       = new SizeInt32(1600, 1280),
-            DefaultAlignment           = ContentAlignment.MiddleCenter
+            DefaultConfiguration = new WindowConfiguration
+            {
+                Title                      = _resourceLoader.GetString("MainWindow/Title"),
+                ExtendsContentIntoTitleBar = true,
+                IconPath                   = "Assets/Icon-64.ico",
+                Size                       = new SizeInt32(1600, 1280),
+                DefaultAlignment           = ContentAlignment.MiddleCenter
+            }
         };
 
-        _mainWindow.Activate();
+        _mainWindow = new MainWindow(viewModel);
+
+        viewModel.ApplyDefaultConfiguration();
+        viewModel.Activate();
     }
 }
