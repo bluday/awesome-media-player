@@ -28,15 +28,37 @@
                            Style="{StaticResource BodyStrongTextBlockStyle}"
                            Text="Interface"/>
 
-                <toolkit:SettingsCard Description="Select which app theme to display"
-                                      Header="Theme"
-                                      HeaderIcon="{winui:FontIcon Glyph=&#xE790;}">
+                <toolkit:SettingsExpander Description="Select which app theme to display"
+                                          Header="Theme"
+                                          HeaderIcon="{winui:FontIcon Glyph=&#xE790;}">
                     <ComboBox SelectedIndex="0">
                         <ComboBoxItem Content="Dark"/>
                         <ComboBoxItem Content="Light"/>
                         <ComboBoxItem Content="System"/>
                     </ComboBox>
-                </toolkit:SettingsCard>
+
+                    <toolkit:SettingsExpander.Items>
+                        <toolkit:SettingsCard ContentAlignment="Vertical"
+                                              Header="Accent color"
+                                              HorizontalContentAlignment="Left">
+                            <GridView SelectedIndex="0">
+                                <GridViewItem ToolTipService.ToolTip="Default">
+                                    <Border Background="{ThemeResource SystemAccentColor}"
+                                            Height="48"
+                                            Width="48"
+                                            CornerRadius="{StaticResource ControlCornerRadius}"/>
+                                </GridViewItem>
+                                
+                                <GridViewItem ToolTipService.ToolTip="VLC">
+                                    <Border Background="#f48b00"
+                                            Height="48"
+                                            Width="48"
+                                            CornerRadius="{StaticResource ControlCornerRadius}"/>
+                                </GridViewItem>
+                            </GridView>
+                        </toolkit:SettingsCard>
+                    </toolkit:SettingsExpander.Items>
+                </toolkit:SettingsExpander>
 
                 <!-- About -->
                 
