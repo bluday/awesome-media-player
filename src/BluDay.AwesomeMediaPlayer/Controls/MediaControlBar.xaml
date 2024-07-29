@@ -39,8 +39,8 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock FontSize="12"
-                        Text="00:00"
-                        VerticalAlignment="Center"/>
+                       Text="00:00"
+                       VerticalAlignment="Center"/>
 
             <Slider Margin="10,-4"
                     HorizontalAlignment="Stretch"
@@ -49,9 +49,9 @@
                     Grid.Column="1"/>
 
             <TextBlock FontSize="12"
-                        Text="-08:00"
-                        VerticalAlignment="Center"
-                        Grid.Column="2"/>
+                       Text="-08:00"
+                       VerticalAlignment="Center"
+                       Grid.Column="2"/>
         </Grid>
 
         <Grid Grid.Row="2">
@@ -147,7 +147,8 @@
 
                 <Slider Value="100" Width="128"/>
 
-                <TextBlock HorizontalAlignment="Center"
+                <TextBlock FontSize="12"
+                           HorizontalAlignment="Center"
                            Text="100%"
                            VerticalAlignment="Center"/>
             </StackPanel>
