@@ -4,8 +4,80 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="using:BluDay.AwesomeMediaPlayer.Controls"
              mc:Ignorable="d">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" Text="{x:Bind}" VerticalAlignment="Center"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <NavigationView x:Name="NavigationView"
+                        PaneDisplayMode="Left"
+                        OpenPaneLength="180"
+                        IsBackButtonVisible="Collapsed">
+            <NavigationView.MenuItems>
+                <NavigationViewItemHeader Content="Library"/>
+
+                <NavigationViewItem Content="Playlist">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xe90b;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItemHeader Content="This computer"/>
+
+                <NavigationViewItem Content="Music">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xec4f;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Videos" IsEnabled="False">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xe8b2;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Pictures" IsEnabled="False">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xe8b9;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+
+            <NavigationView.FooterMenuItems>
+                <NavigationViewItem>
+                    <NavigationViewItem.Template>
+                        <ControlTemplate>
+                            <ContentPresenter Height="140" Margin="0"/>
+                        </ControlTemplate>
+                    </NavigationViewItem.Template>
+
+                    <Grid x:Name="Haha"
+                          BorderBrush="{ThemeResource ControlElevationBorderBrush}"
+                          BorderThickness="1"
+                          CornerRadius="8"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Height="128"
+                          Width="128">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="https://www.halopedia.org/images/2/2e/Halo2-Volume1-OriginalSoundtrack.jpg"/>
+                        </Grid.Background>
+                    </Grid>
+                </NavigationViewItem>
+            </NavigationView.FooterMenuItems>
+
+            <NavigationView.Content>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{x:Bind}"/>
+            </NavigationView.Content>
+        </NavigationView>
+
+        <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
+              BorderThickness="0,1,0,0"
+              Grid.Row="1">
+            <controls:MediaControlBar/>
+        </Grid>
     </Grid>
 </UserControl>
