@@ -18,6 +18,9 @@
     <RepositoryUrl>https://github.com/BluDay/awesome-media-player-winui3</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="BluDay.AwesomeMediaPlayer\Views\MainView.xaml" />
+  </ItemGroup>
   
   <ItemGroup>
     <Page Remove="BluDay.AwesomeMediaPlayer\App.xaml" />
@@ -62,6 +65,12 @@
   
   <ItemGroup>
     <Page Update="BluDay.AwesomeMediaPlayer\Controls\MediaControlBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Page Update="BluDay.AwesomeMediaPlayer\Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
