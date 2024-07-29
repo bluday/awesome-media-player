@@ -49,7 +49,7 @@ public sealed partial class ShellViewModel : ViewModel
 
             ShowDefaultTitleBar();
 
-            OnPropertyChanged(nameof(ExtendsContentIntoTitleBar));
+            OnPropertyChanged();
         }
     }
 
@@ -63,7 +63,7 @@ public sealed partial class ShellViewModel : ViewModel
 
             _iconPath = value;
 
-            OnPropertyChanged(nameof(IconPath));
+            OnPropertyChanged();
         }
     }
 
@@ -75,7 +75,7 @@ public sealed partial class ShellViewModel : ViewModel
         {
             _appWindow!.Title = value;
 
-            OnPropertyChanged(nameof(Title));
+            OnPropertyChanged();
         }
     }
 
@@ -100,7 +100,7 @@ public sealed partial class ShellViewModel : ViewModel
 
             _alignment = value;
 
-            OnPropertyChanged(nameof(Alignment));
+            OnPropertyChanged();
         }
     }
 
@@ -112,7 +112,7 @@ public sealed partial class ShellViewModel : ViewModel
         {
             _appWindow!.Resize(value!.Value);
 
-            OnPropertyChanged(nameof(Size));
+            OnPropertyChanged();
         }
     }
 
