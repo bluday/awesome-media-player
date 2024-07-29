@@ -21,7 +21,7 @@ public sealed partial class ShellViewModel : ObservableObject
 
     private string? _iconPath;
 
-    private ContentAlignment? _defaultAlignment;
+    private ContentAlignment? _alignment;
 
     /// <summary>
     /// Gets the default configuration instance.
@@ -82,7 +82,7 @@ public sealed partial class ShellViewModel : ObservableObject
     /// <inheritdoc cref="WindowConfiguration.DefaultAlignment"/>
     public ContentAlignment? Alignment
     {
-        get => _defaultAlignment;
+        get => _alignment;
         set
         {
             if (value is null) return;
@@ -98,7 +98,7 @@ public sealed partial class ShellViewModel : ObservableObject
 
             Move(x, y);
 
-            _defaultAlignment = value;
+            _alignment = value;
 
             OnPropertyChanged(nameof(Alignment));
         }
