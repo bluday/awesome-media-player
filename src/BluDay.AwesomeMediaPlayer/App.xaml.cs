@@ -22,7 +22,7 @@ public partial class App : Application
     {
         if (_mainWindow is not null) return;
 
-        ShellViewModel viewModel = new()
+        ShellViewModel viewModel = new(WeakReferenceMessenger.Default)
         {
             DefaultConfiguration = new WindowConfiguration
             {

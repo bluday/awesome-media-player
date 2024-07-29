@@ -1,9 +1,9 @@
 ﻿namespace BluDay.AwesomeMediaPlayer.ViewModels;
 
 /// <summary>
-/// Represents the view model for instances of the <see cref="Shell"/> class.
+/// Represents the view model class for the <see cref="Shell"/> control.
 /// </summary>
-public sealed partial class ShellViewModel : ObservableObject
+public sealed partial class ShellViewModel : ViewModel
 {
     private WindowConfiguration? _defaultConfiguration;
 
@@ -114,6 +114,14 @@ public sealed partial class ShellViewModel : ObservableObject
 
             OnPropertyChanged(nameof(Size));
         }
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ShellViewModel"/> class.
+    /// </summary>
+    public ShellViewModel(WeakReferenceMessenger messenger) : base(messenger)
+    {
+        CurrentChild = new MainViewModel(messenger);
     }
 
     /// <summary>
@@ -242,6 +250,9 @@ public sealed partial class ShellViewModel : ObservableObject
     /// <param name="shell">
     /// The shell instance.
     /// </param>
+    /// <exception cref="ArgumentNullException">
+    /// If <paramref name="shell"/> is null.
+    /// </exception>
     public void SetShell(Shell shell, UIElement? titleBar)
     {
         ArgumentNullException.ThrowIfNull(shell);

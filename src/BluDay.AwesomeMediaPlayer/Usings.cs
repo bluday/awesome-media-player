@@ -1,6 +1,8 @@
 ﻿global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Messaging;
 global using CommunityToolkit.WinUI.UI.Controls;
 
+global using BluDay.AwesomeMediaPlayer.Abstractions.ViewModels;
 global using BluDay.AwesomeMediaPlayer.ComponentModel;
 global using BluDay.AwesomeMediaPlayer.Controls;
 global using BluDay.AwesomeMediaPlayer.Extensions;
