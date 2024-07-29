@@ -79,6 +79,11 @@ public sealed partial class ShellViewModel : ViewModel
         }
     }
 
+    /// <summary>
+    /// Gets the id of the window.
+    /// </summary>
+    public ulong? Id => _appWindow!.Id.Value;
+
     /// <inheritdoc cref="WindowConfiguration.DefaultAlignment"/>
     public ContentAlignment? Alignment
     {
@@ -168,6 +173,7 @@ public sealed partial class ShellViewModel : ViewModel
     /// </remarks>
     private void RefreshAllProperties()
     {
+        OnPropertyChanged(nameof(Id));
         OnPropertyChanged(nameof(ExtendsContentIntoTitleBar));
         OnPropertyChanged(nameof(IconPath));
         OnPropertyChanged(nameof(Title));
