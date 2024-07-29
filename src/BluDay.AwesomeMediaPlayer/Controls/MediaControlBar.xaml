@@ -144,7 +144,11 @@
                     </Viewbox>
                 </Button>
 
-                <Slider Value="100" Width="128"/>
+                <Slider x:Name="VolumeSlider" Value="100" Width="128"/>
+
+                <TextBlock HorizontalAlignment="Center"
+                           Text="100%"
+                           VerticalAlignment="Center"/>
             </StackPanel>
         </Grid>
     </Grid>
