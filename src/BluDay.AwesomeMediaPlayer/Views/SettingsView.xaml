@@ -68,7 +68,7 @@
 
                 <toolkit:SettingsExpander Description="© BluDay 2024"
                                           Header="Awesome Media Player"
-                                          HeaderIcon="{winui:BitmapIcon Source=ms-appx:///Assets/Square44x44Logo.scale-200.png}"
+                                          HeaderIcon="{winui:BitmapIcon Source=ms-appx:///Assets/Square44x44Logo.targetsize-48.png}"
                                           Margin="0,0,0,24">
                     <TextBlock Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                                Text="1.0.0"/>
