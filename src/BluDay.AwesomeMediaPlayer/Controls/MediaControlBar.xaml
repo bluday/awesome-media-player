@@ -144,7 +144,7 @@
                     </Viewbox>
                 </Button>
 
-                <Slider x:Name="VolumeSlider" Value="100" Width="128"/>
+                <Slider Value="100" Width="128"/>
 
                 <TextBlock HorizontalAlignment="Center"
                            Text="100%"
