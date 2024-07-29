@@ -44,6 +44,7 @@
 
             <Slider Margin="10,-4"
                     HorizontalAlignment="Stretch"
+                    Value="20"
                     VerticalAlignment="Center"
                     Grid.Column="1"/>
 
