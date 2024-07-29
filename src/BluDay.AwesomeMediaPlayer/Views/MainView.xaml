@@ -7,7 +7,8 @@
                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                xmlns:controls="using:BluDay.AwesomeMediaPlayer.Controls"
-               xmlns:viewModels="using:BluDay.AwesomeMediaPlayer.ViewModels">
+               xmlns:viewModels="using:BluDay.AwesomeMediaPlayer.ViewModels"
+               xmlns:winui="using:CommunityToolkit.WinUI">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -21,31 +22,21 @@
             <NavigationView.MenuItems>
                 <NavigationViewItemHeader Content="Library"/>
 
-                <NavigationViewItem Content="Playlist">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xe90b;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
+                <NavigationViewItem Content="Playlist"
+                                    Icon="{winui:FontIcon Glyph=&#xe90b;}"/>
 
                 <NavigationViewItemHeader Content="This computer"/>
 
-                <NavigationViewItem Content="Music">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xec4f;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
+                <NavigationViewItem Content="Music"
+                                    Icon="{winui:FontIcon Glyph=&#xec4f;}"/>
 
-                <NavigationViewItem Content="Videos" IsEnabled="False">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xe8b2;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
+                <NavigationViewItem Content="Videos"
+                                    Icon="{winui:FontIcon Glyph=&#xe8b2;}"
+                                    IsEnabled="False"/>
 
-                <NavigationViewItem Content="Pictures" IsEnabled="False">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xe8b9;"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
+                <NavigationViewItem Content="Pictures"
+                                    Icon="{winui:FontIcon Glyph=&#xe8b9;}"
+                                    IsEnabled="False"/>
             </NavigationView.MenuItems>
 
             <NavigationView.FooterMenuItems>
