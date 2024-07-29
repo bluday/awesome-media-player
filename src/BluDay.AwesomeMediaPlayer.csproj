@@ -20,6 +20,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="BluDay.AwesomeMediaPlayer\Views\MainView.xaml" />
+    <None Remove="BluDay.AwesomeMediaPlayer\Views\SettingsView.xaml" />
   </ItemGroup>
   
   <ItemGroup>
@@ -45,6 +46,8 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="CommunityToolkit.WinUI" Version="7.1.2" />
+    <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.0.240109" />
     <PackageReference Include="CommunityToolkit.WinUI.UI" Version="7.1.2" />
     <PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240627000" />
@@ -66,6 +69,10 @@
   <ItemGroup>
     <Page Update="BluDay.AwesomeMediaPlayer\Controls\MediaControlBar.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="BluDay.AwesomeMediaPlayer\Views\SettingsView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   

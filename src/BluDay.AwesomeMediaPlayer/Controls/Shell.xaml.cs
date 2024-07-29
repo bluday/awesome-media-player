@@ -23,5 +23,9 @@ public sealed partial class Shell : Window
         ViewModel = viewModel;
 
         viewModel.SetShell(this, TitleBar);
+
+        MainView mainView = new(new MainViewModel(WeakReferenceMessenger.Default));
+
+        ViewContentControl.Content = mainView;
     }
 }

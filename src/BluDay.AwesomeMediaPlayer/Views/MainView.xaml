@@ -69,10 +69,17 @@
                     </Grid>
                 </NavigationViewItem>
             </NavigationView.FooterMenuItems>
-
-            <NavigationView.Content>
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{x:Bind}"/>
-            </NavigationView.Content>
+            
+            <ContentControl x:Name="ViewContentControl"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch"
+                            Grid.Row="1">
+                <ContentControl.Transitions>
+                    <TransitionCollection>
+                        <ContentThemeTransition/>
+                    </TransitionCollection>
+                </ContentControl.Transitions>
+            </ContentControl>
         </NavigationView>
 
         <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"

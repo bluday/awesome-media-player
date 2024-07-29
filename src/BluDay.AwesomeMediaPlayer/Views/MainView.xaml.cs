@@ -13,5 +13,9 @@ public sealed partial class MainView : View
         InitializeComponent();
 
         viewModel.SetNavigationView(NavigationView);
+
+        SettingsView settingsView = new(new SettingsViewModel(WeakReferenceMessenger.Default));
+
+        ViewContentControl.Content = settingsView;
     }
 }
