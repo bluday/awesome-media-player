@@ -66,7 +66,7 @@
                            Style="{StaticResource BodyStrongTextBlockStyle}"
                            Text="About"/>
 
-                <toolkit:SettingsExpander Description="© BluDay 2024"
+                <toolkit:SettingsExpander Description="© 2024 BluDay. No rights reserved."
                                           Header="Awesome Media Player"
                                           HeaderIcon="{winui:BitmapIcon Source=ms-appx:///Assets/Square44x44Logo.targetsize-48.png}"
                                           Margin="0,0,0,24">
