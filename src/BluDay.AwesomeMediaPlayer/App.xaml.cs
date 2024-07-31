@@ -14,8 +14,8 @@ public partial class App : Application
     private readonly IServiceProvider _serviceProvider;
 
     /// <summary>
-    /// Initializes the singleton application object. This is the first line of authored code
-    /// executed, and as such is the logical equivalent of main() or WinMain().
+    /// Initializes an instance of the <see cref="App"/> class using the provided app-specific
+    /// dependencies.
     /// </summary>
     /// <param name="dispatcherQueue">
     /// The main dispatcher queue for the app.
