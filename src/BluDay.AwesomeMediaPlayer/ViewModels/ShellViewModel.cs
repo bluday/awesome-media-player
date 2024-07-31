@@ -238,6 +238,14 @@ public sealed partial class ShellViewModel : ViewModel
     }
 
     /// <summary>
+    /// Hides the window.
+    /// </summary>
+    public void Hide()
+    {
+        _appWindow.Hide();
+    }
+
+    /// <summary>
     /// Moves the shell to the provided x and y coordinates on the screen.
     /// </summary>
     /// <param name="x">
@@ -291,5 +299,13 @@ public sealed partial class ShellViewModel : ViewModel
         UpdateDisplayArea();
 
         RefreshAllProperties();
+    }
+
+    /// <summary>
+    /// Shows the window.
+    /// </summary>
+    public void Show()
+    {
+        _appWindow.Show();
     }
 }
