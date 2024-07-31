@@ -7,13 +7,35 @@ public partial class App : Application
 {
     private Shell? _mainWindow;
 
-    private readonly ResourceLoader _resourceLoader = new();
+    private readonly DispatcherQueue _dispatcherQueue;
+
+    private readonly ResourceLoader _resourceLoader;
+
+    private readonly IServiceProvider _serviceProvider;
 
     /// <summary>
-    /// Initializes the singleton application object.  This is the first line of authored code
+    /// Initializes the singleton application object. This is the first line of authored code
     /// executed, and as such is the logical equivalent of main() or WinMain().
     /// </summary>
-    public App() => InitializeComponent();
+    /// <param name="dispatcherQueue">
+    /// The main dispatcher queue for the app.
+    /// </param>
+    /// <param name="serviceProvider">
+    /// The service provider for the root scope of the DI container.
+    /// </param>
+    public App(
+        DispatcherQueue  dispatcherQueue,
+        ResourceLoader   resourceLoader,
+        IServiceProvider serviceProvider)
+    {
+        _dispatcherQueue = dispatcherQueue;
+
+        _resourceLoader = resourceLoader;
+
+        _serviceProvider = serviceProvider;
+
+        InitializeComponent();
+    }
 
     /// <summary>
     /// Creates, configures and activates the main window.
@@ -22,19 +44,18 @@ public partial class App : Application
     {
         if (_mainWindow is not null) return;
 
-        ShellViewModel viewModel = new(WeakReferenceMessenger.Default)
-        {
-            DefaultConfiguration = new WindowConfiguration
-            {
-                Title                      = _resourceLoader.GetString("MainWindow/Title"),
-                ExtendsContentIntoTitleBar = true,
-                IconPath                   = "Assets/Icon-64.ico",
-                Size                       = new SizeInt32(1600, 1000),
-                Alignment                  = ContentAlignment.MiddleCenter
-            }
-        };
+        _mainWindow = _serviceProvider.GetRequiredService<Shell>();
 
-        _mainWindow = new Shell(viewModel);
+        ShellViewModel viewModel = _mainWindow.ViewModel;
+
+        viewModel.DefaultConfiguration = new WindowConfiguration
+        {
+            Title                      = _resourceLoader.GetString("MainWindow/Title"),
+            ExtendsContentIntoTitleBar = true,
+            IconPath                   = "Assets/Icon-64.ico",
+            Size                       = new SizeInt32(1600, 1000),
+            Alignment                  = ContentAlignment.MiddleCenter
+        };
 
         viewModel.ApplyDefaultConfiguration();
         viewModel.Activate();

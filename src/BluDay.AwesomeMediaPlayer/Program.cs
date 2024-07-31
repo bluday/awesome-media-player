@@ -29,13 +29,15 @@ SOFTWARE.
 HostApplicationBuilder builder = Host.CreateApplicationBuilder();
 
 builder.Services
-    .AddScoped(provider => DispatcherQueue.GetForCurrentThread())
+    .AddScoped(_ => DispatcherQueue.GetForCurrentThread())
     .AddScoped<ShellViewModel>()
     .AddScoped<MainViewModel>()
     .AddScoped<SettingsViewModel>();
 
 builder.Services
-    .AddSingleton<App>();
+    .AddSingleton<App>()
+    .AddSingleton<ResourceLoader>()
+    .AddSingleton(WeakReferenceMessenger.Default);
 
 builder.Services
     .AddTransient<Shell>()

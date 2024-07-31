@@ -16,7 +16,10 @@ public sealed partial class Shell : Window
     /// <param name="viewModel">
     /// The view model instance.
     /// </param>
-    public Shell(ShellViewModel viewModel)
+    /// <param name="serviceProvider">
+    /// Temporary.
+    /// </param>
+    public Shell(ShellViewModel viewModel, IServiceProvider serviceProvider)
     {
         InitializeComponent();
 
@@ -24,8 +27,6 @@ public sealed partial class Shell : Window
 
         viewModel.SetShell(this, TitleBar);
 
-        MainView mainView = new(new MainViewModel(WeakReferenceMessenger.Default));
-
-        ViewContentControl.Content = mainView;
+        ViewContentControl.Content = serviceProvider.GetService<MainView>();
     }
 }

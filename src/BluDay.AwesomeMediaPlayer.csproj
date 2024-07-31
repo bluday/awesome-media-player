@@ -17,6 +17,7 @@
     <Description>Developed by BluDay.</Description>
     <RepositoryUrl>https://github.com/BluDay/awesome-media-player-winui3</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
   </PropertyGroup>
   
   <ItemGroup>
