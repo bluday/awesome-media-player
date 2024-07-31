@@ -54,6 +54,11 @@ public sealed partial class ShellViewModel : ViewModel
         }
     }
 
+    /// <summary>
+    /// Gets a value indicating whether the window is visible.
+    /// </summary>
+    public bool IsVisible => _appWindow.IsVisible;
+
     /// <inheritdoc cref="WindowConfiguration.IconPath"/>
     public string? IconPath
     {
