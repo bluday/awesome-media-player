@@ -26,18 +26,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-[DllImport("Microsoft.UI.Xaml.dll")]
-static extern void XamlCheckProcessRequirements();
+HostApplicationBuilder builder = Host.CreateApplicationBuilder();
 
-XamlCheckProcessRequirements();
+builder.Services
+    .AddScoped(provider => DispatcherQueue.GetForCurrentThread())
+    .AddScoped<ShellViewModel>()
+    .AddScoped<MainViewModel>()
+    .AddScoped<SettingsViewModel>();
 
-WinRT.ComWrappersSupport.InitializeComWrappers();
+builder.Services
+    .AddSingleton<App>();
 
-Application.Start(callback =>
-{
-    SynchronizationContext.SetSynchronizationContext(
-        new DispatcherQueueSynchronizationContext(DispatcherQueue.GetForCurrentThread())
-    );
+builder.Services
+    .AddTransient<Shell>()
+    .AddTransient<MainView>()
+    .AddTransient<SettingsView>();
 
-    new App();
-});
+IHost host = builder.Build();
+
+host.Start();
+host.CreateWinui3App();
