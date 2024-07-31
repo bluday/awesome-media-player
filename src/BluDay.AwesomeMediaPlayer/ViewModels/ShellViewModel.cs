@@ -59,7 +59,7 @@ public sealed partial class ShellViewModel : ViewModel
         get => _iconPath;
         set
         {
-            _appWindow!.SetIcon(_iconPath);
+            _appWindow!.SetIcon(value);
 
             _iconPath = value;
 
