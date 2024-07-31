@@ -2,7 +2,6 @@
 global using CommunityToolkit.Mvvm.Messaging;
 
 global using BluDay.AwesomeMediaPlayer;
-global using BluDay.AwesomeMediaPlayer.Abstractions.ViewModels;
 global using BluDay.AwesomeMediaPlayer.ComponentModel;
 global using BluDay.AwesomeMediaPlayer.Controls;
 global using BluDay.AwesomeMediaPlayer.Extensions;
@@ -23,6 +22,5 @@ global using System;
 global using System.Drawing;
 global using System.Runtime.InteropServices;
 global using System.Threading;
-global using System.Threading.Tasks;
 
 global using Windows.Graphics;

@@ -1,4 +1,4 @@
-﻿namespace BluDay.AwesomeMediaPlayer.Abstractions.ViewModels;
+﻿namespace BluDay.AwesomeMediaPlayer.ViewModels;
 
 /// <summary>
 /// Represents the non-instantiatable base view model class.
