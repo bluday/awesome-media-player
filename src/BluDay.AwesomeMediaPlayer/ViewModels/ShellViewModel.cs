@@ -3,21 +3,22 @@
 /// <summary>
 /// Represents the view model class for the <see cref="Shell"/> control.
 /// </summary>
+/// <inheritdoc cref="ViewModel"/>
 public sealed partial class ShellViewModel : ViewModel
 {
     private WindowConfiguration? _defaultConfiguration;
 
-    private AppWindow? _appWindow;
+    private AppWindow _appWindow;
 
-    private AppWindowTitleBar? _appWindowTitleBar;
+    private AppWindowTitleBar _appWindowTitleBar;
 
-    private DisplayArea? _displayArea;
+    private DisplayArea _displayArea;
 
-    private OverlappedPresenter? _overlappedPresenter;
+    private OverlappedPresenter _overlappedPresenter;
 
     private UIElement? _titleBarControl;
 
-    private Window? _shell;
+    private Window _shell;
 
     private string? _iconPath;
 
@@ -33,14 +34,14 @@ public sealed partial class ShellViewModel : ViewModel
     }
 
     /// <inheritdoc cref="WindowConfiguration.ExtendsContentIntoTitleBar"/>
-    public bool? ExtendsContentIntoTitleBar
+    public bool ExtendsContentIntoTitleBar
     {
-        get => _appWindowTitleBar?.ExtendsContentIntoTitleBar;
+        get => _appWindowTitleBar.ExtendsContentIntoTitleBar;
         set
         {
-            _appWindowTitleBar!.ExtendsContentIntoTitleBar = value!.Value;
+            _appWindowTitleBar.ExtendsContentIntoTitleBar = value;
 
-            if (value.Value)
+            if (value)
             {
                 ShowCustomTitleBar();
 
@@ -59,7 +60,7 @@ public sealed partial class ShellViewModel : ViewModel
         get => _iconPath;
         set
         {
-            _appWindow!.SetIcon(value);
+            _appWindow.SetIcon(value);
 
             _iconPath = value;
 
@@ -70,10 +71,10 @@ public sealed partial class ShellViewModel : ViewModel
     /// <inheritdoc cref="WindowConfiguration.Title"/>
     public string? Title
     {
-        get => _appWindow?.Title;
+        get => _appWindow.Title;
         set
         {
-            _appWindow!.Title = value;
+            _appWindow.Title = value;
 
             OnPropertyChanged();
         }
@@ -82,7 +83,7 @@ public sealed partial class ShellViewModel : ViewModel
     /// <summary>
     /// Gets the id of the window.
     /// </summary>
-    public ulong? Id => _appWindow!.Id.Value;
+    public ulong? Id => _appWindow.Id.Value;
 
     /// <inheritdoc cref="WindowConfiguration.DefaultAlignment"/>
     public ContentAlignment? Alignment
@@ -96,7 +97,7 @@ public sealed partial class ShellViewModel : ViewModel
 
             RectInt32 workArea = _displayArea!.WorkArea;
 
-            SizeInt32 windowSize = _appWindow!.Size;
+            SizeInt32 windowSize = _appWindow.Size;
 
             int x = windowSize.GetXFromAlignment(alignment, workArea);
             int y = windowSize.GetYFromAlignment(alignment, workArea);
@@ -112,10 +113,10 @@ public sealed partial class ShellViewModel : ViewModel
     /// <inheritdoc cref="WindowConfiguration.Size"/>
     public SizeInt32? Size
     {
-        get => _appWindow?.Size;
+        get => _appWindow.Size;
         set
         {
-            _appWindow!.Resize(value!.Value);
+            _appWindow.Resize(value!.Value);
 
             OnPropertyChanged();
         }
@@ -126,6 +127,16 @@ public sealed partial class ShellViewModel : ViewModel
     /// </summary>
     public ShellViewModel(WeakReferenceMessenger messenger) : base(messenger)
     {
+        _appWindow = null!;
+
+        _appWindowTitleBar = null!;
+
+        _displayArea = null!;
+
+        _overlappedPresenter = null!;
+
+        _shell = null!;
+
         CurrentChild = new MainViewModel(messenger);
     }
 
@@ -134,14 +145,16 @@ public sealed partial class ShellViewModel : ViewModel
     /// </summary>
     private void ShowCustomTitleBar()
     {
-        _titleBarControl!.Visibility = Visibility.Visible;
+        if (_titleBarControl is null) return;
 
-        _appWindowTitleBar!.BackgroundColor
+        _titleBarControl.Visibility = Visibility.Visible;
+
+        _appWindowTitleBar.BackgroundColor
             = _appWindowTitleBar.ButtonBackgroundColor
             = _appWindowTitleBar.ButtonInactiveBackgroundColor
             = Colors.Transparent;
 
-        _shell!.SetTitleBar(_titleBarControl);
+        _shell.SetTitleBar(_titleBarControl);
     }
 
     /// <summary>
@@ -149,11 +162,13 @@ public sealed partial class ShellViewModel : ViewModel
     /// </summary>
     private void ShowDefaultTitleBar()
     {
-        _titleBarControl!.Visibility = Visibility.Collapsed;
+        if (_titleBarControl is null) return;
 
-        _appWindowTitleBar!.ResetToDefault();
+        _titleBarControl.Visibility = Visibility.Collapsed;
 
-        _appWindow!.SetIcon(_iconPath);
+        _appWindowTitleBar.ResetToDefault();
+
+        _appWindow.SetIcon(_iconPath);
     }
 
     /// <summary>
@@ -162,7 +177,7 @@ public sealed partial class ShellViewModel : ViewModel
     /// </summary>
     private void UpdateDisplayArea()
     {
-        _displayArea = DisplayArea.GetFromWindowId(_appWindow!.Id, DisplayAreaFallback.Nearest);
+        _displayArea = DisplayArea.GetFromWindowId(_appWindow.Id, DisplayAreaFallback.Nearest);
     }
 
     /// <summary>
@@ -186,7 +201,7 @@ public sealed partial class ShellViewModel : ViewModel
     /// </summary>
     public void Activate()
     {
-        _shell!.Activate();
+        _shell.Activate();
     }
 
     /// <summary>
@@ -204,7 +219,7 @@ public sealed partial class ShellViewModel : ViewModel
     /// </summary>
     public void Close()
     {
-        _shell!.Close();
+        _shell.Close();
     }
 
     /// <summary>
@@ -233,7 +248,7 @@ public sealed partial class ShellViewModel : ViewModel
     /// </param>
     public void Move(int x, int y)
     {
-        _appWindow!.Move(new PointInt32(x, y));
+        _appWindow.Move(new PointInt32(x, y));
     }
 
     /// <summary>
@@ -247,7 +262,7 @@ public sealed partial class ShellViewModel : ViewModel
     /// </param>
     public void Resize(int width, int height)
     {
-        _appWindow!.Resize(new SizeInt32(width, height));
+        _appWindow.Resize(new SizeInt32(width, height));
     }
 
     /// <summary>

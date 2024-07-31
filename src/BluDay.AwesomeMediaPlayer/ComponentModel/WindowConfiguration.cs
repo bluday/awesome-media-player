@@ -8,7 +8,7 @@ public sealed class WindowConfiguration
     /// <summary>
     /// Gets a value indicating whether the content extends into the title bar area.
     /// </summary>
-    public bool? ExtendsContentIntoTitleBar { get; init; }
+    public bool ExtendsContentIntoTitleBar { get; init; }
 
     /// <summary>
     /// Gets the app icon path for the title bar.

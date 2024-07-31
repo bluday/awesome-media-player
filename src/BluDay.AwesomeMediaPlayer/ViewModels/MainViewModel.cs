@@ -5,12 +5,15 @@
 /// </summary>
 public sealed partial class MainViewModel : ViewModel
 {
-    private NavigationView? _navigationViewControl;
+    private NavigationView _navigationViewControl;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MainViewModel"/> class.
     /// </summary>
-    public MainViewModel(WeakReferenceMessenger messenger) : base(messenger) { }
+    public MainViewModel(WeakReferenceMessenger messenger) : base(messenger)
+    {
+        _navigationViewControl = null!;
+    }
 
     /// <summary>
     /// Sets the targeted navigation view control for the view.
