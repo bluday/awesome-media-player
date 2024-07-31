@@ -10,6 +10,7 @@ global using BluDay.AwesomeMediaPlayer.Extensions;
 global using BluDay.AwesomeMediaPlayer.ViewModels;
 global using BluDay.AwesomeMediaPlayer.Views;
 
+global using Microsoft.Extensions.Hosting;
 global using Microsoft.UI;
 global using Microsoft.UI.Dispatching;
 global using Microsoft.UI.Windowing;
