@@ -45,4 +45,4 @@ builder.Services
 IHost host = builder.Build();
 
 host.Start();
-host.CreateWinui3App();
+host.CreateWinui3App<App>();

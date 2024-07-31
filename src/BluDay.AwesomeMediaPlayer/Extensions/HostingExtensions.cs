@@ -14,7 +14,10 @@ public static class HostingExtensions
     /// <param name="source">
     /// The application host instance.
     /// </param>
-    public static void CreateWinui3App(this IHost source)
+    /// <typeparam name="TApp">
+    /// The derived <see cref="Application"/> type for the WinUI 3 app.
+    /// </typeparam>
+    public static void CreateWinui3App<TApp>(this IHost source) where TApp : Application
     {
         XamlCheckProcessRequirements();
 
@@ -28,7 +31,7 @@ public static class HostingExtensions
                 new DispatcherQueueSynchronizationContext(dispatcherQueue)
             );
 
-            source.Services.GetRequiredService<App>();
+            source.Services.GetRequiredService<TApp>();
         });
     }
 }
