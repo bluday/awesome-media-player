@@ -194,6 +194,7 @@ public sealed partial class ShellViewModel : ViewModel
     private void RefreshAllProperties()
     {
         OnPropertyChanged(nameof(Id));
+        OnPropertyChanged(nameof(IsVisible));
         OnPropertyChanged(nameof(ExtendsContentIntoTitleBar));
         OnPropertyChanged(nameof(IconPath));
         OnPropertyChanged(nameof(Title));
@@ -248,6 +249,8 @@ public sealed partial class ShellViewModel : ViewModel
     public void Hide()
     {
         _appWindow.Hide();
+
+        OnPropertyChanged(nameof(IsVisible));
     }
 
     /// <summary>
@@ -312,5 +315,7 @@ public sealed partial class ShellViewModel : ViewModel
     public void Show()
     {
         _appWindow.Show();
+
+        OnPropertyChanged(nameof(IsVisible));
     }
 }
