@@ -28,18 +28,20 @@ SOFTWARE.
 
 HostApplicationBuilder builder = Host.CreateApplicationBuilder();
 
-builder.Services
+IServiceCollection services = builder.Services;
+
+services
     .AddScoped(_ => DispatcherQueue.GetForCurrentThread())
     .AddScoped<ShellViewModel>()
     .AddScoped<MainViewModel>()
     .AddScoped<SettingsViewModel>();
 
-builder.Services
+services
     .AddSingleton<App>()
     .AddSingleton<ResourceLoader>()
     .AddSingleton(WeakReferenceMessenger.Default);
 
-builder.Services
+services
     .AddTransient<Shell>()
     .AddTransient<MainView>()
     .AddTransient<SettingsView>();
