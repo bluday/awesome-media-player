@@ -31,15 +31,17 @@ HostApplicationBuilder builder = Host.CreateApplicationBuilder();
 IServiceCollection services = builder.Services;
 
 services
-    .AddScoped(_ => DispatcherQueue.GetForCurrentThread())
-    .AddScoped<ShellViewModel>()
-    .AddScoped<MainViewModel>()
-    .AddScoped<SettingsViewModel>();
-
-services
     .AddSingleton<App>()
     .AddSingleton<ResourceLoader>()
     .AddSingleton(WeakReferenceMessenger.Default);
+
+services
+    .AddScoped(_ => DispatcherQueue.GetForCurrentThread());
+
+services
+    .AddScoped<ShellViewModel>()
+    .AddScoped<MainViewModel>()
+    .AddScoped<SettingsViewModel>();
 
 services
     .AddTransient<Shell>()
