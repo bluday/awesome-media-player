@@ -53,7 +53,7 @@ public partial class App : Application
             Title                      = _resourceLoader.GetString("MainWindow/Title"),
             ExtendsContentIntoTitleBar = true,
             IconPath                   = "Assets/Icon-64.ico",
-            Size                       = new SizeInt32(1600, 1000),
+            Size                       = new SizeInt32(1600, 1200),
             Alignment                  = ContentAlignment.MiddleCenter
         };
 
