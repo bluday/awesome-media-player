@@ -31,6 +31,16 @@ HostApplicationBuilder builder = Host.CreateApplicationBuilder();
 IServiceCollection services = builder.Services;
 
 services
+    .AddSingleton<AppActivationService>()
+    .AddSingleton<AppDialogService>()
+    .AddSingleton<AppNavigationService>()
+    .AddSingleton<AppThemeService>()
+    .AddSingleton<AppWindowService>();
+
+services
+    .AddSingleton<ImplementationProvider<IBluWindow>>();
+
+services
     .AddSingleton<App>()
     .AddSingleton<ResourceLoader>()
     .AddSingleton(WeakReferenceMessenger.Default);
@@ -39,14 +49,22 @@ services
     .AddScoped(_ => DispatcherQueue.GetForCurrentThread());
 
 services
-    .AddScoped<ShellViewModel>()
     .AddScoped<MainViewModel>()
-    .AddScoped<SettingsViewModel>();
+    .AddScoped<SettingsViewModel>()
+    .AddScoped<ShellViewModel>();
 
 services
     .AddTransient<Shell>()
     .AddTransient<MainView>()
     .AddTransient<SettingsView>();
+
+services
+    .AddLogging();
+
+builder.Logging
+    .AddConsole()
+    .AddDebug()
+    .SetMinimumLevel(LogLevel.Debug);
 
 IHost host = builder.Build();
 

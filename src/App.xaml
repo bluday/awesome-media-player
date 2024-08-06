@@ -21,8 +21,6 @@
             <Color x:Key="SystemAccentColorLight1">#6E9CEF</Color>
             <Color x:Key="SystemAccentColorLight2">#78A3F0</Color>
             <Color x:Key="SystemAccentColorLight3">#8BB0F2</Color>
-
-            <ImageSource x:Key="AppIconImageSource">ms-appx:///Assets/Square44x44Logo.targetsize-48.png</ImageSource>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

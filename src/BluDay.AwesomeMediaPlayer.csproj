@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.22000.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>BluDay.AwesomeMediaPlayer</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -19,24 +19,17 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
   </PropertyGroup>
-  
+
   <ItemGroup>
-    <None Remove="BluDay.AwesomeMediaPlayer\Views\MainView.xaml" />
-    <None Remove="BluDay.AwesomeMediaPlayer\Views\SettingsView.xaml" />
+    <Reference Include="BluDay.Net">
+      <HintPath>..\..\bluday-dotnet\src\BluDay.Net\bin\x64\Debug\net8.0\BluDay.Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
-  
+
   <ItemGroup>
-    <Page Remove="BluDay.AwesomeMediaPlayer\App.xaml" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <ApplicationDefinition Include="BluDay.AwesomeMediaPlayer\App.xaml" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Page Update="BluDay.AwesomeMediaPlayer\Controls\TitleBar.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Reference Include="BluDay.Net.WinUI3">
+      <HintPath>..\..\bluday-dotnet-winui3\src\BluDay.Net.WinUI3\bin\x64\Debug\net8.0-windows10.0.22000.0\BluDay.Net.WinUI3.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
@@ -69,23 +62,6 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   
-  <ItemGroup>
-    <Page Update="BluDay.AwesomeMediaPlayer\Controls\MediaControlBar.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    
-    <Page Update="BluDay.AwesomeMediaPlayer\Views\SettingsView.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Page Update="BluDay.AwesomeMediaPlayer\Views\MainView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-
   <!-- 
     Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
     Explorer "Package and Publish" context menu entry to be enabled for this project even if 

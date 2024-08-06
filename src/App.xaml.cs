@@ -3,48 +3,69 @@
 /// <summary>
 /// Provides application-specific behavior to supplement the default Application class.
 /// </summary>
-public partial class App : Application
+public sealed partial class App : Application
 {
     private Shell? _mainWindow;
+
+    private readonly AppWindowService _windowService;
+
+    private readonly ILogger _logger;
 
     private readonly DispatcherQueue _dispatcherQueue;
 
     private readonly ResourceLoader _resourceLoader;
 
-    private readonly IServiceProvider _serviceProvider;
+    private readonly IServiceProvider _rootServiceProvider;
 
     /// <summary>
-    /// Initializes an instance of the <see cref="App"/> class using the provided app-specific
-    /// dependencies.
+    /// Initializes a new instance of the <see cref="App"/> class.
     /// </summary>
-    /// <param name="dispatcherQueue">
-    /// The main dispatcher queue for the app.
+    /// <param name="windowService">
+    /// The window service.
     /// </param>
-    /// <param name="serviceProvider">
-    /// The service provider for the root scope of the DI container.
+    /// <param name="dispatcherQueue">
+    /// The main <see cref="DispatcherQueue"/> instance for the app.
+    /// </param>
+    /// <param name="resourceLoader">
+    /// The default app resource loader instance.
+    /// </param>
+    /// <param name="logger">
+    /// The logger instance.
+    /// </param>
+    /// <param name="rootServiceProvider">
+    /// The service provider instance for the root scope of the DI container.
     /// </param>
     public App(
+        AppWindowService windowService,
         DispatcherQueue  dispatcherQueue,
         ResourceLoader   resourceLoader,
-        IServiceProvider serviceProvider)
+        ILogger<App>     logger,
+        IServiceProvider rootServiceProvider)
     {
+        _windowService = windowService;
+
+        _logger = logger;
+
         _dispatcherQueue = dispatcherQueue;
 
         _resourceLoader = resourceLoader;
 
-        _serviceProvider = serviceProvider;
+        _rootServiceProvider = rootServiceProvider;
 
         InitializeComponent();
     }
 
     /// <summary>
-    /// Creates, configures and activates the main window.
+    /// Creates a new <see cref="IWindow"/> instance for the main window.
     /// </summary>
+    /// <remarks>
+    /// Returns if <see cref="_mainWindow"/> is not null.
+    /// </remarks>
     private void CreateMainWindow()
     {
         if (_mainWindow is not null) return;
 
-        _mainWindow = _serviceProvider.GetRequiredService<Shell>();
+        _mainWindow = _windowService.CreateWindow<Shell>();
 
         ShellViewModel viewModel = _mainWindow.ViewModel;
 
@@ -69,6 +90,6 @@ public partial class App : Application
     /// </param>
     protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
-        CreateMainWindow();
+        _dispatcherQueue.TryEnqueue(CreateMainWindow);
     }
 }
