@@ -15,8 +15,6 @@ public sealed partial class App : Application
 
     private readonly ResourceLoader _resourceLoader;
 
-    private readonly IServiceProvider _rootServiceProvider;
-
     /// <summary>
     /// Initializes a new instance of the <see cref="App"/> class.
     /// </summary>
@@ -67,7 +65,7 @@ public sealed partial class App : Application
         {
             Title                      = _resourceLoader.GetString("MainWindow/Title"),
             ExtendsContentIntoTitleBar = true,
-            IconPath                   = "Assets/Icon-64.ico",
+            IconPath                   = "ms-appx:///Assets/Icon-64.ico",
             Size                       = new SizeInt32(1600, 1200),
             Alignment                  = ContentAlignment.MiddleCenter
         };

@@ -16,10 +16,11 @@
     <Copyright>© BluDay 2024</Copyright>
     <Description>Developed by BluDay.</Description>
     <RepositoryUrl>https://github.com/BluDay/awesome-media-player-winui3</RepositoryUrl>
+    <ApplicationIcon>Assets\Icon-64.ico</ApplicationIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <Reference Include="BluDay.Net">
       <HintPath>..\..\bluday-dotnet\BluDay.Net\bin\x64\Debug\net8.0\BluDay.Net.dll</HintPath>

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<bluControls:View d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel}"
-                  mc:Ignorable="d"
-                  x:Class="BluDay.AwesomeMediaPlayer.Views.MainView"
-                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                  xmlns:controls="using:BluDay.AwesomeMediaPlayer.Controls"
-                  xmlns:bluControls="using:BluDay.Net.WinUI3.Controls"
-                  xmlns:viewModels="using:BluDay.AwesomeMediaPlayer.ViewModels"
-                  xmlns:winui="using:CommunityToolkit.WinUI"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<UserControl d:DataContext="viewModels:MainViewModel"
+             mc:Ignorable="d"
+             x:Class="BluDay.AwesomeMediaPlayer.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:controls="using:BluDay.AwesomeMediaPlayer.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:toolkit="using:CommunityToolkit.WinUI"
+             xmlns:viewModels="using:BluDay.AwesomeMediaPlayer.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -19,24 +18,25 @@
         <NavigationView x:Name="NavigationView"
                         PaneDisplayMode="Left"
                         OpenPaneLength="180"
-                        IsBackButtonVisible="Collapsed">
+                        IsBackButtonVisible="Collapsed"
+                        ItemInvoked="NavigationView_ItemInvoked">
             <NavigationView.MenuItems>
                 <NavigationViewItemHeader Content="Library"/>
 
                 <NavigationViewItem Content="Playlist"
-                                    Icon="{winui:FontIcon Glyph=&#xe90b;}"/>
+                                    Icon="{toolkit:FontIcon Glyph=&#xe90b;}"/>
 
                 <NavigationViewItemHeader Content="This computer"/>
 
                 <NavigationViewItem Content="Music"
-                                    Icon="{winui:FontIcon Glyph=&#xec4f;}"/>
+                                    Icon="{toolkit:FontIcon Glyph=&#xec4f;}"/>
 
                 <NavigationViewItem Content="Videos"
-                                    Icon="{winui:FontIcon Glyph=&#xe8b2;}"
+                                    Icon="{toolkit:FontIcon Glyph=&#xe8b2;}"
                                     IsEnabled="False"/>
 
                 <NavigationViewItem Content="Pictures"
-                                    Icon="{winui:FontIcon Glyph=&#xe8b9;}"
+                                    Icon="{toolkit:FontIcon Glyph=&#xe8b9;}"
                                     IsEnabled="False"/>
             </NavigationView.MenuItems>
 
@@ -80,4 +80,4 @@
             <controls:MediaControlBar/>
         </Grid>
     </Grid>
-</bluControls:View>
+</UserControl>

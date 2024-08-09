@@ -3,7 +3,7 @@ namespace BluDay.AwesomeMediaPlayer.Views;
 /// <summary>
 /// Interaction logic for SettingsView.xaml
 /// </summary>
-public sealed partial class SettingsView : BluControls.View
+public sealed partial class SettingsView : UserControl
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SettingsView"/> class.
@@ -11,8 +11,10 @@ public sealed partial class SettingsView : BluControls.View
     /// <param name="viewModel">
     /// A transient <see cref="SettingsViewModel"/> instance.
     /// </param>
-    public SettingsView(SettingsViewModel viewModel) : base(viewModel)
+    public SettingsView(SettingsViewModel viewModel)
     {
+        DataContext = viewModel;
+
         InitializeComponent();
     }
 }
