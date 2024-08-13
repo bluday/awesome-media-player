@@ -1,9 +1,9 @@
 # awesome-media-player-winui3
 
-A VLC-inspired media player WinUI 3 app
+WinUI 3-based clone of the classic VLC desktop app for Windows.
 
-## Proof of concept
+## Screenshots
 
-Screenshot from 2024-07-20.
+From 2024-07-20:
 
 <img src="/assets/screenshots/poc_0_2024-07-20.png?raw=true" width="800"/>
