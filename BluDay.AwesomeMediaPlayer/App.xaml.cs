@@ -50,13 +50,8 @@ public sealed partial class App : Application
     /// <summary>
     /// Creates a new <see cref="IWindow"/> instance for the main window.
     /// </summary>
-    /// <remarks>
-    /// Returns if <see cref="_mainWindow"/> is not null.
-    /// </remarks>
     private void CreateMainWindow()
     {
-        if (_mainWindow is not null) return;
-
         _mainWindow = _windowService.CreateWindow<Shell>();
 
         ShellViewModel viewModel = _mainWindow.ViewModel;
@@ -65,7 +60,7 @@ public sealed partial class App : Application
         {
             Title                      = _resourceLoader.GetString("MainWindow/Title"),
             ExtendsContentIntoTitleBar = true,
-            IconPath                   = "ms-appx:///Assets/Icon-64.ico",
+            IconPath                   = _resourceLoader.GetString("AppIconPath/64x64"),
             Size                       = new SizeInt32(1000, 800),
             Alignment                  = ContentAlignment.MiddleCenter
         };
@@ -82,6 +77,8 @@ public sealed partial class App : Application
     /// </param>
     protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
+        // TODO: Configure app based on the launch arguments.
+
         _dispatcherQueue.TryEnqueue(CreateMainWindow);
     }
 }
