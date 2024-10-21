@@ -28,7 +28,7 @@ SOFTWARE.
 
 HostApplicationBuilder builder = Host.CreateApplicationBuilder();
 
-IServiceCollection services = builder.Services;
+ServiceCollection services = new();
 
 services
     .AddSingleton<AppActivationService>()
@@ -59,14 +59,14 @@ services
     .AddTransient<SettingsView>();
 
 services
-    .AddLogging();
+    .AddLogging(loggingBuilder =>
+    {
+        loggingBuilder
+            .AddConsole()
+            .AddDebug()
+            .SetMinimumLevel(LogLevel.Debug);
+    });
 
-builder.Logging
-    .AddConsole()
-    .AddDebug()
-    .SetMinimumLevel(LogLevel.Debug);
+IServiceProvider serviceProvider = services.BuildServiceProvider();
 
-IHost host = builder.Build();
-
-host.Start();
-host.CreateWinui3App<App>();
+serviceProvider.CreateWinui3App<App>();
