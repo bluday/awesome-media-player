@@ -6,6 +6,7 @@ global using BluDay.AwesomeMediaPlayer.ViewModels;
 global using BluDay.AwesomeMediaPlayer.Views;
 
 global using BluDay.Net.DependencyInjection;
+global using BluDay.Net.Extensions;
 global using BluDay.Net.Services;
 global using BluDay.Net.UI.Navigation;
 global using BluDay.Net.UI.Windowing;

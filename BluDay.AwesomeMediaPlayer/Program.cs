@@ -26,8 +26,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-HostApplicationBuilder builder = Host.CreateApplicationBuilder();
-
 ServiceCollection services = new();
 
 services
@@ -38,7 +36,9 @@ services
     .AddSingleton<AppWindowService>();
 
 services
-    .AddSingleton<ImplementationProvider<IBluWindow>>()
+    .AddSingleton<ImplementationProvider<IBluWindow>>();
+
+services
     .AddSingleton(WeakReferenceMessenger.Default);
 
 services
@@ -49,12 +49,15 @@ services
     .AddScoped(_ => DispatcherQueue.GetForCurrentThread());
 
 services
-    .AddScoped<MainViewModel>()
-    .AddScoped<SettingsViewModel>()
     .AddScoped<ShellViewModel>();
 
 services
-    .AddTransient<Shell>()
+    .AddViewModels();
+
+services
+    .AddTransient<Shell>();
+
+services
     .AddTransient<MainView>()
     .AddTransient<SettingsView>();
 
