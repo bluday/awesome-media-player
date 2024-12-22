@@ -5,15 +5,9 @@
 /// </summary>
 public sealed partial class App : Application
 {
-    private Shell? _mainWindow;
-
-    private readonly AppWindowService _windowService;
+    private readonly Lazy<Shell> _shell;
 
     private readonly ILogger _logger;
-
-    private readonly DispatcherQueue _dispatcherQueue;
-
-    private readonly ResourceLoader _resourceLoader;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="App"/> class.
@@ -21,52 +15,16 @@ public sealed partial class App : Application
     /// <param name="windowService">
     /// The window service.
     /// </param>
-    /// <param name="dispatcherQueue">
-    /// The main <see cref="DispatcherQueue"/> instance for the app.
-    /// </param>
-    /// <param name="resourceLoader">
-    /// The default app resource loader instance.
-    /// </param>
     /// <param name="logger">
     /// The logger instance.
     /// </param>
-    public App(
-        AppWindowService windowService,
-        DispatcherQueue  dispatcherQueue,
-        ResourceLoader   resourceLoader,
-        ILogger<App>     logger)
+    public App(AppWindowService windowService, ILogger<App> logger)
     {
-        _windowService = windowService;
+        _shell = new Lazy<Shell>(windowService.CreateWindow<Shell>);
 
         _logger = logger;
 
-        _dispatcherQueue = dispatcherQueue;
-
-        _resourceLoader = resourceLoader;
-
         InitializeComponent();
-    }
-
-    /// <summary>
-    /// Creates a new <see cref="IWindow"/> instance for the main window.
-    /// </summary>
-    private void CreateMainWindow()
-    {
-        _mainWindow = _windowService.CreateWindow<Shell>();
-
-        ShellViewModel viewModel = _mainWindow.ViewModel;
-
-        viewModel.DefaultConfiguration = new WindowConfiguration
-        {
-            Title                      = _resourceLoader.GetString("MainWindow/Title"),
-            ExtendsContentIntoTitleBar = true,
-            IconPath                   = _resourceLoader.GetString("AppIconPath/64x64"),
-            Size                       = new SizeInt32(1000, 680),
-            Alignment                  = ContentAlignment.MiddleCenter
-        };
-
-        viewModel.ApplyDefaultConfiguration();
-        viewModel.Activate();
     }
 
     /// <summary>
@@ -77,8 +35,6 @@ public sealed partial class App : Application
     /// </param>
     protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
-        // TODO: Configure app based on the launch arguments.
-
-        _dispatcherQueue.TryEnqueue(CreateMainWindow);
+        _shell.Value.Activate();
     }
 }

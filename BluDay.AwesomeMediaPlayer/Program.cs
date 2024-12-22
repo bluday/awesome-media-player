@@ -28,48 +28,6 @@ SOFTWARE.
 
 ServiceCollection services = new();
 
-services
-    .AddSingleton<AppActivationService>()
-    .AddSingleton<AppDialogService>()
-    .AddSingleton<AppNavigationService>()
-    .AddSingleton<AppThemeService>()
-    .AddSingleton<AppWindowService>();
+App.ConfigureServices(services);
 
-services
-    .AddSingleton<ImplementationProvider<IBluWindow>>();
-
-services
-    .AddSingleton(WeakReferenceMessenger.Default);
-
-services
-    .AddSingleton<App>()
-    .AddSingleton<ResourceLoader>();
-
-services
-    .AddScoped(_ => DispatcherQueue.GetForCurrentThread());
-
-services
-    .AddScoped<ShellViewModel>();
-
-services
-    .AddViewModels();
-
-services
-    .AddTransient<Shell>();
-
-services
-    .AddTransient<MainView>()
-    .AddTransient<SettingsView>();
-
-services
-    .AddLogging(loggingBuilder =>
-    {
-        loggingBuilder
-            .AddConsole()
-            .AddDebug()
-            .SetMinimumLevel(LogLevel.Debug);
-    });
-
-IServiceProvider serviceProvider = services.BuildServiceProvider();
-
-serviceProvider.CreateWinui3App<App>();
+services.BuildServiceProvider().CreateWinui3App<App>();
