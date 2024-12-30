@@ -26,8 +26,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-ServiceCollection services = new();
-
-App.ConfigureServices(services);
-
-services.BuildServiceProvider().CreateWinui3App<App>();
+await Container.ServiceProvider.CreateWinui3AppAsync<App>();

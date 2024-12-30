@@ -48,18 +48,10 @@ public sealed partial class App : Application
             .AddSingleton<ResourceLoader>();
 
         services
-            .AddScoped(_ => DispatcherQueue.GetForCurrentThread());
-
-        services
-            .AddScoped<ShellViewModel>();
-
-        services
-            .AddViewModels();
-
-        services
             .AddTransient<Shell>();
 
         services
-            .AddViews<UserControl>();
+            .AddViews()
+            .AddViewModels();
     }
 }
