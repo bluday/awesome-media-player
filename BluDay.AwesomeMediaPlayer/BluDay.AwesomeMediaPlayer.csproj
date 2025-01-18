@@ -1,38 +1,50 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Application icon -->
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.26100.0</TargetFramework>
-    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
-    <RootNamespace>BluDay.AwesomeMediaPlayer</RootNamespace>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Platforms>x64;ARM64</Platforms>
-    <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
-    <PublishProfile>win-$(Platform).pubxml</PublishProfile>
-    <UseWinUI>true</UseWinUI>
-    <EnableMsixTooling>true</EnableMsixTooling>
-    <Nullable>enable</Nullable>
-    <Title>Awesome Media Player</Title>
-    <Authors>BluDay</Authors>
-    <Copyright>© BluDay 2024</Copyright>
-    <Description>Developed by BluDay.</Description>
-    <RepositoryUrl>https://github.com/BluDay/awesome-media-player-winui3</RepositoryUrl>
     <ApplicationIcon>Assets\Icon-64.ico</ApplicationIcon>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <!-- Application information -->
+  <PropertyGroup>
+    <Authors>BluDay</Authors>
+    <Copyright>© BluDay 2025</Copyright>
+    <Description>Developed by BluDay.</Description>
+    <RepositoryUrl>https://github.com/bluday/awesome-media-player-winui3</RepositoryUrl>
+    <Title>Awesome Media Player</Title>
+  </PropertyGroup>
+
+  <!-- Constants -->
+  <PropertyGroup>
     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
   </PropertyGroup>
+
+  <!-- Framework versioning -->
+  <PropertyGroup>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+    <TargetFramework>net9.0-windows10.0.26100.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <WindowsSdkPackageVersion>10.0.26100.38</WindowsSdkPackageVersion>
+  </PropertyGroup>
+
+  <!-- General settings -->
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <LangVersion>preview</LangVersion>
+    <Nullable>enable</Nullable>
+    <OutputType>WinExe</OutputType>
+    <Platforms>x64;ARM64</Platforms>
+    <RootNamespace>BluDay.AwesomeMediaPlayer</RootNamespace>
+    <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <!-- Publishing and deployment -->
+  <PropertyGroup>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <EnableMsixTooling>true</EnableMsixTooling>
+    <PublishProfile>win-$(Platform).pubxml</PublishProfile>
+  </PropertyGroup>
   
-  <ItemGroup>
-    <Reference Include="BluDay.Net">
-      <HintPath>..\..\bluday-dotnet\BluDay.Net\bin\x64\Debug\net8.0\BluDay.Net.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="BluDay.Net.WinUI3">
-      <HintPath>..\..\bluday-dotnet\BluDay.Net.WinUI3\bin\x64\Debug\net8.0-windows10.0.26100.0\BluDay.Net.WinUI3.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
+  <!-- Read me -->
   <ItemGroup>
     <None Include="..\README.md">
       <Pack>True</Pack>
@@ -40,16 +52,43 @@
     </None>
   </ItemGroup>
 
+  <!-- Windows App SDK -->
+  <PropertyGroup>
+    <UseWinUI>true</UseWinUI>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+  </PropertyGroup>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- Assemblies -->
+  <ItemGroup>
+    <Reference Include="BluDay.Net">
+      <HintPath>..\..\bluday-dotnet\BluDay.Net\bin\x64\Debug\net9.0\BluDay.Net.dll</HintPath>
+    </Reference>
+
+    <Reference Include="BluDay.Net.WinUI3">
+      <HintPath>..\..\bluday-dotnet\BluDay.Net.WinUI3\bin\x64\Debug\net9.0-windows10.0.26100.0\BluDay.Net.WinUI3.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- NuGet packages -->
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="CommunityToolkit.WinUI" Version="7.1.2" />
     <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.1.240916" />
     <PackageReference Include="CommunityToolkit.WinUI.UI" Version="7.1.2" />
     <PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.241114003" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.1" />
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
-    <PackageReference Include="System.Drawing.Common" Version="9.0.0" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.250108002" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.9" />
+    <PackageReference Include="System.Drawing.Common" Version="9.0.1" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
@@ -58,7 +97,6 @@
     Tools extension to be activated for this project even if the Windows App SDK Nuget
     package has not yet been restored.
   -->
-  
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
   </ItemGroup>
@@ -68,7 +106,6 @@
     Explorer "Package and Publish" context menu entry to be enabled for this project even if 
     the Windows App SDK Nuget package has not yet been restored.
   -->
-    
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
   </PropertyGroup>
