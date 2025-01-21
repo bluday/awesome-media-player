@@ -123,4 +123,7 @@
   <data name="MainWindow.Title" xml:space="preserve">
     <value>Awesome Media Player</value>
   </data>
+  <data name="TitleBar.AutoSuggestBox.PlaceholderText" xml:space="preserve">
+    <value>Search for tracks, artists, etc.</value>
+  </data>
 </root>
