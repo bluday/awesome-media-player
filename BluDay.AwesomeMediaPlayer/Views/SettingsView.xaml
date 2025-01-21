@@ -65,7 +65,7 @@
                            Style="{StaticResource BodyStrongTextBlockStyle}"
                            Text="About"/>
 
-                <toolkitControls:SettingsExpander Description="© 2024 BluDay. No rights reserved."
+                <toolkitControls:SettingsExpander Description="© 2025 BluDay. No rights reserved."
                                                   Header="Awesome Media Player"
                                                   HeaderIcon="{toolkit:BitmapIcon Source=ms-appx:///Assets/Square44x44Logo.targetsize-48.png}"
                                                   Margin="0,0,0,24">
@@ -76,13 +76,13 @@
                         <toolkitControls:SettingsCard ContentAlignment="Left"
                                                       HorizontalContentAlignment="Left">
                             <HyperlinkButton Content="GitHub repo"
-                                             NavigateUri="https://github.com/BluDay/awesome-media-player-winui3"/>
+                                             NavigateUri="https://github.com/bluday/awesome-media-player-winui3"/>
                         </toolkitControls:SettingsCard>
                     </toolkitControls:SettingsExpander.Items>
                 </toolkitControls:SettingsExpander>
 
                 <HyperlinkButton Content="Send feedback"
-                                 NavigateUri="https://github.com/BluDay/awesome-media-player-winui3"/>
+                                 NavigateUri="https://github.com/bluday/awesome-media-player-winui3"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

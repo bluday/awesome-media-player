@@ -15,6 +15,7 @@ global using BluDay.Net.WinUI3.ComponentModel;
 global using BluDay.Net.WinUI3.Extensions;
 
 global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.DependencyInjection.Extensions;
 global using Microsoft.Extensions.Logging;
 global using Microsoft.UI.Windowing;
 global using Microsoft.UI.Xaml;

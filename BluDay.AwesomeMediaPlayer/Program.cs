@@ -1,11 +1,11 @@
 ﻿/*
 Awesome Media Player
 
-https://github.com/BluDay/awesome-media-player-winui3
+https://github.com/bluday/awesome-media-player-winui3
 
 MIT License
 
-Copyright (c) 2024 BluDay
+Copyright (c) 2025 BluDay
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -26,4 +26,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-await Container.ServiceProvider.CreateWinui3AppAsync<App>();
+await new ServiceCollection()
+    .Add(App.ConfigureServices)
+    .BuildServiceProvider()
+    .CreateWinui3AppAsync<App>();
