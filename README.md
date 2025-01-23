@@ -1,6 +1,6 @@
 # Awesome Media Player
 
-WinUI 3-based clone of the classic VLC desktop app for Windows.
+A clone of the [VLC](https://www.videolan.org/) desktop app for Windows built using WinUI 3.
 
 **This app does not have any functionality at this time.**
 
