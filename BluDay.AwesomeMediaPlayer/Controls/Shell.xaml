@@ -22,8 +22,7 @@
 
         <!-- Title bar -->
         <controls:TitleBar x:Name="AppTitleBar"
-                           HeaderPadding="16"
-                           Height="48"
+                           Height="44"
                            Icon="{x:Bind ViewModel.IconPath}"
                            TargetWindow="{x:Bind AppWindow}"
                            Title="{x:Bind ViewModel.Title}">

@@ -67,16 +67,6 @@ public sealed partial class TitleBar : UserControl
     );
 
     /// <summary>
-    /// Identifies the <see cref="HeaderPadding"/> dependency property.
-    /// </summary>
-    public static readonly DependencyProperty HeaderPaddingProperty = DependencyProperty.Register(
-        nameof(HeaderPadding),
-        typeof(Thickness),
-        typeof(TitleBar),
-        new PropertyMetadata(defaultValue: default)
-    );
-
-    /// <summary>
     /// Identifies the <see cref="Title"/> dependency property.
     /// </summary>
     public static readonly DependencyProperty TitleProperty = DependencyProperty.Register(
@@ -140,15 +130,6 @@ public sealed partial class TitleBar : UserControl
     {
         get => (Visibility)GetValue(HeaderVisibilityProperty);
         set => SetValue(HeaderVisibilityProperty, value);
-    }
-
-    /// <summary>
-    /// Gets the margin of the header.
-    /// </summary>
-    public Thickness HeaderPadding
-    {
-        get => (Thickness)GetValue(HeaderPaddingProperty);
-        set => SetValue(HeaderPaddingProperty, value);
     }
 
     /// <summary>
