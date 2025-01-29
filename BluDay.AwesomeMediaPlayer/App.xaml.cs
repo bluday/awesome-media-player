@@ -18,7 +18,7 @@ public sealed partial class App : Application
     /// <param name="logger">
     /// The logger instance.
     /// </param>
-    public App(AppWindowService windowService, ILogger<App> logger)
+    public App(IAppWindowService windowService, ILogger<App> logger)
     {
         _shell = new Lazy<Shell>(windowService.CreateWindow<Shell>);
 
@@ -64,11 +64,11 @@ public sealed partial class App : Application
             .AddLogging(ConfigureLogging);
 
         services
-            .AddSingleton<AppActivationService>()
-            .AddSingleton<AppDialogService>()
-            .AddSingleton<AppNavigationService>()
-            .AddSingleton<AppThemeService>()
-            .AddSingleton<AppWindowService>();
+            .AddSingleton<IAppActivationService, AppActivationService>()
+            .AddSingleton<IAppDialogService, AppDialogService>()
+            .AddSingleton<IAppNavigationService, AppNavigationService>()
+            .AddSingleton<IAppThemeService, AppThemeService>()
+            .AddSingleton<IAppWindowService, AppWindowService>();
 
         services
             .AddSingleton<ImplementationProvider<IBluWindow>>();

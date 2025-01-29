@@ -8,9 +8,15 @@ public sealed partial class ShellViewModel : Net.WinUI3.ViewModels.ShellViewMode
     /// <summary>
     /// Initializes a new instance of the <see cref="SettingsViewModel"/> class.
     /// </summary>
+    /// <param name="navigationService">
+    /// The navigation service.
+    /// </param>
+    /// <param name="messenger">
+    /// The messaging service.
+    /// </param>
     public ShellViewModel(
-        AppNavigationService   appNavigationService,
+        IAppNavigationService  navigationService,
         WeakReferenceMessenger messenger
     )
-        : base(appNavigationService, messenger) { }
+        : base(navigationService, messenger) { }
 }
