@@ -1,7 +1,7 @@
 ﻿namespace BluDay.AwesomeMediaPlayer.ViewModels;
 
 /// <summary>
-/// Represents the view model class for the <see cref="SettingsView"/> control.
+/// Represents the view model class for the settings screen.
 /// </summary>
 public sealed partial class SettingsViewModel : ViewModel
 {

@@ -1,7 +1,7 @@
 ﻿namespace BluDay.AwesomeMediaPlayer.ViewModels;
 
 /// <summary>
-/// Represents the view model for <see cref="Shell"/>.
+/// Represents the view model for the app shell window.
 /// </summary>
 public sealed partial class ShellViewModel : Net.WinUI3.ViewModels.ShellViewModel
 {

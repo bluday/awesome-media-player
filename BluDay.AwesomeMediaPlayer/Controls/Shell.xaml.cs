@@ -1,20 +1,19 @@
 namespace BluDay.AwesomeMediaPlayer.Controls;
 
 /// <summary>
-/// An empty window that can be used on its own or navigated to within a Frame.
+/// Represents a customizable shell window that hosts and manages a view model.
+/// This window can be used independently or within a Frame for navigation.
 /// </summary>
-/// <inheritdoc/>
-public sealed partial class Shell : Window, IBluNavigableWindow
+public sealed partial class Shell : Window, IBluWindow
 {
     private readonly Lazy<MainView> _mainView;
-
-    public ViewNavigator ViewNavigator => ViewModel.ViewNavigator;
 
     /// <summary>
     /// Gets the view model instance.
     /// </summary>
     public ShellViewModel ViewModel { get; }
 
+    /// <inheritdoc cref="IBluWindow.Id"/>
     public ulong Id => AppWindow.Id!.Value;
 
     /// <summary>
@@ -43,27 +42,16 @@ public sealed partial class Shell : Window, IBluNavigableWindow
 
         InitializeComponent();
 
-        UpdateViewModelWindowTarget(resourceLoader);
-
-        ViewContentControl.Content = _mainView.Value;
-    }
-
-    private void UpdateViewModelWindowTarget(ResourceLoader resourceLoader)
-    {
-        ShellViewModel viewModel = ViewModel;
-
         viewModel.DefaultConfiguration = GetDefaultConfiguration(resourceLoader);
 
         viewModel.TitleBarControl = AppTitleBar;
 
         viewModel.SetWindow(this);
+
+        ViewContentControl.Content = _mainView.Value;
     }
 
-    public void ApplyDefaultConfiguration()
-    {
-        ViewModel.ApplyDefaultConfiguration();
-    }
-
+    /// <inheritdoc cref="IBluWindow.Resize(int, int)"/>
     public void Resize(int width, int height)
     {
         ViewModel.Resize(width, height);
