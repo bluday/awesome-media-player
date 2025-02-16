@@ -120,7 +120,10 @@
   <data name="AppDisplayName" xml:space="preserve">
     <value>Awesome Media Player</value>
   </data>
-  <data name="MainWindow.Title" xml:space="preserve">
+  <data name="CurrentMediaInformationWindow.Title" xml:space="preserve">
+    <value>Current media information</value>
+  </data>
+  <data name="ApplicationShell.Title" xml:space="preserve">
     <value>Awesome Media Player</value>
   </data>
   <data name="TitleBar.AutoSuggestBox.PlaceholderText" xml:space="preserve">

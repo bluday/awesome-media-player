@@ -1,11 +1,11 @@
 ﻿namespace BluDay.AwesomeMediaPlayer;
 
 /// <summary>
-/// Provides application-specific behavior to supplement the default Application class.
+/// Provides application-specific behavior to supplement the default <see cref="Application"/> class.
 /// </summary>
 public sealed partial class App : Application
 {
-    private readonly Lazy<MainWindow> _shell;
+    private readonly Lazy<ApplicationShell> _shell;
 
     private readonly ILogger _logger;
 
@@ -20,7 +20,7 @@ public sealed partial class App : Application
     /// </param>
     public App(IAppWindowService windowService, ILogger<App> logger)
     {
-        _shell = new Lazy<MainWindow>(windowService.CreateWindow<MainWindow>);
+        _shell = new Lazy<ApplicationShell>(windowService.CreateWindow<ApplicationShell>);
 
         _logger = logger;
 
@@ -81,7 +81,7 @@ public sealed partial class App : Application
             .AddSingleton<ResourceLoader>();
 
         services
-            .AddTransient<MainWindow>();
+            .AddTransient<ApplicationShell>();
 
         services
             .AddViews()

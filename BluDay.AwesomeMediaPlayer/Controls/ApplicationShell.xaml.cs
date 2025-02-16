@@ -4,20 +4,20 @@ namespace BluDay.AwesomeMediaPlayer.Windows;
 /// Represents a customizable shell window that hosts and manages a view model.
 /// This window can be used independently or within a Frame for navigation.
 /// </summary>
-public sealed partial class MainWindow : Window, IBluWindow
+public sealed partial class ApplicationShell : Window, IBluWindow
 {
     private readonly Lazy<MainView> _mainView;
 
     /// <summary>
     /// Gets the view model instance.
     /// </summary>
-    public MainWindowViewModel ViewModel { get; }
+    public ApplicationShellViewModel ViewModel { get; }
 
     /// <inheritdoc cref="IBluWindow.Id"/>
     public ulong Id => AppWindow.Id!.Value;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="MainWindow"/> class.
+    /// Initializes a new instance of the <see cref="ApplicationShell"/> class.
     /// </summary>
     /// <param name="viewModel">
     /// The view model instance.
@@ -28,11 +28,11 @@ public sealed partial class MainWindow : Window, IBluWindow
     /// <param name="serviceProvider">
     /// The root service provider.
     /// </param>
-    public MainWindow(
-        MainWindowViewModel viewModel,
-        MainView            mainView,
-        ResourceLoader      resourceLoader,
-        IServiceProvider    serviceProvider)
+    public ApplicationShell(
+        ApplicationShellViewModel viewModel,
+        MainView                  mainView,
+        ResourceLoader            resourceLoader,
+        IServiceProvider          serviceProvider)
     {
         _mainView = new Lazy<MainView>(
             serviceProvider.GetRequiredService<MainView>
@@ -70,7 +70,7 @@ public sealed partial class MainWindow : Window, IBluWindow
     {
         return new()
         {
-            Title                      = resourceLoader.GetString("MainWindow/Title"),
+            Title                      = resourceLoader.GetString("ApplicationShell/Title"),
             ExtendsContentIntoTitleBar = true,
             IconPath                   = resourceLoader.GetString("AppIconPath/64x64"),
             Size                       = new SizeInt32(1000, 800),
