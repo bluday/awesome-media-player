@@ -1,4 +1,5 @@
-﻿global using CommunityToolkit.Mvvm.Messaging;
+﻿global using CommunityToolkit.Mvvm.Input;
+global using CommunityToolkit.Mvvm.Messaging;
 
 global using BluDay.AwesomeMediaPlayer;
 global using BluDay.AwesomeMediaPlayer.ViewModels;
