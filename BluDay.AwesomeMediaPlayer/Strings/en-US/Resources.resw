@@ -123,7 +123,25 @@
   <data name="CurrentMediaInformationWindow.Title" xml:space="preserve">
     <value>Current media information</value>
   </data>
-  <data name="ApplicationShell.Title" xml:space="preserve">
+  <data name="MainView.NavigationView.LibraryHeader.Content" xml:space="preserve">
+    <value>Library</value>
+  </data>
+  <data name="MainView.NavigationView.MusicItem.Content" xml:space="preserve">
+    <value>Music</value>
+  </data>
+  <data name="MainView.NavigationView.PicturesItem.Content" xml:space="preserve">
+    <value>Pictures</value>
+  </data>
+  <data name="MainView.NavigationView.PlaylistItem.Content" xml:space="preserve">
+    <value>Playlist</value>
+  </data>
+  <data name="MainView.NavigationView.ThisComputerHeader.Content" xml:space="preserve">
+    <value>This computer</value>
+  </data>
+  <data name="MainView.NavigationView.VideosItem.Content" xml:space="preserve">
+    <value>Videos</value>
+  </data>
+  <data name="MainWindow.Title" xml:space="preserve">
     <value>Awesome Media Player</value>
   </data>
   <data name="TitleBar.AutoSuggestBox.PlaceholderText" xml:space="preserve">

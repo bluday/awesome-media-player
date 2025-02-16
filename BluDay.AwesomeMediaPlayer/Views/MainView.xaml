@@ -23,21 +23,21 @@
                         IsBackButtonVisible="Collapsed"
                         ItemInvoked="NavigationView_ItemInvoked">
             <NavigationView.MenuItems>
-                <NavigationViewItemHeader Content="Library"/>
+                <NavigationViewItemHeader x:Uid="MainView/NavigationView/LibraryHeader"/>
 
-                <NavigationViewItem Content="Playlist"
+                <NavigationViewItem x:Uid="MainView/NavigationView/PlaylistItem"
                                     Icon="{toolkit:FontIcon Glyph=&#xe90b;}"/>
 
-                <NavigationViewItemHeader Content="This computer"/>
+                <NavigationViewItemHeader x:Uid="MainView/NavigationView/ThisComputerHeader"/>
 
-                <NavigationViewItem Content="Music"
+                <NavigationViewItem x:Uid="MainView/NavigationView/MusicItem"
                                     Icon="{toolkit:FontIcon Glyph=&#xec4f;}"/>
 
-                <NavigationViewItem Content="Videos"
+                <NavigationViewItem x:Uid="MainView/NavigationView/VideosItem"
                                     Icon="{toolkit:FontIcon Glyph=&#xe8b2;}"
                                     IsEnabled="False"/>
 
-                <NavigationViewItem Content="Pictures"
+                <NavigationViewItem x:Uid="MainView/NavigationView/PicturesItem"
                                     Icon="{toolkit:FontIcon Glyph=&#xe8b9;}"
                                     IsEnabled="False"/>
             </NavigationView.MenuItems>
