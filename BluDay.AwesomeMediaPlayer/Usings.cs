@@ -12,6 +12,7 @@ global using BluDay.Net.UI.Windowing;
 global using BluDay.Net.ViewModels;
 global using BluDay.Net.WinUI3.ComponentModel;
 global using BluDay.Net.WinUI3.Extensions;
+global using BluDay.Net.WinUI3.ViewModels;
 
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.DependencyInjection.Extensions;

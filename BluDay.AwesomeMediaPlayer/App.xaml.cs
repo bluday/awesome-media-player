@@ -5,7 +5,7 @@
 /// </summary>
 public sealed partial class App : Application
 {
-    private readonly Lazy<Shell> _shell;
+    private readonly Lazy<MainWindow> _shell;
 
     private readonly ILogger _logger;
 
@@ -20,7 +20,7 @@ public sealed partial class App : Application
     /// </param>
     public App(IAppWindowService windowService, ILogger<App> logger)
     {
-        _shell = new Lazy<Shell>(windowService.CreateWindow<Shell>);
+        _shell = new Lazy<MainWindow>(windowService.CreateWindow<MainWindow>);
 
         _logger = logger;
 
@@ -81,7 +81,7 @@ public sealed partial class App : Application
             .AddSingleton<ResourceLoader>();
 
         services
-            .AddTransient<Shell>();
+            .AddTransient<MainWindow>();
 
         services
             .AddViews()
