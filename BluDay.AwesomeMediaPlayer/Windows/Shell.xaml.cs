@@ -70,7 +70,7 @@ public sealed partial class Shell : Window, IBluWindow
     {
         return new()
         {
-            Title                      = resourceLoader.GetString("MainWindow/Title"),
+            Title                      = resourceLoader.GetString("Shell/Title"),
             ExtendsContentIntoTitleBar = true,
             IconPath                   = resourceLoader.GetString("AppIconPath/64x64"),
             Size                       = new SizeInt32(1000, 800),
