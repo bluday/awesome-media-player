@@ -1,4 +1,4 @@
-namespace BluDay.AwesomeMediaPlayer.Controls;
+namespace BluDay.AwesomeMediaPlayer.Windows;
 
 /// <summary>
 /// Represents a customizable shell window that hosts and manages a view model.
