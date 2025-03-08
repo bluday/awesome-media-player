@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Window x:Class="BluDay.AwesomeMediaPlayer.Windows.ApplicationShell"
+<Window x:Class="BluDay.AwesomeMediaPlayer.Controls.Shell"
         x:DefaultBindMode="OneWay"
         mc:Ignorable="d"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"

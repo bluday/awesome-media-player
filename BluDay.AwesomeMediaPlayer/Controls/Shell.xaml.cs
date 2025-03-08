@@ -1,23 +1,26 @@
-namespace BluDay.AwesomeMediaPlayer.Windows;
+namespace BluDay.AwesomeMediaPlayer.Controls;
 
 /// <summary>
 /// Represents a customizable shell window that hosts and manages a view model.
 /// This window can be used independently or within a Frame for navigation.
 /// </summary>
-public sealed partial class ApplicationShell : Window, IBluWindow
+public sealed partial class Shell : Window, IBluWindow
 {
     private readonly Lazy<MainView> _mainView;
 
     /// <summary>
     /// Gets the view model instance.
     /// </summary>
-    public ApplicationShellViewModel ViewModel { get; }
+    public ShellViewModel ViewModel { get; }
 
     /// <inheritdoc cref="IBluWindow.Id"/>
-    public ulong Id => AppWindow.Id!.Value;
+    public ulong Id
+    {
+        get => AppWindow.Id!.Value;
+    }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="ApplicationShell"/> class.
+    /// Initializes a new instance of the <see cref="Shell"/> class.
     /// </summary>
     /// <param name="viewModel">
     /// The view model instance.
@@ -28,11 +31,11 @@ public sealed partial class ApplicationShell : Window, IBluWindow
     /// <param name="serviceProvider">
     /// The root service provider.
     /// </param>
-    public ApplicationShell(
-        ApplicationShellViewModel viewModel,
-        MainView                  mainView,
-        ResourceLoader            resourceLoader,
-        IServiceProvider          serviceProvider)
+    public Shell(
+        ShellViewModel   viewModel,
+        MainView         mainView,
+        ResourceLoader   resourceLoader,
+        IServiceProvider serviceProvider)
     {
         _mainView = new Lazy<MainView>(
             serviceProvider.GetRequiredService<MainView>
