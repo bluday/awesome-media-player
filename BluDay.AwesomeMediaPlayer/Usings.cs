@@ -6,13 +6,13 @@ global using BluDay.AwesomeMediaPlayer.ViewModels;
 global using BluDay.AwesomeMediaPlayer.Views;
 global using BluDay.AwesomeMediaPlayer.Windows;
 
+global using BluDay.Net.Common.Extensions;
 global using BluDay.Net.DependencyInjection;
-global using BluDay.Net.Extensions;
 global using BluDay.Net.Services;
 global using BluDay.Net.UI.Windowing;
 global using BluDay.Net.ViewModels;
+global using BluDay.Net.WinUI3.Common.Extensions;
 global using BluDay.Net.WinUI3.ComponentModel;
-global using BluDay.Net.WinUI3.Extensions;
 global using BluDay.Net.WinUI3.ViewModels;
 
 global using Microsoft.Extensions.DependencyInjection;

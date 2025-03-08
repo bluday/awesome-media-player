@@ -48,7 +48,9 @@ public sealed partial class App : Application
     {
         logging
             .AddConsole()
-            .AddDebug()
+            .AddDebug();
+
+        logging
             .SetMinimumLevel(LogLevel.Debug);
     }
 
@@ -64,16 +66,6 @@ public sealed partial class App : Application
             .AddLogging(ConfigureLogging);
 
         services
-            .AddSingleton<IAppActivationService, AppActivationService>()
-            .AddSingleton<IAppDialogService, AppDialogService>()
-            .AddSingleton<IAppNavigationService, AppNavigationService>()
-            .AddSingleton<IAppThemeService, AppThemeService>()
-            .AddSingleton<IAppWindowService, AppWindowService>();
-
-        services
-            .AddSingleton<ImplementationProvider<IBluWindow>>();
-
-        services
             .AddSingleton(WeakReferenceMessenger.Default);
 
         services
@@ -82,6 +74,9 @@ public sealed partial class App : Application
 
         services
             .AddTransient<ApplicationShell>();
+
+        services
+            .AddDesktopClientServices();
 
         services
             .AddViews()
