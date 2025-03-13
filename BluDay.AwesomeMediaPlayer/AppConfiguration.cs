@@ -33,7 +33,7 @@ public static class AppConfiguration
             .AddLogging(ConfigureLogging);
 
         services
-            .AddSingleton(WeakReferenceMessenger.Default);
+            .AddSingleton<WeakReferenceMessenger>();
 
         services
             .AddSingleton<App>()
