@@ -6,6 +6,7 @@ global using BluDay.AwesomeMediaPlayer.Controls;
 global using BluDay.AwesomeMediaPlayer.ViewModels;
 global using BluDay.AwesomeMediaPlayer.Views;
 
+global using BluDay.Net.Abstractions.Handlers;
 global using BluDay.Net.Common.Extensions;
 global using BluDay.Net.Services;
 global using BluDay.Net.UI.Windowing;
@@ -24,5 +25,6 @@ global using Microsoft.Windows.ApplicationModel.Resources;
 
 global using System;
 global using System.Drawing;
+global using System.Threading.Tasks;
 
 global using Windows.Graphics;
