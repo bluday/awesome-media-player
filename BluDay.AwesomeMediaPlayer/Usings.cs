@@ -3,6 +3,7 @@ global using CommunityToolkit.Mvvm.Messaging;
 
 global using BluDay.AwesomeMediaPlayer;
 global using BluDay.AwesomeMediaPlayer.Controls;
+global using BluDay.AwesomeMediaPlayer.Handlers;
 global using BluDay.AwesomeMediaPlayer.ViewModels;
 global using BluDay.AwesomeMediaPlayer.Views;
 
