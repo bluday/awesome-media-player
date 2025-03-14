@@ -76,13 +76,13 @@
                         <toolkitControls:SettingsCard ContentAlignment="Left"
                                                       HorizontalContentAlignment="Left">
                             <HyperlinkButton Content="GitHub repo"
-                                             NavigateUri="https://github.com/bluday/awesome-media-player-winui3"/>
+                                             NavigateUri="https://github.com/bluday/awesome-media-player"/>
                         </toolkitControls:SettingsCard>
                     </toolkitControls:SettingsExpander.Items>
                 </toolkitControls:SettingsExpander>
 
                 <HyperlinkButton Content="Send feedback"
-                                 NavigateUri="https://github.com/bluday/awesome-media-player-winui3"/>
+                                 NavigateUri="https://github.com/bluday/awesome-media-player"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

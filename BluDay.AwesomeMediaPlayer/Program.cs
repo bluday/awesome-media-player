@@ -1,7 +1,7 @@
 ﻿/**
  * Awesome Media Player
  * 
- * https://github.com/bluday/awesome-media-player-winui3
+ * https://github.com/bluday/awesome-media-player
  * 
  * Copyright (c) 2025 BluDay
  * 
