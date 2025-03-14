@@ -43,10 +43,6 @@ public static class AppConfiguration
             .AddTransient<Shell>();
 
         services
-            .AddSingleton<IAppActivationHandler, AppActivationHandler>()
-            .AddSingleton<IAppDeactivationHandler, AppDeactivationHandler>();
-
-        services
             .AddDesktopClientServices();
 
         services
