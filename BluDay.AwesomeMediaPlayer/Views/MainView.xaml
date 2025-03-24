@@ -18,7 +18,14 @@
         </Grid.RowDefinitions>
 
         <MenuBar>
-            <MenuBarItem Title="File"/>
+            <MenuBarItem Title="Media"/>
+            <MenuBarItem Title="Playback"/>
+            <MenuBarItem Title="Audio"/>
+            <MenuBarItem Title="Video"/>
+            <MenuBarItem Title="Subtitle"/>
+            <MenuBarItem Title="Tools"/>
+            <MenuBarItem Title="View"/>
+            <MenuBarItem Title="Help"/>
         </MenuBar>
 
         <NavigationView x:Name="NavigationView"
