@@ -21,16 +21,9 @@
         </Grid.RowDefinitions>
 
         <controls:TitleBar x:Name="AppTitleBar"
-                           Height="44"
                            Icon="{x:Bind ViewModel.IconPath}"
                            TargetWindow="{x:Bind AppWindow}"
                            Title="{x:Bind ViewModel.Title}">
-            <controls:TitleBar.MiddleContent>
-                <AutoSuggestBox x:Uid="TitleBar/AutoSuggestBox"
-                                MaxWidth="256"
-                                QueryIcon="Find"
-                                VerticalAlignment="Center"/>
-            </controls:TitleBar.MiddleContent>
         </controls:TitleBar>
 
         <ContentControl x:Name="ViewContentControl"
