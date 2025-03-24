@@ -24,20 +24,6 @@ public sealed partial class MainView : UserControl
 
     private void NavigationView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
     {
-        if (args.IsSettingsInvoked)
-        {
-            ViewContentControl.Content = _settingsView.Value;
-
-            return;
-        }
-
-        /*
-        string? viewName = ((FrameworkElement)args.InvokedItemContainer)?.Tag as string;
-
-        if (viewName is nameof(UserView))
-        {
-            ViewContentControl.Content = _userView.Value;
-        }
-        */
+        ViewContentControl.Content = args.IsSettingsInvoked ? _settingsView.Value : null;
     }
 }
