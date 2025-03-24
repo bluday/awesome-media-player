@@ -18,14 +18,111 @@
         </Grid.RowDefinitions>
 
         <MenuBar>
-            <MenuBarItem Title="Media"/>
-            <MenuBarItem Title="Playback"/>
-            <MenuBarItem Title="Audio"/>
-            <MenuBarItem Title="Video"/>
-            <MenuBarItem Title="Subtitle"/>
-            <MenuBarItem Title="Tools"/>
-            <MenuBarItem Title="View"/>
-            <MenuBarItem Title="Help"/>
+            <MenuBarItem Title="Media">
+                <MenuFlyoutItem Text="Open File...">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="O"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Open Multiple Files...">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control,Shift" Key="O"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Open Folder...">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="F"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Open Disc...">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="D"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Open Network Stream...">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="N"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Open Capture Device...">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="C"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Open Location from clipboard">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="V"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutSubItem Text="Open Recent Media">
+                    <MenuFlyoutItem Text="file_0.mp3"/>
+                </MenuFlyoutSubItem>
+                
+                <MenuFlyoutSeparator/>
+
+                <MenuFlyoutItem Text="Save Playlist to File...">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="Y"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Convert / Save...">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="R"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Stream...">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="S"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutSeparator/>
+                
+                <MenuFlyoutItem Text="Quit at the end of playlist"/>
+
+                <MenuFlyoutItem Text="Quit">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="Q"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+            </MenuBarItem>
+
+            <MenuBarItem Title="Playback">
+                <MenuFlyoutSeparator/>
+            </MenuBarItem>
+
+            <MenuBarItem Title="Audio">
+                <MenuFlyoutSeparator/>
+            </MenuBarItem>
+
+            <MenuBarItem Title="Video">
+                <MenuFlyoutSeparator/>
+            </MenuBarItem>
+
+            <MenuBarItem Title="Subtitle">
+                <MenuFlyoutSeparator/>
+            </MenuBarItem>
+
+            <MenuBarItem Title="Tools">
+                <MenuFlyoutSeparator/>
+            </MenuBarItem>
+
+            <MenuBarItem Title="View">
+                <MenuFlyoutSeparator/>
+            </MenuBarItem>
+
+            <MenuBarItem Title="Help">
+                <MenuFlyoutSeparator/>
+            </MenuBarItem>
         </MenuBar>
 
         <NavigationView x:Name="NavigationView"
