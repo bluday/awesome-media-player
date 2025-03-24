@@ -164,7 +164,34 @@
             </MenuBarItem>
 
             <MenuBarItem Title="Audio">
+                <MenuFlyoutSubItem Text="Audio Track">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSubItem Text="Audio Device">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSubItem Text="Stereo Mode">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
                 <MenuFlyoutSeparator/>
+
+                <MenuFlyoutSubItem Text="Visualizations">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSeparator/>
+
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe995;}"
+                                Text="Increase Volume"/>
+
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe993;}"
+                                Text="Decrease Volume"/>
+
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe74f;}"
+                                Text="Mute"/>
             </MenuBarItem>
 
             <MenuBarItem Title="Video">
