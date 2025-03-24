@@ -26,8 +26,7 @@
                     </MenuFlyoutItem.KeyboardAccelerators>
                 </MenuFlyoutItem>
 
-                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe8e5;}"
-                                Text="Open Multiple Files...">
+                <MenuFlyoutItem Text="Open Multiple Files...">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control,Shift" Key="O"/>
                     </MenuFlyoutItem.KeyboardAccelerators>
@@ -67,7 +66,8 @@
                     </MenuFlyoutItem.KeyboardAccelerators>
                 </MenuFlyoutItem>
 
-                <MenuFlyoutSubItem Text="Open Recent Media">
+                <MenuFlyoutSubItem Icon="{toolkit:FontIcon Glyph=&#xe823;}"
+                                   Text="Open Recent Media">
                     <MenuFlyoutItem Text="file_0.mp3"/>
                 </MenuFlyoutSubItem>
                 
@@ -96,7 +96,7 @@
                 
                 <MenuFlyoutItem Text="Quit at the end of playlist"/>
 
-                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe7b5;}"
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe944;}"
                                 Text="Quit">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control" Key="Q"/>
@@ -105,39 +105,49 @@
             </MenuBarItem>
 
             <MenuBarItem Title="Playback">
-                <MenuFlyoutSubItem Text="Title">
+                <MenuFlyoutSubItem IsEnabled="False" Text="Title">
                     <MenuFlyoutItem Text="Content"/>
                 </MenuFlyoutSubItem>
 
-                <MenuFlyoutSubItem Text="Chapter">
+                <MenuFlyoutSubItem IsEnabled="False" Text="Chapter">
                     <MenuFlyoutItem Text="Content"/>
                 </MenuFlyoutSubItem>
 
-                <MenuFlyoutSubItem Text="Program">
+                <MenuFlyoutSubItem IsEnabled="False" Text="Program">
                     <MenuFlyoutItem Text="Content"/>
                 </MenuFlyoutSubItem>
 
                 <MenuFlyoutSubItem Text="Custom Bookmarks">
-                    <MenuFlyoutItem Text="Content"/>
+                    <MenuFlyoutItem Text="Manage">
+                        <MenuFlyoutItem.KeyboardAccelerators>
+                            <KeyboardAccelerator Modifiers="Control" Key="B"/>
+                        </MenuFlyoutItem.KeyboardAccelerators>
+                    </MenuFlyoutItem>
                 </MenuFlyoutSubItem>
 
                 <MenuFlyoutSeparator/>
 
                 <MenuFlyoutSubItem Text="Renderer">
-                    <MenuFlyoutItem Text="Content"/>
+                    <MenuFlyoutItem IsEnabled="False" Text="Scanning..."/>
                 </MenuFlyoutSubItem>
 
                 <MenuFlyoutSeparator/>
 
                 <MenuFlyoutSubItem Text="Speed">
-                    <MenuFlyoutItem Text="Content"/>
+                    <MenuFlyoutItem Text="Faster"/>
+                    <MenuFlyoutItem Text="Faster (fine)"/>
+                    <MenuFlyoutItem Text="Normal Speed"/>
+                    <MenuFlyoutItem Text="Slower (fine)"/>
+                    <MenuFlyoutItem Text="Slower"/>
                 </MenuFlyoutSubItem>
 
                 <MenuFlyoutSeparator/>
 
-                <MenuFlyoutItem Text="Jump Forward"/>
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xed3d;}"
+                                Text="Jump Forward"/>
 
-                <MenuFlyoutItem Text="Jump Backward"/>
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xed3c;}"
+                                Text="Jump Backward"/>
 
                 <MenuFlyoutItem Text="Jump to Specific Time">
                     <MenuFlyoutItem.KeyboardAccelerators>
@@ -159,7 +169,7 @@
                 <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xf8ad;}"
                                 Text="Next"/>
                 
-                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe7c8;}"
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Foreground=Red, Glyph=&#xe7c8;}"
                                 Text="Record"/>
             </MenuBarItem>
 
@@ -195,29 +205,37 @@
             </MenuBarItem>
 
             <MenuBarItem Title="Video">
-                <MenuFlyoutSubItem Text="Video Track">
+                <MenuFlyoutSubItem IsEnabled="False" Text="Video Track">
                     <MenuFlyoutItem Text="Content"/>
                 </MenuFlyoutSubItem>
 
                 <MenuFlyoutSeparator/>
 
-                <MenuFlyoutItem Text="Fullscreen"/>
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe740;}"
+                                Text="Fullscreen"/>
 
                 <MenuFlyoutItem IsEnabled="False" Text="Always Fit Window"/>
 
-                <MenuFlyoutItem Text="Set as Wallpaper"/>
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe7b5;}"
+                                Text="Set as Wallpaper"/>
 
                 <MenuFlyoutSeparator/>
 
-                <MenuFlyoutSubItem Text="Zoom">
+                <MenuFlyoutSubItem Icon="{toolkit:FontIcon Glyph=&#xe71e;}"
+                                   IsEnabled="False"
+                                   Text="Zoom">
                     <MenuFlyoutItem Text="Content"/>
                 </MenuFlyoutSubItem>
 
-                <MenuFlyoutSubItem Text="Aspect Ratio">
+                <MenuFlyoutSubItem Icon="{toolkit:FontIcon Glyph=&#xe799;}"
+                                   IsEnabled="False"
+                                   Text="Aspect Ratio">
                     <MenuFlyoutItem Text="Content"/>
                 </MenuFlyoutSubItem>
 
-                <MenuFlyoutSubItem Text="Crop">
+                <MenuFlyoutSubItem Icon="{toolkit:FontIcon Glyph=&#xe7a8;}"
+                                   IsEnabled="False"
+                                   Text="Crop">
                     <MenuFlyoutItem Text="Content"/>
                 </MenuFlyoutSubItem>
 
@@ -233,13 +251,18 @@
 
                 <MenuFlyoutSeparator/>
 
-                <MenuFlyoutItem Text="Take Snapshot"/>
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe722;}"
+                                IsEnabled="False"
+                                Text="Take Snapshot"/>
             </MenuBarItem>
 
             <MenuBarItem Title="Subtitle">
-                <MenuFlyoutItem Text="Add Subtitle File..."/>
-                
-                <MenuFlyoutSubItem IsEnabled="False" Text="Sub Track">
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe710;}"
+                                Text="Add Subtitle File..."/>
+
+                <MenuFlyoutSubItem Icon="{toolkit:FontIcon Glyph=&#xed1e;}"
+                                   IsEnabled="False"
+                                   Text="Sub Track">
                     <MenuFlyoutItem Text="Content"/>
                 </MenuFlyoutSubItem>
             </MenuBarItem>
@@ -254,14 +277,14 @@
 
                 <MenuFlyoutItem Text="Track Synchronization"/>
                 
-                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe946;}"
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Foreground=CornflowerBlue, Glyph=&#xe946;}"
                                 Text="Media Information">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control" Key="I"/>
                     </MenuFlyoutItem.KeyboardAccelerators>
                 </MenuFlyoutItem>
 
-                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe946;}"
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Foreground=CornflowerBlue, Glyph=&#xe946;}"
                                 Text="Codec Information">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control" Key="J"/>
@@ -276,7 +299,7 @@
 
                 <MenuFlyoutItem Text="Program Guide"/>
 
-                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe9d9;}"
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe756;}"
                                 Text="Messages">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control" Key="P"/>
@@ -324,7 +347,8 @@
                     </MenuFlyoutItem.KeyboardAccelerators>
                 </MenuFlyoutItem>
 
-                <MenuFlyoutItem Text="Fullscreen Interface">
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe740;}"
+                                Text="Fullscreen Interface">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Key="F11"/>
                     </MenuFlyoutItem.KeyboardAccelerators>
@@ -346,7 +370,7 @@
             </MenuBarItem>
 
             <MenuBarItem Title="Help">
-                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe897;}"
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Foreground=CornflowerBlue, Glyph=&#xe897;}"
                                 Text="Help">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Key="F1"/>
@@ -357,7 +381,7 @@
 
                 <MenuFlyoutSeparator/>
 
-                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe946;}"
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Foreground=CornflowerBlue, Glyph=&#xe946;}"
                                 Text="About">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Shift" Key="F1"/>
