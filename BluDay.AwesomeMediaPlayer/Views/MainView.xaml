@@ -245,7 +245,57 @@
             </MenuBarItem>
 
             <MenuBarItem Title="Tools">
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe9e9;}"
+                                Text="Effects and Filters">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="E"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Track Synchronization"/>
+                
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe946;}"
+                                Text="Media Information">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="I"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe946;}"
+                                Text="Codec Information">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="J"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="VLM Configuration">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control,Shift" Key="W"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Program Guide"/>
+
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe9d9;}"
+                                Text="Messages">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="P"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Plugins and extensions"/>
+
                 <MenuFlyoutSeparator/>
+
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe713;}"
+                                Text="Customize Interface..."/>
+
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe713;}"
+                                Text="Preferences">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="P"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
             </MenuBarItem>
 
             <MenuBarItem Title="View">
