@@ -5,7 +5,6 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:controls="using:BluDay.AwesomeMediaPlayer.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:interactionsCore="using:Microsoft.Xaml.Interactions.Core"
              xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:toolkit="using:CommunityToolkit.WinUI"
@@ -13,15 +12,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
+
+        <MenuBar>
+            <MenuBarItem Title="File"/>
+        </MenuBar>
+
         <NavigationView x:Name="NavigationView"
                         PaneDisplayMode="Left"
                         OpenPaneLength="180"
                         IsBackButtonVisible="Collapsed"
-                        ItemInvoked="NavigationView_ItemInvoked">
+                        ItemInvoked="NavigationView_ItemInvoked"
+                        Grid.Row="1">
             <NavigationView.MenuItems>
                 <NavigationViewItemHeader x:Uid="MainView/NavigationView/LibraryHeader"/>
 
@@ -63,9 +68,9 @@
 
                         <interactivity:Interaction.Behaviors>
                             <interactivity:BehaviorCollection>
-                                <interactionsCore:EventTriggerBehavior EventName="PointerPressed">
-                                    <interactionsCore:InvokeCommandAction Command="{Binding ShowCurrentMediaInformationWindowCommand}"/>
-                                </interactionsCore:EventTriggerBehavior>
+                                <interactivity:EventTriggerBehavior EventName="PointerPressed">
+                                    <interactivity:InvokeCommandAction Command="{Binding ShowCurrentMediaInformationWindowCommand}"/>
+                                </interactivity:EventTriggerBehavior>
                             </interactivity:BehaviorCollection>
                         </interactivity:Interaction.Behaviors>
                     </Grid>
@@ -86,7 +91,7 @@
 
         <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
               BorderThickness="0,1,0,0"
-              Grid.Row="1">
+              Grid.Row="2">
             <controls:MediaControlBar/>
         </Grid>
     </Grid>
