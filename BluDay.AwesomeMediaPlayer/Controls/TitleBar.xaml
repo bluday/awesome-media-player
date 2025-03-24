@@ -23,7 +23,7 @@
 
             <Grid VerticalAlignment="Center" Visibility="{x:Bind HeaderVisibility}">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="16"/>
+                    <ColumnDefinition Width="8"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="12"/>
                     <ColumnDefinition Width="Auto"/>
