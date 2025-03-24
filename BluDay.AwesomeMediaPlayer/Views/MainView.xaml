@@ -237,7 +237,11 @@
             </MenuBarItem>
 
             <MenuBarItem Title="Subtitle">
-                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem Text="Add Subtitle File..."/>
+                
+                <MenuFlyoutSubItem IsEnabled="False" Text="Sub Track">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
             </MenuBarItem>
 
             <MenuBarItem Title="Tools">
