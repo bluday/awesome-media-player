@@ -21,7 +21,9 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Grid VerticalAlignment="Center" Visibility="{x:Bind HeaderVisibility}">
+            <Grid Margin="{x:Bind HeaderMargin}"
+                  VerticalAlignment="Center"
+                  Visibility="{x:Bind HeaderVisibility}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="8"/>
                     <ColumnDefinition Width="Auto"/>

@@ -57,6 +57,16 @@ public sealed partial class TitleBar : UserControl
     );
 
     /// <summary>
+    /// Identifies the <see cref="HeaderMargin"/> dependency property.
+    /// </summary>
+    public static readonly DependencyProperty HeaderMarginProperty = DependencyProperty.Register(
+        nameof(HeaderMargin),
+        typeof(Thickness),
+        typeof(TitleBar),
+        new PropertyMetadata(defaultValue: default)
+    );
+
+    /// <summary>
     /// Identifies the <see cref="HeaderVisibility"/> dependency property.
     /// </summary>
     public static readonly DependencyProperty HeaderVisibilityProperty = DependencyProperty.Register(
@@ -121,6 +131,15 @@ public sealed partial class TitleBar : UserControl
     {
         get => GetValue(IconProperty) as ImageSource;
         set => SetValue(IconProperty, value);
+    }
+
+    /// <summary>
+    /// Gets the margin of the header.
+    /// </summary>
+    public Thickness HeaderMargin
+    {
+        get => (Thickness)GetValue(HeaderMarginProperty);
+        set => SetValue(HeaderMarginProperty, value);
     }
 
     /// <summary>

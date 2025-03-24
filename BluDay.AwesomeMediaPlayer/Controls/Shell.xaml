@@ -23,8 +23,7 @@
         <controls:TitleBar x:Name="AppTitleBar"
                            Icon="{x:Bind ViewModel.IconPath}"
                            TargetWindow="{x:Bind AppWindow}"
-                           Title="{x:Bind ViewModel.Title}">
-        </controls:TitleBar>
+                           Title="{x:Bind ViewModel.Title}"/>
 
         <ContentControl x:Name="ViewContentControl"
                         HorizontalContentAlignment="Stretch"
