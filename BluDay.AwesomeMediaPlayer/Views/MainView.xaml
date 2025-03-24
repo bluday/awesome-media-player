@@ -158,19 +158,39 @@
                 <MenuFlyoutSeparator/>
 
                 <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xf5b0;}"
-                                Text="Play"/>
+                                Text="Play">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="Space"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
                 
                 <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xee95;}"
-                                Text="Stop"/>
+                                Text="Stop">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="S"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
                 
                 <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xf8ac;}"
-                                Text="Previous"/>
+                                Text="Previous">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="Left"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
                 
                 <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xf8ad;}"
-                                Text="Next"/>
+                                Text="Next">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="Right"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
                 
                 <MenuFlyoutItem Icon="{toolkit:FontIcon Foreground=Red, Glyph=&#xe7c8;}"
-                                Text="Record"/>
+                                Text="Record">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="R"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
             </MenuBarItem>
 
             <MenuBarItem Title="Audio">
