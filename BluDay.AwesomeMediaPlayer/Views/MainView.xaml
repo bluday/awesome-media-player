@@ -415,7 +415,7 @@
                         OpenPaneLength="180"
                         IsBackButtonVisible="Collapsed"
                         IsPaneToggleButtonVisible="False"
-                        ItemInvoked="NavigationView_ItemInvoked"
+                        IsSettingsVisible="False"
                         Grid.Row="1">
             <NavigationView.MenuItems>
                 <NavigationViewItemHeader x:Uid="MainView/NavigationView/LibraryHeader"/>
@@ -441,16 +441,17 @@
                 <NavigationViewItem>
                     <NavigationViewItem.Template>
                         <ControlTemplate>
-                            <ContentPresenter Height="140" Margin="0"/>
+                            <ContentPresenter/>
                         </ControlTemplate>
                     </NavigationViewItem.Template>
 
                     <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
                           BorderThickness="1"
                           CornerRadius="8"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
                           Height="128"
+                          HorizontalAlignment="Center"
+                          Margin="0,16"
+                          VerticalAlignment="Center"
                           Width="128">
                         <Grid.Background>
                             <ImageBrush ImageSource="https://www.halopedia.org/images/2/2e/Halo2-Volume1-OriginalSoundtrack.jpg"/>
