@@ -299,7 +299,50 @@
             </MenuBarItem>
 
             <MenuBarItem Title="View">
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xea37;}"
+                                Text="Playlist">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="P"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Docked Playlist"/>
+
+                <MenuFlyoutSubItem Text="Playlist View Mode">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
                 <MenuFlyoutSeparator/>
+
+                <MenuFlyoutItem Text="Always on top"/>
+
+                <MenuFlyoutSeparator/>
+
+                <MenuFlyoutItem Text="Minimal Interface">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="H"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Fullscreen Interface">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="F11"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Advanced Controls"/>
+
+                <MenuFlyoutItem Text="Status Bar"/>
+
+                <MenuFlyoutSeparator/>
+
+                <MenuFlyoutSubItem Text="Add Interface">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSeparator/>
+
+                <MenuFlyoutItem Text="VLsub"/>
             </MenuBarItem>
 
             <MenuBarItem Title="Help">
