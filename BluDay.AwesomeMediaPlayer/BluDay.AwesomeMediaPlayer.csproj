@@ -63,11 +63,11 @@
   <!-- Assemblies -->
   <ItemGroup>
     <Reference Include="BluDay.Net">
-      <HintPath>..\..\bluday-dotnet\BluDay.Net\bin\x64\Debug\net9.0\BluDay.Net.dll</HintPath>
+      <HintPath>..\..\bluday-dotnet\BluDay.Net\bin\x64\Release\net9.0\BluDay.Net.dll</HintPath>
     </Reference>
 
     <Reference Include="BluDay.Net.WinUI3">
-      <HintPath>..\..\bluday-dotnet\BluDay.Net.WinUI3\bin\x64\Debug\net9.0-windows10.0.26100.0\BluDay.Net.WinUI3.dll</HintPath>
+      <HintPath>..\..\bluday-dotnet\BluDay.Net.WinUI3\bin\x64\Release\net9.0-windows10.0.26100.0\BluDay.Net.WinUI3.dll</HintPath>
     </Reference>
   </ItemGroup>
 
