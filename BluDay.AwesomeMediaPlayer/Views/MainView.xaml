@@ -414,6 +414,7 @@
                         PaneDisplayMode="Left"
                         OpenPaneLength="180"
                         IsBackButtonVisible="Collapsed"
+                        IsPaneToggleButtonVisible="False"
                         ItemInvoked="NavigationView_ItemInvoked"
                         Grid.Row="1">
             <NavigationView.MenuItems>
