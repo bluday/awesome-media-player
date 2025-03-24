@@ -346,7 +346,23 @@
             </MenuBarItem>
 
             <MenuBarItem Title="Help">
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe897;}"
+                                Text="Help">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="F1"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutItem Text="Check for Updates..."/>
+
                 <MenuFlyoutSeparator/>
+
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe946;}"
+                                Text="About">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Shift" Key="F1"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
             </MenuBarItem>
         </MenuBar>
 
