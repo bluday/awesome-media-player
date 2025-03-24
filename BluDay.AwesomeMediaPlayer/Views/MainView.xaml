@@ -195,7 +195,45 @@
             </MenuBarItem>
 
             <MenuBarItem Title="Video">
+                <MenuFlyoutSubItem Text="Video Track">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
                 <MenuFlyoutSeparator/>
+
+                <MenuFlyoutItem Text="Fullscreen"/>
+
+                <MenuFlyoutItem IsEnabled="False" Text="Always Fit Window"/>
+
+                <MenuFlyoutItem Text="Set as Wallpaper"/>
+
+                <MenuFlyoutSeparator/>
+
+                <MenuFlyoutSubItem Text="Zoom">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSubItem Text="Aspect Ratio">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSubItem Text="Crop">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSeparator/>
+
+                <MenuFlyoutSubItem IsEnabled="False" Text="Deinterlace">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSubItem IsEnabled="False" Text="Deinterlace mode">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSeparator/>
+
+                <MenuFlyoutItem Text="Take Snapshot"/>
             </MenuBarItem>
 
             <MenuBarItem Title="Subtitle">
