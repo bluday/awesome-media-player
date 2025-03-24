@@ -342,7 +342,7 @@
             </MenuBarItem>
 
             <MenuBarItem Title="View">
-                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xea37;}"
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe90b;}"
                                 Text="Playlist">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control" Key="P"/>
@@ -418,12 +418,15 @@
                         IsSettingsVisible="False"
                         Grid.Row="1">
             <NavigationView.MenuItems>
-                <NavigationViewItemHeader x:Uid="MainView/NavigationView/LibraryHeader"/>
+                <NavigationViewItemHeader x:Uid="MainView/NavigationView/MyLibraryHeader"/>
 
                 <NavigationViewItem x:Uid="MainView/NavigationView/PlaylistItem"
                                     Icon="{toolkit:FontIcon Glyph=&#xe90b;}"/>
 
-                <NavigationViewItemHeader x:Uid="MainView/NavigationView/ThisComputerHeader"/>
+                <NavigationViewItem x:Uid="MainView/NavigationView/MediaLibraryItem"
+                                    Icon="{toolkit:FontIcon Glyph=&#xe8f1;}"/>
+
+                <NavigationViewItemHeader x:Uid="MainView/NavigationView/MyComputerHeader"/>
 
                 <NavigationViewItem x:Uid="MainView/NavigationView/MusicItem"
                                     Icon="{toolkit:FontIcon Glyph=&#xec4f;}"/>

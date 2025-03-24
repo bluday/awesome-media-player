@@ -123,8 +123,8 @@
   <data name="CurrentMediaInformationWindow.Title" xml:space="preserve">
     <value>Current media information</value>
   </data>
-  <data name="MainView.NavigationView.LibraryHeader.Content" xml:space="preserve">
-    <value>Library</value>
+  <data name="MainView.NavigationView.MyLibraryHeader.Content" xml:space="preserve">
+    <value>My Library</value>
   </data>
   <data name="MainView.NavigationView.MusicItem.Content" xml:space="preserve">
     <value>Music</value>
@@ -133,10 +133,10 @@
     <value>Pictures</value>
   </data>
   <data name="MainView.NavigationView.PlaylistItem.Content" xml:space="preserve">
-    <value>Playlist</value>
+    <value>Playlist [00:00]</value>
   </data>
-  <data name="MainView.NavigationView.ThisComputerHeader.Content" xml:space="preserve">
-    <value>This computer</value>
+  <data name="MainView.NavigationView.MyComputerHeader.Content" xml:space="preserve">
+    <value>My Computer</value>
   </data>
   <data name="MainView.NavigationView.VideosItem.Content" xml:space="preserve">
     <value>Videos</value>
@@ -146,5 +146,8 @@
   </data>
   <data name="TitleBar.AutoSuggestBox.PlaceholderText" xml:space="preserve">
     <value>Search for tracks, artists, etc.</value>
+  </data>
+  <data name="MainView.NavigationView.MediaLibraryItem.Content" xml:space="preserve">
+    <value>Media Library</value>
   </data>
 </root>

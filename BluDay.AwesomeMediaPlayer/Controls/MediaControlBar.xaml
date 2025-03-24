@@ -39,17 +39,19 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock FontSize="12"
-                       Text="00:00"
+                       Text="--:--"
                        VerticalAlignment="Center"/>
 
-            <Slider Margin="10,-4"
-                    HorizontalAlignment="Stretch"
-                    Value="20"
+            <Slider HorizontalAlignment="Stretch"
+                    IsEnabled="False"
+                    Margin="10,-4"
+                    Value="0"
+                    IntermediateValue="0"
                     VerticalAlignment="Center"
                     Grid.Column="1"/>
 
             <TextBlock FontSize="12"
-                       Text="-08:00"
+                       Text="--:--"
                        VerticalAlignment="Center"
                        Grid.Column="2"/>
         </Grid>
