@@ -97,7 +97,62 @@
             </MenuBarItem>
 
             <MenuBarItem Title="Playback">
+                <MenuFlyoutSubItem Text="Title">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSubItem Text="Chapter">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSubItem Text="Program">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSubItem Text="Custom Bookmarks">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
                 <MenuFlyoutSeparator/>
+
+                <MenuFlyoutSubItem Text="Renderer">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSeparator/>
+
+                <MenuFlyoutSubItem Text="Speed">
+                    <MenuFlyoutItem Text="Content"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSeparator/>
+
+                <MenuFlyoutItem Text="Jump Forward"/>
+
+                <MenuFlyoutItem Text="Jump Backward"/>
+
+                <MenuFlyoutItem Text="Jump to Specific Time">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="T"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
+
+                <MenuFlyoutSeparator/>
+
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xf5b0;}"
+                                Text="Play"/>
+                
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xee95;}"
+                                Text="Stop"/>
+                
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xf8ac;}"
+                                Text="Previous"/>
+                
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xf8ad;}"
+                                Text="Next"/>
+                
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe7c8;}"
+                                Text="Record"/>
             </MenuBarItem>
 
             <MenuBarItem Title="Audio">
