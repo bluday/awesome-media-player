@@ -19,37 +19,43 @@
 
         <MenuBar>
             <MenuBarItem Title="Media">
-                <MenuFlyoutItem Text="Open File...">
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe8e5;}"
+                                Text="Open File...">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control" Key="O"/>
                     </MenuFlyoutItem.KeyboardAccelerators>
                 </MenuFlyoutItem>
 
-                <MenuFlyoutItem Text="Open Multiple Files...">
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe8e5;}"
+                                Text="Open Multiple Files...">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control,Shift" Key="O"/>
                     </MenuFlyoutItem.KeyboardAccelerators>
                 </MenuFlyoutItem>
 
-                <MenuFlyoutItem Text="Open Folder...">
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xf12b;}"
+                                Text="Open Folder...">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control" Key="F"/>
                     </MenuFlyoutItem.KeyboardAccelerators>
                 </MenuFlyoutItem>
 
-                <MenuFlyoutItem Text="Open Disc...">
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe958;}"
+                                Text="Open Disc...">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control" Key="D"/>
                     </MenuFlyoutItem.KeyboardAccelerators>
                 </MenuFlyoutItem>
 
-                <MenuFlyoutItem Text="Open Network Stream...">
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe968;}"
+                                Text="Open Network Stream...">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control" Key="N"/>
                     </MenuFlyoutItem.KeyboardAccelerators>
                 </MenuFlyoutItem>
 
-                <MenuFlyoutItem Text="Open Capture Device...">
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xf211;}"
+                                Text="Open Capture Device...">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control" Key="C"/>
                     </MenuFlyoutItem.KeyboardAccelerators>
@@ -79,7 +85,8 @@
                     </MenuFlyoutItem.KeyboardAccelerators>
                 </MenuFlyoutItem>
 
-                <MenuFlyoutItem Text="Stream...">
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe93e;}"
+                                Text="Stream...">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control" Key="S"/>
                     </MenuFlyoutItem.KeyboardAccelerators>
@@ -89,7 +96,8 @@
                 
                 <MenuFlyoutItem Text="Quit at the end of playlist"/>
 
-                <MenuFlyoutItem Text="Quit">
+                <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe7b5;}"
+                                Text="Quit">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control" Key="Q"/>
                     </MenuFlyoutItem.KeyboardAccelerators>
