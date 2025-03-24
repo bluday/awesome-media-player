@@ -20,49 +20,25 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Title bar -->
         <controls:TitleBar x:Name="AppTitleBar"
                            Height="44"
                            Icon="{x:Bind ViewModel.IconPath}"
                            TargetWindow="{x:Bind AppWindow}"
                            Title="{x:Bind ViewModel.Title}">
-            <!-- Test content
-            <controls:TitleBar.RightContent>
-                <StackPanel Orientation="Horizontal" Spacing="8">
-                    <Button Content="BluDay"/>
-
-                    <PersonPicture Height="28"
-                                   PreferSmallImage="True"
-                                   ProfilePicture="https://avatars.githubusercontent.com/u/19403893"/>
-                </StackPanel>
-            </controls:TitleBar.RightContent>
-            -->
-
             <controls:TitleBar.MiddleContent>
                 <AutoSuggestBox x:Uid="TitleBar/AutoSuggestBox"
                                 MaxWidth="256"
                                 QueryIcon="Find"
                                 VerticalAlignment="Center"/>
             </controls:TitleBar.MiddleContent>
-
-            <!-- Test content
-            <controls:TitleBar.LeftContent>
-                <StackPanel Orientation="Horizontal" Spacing="8">
-                    <ToggleSwitch/>
-                </StackPanel>
-            </controls:TitleBar.LeftContent>
-            -->
         </controls:TitleBar>
 
-        <!-- Content -->
         <ContentControl x:Name="ViewContentControl"
                         HorizontalContentAlignment="Stretch"
                         VerticalContentAlignment="Stretch"
                         Grid.Row="1"/>
 
-        <!-- Dialog control -->
-        <ContentDialog x:Name="TestContentDialog"
-                       CloseButtonText="Close"
+        <ContentDialog CloseButtonText="Close"
                        DefaultButton="Primary"
                        IsSecondaryButtonEnabled="True"
                        PrimaryButtonText="OK"
