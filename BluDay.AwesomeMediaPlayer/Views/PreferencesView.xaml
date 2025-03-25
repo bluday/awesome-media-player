@@ -10,7 +10,7 @@
              xmlns:toolkitControls="using:CommunityToolkit.WinUI.Controls"
              xmlns:viewModels="using:BluDay.AwesomeMediaPlayer.ViewModels"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Grid>
+    <Grid MaxWidth="800">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
