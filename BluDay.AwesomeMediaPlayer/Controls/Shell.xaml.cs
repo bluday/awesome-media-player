@@ -8,6 +8,8 @@ public sealed partial class Shell : Window, IBluWindow
 {
     private readonly Lazy<MainView> _mainView;
 
+    private readonly Lazy<PreferencesView> _preferencesView;
+
     /// <summary>
     /// Gets the view model instance.
     /// </summary>
@@ -25,6 +27,12 @@ public sealed partial class Shell : Window, IBluWindow
     /// <param name="viewModel">
     /// The view model instance.
     /// </param>
+    /// <param name="mainView">
+    /// The main view. Temporary.
+    /// </param>
+    /// <param name="preferencesView">
+    /// The preferences view. Temporary.
+    /// </param>
     /// <param name="resourceLoader">
     /// The application resource loader.
     /// </param>
@@ -34,11 +42,16 @@ public sealed partial class Shell : Window, IBluWindow
     public Shell(
         ShellViewModel   viewModel,
         MainView         mainView,
+        PreferencesView  preferencesView,
         ResourceLoader   resourceLoader,
         IServiceProvider serviceProvider)
     {
         _mainView = new Lazy<MainView>(
             serviceProvider.GetRequiredService<MainView>
+        );
+
+        _preferencesView = new Lazy<PreferencesView>(
+            serviceProvider.GetRequiredService<PreferencesView>
         );
 
         ViewModel = viewModel;
@@ -51,7 +64,7 @@ public sealed partial class Shell : Window, IBluWindow
 
         viewModel.SetWindow(this);
 
-        ViewContentControl.Content = _mainView.Value;
+        ViewContentControl.Content = _preferencesView.Value;
     }
 
     /// <inheritdoc cref="IBluWindow.Resize(int, int)"/>
