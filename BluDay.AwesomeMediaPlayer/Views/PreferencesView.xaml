@@ -10,18 +10,18 @@
              xmlns:toolkitControls="using:CommunityToolkit.WinUI.Controls"
              xmlns:viewModels="using:BluDay.AwesomeMediaPlayer.ViewModels"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Grid Margin="32,0,32,0" MaxWidth="800">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
         <TextBlock FontSize="24"
-                   Margin="0,24"
+                   Margin="32,24,0,24"
                    Style="{StaticResource TitleTextBlockStyle}"
                    Text="Preferences"/>
 
-        <ScrollViewer Grid.Row="1">
+        <ScrollViewer Padding="32,0" Grid.Row="1">
             <StackPanel Orientation="Vertical" Spacing="4">
                 <!-- Advanced -->
                 <Grid Margin="0,4">
@@ -31,7 +31,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <FontIcon FontSize="14" Glyph="&#xeea1;"/>
+                    <FontIcon FontSize="15" Glyph="&#xeea1;"/>
 
                     <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
                                Text="Advanced"
@@ -39,7 +39,8 @@
                 </Grid>
 
                 <toolkitControls:SettingsExpander Description="GNS TLS transport security layer."
-                                                  Header="GNU TLS">
+                                                  Header="GNU TLS"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe72e;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -50,7 +51,8 @@
                 </toolkitControls:SettingsExpander>
                 
                 <toolkitControls:SettingsExpander Description="File logger."
-                                                  Header="Logger">
+                                                  Header="Logger"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe90a;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -61,7 +63,8 @@
                 </toolkitControls:SettingsExpander>
                 
                 <toolkitControls:SettingsExpander Description="Network synchronizations."
-                                                  Header="Network Sync">
+                                                  Header="Network Sync"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe895;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -79,7 +82,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <FontIcon FontSize="14" Glyph="&#xe8d6;"/>
+                    <FontIcon FontSize="15" Glyph="&#xe8d6;"/>
 
                     <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
                                Text="Audio"
@@ -87,7 +90,8 @@
                 </Grid>
 
                 <toolkitControls:SettingsExpander Description="Audio filters are used to process the audio stream."
-                                                  Header="Audio resampler">
+                                                  Header="Audio resampler"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe72c;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -98,7 +102,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Audio filters are used to process the audio stream."
-                                                  Header="Filters">
+                                                  Header="Filters"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe71c;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -109,7 +114,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="General settings for audio output modules."
-                                                  Header="Output modules">
+                                                  Header="Output modules"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xea86;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -120,7 +126,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Audio visualizations."
-                                                  Header="Visualizations">
+                                                  Header="Visualizations"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe9d2;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -138,7 +145,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <FontIcon FontSize="14" Glyph="&#xf61f;"/>
+                    <FontIcon FontSize="15" Glyph="&#xf61f;"/>
 
                     <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
                                Text="Input / Codecs"
@@ -146,7 +153,8 @@
                 </Grid>
                 
                 <toolkitControls:SettingsExpander Description="Settings related to the various access methods. Common settings you may want to alter are HTTP proxy or caching settings."
-                                                  Header="Access modules">
+                                                  Header="Access modules"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xea86;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -157,7 +165,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Settings for the audio-only decoders and encoders."
-                                                  Header="Audio codecs">
+                                                  Header="Audio codecs"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xf61f;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -168,7 +177,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Demuxers are used to separate audio and video streams."
-                                                  Header="Demuxers">
+                                                  Header="Demuxers"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xef90;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -179,7 +189,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Stream filters are special modules that allow advanced operationson the input side of VLC. Use with care..."
-                                                  Header="Stream filters">
+                                                  Header="Stream filters"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe71c;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -190,7 +201,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Settings for subtitle, teletext and CC decoders and encoders."
-                                                  Header="Subtitle codecs">
+                                                  Header="Subtitle codecs"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xed1e;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -201,7 +213,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Settings for the video, images or video+audio decoders and encoders."
-                                                  Header="Video codecs">
+                                                  Header="Video codecs"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe8b2;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -219,7 +232,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <FontIcon FontSize="14" Glyph="&#xf8a6;"/>
+                    <FontIcon FontSize="15" Glyph="&#xf8a6;"/>
 
                     <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
                                Text="Interface"
@@ -227,7 +240,8 @@
                 </Grid>
                 
                 <toolkitControls:SettingsExpander Description="Settings for VLC's control interfaces."
-                                                  Header="Control interfaces">
+                                                  Header="Control interfaces"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe9e9;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -238,7 +252,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Configure general hotkey settings."
-                                                  Header="Hotkeys">
+                                                  Header="Hotkeys"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe961;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -248,9 +263,9 @@
                     </toolkitControls:SettingsExpander.Items>
                 </toolkitControls:SettingsExpander>
 
-                <!-- Glyph = e790 -->
                 <toolkitControls:SettingsExpander Description="Select which app theme to display"
-                                                  Header="Theme">
+                                                  Header="Theme"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe790;}">
                     <ComboBox SelectedIndex="0">
                         <ComboBoxItem Content="Dark"/>
                         <ComboBoxItem Content="Light"/>
@@ -288,7 +303,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <FontIcon FontSize="14" Glyph="&#xe90b;"/>
+                    <FontIcon FontSize="15" Glyph="&#xe90b;"/>
 
                     <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
                                Text="Playlist"
@@ -296,7 +311,8 @@
                 </Grid>
 
                 <toolkitControls:SettingsExpander Description="Folder metadata."
-                                                  Header="Folder">
+                                                  Header="Folder"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe838;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -307,7 +323,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Services discovery modules are facilities that automatically add items to playlist"
-                                                  Header="Services discovery">
+                                                  Header="Services discovery"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xebde;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -325,7 +342,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <FontIcon FontSize="14" Glyph="&#xe93e;"/>
+                    <FontIcon FontSize="15" Glyph="&#xe93e;"/>
 
                     <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
                                Text="Stream output"
@@ -333,7 +350,8 @@
                 </Grid>
 
                 <toolkitControls:SettingsExpander Description="Access output modules control the ways the muxed streams are sent. This setting allows you to always force a specific access output method. You should probably not do that. You can also set default parameters for each access output."
-                                                  Header="Access output">
+                                                  Header="Access output"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe95f;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -344,7 +362,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Muxers create the encapsulation formats that are used to put all elementary streams (video, audio, ...) together. This setting allows you to always force a specific muxer. You should probably not do that. You can also set default parameters for each muxer."
-                                                  Header="Muxers">
+                                                  Header="Muxers"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xea3c;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -355,7 +374,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Packetizers are used to &quot;preprocess&quot; the elementary streams before muxing. This setting allows you to always force a packetizer. You should probably not do that. You can also set default parameters for each packetizer."
-                                                  Header="Packetizers">
+                                                  Header="Packetizers"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe7b8;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -366,7 +386,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Sout stream modules allow to build a sout processing chain. Please refer to the Streaming Howto for more information. You can configure default options for each sout stream module here."
-                                                  Header="Sout stream">
+                                                  Header="Sout stream"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe968;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -377,7 +398,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="VLC's implementation of Video On Demand."
-                                                  Header="VOD">
+                                                  Header="VOD"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe768;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -395,7 +417,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <FontIcon FontSize="14" Glyph="&#xe8b2;"/>
+                    <FontIcon FontSize="15" Glyph="&#xe8b2;"/>
 
                     <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
                                Text="Video"
@@ -403,7 +425,8 @@
                 </Grid>
 
                 <toolkitControls:SettingsExpander Description="Video filters are used to process the video stream."
-                                                  Header="Filters">
+                                                  Header="Filters"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe71c;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -414,7 +437,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="General settings for video output modules."
-                                                  Header="Output modules">
+                                                  Header="Output modules"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xea86;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -425,7 +449,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Video splitters separate the stream into multiple videos"
-                                                  Header="Splitters">
+                                                  Header="Splitters"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xe8b1;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -436,7 +461,8 @@
                 </toolkitControls:SettingsExpander>
 
                 <toolkitControls:SettingsExpander Description="Settings related to On-Screen-Display, subtitles and &quot;overlay subpictures&quot;"
-                                                  Header="Subtitles / OSD">
+                                                  Header="Subtitles / OSD"
+                                                  HeaderIcon="{toolkit:FontIcon Glyph=&#xed1e;}">
                     <!-- TODO: Add far right content. -->
 
                     <toolkitControls:SettingsExpander.Items>
@@ -454,16 +480,16 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <FontIcon FontSize="14" Glyph="&#xe946;"/>
+                    <FontIcon FontSize="15" Glyph="&#xe946;"/>
 
                     <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
-                               Text="About"
-                               Grid.Column="2"/>
+                                Text="About"
+                                Grid.Column="2"/>
                 </Grid>
 
                 <toolkitControls:SettingsExpander Description="© 2025 BluDay. No rights reserved."
                                                   Header="Awesome Media Player"
-                                                  HeaderIcon="{toolkit:BitmapIcon Source=ms-appx:///Assets/Square44x44Logo.targetsize-48.png}"
+                                                  HeaderIcon="{toolkit:BitmapIcon Source=ms-appx:///Assets/StoreLogo.scale-100.png}"
                                                   Margin="0,0,0,24">
                     <TextBlock Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                                Text="1.0.0"/>
