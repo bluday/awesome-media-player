@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl d:DataContext="viewModels:PreferencesViewModel"
+             mc:Ignorable="d"
+             x:Class="BluDay.AwesomeMediaPlayer.Views.PreferencesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:toolkit="using:CommunityToolkit.WinUI"
+             xmlns:toolkitControls="using:CommunityToolkit.WinUI.Controls"
+             xmlns:viewModels="using:BluDay.AwesomeMediaPlayer.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="32,0,32,0" MaxWidth="800">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock FontSize="24"
+                   Margin="0,24"
+                   Style="{StaticResource TitleTextBlockStyle}"
+                   Text="Preferences"/>
+
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Orientation="Vertical" Spacing="4">
+                <!-- Advanced -->
+                <Grid Margin="0,4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <FontIcon FontSize="14" Glyph="&#xeea1;"/>
+
+                    <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
+                               Text="Advanced"
+                               Grid.Column="2"/>
+                </Grid>
+
+                <toolkitControls:SettingsExpander Description="GNS TLS transport security layer."
+                                                  Header="GNU TLS">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+                
+                <toolkitControls:SettingsExpander Description="File logger."
+                                                  Header="Logger">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+                
+                <toolkitControls:SettingsExpander Description="Network synchronizations."
+                                                  Header="Network Sync">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+                
+                <!-- Audio -->
+                <Grid Margin="0,16,0,4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <FontIcon FontSize="14" Glyph="&#xe8d6;"/>
+
+                    <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
+                               Text="Audio"
+                               Grid.Column="2"/>
+                </Grid>
+
+                <toolkitControls:SettingsExpander Description="Audio filters are used to process the audio stream."
+                                                  Header="Audio resampler">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Audio filters are used to process the audio stream."
+                                                  Header="Filters">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="General settings for audio output modules."
+                                                  Header="Output modules">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Audio visualizations."
+                                                  Header="Visualizations">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <!-- Input / Codecs -->
+                <Grid Margin="0,16,0,4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <FontIcon FontSize="14" Glyph="&#xf61f;"/>
+
+                    <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
+                               Text="Input / Codecs"
+                               Grid.Column="2"/>
+                </Grid>
+                
+                <toolkitControls:SettingsExpander Description="Settings related to the various access methods. Common settings you may want to alter are HTTP proxy or caching settings."
+                                                  Header="Access modules">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Settings for the audio-only decoders and encoders."
+                                                  Header="Audio codecs">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Demuxers are used to separate audio and video streams."
+                                                  Header="Demuxers">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Stream filters are special modules that allow advanced operationson the input side of VLC. Use with care..."
+                                                  Header="Stream filters">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Settings for subtitle, teletext and CC decoders and encoders."
+                                                  Header="Subtitle codecs">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Settings for the video, images or video+audio decoders and encoders."
+                                                  Header="Video codecs">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <!-- Interface -->
+                <Grid Margin="0,16,0,4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <FontIcon FontSize="14" Glyph="&#xf8a6;"/>
+
+                    <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
+                               Text="Interface"
+                               Grid.Column="2"/>
+                </Grid>
+                
+                <toolkitControls:SettingsExpander Description="Settings for VLC's control interfaces."
+                                                  Header="Control interfaces">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Configure general hotkey settings."
+                                                  Header="Hotkeys">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <!-- Glyph = e790 -->
+                <toolkitControls:SettingsExpander Description="Select which app theme to display"
+                                                  Header="Theme">
+                    <ComboBox SelectedIndex="0">
+                        <ComboBoxItem Content="Dark"/>
+                        <ComboBoxItem Content="Light"/>
+                        <ComboBoxItem Content="System"/>
+                    </ComboBox>
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard ContentAlignment="Vertical"
+                                                      Header="Accent color"
+                                                      HorizontalContentAlignment="Left">
+                            <GridView SelectedIndex="0">
+                                <GridViewItem ToolTipService.ToolTip="Default">
+                                    <Border Background="{ThemeResource SystemAccentColor}"
+                                            Height="48"
+                                            Width="48"
+                                            CornerRadius="{StaticResource ControlCornerRadius}"/>
+                                </GridViewItem>
+                                
+                                <GridViewItem ToolTipService.ToolTip="VLC">
+                                    <Border Background="#f48b00"
+                                            Height="48"
+                                            Width="48"
+                                            CornerRadius="{StaticResource ControlCornerRadius}"/>
+                                </GridViewItem>
+                            </GridView>
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <!-- Playlist -->
+                <Grid Margin="0,16,0,4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <FontIcon FontSize="14" Glyph="&#xe90b;"/>
+
+                    <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
+                               Text="Playlist"
+                               Grid.Column="2"/>
+                </Grid>
+
+                <toolkitControls:SettingsExpander Description="Folder metadata."
+                                                  Header="Folder">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Services discovery modules are facilities that automatically add items to playlist"
+                                                  Header="Services discovery">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <!-- Stream output -->
+                <Grid Margin="0,16,0,4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <FontIcon FontSize="14" Glyph="&#xe93e;"/>
+
+                    <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
+                               Text="Stream output"
+                               Grid.Column="2"/>
+                </Grid>
+
+                <toolkitControls:SettingsExpander Description="Access output modules control the ways the muxed streams are sent. This setting allows you to always force a specific access output method. You should probably not do that. You can also set default parameters for each access output."
+                                                  Header="Access output">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Muxers create the encapsulation formats that are used to put all elementary streams (video, audio, ...) together. This setting allows you to always force a specific muxer. You should probably not do that. You can also set default parameters for each muxer."
+                                                  Header="Muxers">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Packetizers are used to &quot;preprocess&quot; the elementary streams before muxing. This setting allows you to always force a packetizer. You should probably not do that. You can also set default parameters for each packetizer."
+                                                  Header="Packetizers">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Sout stream modules allow to build a sout processing chain. Please refer to the Streaming Howto for more information. You can configure default options for each sout stream module here."
+                                                  Header="Sout stream">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="VLC's implementation of Video On Demand."
+                                                  Header="VOD">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <!-- Video -->
+                <Grid Margin="0,16,0,4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <FontIcon FontSize="14" Glyph="&#xe8b2;"/>
+
+                    <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
+                               Text="Video"
+                               Grid.Column="2"/>
+                </Grid>
+
+                <toolkitControls:SettingsExpander Description="Video filters are used to process the video stream."
+                                                  Header="Filters">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="General settings for video output modules."
+                                                  Header="Output modules">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Video splitters separate the stream into multiple videos"
+                                                  Header="Splitters">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <toolkitControls:SettingsExpander Description="Settings related to On-Screen-Display, subtitles and &quot;overlay subpictures&quot;"
+                                                  Header="Subtitles / OSD">
+                    <!-- TODO: Add far right content. -->
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard Header="">
+                            <!-- TODO: Add content. -->
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+
+                <!-- About -->
+                <Grid Margin="0,16,0,4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <FontIcon FontSize="14" Glyph="&#xe946;"/>
+
+                    <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}"
+                               Text="About"
+                               Grid.Column="2"/>
+                </Grid>
+
+                <toolkitControls:SettingsExpander Description="© 2025 BluDay. No rights reserved."
+                                                  Header="Awesome Media Player"
+                                                  HeaderIcon="{toolkit:BitmapIcon Source=ms-appx:///Assets/Square44x44Logo.targetsize-48.png}"
+                                                  Margin="0,0,0,24">
+                    <TextBlock Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                               Text="1.0.0"/>
+
+                    <toolkitControls:SettingsExpander.Items>
+                        <toolkitControls:SettingsCard ContentAlignment="Left"
+                                                      HorizontalContentAlignment="Left">
+                            <HyperlinkButton Content="GitHub repo"
+                                             NavigateUri="https://github.com/bluday/awesome-media-player"/>
+                        </toolkitControls:SettingsCard>
+                    </toolkitControls:SettingsExpander.Items>
+                </toolkitControls:SettingsExpander>
+                
+                <!-- Reset preferences -->
+                <HyperlinkButton Content="Reset preferences">
+                    <interactivity:Interaction.Behaviors>
+                        <interactivity:BehaviorCollection>
+                            <interactivity:EventTriggerBehavior EventName="Click">
+                                <interactivity:InvokeCommandAction/>
+                            </interactivity:EventTriggerBehavior>
+                        </interactivity:BehaviorCollection>
+                    </interactivity:Interaction.Behaviors>
+                </HyperlinkButton>
+
+                <!-- Send feedback -->
+                <HyperlinkButton Content="Send feedback"
+                                 Margin="0,0,0,24"
+                                 NavigateUri="https://github.com/bluday/awesome-media-player"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
