@@ -8,6 +8,7 @@
              xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:toolkit="using:CommunityToolkit.WinUI"
+             xmlns:toolkitControls="using:CommunityToolkit.WinUI.Controls"
              xmlns:viewModels="using:BluDay.AwesomeMediaPlayer.ViewModels"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
@@ -17,6 +18,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <!-- Menu bar -->
         <MenuBar>
             <MenuBarItem Title="Media">
                 <MenuFlyoutItem Icon="{toolkit:FontIcon Glyph=&#xe8e5;}"
@@ -410,6 +412,7 @@
             </MenuBarItem>
         </MenuBar>
 
+        <!-- Navigation view -->
         <NavigationView x:Name="NavigationView"
                         PaneDisplayMode="Left"
                         OpenPaneLength="180"
@@ -470,19 +473,26 @@
                     </Grid>
                 </NavigationViewItem>
             </NavigationView.FooterMenuItems>
-            
-            <ContentControl x:Name="ViewContentControl"
-                            HorizontalContentAlignment="Stretch"
-                            VerticalContentAlignment="Stretch"
-                            Grid.Row="1">
-                <ContentControl.Transitions>
-                    <TransitionCollection>
-                        <ContentThemeTransition/>
-                    </TransitionCollection>
-                </ContentControl.Transitions>
-            </ContentControl>
+
+            <Grid>
+                <ContentControl x:Name="ViewContentControl"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Stretch">
+                    <ContentControl.Transitions>
+                        <TransitionCollection>
+                            <NavigationThemeTransition/>
+                        </TransitionCollection>
+                    </ContentControl.Transitions>
+                </ContentControl>
+                
+                <toolkitControls:PropertySizer Binding="{x:Bind NavigationView.OpenPaneLength, Mode=TwoWay}"
+                                               HorizontalAlignment="Left"
+                                               Maximum="280"
+                                               Minimum="180"/>
+            </Grid>
         </NavigationView>
 
+        <!-- Media control bar -->
         <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
               BorderThickness="0,1,0,0"
               Grid.Row="2">
