@@ -380,7 +380,8 @@
         </MenuBarItem>
 
         <MenuBarItem Title="Help">
-            <MenuFlyoutItem Icon="{communityToolkit:FontIcon Foreground=CornflowerBlue, Glyph=&#xe897;}"
+            <MenuFlyoutItem Command="{x:Bind OpenHelpWindowCommand}"
+                            Icon="{communityToolkit:FontIcon Foreground=CornflowerBlue, Glyph=&#xe897;}"
                             Text="Help">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Key="F1"/>

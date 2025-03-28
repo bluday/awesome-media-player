@@ -9,6 +9,8 @@ public sealed partial class MainViewModel : ViewModel
 
     private readonly ResourceLoader _resourceLoader;
 
+    private readonly Func<HelpWindow> _helpWindowFactory;
+
     /// <summary>
     /// Initializes a new instance of the <see cref="MainViewModel"/> class.
     /// </summary>
@@ -18,13 +20,25 @@ public sealed partial class MainViewModel : ViewModel
     public MainViewModel(
         IAppWindowService      windowService,
         ResourceLoader         resourceLoader,
-        WeakReferenceMessenger messenger
+        WeakReferenceMessenger messenger,
+        IServiceProvider       serviceProvider
     )
         : base(messenger)
     {
         _windowService = windowService;
 
         _resourceLoader = resourceLoader;
+
+        _helpWindowFactory = serviceProvider.GetRequiredService<HelpWindow>;
+    }
+
+    /// <summary>
+    /// Opens the help window.
+    /// </summary>
+    [RelayCommand]
+    public void OpenHelpWindow()
+    {
+        _helpWindowFactory().Activate();
     }
 
     /// <summary>

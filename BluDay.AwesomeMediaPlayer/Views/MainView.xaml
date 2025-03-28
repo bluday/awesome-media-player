@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <!-- Menu bar -->
-        <awesomeControls:MenuBar/>
+        <awesomeControls:MenuBar OpenHelpWindowCommand="{Binding OpenHelpWindowCommand}"/>
 
         <!-- Navigation view -->
         <NavigationView x:Name="NavigationView"

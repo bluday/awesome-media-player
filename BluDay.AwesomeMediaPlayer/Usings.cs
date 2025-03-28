@@ -1,5 +1,6 @@
 ﻿global using CommunityToolkit.Mvvm.Input;
 global using CommunityToolkit.Mvvm.Messaging;
+global using CommunityToolkit.WinUI.UI.Controls;
 
 global using BluDay.AwesomeMediaPlayer;
 global using BluDay.AwesomeMediaPlayer.Controls;
@@ -26,5 +27,7 @@ global using Microsoft.Windows.ApplicationModel.Resources;
 global using System;
 global using System.Drawing;
 global using System.Threading.Tasks;
+global using System.Windows.Input;
 
 global using Windows.Graphics;
+global using Windows.System;
