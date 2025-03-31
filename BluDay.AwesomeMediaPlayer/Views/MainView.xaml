@@ -36,12 +36,14 @@
                                     Icon="{toolkit:FontIcon Glyph=&#xe90b;}"/>
 
                 <NavigationViewItem x:Uid="MainView/NavigationView/MediaLibraryItem"
-                                    Icon="{toolkit:FontIcon Glyph=&#xe8f1;}"/>
+                                    Icon="{toolkit:FontIcon Glyph=&#xe8f1;}"
+                                    IsEnabled="False"/>
 
                 <NavigationViewItemHeader x:Uid="MainView/NavigationView/MyComputerHeader"/>
 
                 <NavigationViewItem x:Uid="MainView/NavigationView/MusicItem"
-                                    Icon="{toolkit:FontIcon Glyph=&#xec4f;}"/>
+                                    Icon="{toolkit:FontIcon Glyph=&#xec4f;}"
+                                    IsSelected="True"/>
 
                 <NavigationViewItem x:Uid="MainView/NavigationView/VideosItem"
                                     Icon="{toolkit:FontIcon Glyph=&#xe8b2;}"
