@@ -6,5 +6,5 @@ A clone of the [VLC](https://www.videolan.org/) desktop app for Windows, built u
 
 Screenshots (2023-03-08):
 
-<img src="/BluDay.AwesomeMediaPlayer/Assets/Screenshots/screenshot_0_2025-03-08.png?raw=true" width="800"/>
-<img src="/BluDay.AwesomeMediaPlayer/Assets/Screenshots/screenshot_1_2025-03-08.png?raw=true" width="800"/>
+<img src="/Assets/Screenshots/screenshot_0_2025-03-08.png?raw=true" width="800"/>
+<img src="/Assets/Screenshots/screenshot_1_2025-03-08.png?raw=true" width="800"/>
