@@ -9,7 +9,10 @@ public sealed partial class MainViewModel : ViewModel
 
     private readonly ResourceLoader _resourceLoader;
 
+    private readonly Func<AboutWindow> _aboutWindowFactory;
+
     private readonly Func<HelpWindow> _helpWindowFactory;
+
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MainViewModel"/> class.
@@ -29,7 +32,18 @@ public sealed partial class MainViewModel : ViewModel
 
         _resourceLoader = resourceLoader;
 
+        _aboutWindowFactory = serviceProvider.GetRequiredService<AboutWindow>;
+
         _helpWindowFactory = serviceProvider.GetRequiredService<HelpWindow>;
+    }
+
+    /// <summary>
+    /// Opens the about window.
+    /// </summary>
+    [RelayCommand]
+    public void OpenAboutWindow()
+    {
+        _aboutWindowFactory().Activate();
     }
 
     /// <summary>

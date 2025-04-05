@@ -40,6 +40,7 @@ public static class AppConfiguration
             .AddSingleton<ResourceLoader>();
 
         services
+            .AddTransient<AboutWindow>()
             .AddTransient<HelpWindow>()
             .AddTransient<Shell>();
 

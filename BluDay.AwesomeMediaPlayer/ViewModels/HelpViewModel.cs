@@ -21,15 +21,6 @@ public sealed partial class HelpViewModel : ViewModel
     }
 
     /// <summary>
-    /// Closes the window on click of the close button.
-    /// </summary>
-    [RelayCommand]
-    public void CloseButtonClickCommand()
-    {
-        // TODO: Close the window.
-    }
-
-    /// <summary>
     /// Handles the link-clicked event by launching the provided URI.
     /// </summary>
     /// <param name="sender">

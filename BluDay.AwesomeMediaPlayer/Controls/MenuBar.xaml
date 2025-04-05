@@ -392,7 +392,8 @@
 
             <MenuFlyoutSeparator/>
 
-            <MenuFlyoutItem Icon="{communityToolkit:FontIcon Foreground=CornflowerBlue, Glyph=&#xe946;}"
+            <MenuFlyoutItem Command="{x:Bind OpenAboutWindowCommand}"
+                            Icon="{communityToolkit:FontIcon Foreground=CornflowerBlue, Glyph=&#xe946;}"
                             Text="About">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Shift" Key="F1"/>
