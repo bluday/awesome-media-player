@@ -43,7 +43,7 @@
                        VerticalAlignment="Center"/>
 
             <Slider HorizontalAlignment="Stretch"
-                    Margin="10,-4"
+                    Margin="16,-4"
                     Value="0"
                     IntermediateValue="0"
                     VerticalAlignment="Center"
