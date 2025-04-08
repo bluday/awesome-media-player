@@ -86,7 +86,7 @@
                     <NavigationViewItem.MenuItems>
                         <NavigationViewItem x:Uid="MainView/NavigationView/MyMusicItem" IsSelected="True">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xec4f;"/>
+                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe8d6;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
