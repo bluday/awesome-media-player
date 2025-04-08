@@ -30,6 +30,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
+            <!-- Selected navigation view title -->
             <TextBlock Padding="16,8"
                        Style="{ThemeResource NavigationViewItemHeaderTextStyle}"
                        Text="Music"
@@ -43,13 +44,18 @@
                     <ColumnDefinition Width="4"/>
                 </Grid.ColumnDefinitions>
 
+                <!-- List layout button -->
                 <Button Height="25" Padding="0" VerticalAlignment="Center" Width="25">
                     <Viewbox Height="17" Width="17">
                         <FontIcon Glyph="&#xe9a4;"/>
                     </Viewbox>
                 </Button>
 
-                <AutoSuggestBox MinWidth="200" PlaceholderText="Search" VerticalAlignment="Center" Grid.Column="2"/>
+                <!-- Search box -->
+                <AutoSuggestBox x:Uid="MainView/NavigationViewHeaderBar/AutoSuggestBox"
+                                MinWidth="200"
+                                VerticalAlignment="Center"
+                                Grid.Column="2"/>
             </Grid>
         </Grid>
 
@@ -69,35 +75,35 @@
                                     Icon="{toolkit:FontIcon Glyph=&#xe8f1;}"
                                     IsEnabled="False"/>
 
-                <NavigationViewItem x:Uid="MainView/NavigationView/MyComputerHeader"
+                <NavigationViewItem x:Uid="MainView/NavigationView/MyComputerItem"
                                     IsExpanded="True"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.MenuItems>
-                        <NavigationViewItem x:Uid="MainView/NavigationView/MusicItem"
+                        <NavigationViewItem x:Uid="MainView/NavigationView/MyMusicItem"
                                             Icon="{toolkit:FontIcon Glyph=&#xec4f;}"
                                             IsSelected="True"/>
 
-                        <NavigationViewItem x:Uid="MainView/NavigationView/VideosItem"
+                        <NavigationViewItem x:Uid="MainView/NavigationView/MyVideosItem"
                                             Icon="{toolkit:FontIcon Glyph=&#xe8b2;}"
                                             IsEnabled="False"/>
 
-                        <NavigationViewItem x:Uid="MainView/NavigationView/PicturesItem"
+                        <NavigationViewItem x:Uid="MainView/NavigationView/MyPicturesItem"
                                             Icon="{toolkit:FontIcon Glyph=&#xe8b9;}"
                                             IsEnabled="False"/>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
 
-                <NavigationViewItem Content="Devices"
+                <NavigationViewItem x:Uid="MainView/NavigationView/DevicesItem"
                                     IsExpanded="False"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.MenuItems>
-                        <NavigationViewItem Content="Discs"
+                        <NavigationViewItem x:Uid="MainView/NavigationView/DiscsItem"
                                             Icon="{toolkit:FontIcon Glyph=&#xe958;}"
                                             IsEnabled="False"/>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
-                
-                <NavigationViewItem Content="Local Network"
+
+                <NavigationViewItem x:Uid="MainView/NavigationView/LocalNetworkItem"
                                     IsExpanded="False"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.MenuItems>
@@ -114,8 +120,8 @@
                                             IsEnabled="False"/>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
-                
-                <NavigationViewItem Content="Internet"
+
+                <NavigationViewItem x:Uid="MainView/NavigationView/InternetItem"
                                     IsExpanded="False"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.MenuItems>
