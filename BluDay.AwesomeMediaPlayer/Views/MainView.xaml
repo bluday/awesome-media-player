@@ -70,6 +70,7 @@
                                     IsEnabled="False"/>
 
                 <NavigationViewItem x:Uid="MainView/NavigationView/MyComputerHeader"
+                                    IsExpanded="True"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.MenuItems>
                         <NavigationViewItem x:Uid="MainView/NavigationView/MusicItem"
@@ -82,6 +83,52 @@
 
                         <NavigationViewItem x:Uid="MainView/NavigationView/PicturesItem"
                                             Icon="{toolkit:FontIcon Glyph=&#xe8b9;}"
+                                            IsEnabled="False"/>
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
+
+                <NavigationViewItem Content="Devices"
+                                    IsExpanded="False"
+                                    SelectsOnInvoked="False">
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem Content="Discs"
+                                            Icon="{toolkit:FontIcon Glyph=&#xe958;}"
+                                            IsEnabled="False"/>
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
+                
+                <NavigationViewItem Content="Local Network"
+                                    IsExpanded="False"
+                                    SelectsOnInvoked="False">
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem Content="mDNS Network Discovery"
+                                            Icon="{toolkit:FontIcon Glyph=&#xe968;}"
+                                            IsEnabled="False"/>
+
+                        <NavigationViewItem Content="Network streams (SAP)"
+                                            Icon="{toolkit:FontIcon Glyph=&#xe968;}"
+                                            IsEnabled="False"/>
+
+                        <NavigationViewItem Content="Universal Plug'n'Play"
+                                            Icon="{toolkit:FontIcon Glyph=&#xe968;}"
+                                            IsEnabled="False"/>
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
+                
+                <NavigationViewItem Content="Internet"
+                                    IsExpanded="False"
+                                    SelectsOnInvoked="False">
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem Content="Podcasts"
+                                            Icon="{toolkit:FontIcon Glyph=&#xe704;}"
+                                            IsEnabled="False"/>
+
+                        <NavigationViewItem Content="Jamendo Selections"
+                                            Icon="{toolkit:FontIcon Glyph=&#xe704;}"
+                                            IsEnabled="False"/>
+
+                        <NavigationViewItem Content="Icecast Radio Directory"
+                                            Icon="{toolkit:FontIcon Glyph=&#xe704;}"
                                             IsEnabled="False"/>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
@@ -100,7 +147,7 @@
                           CornerRadius="8"
                           Height="128"
                           HorizontalAlignment="Center"
-                          Margin="0,16"
+                          Margin="4"
                           VerticalAlignment="Center"
                           Width="128">
                         <Grid.Background>
