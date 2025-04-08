@@ -56,7 +56,7 @@
         <!-- Navigation view -->
         <NavigationView x:Name="NavigationView"
                         PaneDisplayMode="Left"
-                        OpenPaneLength="180"
+                        OpenPaneLength="170"
                         IsBackButtonVisible="Collapsed"
                         IsPaneToggleButtonVisible="False"
                         IsSettingsVisible="False"
@@ -128,8 +128,8 @@
                 
                 <toolkitControls:PropertySizer Binding="{x:Bind NavigationView.OpenPaneLength, Mode=TwoWay}"
                                                HorizontalAlignment="Left"
-                                               Maximum="280"
-                                               Minimum="180"/>
+                                               Maximum="550"
+                                               Minimum="170"/>
             </Grid>
         </NavigationView>
 
