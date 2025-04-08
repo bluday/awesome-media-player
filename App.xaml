@@ -4,23 +4,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <!-- Dictionaries -->
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
                 
                 <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
+            <!-- Brushes -->
+            <SolidColorBrush x:Key="NavigationViewSelectionIndicatorForeground">#f48b00</SolidColorBrush>
             <SolidColorBrush x:Key="WindowCaptionBackground">Transparent</SolidColorBrush>
             <SolidColorBrush x:Key="WindowCaptionBackgroundDisabled">Transparent</SolidColorBrush>
             <SolidColorBrush x:Key="WindowCaptionForeground">White</SolidColorBrush>
-
-            <Color x:Key="SystemAccentColor">#6495ED</Color>
-            <Color x:Key="SystemAccentColorDark1">#5E8CDF</Color>
-            <Color x:Key="SystemAccentColorDark2">#5883D0</Color>
-            <Color x:Key="SystemAccentColorDark3">#4B70B2</Color>
-            <Color x:Key="SystemAccentColorLight1">#6E9CEF</Color>
-            <Color x:Key="SystemAccentColorLight2">#78A3F0</Color>
-            <Color x:Key="SystemAccentColorLight3">#8BB0F2</Color>
+            
+            <!-- Colors -->
+            <Color x:Key="DefaultVlcOrangeColor">#f48b00</Color>
+            <Color x:Key="SystemAccentColor">CornflowerBlue</Color>
+            <Color x:Key="SystemAccentColorDark1">CornflowerBlue</Color>
+            <Color x:Key="SystemAccentColorDark2">CornflowerBlue</Color>
+            <Color x:Key="SystemAccentColorDark3">CornflowerBlue</Color>
+            <Color x:Key="SystemAccentColorLight1">CornflowerBlue</Color>
+            <Color x:Key="SystemAccentColorLight2">CornflowerBlue</Color>
+            <Color x:Key="SystemAccentColorLight3">CornflowerBlue</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

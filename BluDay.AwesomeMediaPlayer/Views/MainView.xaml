@@ -68,28 +68,39 @@
                         IsSettingsVisible="False"
                         Grid.Row="2">
             <NavigationView.MenuItems>
-                <NavigationViewItem x:Uid="MainView/NavigationView/PlaylistItem"
-                                    Icon="{toolkit:FontIcon Glyph=&#xe90b;}"/>
+                <NavigationViewItem x:Uid="MainView/NavigationView/PlaylistItem">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe90b;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
 
-                <NavigationViewItem x:Uid="MainView/NavigationView/MediaLibraryItem"
-                                    Icon="{toolkit:FontIcon Glyph=&#xe8f1;}"
-                                    IsEnabled="False"/>
+                <NavigationViewItem x:Uid="MainView/NavigationView/MediaLibraryItem" IsEnabled="False">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe8f1;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
 
                 <NavigationViewItem x:Uid="MainView/NavigationView/MyComputerItem"
                                     IsExpanded="True"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.MenuItems>
-                        <NavigationViewItem x:Uid="MainView/NavigationView/MyMusicItem"
-                                            Icon="{toolkit:FontIcon Glyph=&#xec4f;}"
-                                            IsSelected="True"/>
+                        <NavigationViewItem x:Uid="MainView/NavigationView/MyMusicItem" IsSelected="True">
+                            <NavigationViewItem.Icon>
+                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xec4f;"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
 
-                        <NavigationViewItem x:Uid="MainView/NavigationView/MyVideosItem"
-                                            Icon="{toolkit:FontIcon Glyph=&#xe8b2;}"
-                                            IsEnabled="False"/>
+                        <NavigationViewItem x:Uid="MainView/NavigationView/MyVideosItem" IsEnabled="False">
+                            <NavigationViewItem.Icon>
+                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe8b2;"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
 
-                        <NavigationViewItem x:Uid="MainView/NavigationView/MyPicturesItem"
-                                            Icon="{toolkit:FontIcon Glyph=&#xe8b9;}"
-                                            IsEnabled="False"/>
+                        <NavigationViewItem x:Uid="MainView/NavigationView/MyPicturesItem" IsEnabled="False">
+                            <NavigationViewItem.Icon>
+                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe8b9;"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
 
@@ -97,9 +108,11 @@
                                     IsExpanded="False"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.MenuItems>
-                        <NavigationViewItem x:Uid="MainView/NavigationView/DiscsItem"
-                                            Icon="{toolkit:FontIcon Glyph=&#xe958;}"
-                                            IsEnabled="False"/>
+                        <NavigationViewItem x:Uid="MainView/NavigationView/DiscsItem" IsEnabled="False">
+                            <NavigationViewItem.Icon>
+                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe958;"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
 
@@ -107,17 +120,23 @@
                                     IsExpanded="False"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.MenuItems>
-                        <NavigationViewItem Content="mDNS Network Discovery"
-                                            Icon="{toolkit:FontIcon Glyph=&#xe968;}"
-                                            IsEnabled="False"/>
+                        <NavigationViewItem Content="mDNS Network Discovery" IsEnabled="False">
+                            <NavigationViewItem.Icon>
+                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe968;"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
 
-                        <NavigationViewItem Content="Network streams (SAP)"
-                                            Icon="{toolkit:FontIcon Glyph=&#xe968;}"
-                                            IsEnabled="False"/>
+                        <NavigationViewItem Content="Network streams (SAP)" IsEnabled="False">
+                            <NavigationViewItem.Icon>
+                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe968;"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
 
-                        <NavigationViewItem Content="Universal Plug'n'Play"
-                                            Icon="{toolkit:FontIcon Glyph=&#xe968;}"
-                                            IsEnabled="False"/>
+                        <NavigationViewItem Content="Universal Plug'n'Play" IsEnabled="False">
+                            <NavigationViewItem.Icon>
+                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe968;"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
 
@@ -125,17 +144,23 @@
                                     IsExpanded="False"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.MenuItems>
-                        <NavigationViewItem Content="Podcasts"
-                                            Icon="{toolkit:FontIcon Glyph=&#xe704;}"
-                                            IsEnabled="False"/>
+                        <NavigationViewItem Content="Podcasts" IsEnabled="False">
+                            <NavigationViewItem.Icon>
+                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe704;"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
 
-                        <NavigationViewItem Content="Jamendo Selections"
-                                            Icon="{toolkit:FontIcon Glyph=&#xe704;}"
-                                            IsEnabled="False"/>
+                        <NavigationViewItem Content="Jamendo Selections" IsEnabled="False">
+                            <NavigationViewItem.Icon>
+                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe704;"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
 
-                        <NavigationViewItem Content="Icecast Radio Directory"
-                                            Icon="{toolkit:FontIcon Glyph=&#xe704;}"
-                                            IsEnabled="False"/>
+                        <NavigationViewItem Content="Icecast Radio Directory" IsEnabled="False">
+                            <NavigationViewItem.Icon>
+                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe704;"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
             </NavigationView.MenuItems>

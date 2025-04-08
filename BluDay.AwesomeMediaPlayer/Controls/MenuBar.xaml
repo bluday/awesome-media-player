@@ -287,15 +287,21 @@
 
             <MenuFlyoutItem Text="Track Synchronization"/>
         
-            <MenuFlyoutItem Icon="{communityToolkit:FontIcon Foreground=CornflowerBlue, Glyph=&#xe946;}"
-                            Text="Media Information">
+            <MenuFlyoutItem Text="Media Information">
+                <MenuFlyoutItem.Icon>
+                    <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe946;"/>
+                </MenuFlyoutItem.Icon>
+                
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control" Key="I"/>
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
-            <MenuFlyoutItem Icon="{communityToolkit:FontIcon Foreground=CornflowerBlue, Glyph=&#xe946;}"
-                            Text="Codec Information">
+            <MenuFlyoutItem Text="Codec Information">
+                <MenuFlyoutItem.Icon>
+                    <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe946;"/>
+                </MenuFlyoutItem.Icon>
+                
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control" Key="J"/>
                 </MenuFlyoutItem.KeyboardAccelerators>
@@ -380,9 +386,11 @@
         </MenuBarItem>
 
         <MenuBarItem Title="Help">
-            <MenuFlyoutItem Command="{x:Bind OpenHelpWindowCommand}"
-                            Icon="{communityToolkit:FontIcon Foreground=CornflowerBlue, Glyph=&#xe897;}"
-                            Text="Help">
+            <MenuFlyoutItem Command="{x:Bind OpenHelpWindowCommand}" Text="Help">
+                <MenuFlyoutItem.Icon>
+                    <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe897;"/>
+                </MenuFlyoutItem.Icon>
+                
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Key="F1"/>
                 </MenuFlyoutItem.KeyboardAccelerators>
@@ -392,9 +400,11 @@
 
             <MenuFlyoutSeparator/>
 
-            <MenuFlyoutItem Command="{x:Bind OpenAboutWindowCommand}"
-                            Icon="{communityToolkit:FontIcon Foreground=CornflowerBlue, Glyph=&#xe946;}"
-                            Text="About">
+            <MenuFlyoutItem Command="{x:Bind OpenAboutWindowCommand}" Text="About">
+                <MenuFlyoutItem.Icon>
+                    <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe946;"/>
+                </MenuFlyoutItem.Icon>
+                
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Shift" Key="F1"/>
                 </MenuFlyoutItem.KeyboardAccelerators>
