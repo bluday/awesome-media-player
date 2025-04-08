@@ -14,6 +14,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -21,6 +22,36 @@
         <!-- Menu bar -->
         <awesomeControls:MenuBar OpenAboutWindowCommand="{Binding OpenAboutWindowCommand}"
                                  OpenHelpWindowCommand="{Binding OpenHelpWindowCommand}"/>
+        
+        <!-- Navigation view header bar -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Padding="16,8"
+                       Style="{ThemeResource NavigationViewItemHeaderTextStyle}"
+                       Text="Music"
+                       VerticalAlignment="Center"/>
+
+            <Grid HorizontalAlignment="Right" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="8"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="4"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Height="25" Padding="0" VerticalAlignment="Center" Width="25">
+                    <Viewbox Height="17" Width="17">
+                        <FontIcon Glyph="&#xe9a4;"/>
+                    </Viewbox>
+                </Button>
+
+                <AutoSuggestBox MinWidth="200" PlaceholderText="Search" VerticalAlignment="Center" Grid.Column="2"/>
+            </Grid>
+        </Grid>
 
         <!-- Navigation view -->
         <NavigationView x:Name="NavigationView"
@@ -29,10 +60,8 @@
                         IsBackButtonVisible="Collapsed"
                         IsPaneToggleButtonVisible="False"
                         IsSettingsVisible="False"
-                        Grid.Row="1">
+                        Grid.Row="2">
             <NavigationView.MenuItems>
-                <NavigationViewItemHeader x:Uid="MainView/NavigationView/MyLibraryHeader"/>
-
                 <NavigationViewItem x:Uid="MainView/NavigationView/PlaylistItem"
                                     Icon="{toolkit:FontIcon Glyph=&#xe90b;}"/>
 
@@ -107,7 +136,7 @@
         <!-- Media control bar -->
         <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
               BorderThickness="0,1,0,0"
-              Grid.Row="2">
+              Grid.Row="3">
             <awesomeControls:MediaControlBar/>
         </Grid>
     </Grid>
