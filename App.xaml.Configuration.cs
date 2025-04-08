@@ -3,7 +3,7 @@
 /// <summary>
 /// Contains methods for configuring logging and services in the application.
 /// </summary>
-public static class AppConfiguration
+public sealed partial class App
 {
     /// <summary>
     /// Configures the logging factory and provider through the provided builder instance.

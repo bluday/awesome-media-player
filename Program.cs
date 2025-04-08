@@ -27,6 +27,6 @@
  */
 
 await new ServiceCollection()
-    .Add(AppConfiguration.ConfigureServices)
+    .Add(App.ConfigureServices)
     .BuildServiceProvider()
     .CreateWinui3AppAsync<App>();
