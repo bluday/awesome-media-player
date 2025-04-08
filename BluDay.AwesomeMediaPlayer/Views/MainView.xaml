@@ -69,19 +69,22 @@
                                     Icon="{toolkit:FontIcon Glyph=&#xe8f1;}"
                                     IsEnabled="False"/>
 
-                <NavigationViewItemHeader x:Uid="MainView/NavigationView/MyComputerHeader"/>
+                <NavigationViewItem x:Uid="MainView/NavigationView/MyComputerHeader"
+                                    SelectsOnInvoked="False">
+                    <NavigationViewItem.MenuItems>
+                        <NavigationViewItem x:Uid="MainView/NavigationView/MusicItem"
+                                            Icon="{toolkit:FontIcon Glyph=&#xec4f;}"
+                                            IsSelected="True"/>
 
-                <NavigationViewItem x:Uid="MainView/NavigationView/MusicItem"
-                                    Icon="{toolkit:FontIcon Glyph=&#xec4f;}"
-                                    IsSelected="True"/>
+                        <NavigationViewItem x:Uid="MainView/NavigationView/VideosItem"
+                                            Icon="{toolkit:FontIcon Glyph=&#xe8b2;}"
+                                            IsEnabled="False"/>
 
-                <NavigationViewItem x:Uid="MainView/NavigationView/VideosItem"
-                                    Icon="{toolkit:FontIcon Glyph=&#xe8b2;}"
-                                    IsEnabled="False"/>
-
-                <NavigationViewItem x:Uid="MainView/NavigationView/PicturesItem"
-                                    Icon="{toolkit:FontIcon Glyph=&#xe8b9;}"
-                                    IsEnabled="False"/>
+                        <NavigationViewItem x:Uid="MainView/NavigationView/PicturesItem"
+                                            Icon="{toolkit:FontIcon Glyph=&#xe8b9;}"
+                                            IsEnabled="False"/>
+                    </NavigationViewItem.MenuItems>
+                </NavigationViewItem>
             </NavigationView.MenuItems>
 
             <NavigationView.FooterMenuItems>
