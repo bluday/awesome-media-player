@@ -1,7 +1,7 @@
 ﻿namespace BluDay.AwesomeMediaPlayer.ViewModels;
 
 /// <summary>
-/// Represents the view model class for the help view.
+/// Represents the view model class for the about view.
 /// </summary>
 public sealed partial class AboutViewModel : ViewModel
 {
