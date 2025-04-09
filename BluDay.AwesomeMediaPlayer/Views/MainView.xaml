@@ -68,7 +68,7 @@
                         IsSettingsVisible="False"
                         Grid.Row="2">
             <NavigationView.MenuItems>
-                <NavigationViewItem x:Uid="MainView/NavigationView/PlaylistItem">
+                <NavigationViewItem x:Uid="MainView/NavigationView/PlaylistItem" IsSelected="True">
                     <NavigationViewItem.Icon>
                         <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe90b;"/>
                     </NavigationViewItem.Icon>
@@ -84,7 +84,7 @@
                                     IsExpanded="True"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.MenuItems>
-                        <NavigationViewItem x:Uid="MainView/NavigationView/MyMusicItem" IsSelected="True">
+                        <NavigationViewItem x:Uid="MainView/NavigationView/MyMusicItem">
                             <NavigationViewItem.Icon>
                                 <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe8d6;"/>
                             </NavigationViewItem.Icon>
