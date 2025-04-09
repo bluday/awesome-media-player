@@ -133,7 +133,10 @@
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel HorizontalAlignment="Right" Margin="0,0,8,0"  Spacing="8" Grid.Column="2">
+            <StackPanel HorizontalAlignment="Right"
+                        Margin="0,0,16,0"
+                        Spacing="8"
+                        Grid.Column="2">
                 <Button Background="Transparent" BorderBrush="Transparent">
                     <Viewbox>
                         <!-- e992 (Volume0) -->
@@ -146,13 +149,37 @@
                     </Viewbox>
                 </Button>
 
-                <Slider Value="100" Width="128"/>
-
                 <TextBlock FontSize="12"
                            HorizontalAlignment="Center"
                            Text="100%"
                            VerticalAlignment="Center"/>
+
+                <Slider Value="100" Width="128"/>
             </StackPanel>
         </Grid>
+
+        <!-- Window corner drag handle -->
+        <Path Fill="{ThemeResource ControlElevationBorderBrush}"
+              Height="10"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Bottom"
+              Width="10"
+              Grid.Row="3">
+            <Path.Data>
+                <GeometryGroup>
+                    <!-- Column 0 -->
+                    <RectangleGeometry Rect="0,8,2,2"/>
+
+                    <!-- Column 1 -->
+                    <RectangleGeometry Rect="4,4,2,2"/>
+                    <RectangleGeometry Rect="4,8,2,2"/>
+
+                    <!-- Column 2 -->
+                    <RectangleGeometry Rect="8,0,2,2"/>
+                    <RectangleGeometry Rect="8,4,2,2"/>
+                    <RectangleGeometry Rect="8,8,2,2"/>
+                </GeometryGroup>
+            </Path.Data>
+        </Path>
     </Grid>
 </UserControl>

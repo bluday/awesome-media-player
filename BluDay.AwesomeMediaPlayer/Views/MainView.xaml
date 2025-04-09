@@ -220,30 +220,5 @@
               Grid.Row="3">
             <awesomeControls:MediaControlBar/>
         </Grid>
-
-        <!-- Window corner drag handle -->
-        <Path Fill="{ThemeResource ControlElevationBorderBrush}"
-              Height="10"
-              HorizontalAlignment="Right"
-              Margin="4"
-              VerticalAlignment="Bottom"
-              Width="10"
-              Grid.Row="3">
-            <Path.Data>
-                <GeometryGroup>
-                    <!-- Column 0 -->
-                    <RectangleGeometry Rect="0,8,2,2"/>
-
-                    <!-- Column 1 -->
-                    <RectangleGeometry Rect="4,4,2,2"/>
-                    <RectangleGeometry Rect="4,8,2,2"/>
-
-                    <!-- Column 2 -->
-                    <RectangleGeometry Rect="8,0,2,2"/>
-                    <RectangleGeometry Rect="8,4,2,2"/>
-                    <RectangleGeometry Rect="8,8,2,2"/>
-                </GeometryGroup>
-            </Path.Data>
-        </Path>
     </Grid>
 </UserControl>
