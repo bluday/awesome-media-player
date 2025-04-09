@@ -105,7 +105,7 @@
                 </NavigationViewItem>
 
                 <NavigationViewItem x:Uid="MainView/NavigationView/DevicesItem"
-                                    IsExpanded="False"
+                                    IsExpanded="True"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.MenuItems>
                         <NavigationViewItem x:Uid="MainView/NavigationView/DiscsItem" IsEnabled="False">
@@ -117,7 +117,7 @@
                 </NavigationViewItem>
 
                 <NavigationViewItem x:Uid="MainView/NavigationView/LocalNetworkItem"
-                                    IsExpanded="False"
+                                    IsExpanded="True"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.MenuItems>
                         <NavigationViewItem Content="mDNS Network Discovery" IsEnabled="False">
@@ -141,7 +141,7 @@
                 </NavigationViewItem>
 
                 <NavigationViewItem x:Uid="MainView/NavigationView/InternetItem"
-                                    IsExpanded="False"
+                                    IsExpanded="True"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.MenuItems>
                         <NavigationViewItem Content="Podcasts" IsEnabled="False">
