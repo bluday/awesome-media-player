@@ -4,6 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:toolkit="using:CommunityToolkit.WinUI"
              mc:Ignorable="d"
              MaxHeight="80">
     <Grid Padding="4">
@@ -31,6 +32,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <!-- Seek bar container -->
         <Grid Padding="4,0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -55,6 +57,7 @@
                        Grid.Column="2"/>
         </Grid>
 
+        <!-- Control bar container -->
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -63,91 +66,53 @@
             </Grid.ColumnDefinitions>
             
             <StackPanel Spacing="16">
-                <Button Height="32" Width="32">
-                    <Viewbox Height="20" Width="20">
-                        <!-- f8ae (Pause) -->
-
-                        <FontIcon Glyph="&#xf5b0;"/>
-                    </Viewbox>
-                </Button>
+                <!-- f8ae (Pause) -->
+                <Button Content="{toolkit:FontIcon FontSize=20, Glyph=&#xf5b0;}"
+                        Height="32"
+                        Width="32"/>
 
                 <StackPanel>
-                    <Button>
-                        <Viewbox>
-                            <!-- eb9e (Rewind) -->
+                    <!-- eb9e (Rewind) -->
+                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xf8ac;}"/>
 
-                            <FontIcon Glyph="&#xf8ac;"/>
-                        </Viewbox>
-                    </Button>
+                    <!-- e71a (Stop) -->
+                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe73b;}"/>
 
-                    <Button>
-                        <Viewbox>
-                            <!-- e71a (Stop) -->
-
-                            <FontIcon Glyph="&#xe73b;"/>
-                        </Viewbox>
-                    </Button>
-
-                    <Button>
-                        <Viewbox>
-                            <!-- eb9d (FastForward) -->
-
-                            <FontIcon Glyph="&#xf8ad;"/>
-                        </Viewbox>
-                    </Button>
+                    <!-- eb9d (FastForward) -->
+                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xf8ad;}"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <Button IsEnabled="False">
-                        <Viewbox>
-                            <!-- e73f (Back to windowed mode) -->
+                    <!-- e73f (Back to windowed mode) -->
+                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe740;}"
+                            IsEnabled="False"/>
 
-                            <FontIcon Glyph="&#xe740;"/>
-                        </Viewbox>
-                    </Button>
-
-                    <Button>
-                        <Viewbox>
-                            <FontIcon Glyph="&#xe9e9;"/>
-                        </Viewbox>
-                    </Button>
+                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe9e9;}"/>
                 </StackPanel>
 
                 <StackPanel>
-                    <Button>
-                        <Viewbox>
-                            <!-- e8ee (All) -->
-                            <!-- f5e7 (Off) -->
+                    <!-- e8ee (All) -->
+                    <!-- f5e7 (Off) -->
+                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe8ed;}"/>
 
-                            <FontIcon Glyph="&#xe8ed;"/>
-                        </Viewbox>
-                    </Button>
-
-                    <Button>
-                        <Viewbox>
-                            <!-- SystemAccentColor -->
-
-                            <FontIcon Glyph="&#xe8b1;"/>
-                        </Viewbox>
-                    </Button>
+                    <!-- SystemAccentColor -->
+                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe8b1;}"/>
                 </StackPanel>
             </StackPanel>
 
+            <!-- Volume slider container -->
             <StackPanel HorizontalAlignment="Right"
                         Margin="0,0,16,0"
                         Spacing="8"
                         Grid.Column="2">
-                <Button Background="Transparent" BorderBrush="Transparent">
-                    <Viewbox>
-                        <!-- e992 (Volume0) -->
-                        <!-- e993 (Volume1) -->
-                        <!-- e994 (Volume2) -->
-                        <!-- e995 (Volume3) -->
-                        <!-- e74f (Mute) -->
-
-                        <FontIcon Glyph="&#xe767;"/>
-                    </Viewbox>
-                </Button>
+                <!-- e992 (Volume0) -->
+                <!-- e993 (Volume1) -->
+                <!-- e994 (Volume2) -->
+                <!-- e995 (Volume3) -->
+                <!-- e74f (Mute) -->
+                <Button Background="Transparent"
+                        BorderBrush="Transparent"
+                        Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe767;}"/>
 
                 <TextBlock FontSize="12"
                            HorizontalAlignment="Center"
