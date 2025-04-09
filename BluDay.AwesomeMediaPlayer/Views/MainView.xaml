@@ -90,13 +90,13 @@
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
-                        <NavigationViewItem x:Uid="MainView/NavigationView/MyVideosItem" IsEnabled="False">
+                        <NavigationViewItem x:Uid="MainView/NavigationView/MyVideosItem">
                             <NavigationViewItem.Icon>
                                 <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe8b2;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
-                        <NavigationViewItem x:Uid="MainView/NavigationView/MyPicturesItem" IsEnabled="False">
+                        <NavigationViewItem x:Uid="MainView/NavigationView/MyPicturesItem">
                             <NavigationViewItem.Icon>
                                 <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe8b9;"/>
                             </NavigationViewItem.Icon>
