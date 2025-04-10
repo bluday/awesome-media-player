@@ -42,7 +42,7 @@
         </Grid.RowDefinitions>
 
         <!-- Seek bar container -->
-        <Grid Padding="4,0">
+        <Grid Padding="4,0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
