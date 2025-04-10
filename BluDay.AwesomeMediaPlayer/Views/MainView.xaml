@@ -138,18 +138,17 @@
                 <NavigationViewItem>
                     <NavigationViewItem.Template>
                         <ControlTemplate>
-                            <ContentPresenter/>
+                            <ContentPresenter Height="140"/>
                         </ControlTemplate>
                     </NavigationViewItem.Template>
 
                     <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
                           BorderThickness="1"
                           CornerRadius="8"
-                          Height="128"
+                          Height="120"
                           HorizontalAlignment="Center"
-                          Margin="4"
                           VerticalAlignment="Center"
-                          Width="128">
+                          Width="120">
                         <Grid.Background>
                             <ImageBrush ImageSource="https://www.halopedia.org/images/2/2e/Halo2-Volume1-OriginalSoundtrack.jpg"/>
                         </Grid.Background>
