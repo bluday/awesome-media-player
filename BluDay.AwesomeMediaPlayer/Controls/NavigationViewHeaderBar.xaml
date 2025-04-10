@@ -27,12 +27,12 @@
             </Grid.ColumnDefinitions>
 
             <!-- List layout button -->
-            <Button Height="25" Padding="0" VerticalAlignment="Center" Width="25">
-                <Viewbox Height="17" Width="17">
-                    <FontIcon Glyph="&#xe9a4;"/>
-                </Viewbox>
-            </Button>
-
+            <Button Content="{communityToolkit:FontIcon FontSize=17, Glyph=&#xe9a4;}"
+                    Height="25"
+                    Padding="0"
+                    VerticalAlignment="Center"
+                    Width="25"/>
+            
             <!-- Search box -->
             <AutoSuggestBox x:Uid="MainView/NavigationViewHeaderBar/AutoSuggestBox"
                             MinWidth="200"
