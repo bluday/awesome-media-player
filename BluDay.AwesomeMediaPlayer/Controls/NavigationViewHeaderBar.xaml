@@ -15,7 +15,6 @@
 
         <!-- Selected navigation view title -->
         <TextBlock Padding="16,0"
-                   Style="{ThemeResource NavigationViewItemHeaderTextStyle}"
                    Text="My Music"
                    VerticalAlignment="Bottom"/>
 
@@ -36,9 +35,9 @@
 
             <!-- Search box -->
             <AutoSuggestBox x:Uid="MainView/NavigationViewHeaderBar/AutoSuggestBox"
-                        MinWidth="200"
-                        VerticalAlignment="Center"
-                        Grid.Column="2"/>
+                            MinWidth="200"
+                            VerticalAlignment="Center"
+                            Grid.Column="2"/>
         </Grid>
     </Grid>
 </UserControl>
