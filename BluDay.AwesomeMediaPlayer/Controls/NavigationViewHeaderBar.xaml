@@ -7,17 +7,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:communityToolkit="using:CommunityToolkit.WinUI"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Grid>
+    <Grid Padding="0,4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <!-- Selected navigation view title -->
-        <TextBlock Padding="16,8"
-               Style="{ThemeResource NavigationViewItemHeaderTextStyle}"
-               Text="My Music"
-               VerticalAlignment="Center"/>
+        <TextBlock Padding="16,0"
+                   Style="{ThemeResource NavigationViewItemHeaderTextStyle}"
+                   Text="My Music"
+                   VerticalAlignment="Bottom"/>
 
         <Grid HorizontalAlignment="Right" Grid.Column="1">
             <Grid.ColumnDefinitions>
