@@ -65,7 +65,7 @@ public sealed partial class AboutWindow : Window, IBluWindow
             Title                      = "About",
             ExtendsContentIntoTitleBar = true,
             IconPath                   = resourceLoader.GetString("AppIconPath/64x64"),
-            Size                       = new SizeInt32(900, 500),
+            Size                       = new SizeInt32(750, 380),
             Alignment                  = ContentAlignment.MiddleCenter
         };
     }
