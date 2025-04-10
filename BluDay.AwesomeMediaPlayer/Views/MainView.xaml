@@ -22,7 +22,7 @@
         <!-- Menu bar -->
         <awesomeControls:MenuBar OpenAboutWindowCommand="{Binding OpenAboutWindowCommand}"
                                  OpenHelpWindowCommand="{Binding OpenHelpWindowCommand}"/>
-        
+
         <!-- Navigation view header bar -->
         <awesomeControls:NavigationViewHeaderBar Grid.Row="1"/>
 
@@ -169,14 +169,8 @@
             <Grid>
                 <ContentControl x:Name="ViewContentControl"
                                 HorizontalContentAlignment="Stretch"
-                                VerticalContentAlignment="Stretch">
-                    <ContentControl.Transitions>
-                        <TransitionCollection>
-                            <NavigationThemeTransition/>
-                        </TransitionCollection>
-                    </ContentControl.Transitions>
-                </ContentControl>
-                
+                                VerticalContentAlignment="Stretch"/>
+
                 <toolkitControls:PropertySizer Binding="{x:Bind NavigationView.OpenPaneLength, Mode=TwoWay}"
                                                HorizontalAlignment="Left"
                                                Maximum="400"
