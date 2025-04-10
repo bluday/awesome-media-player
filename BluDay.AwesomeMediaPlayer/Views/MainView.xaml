@@ -218,7 +218,7 @@
         <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
               BorderThickness="0,1,0,0"
               Grid.Row="3">
-            <awesomeControls:MediaControlBar/>
+            <awesomeControls:MediaControlBar CornerDragHandleVisibility="Visible"/>
         </Grid>
     </Grid>
 </UserControl>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <UserControl x:Class="BluDay.AwesomeMediaPlayer.Controls.MediaControlBar"
+             x:DefaultBindMode="OneWay"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,7 +9,13 @@
              mc:Ignorable="d"
              MaxHeight="80">
     <Grid Padding="4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
         <Grid.Resources>
+            <!-- Styles -->
             <Style TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
                 <Setter Property="Height" Value="28"/>
                 <Setter Property="Padding" Value="0"/>
@@ -33,7 +40,7 @@
         </Grid.RowDefinitions>
 
         <!-- Seek bar container -->
-        <Grid Padding="4,0" Grid.ColumnSpan="2">
+        <Grid Padding="4,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
@@ -102,7 +109,7 @@
 
             <!-- Volume slider container -->
             <StackPanel HorizontalAlignment="Right"
-                        Margin="0,0,16,0"
+                        Margin="8,0"
                         Spacing="8"
                         Grid.Column="2">
                 <!-- e992 (Volume0) -->
@@ -128,8 +135,10 @@
               Height="10"
               HorizontalAlignment="Right"
               VerticalAlignment="Bottom"
+              Visibility="{x:Bind CornerDragHandleVisibility}"
               Width="10"
-              Grid.Row="3">
+              Grid.Column="1"
+              Grid.Row="2">
             <Path.Data>
                 <GeometryGroup>
                     <!-- Column 0 -->
