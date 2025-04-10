@@ -1,14 +1,14 @@
 ﻿namespace BluDay.AwesomeMediaPlayer.ViewModels;
 
 /// <summary>
-/// Represents the view model class for the library view.
+/// Represents the view model class for the media library view.
 /// </summary>
-public sealed partial class LibraryViewModel : ViewModel
+public sealed partial class MediaLibraryViewModel : ViewModel
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="LibraryViewModel"/> class.
+    /// Initializes a new instance of the <see cref="MediaLibraryViewModel"/> class.
     /// </summary>
-    public LibraryViewModel(WeakReferenceMessenger messenger) : base(messenger) { }
+    public MediaLibraryViewModel(WeakReferenceMessenger messenger) : base(messenger) { }
 
     /// <summary>
     /// Handles the link-clicked event by launching the provided URI.

@@ -1,19 +1,19 @@
 namespace BluDay.AwesomeMediaPlayer.Views;
 
 /// <summary>
-/// Interaction logic for LibraryView.xaml
+/// Interaction logic for MediaLibraryView.xaml
 /// </summary>
-public sealed partial class LibraryView : UserControl
+public sealed partial class MediaLibraryView : UserControl
 {
-    private readonly LibraryViewModel _viewModel;
+    private readonly MediaLibraryViewModel _viewModel;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="LibraryView"/> class.
+    /// Initializes a new instance of the <see cref="MediaLibraryView"/> class.
     /// </summary>
     /// <param name="viewModel">
-    /// A transient <see cref="LibraryViewModel"/> instance.
+    /// A transient <see cref="MediaLibraryViewModel"/> instance.
     /// </param>
-    public LibraryView(LibraryViewModel viewModel)
+    public MediaLibraryView(MediaLibraryViewModel viewModel)
     {
         DataContext = _viewModel = viewModel;
 

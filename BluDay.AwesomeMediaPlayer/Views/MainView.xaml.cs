@@ -11,12 +11,15 @@ public sealed partial class MainView : UserControl
     /// <param name="viewModel">
     /// A transient <see cref="MainViewModel"/> instance.
     /// </param>
-    public MainView(MainViewModel viewModel, LibraryView libraryView)
+    /// <param name="mediaLibraryView">
+    /// A transient <see cref="MediaLibraryView"/> instance.
+    /// </param>
+    public MainView(MainViewModel viewModel, MediaLibraryView mediaLibraryView)
     {
         DataContext = viewModel;
-
+        
         InitializeComponent();
 
-        ViewContentControl.Content = libraryView;
+        ViewContentControl.Content = mediaLibraryView;
     }
 }
