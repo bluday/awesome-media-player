@@ -91,17 +91,17 @@
             
             <!-- Authors -->
             <HyperlinkButton>
-                <TextBlock Text="Authors"/>
+                <TextBlock x:Uid="AboutView/BottomTabBar/AuthorsTextBlock"/>
             </HyperlinkButton>
 
             <!-- License -->
             <HyperlinkButton Grid.Column="1">
-                <TextBlock Text="License"/>
+                <TextBlock x:Uid="AboutView/BottomTabBar/LicenseTextBlock"/>
             </HyperlinkButton>
             
             <!-- Credits -->
             <HyperlinkButton Grid.Column="2">
-                <TextBlock Text="Credits"/>
+                <TextBlock x:Uid="AboutView/BottomTabBar/CreditsTextBlock"/>
             </HyperlinkButton>
         </Grid>
     </Grid>
