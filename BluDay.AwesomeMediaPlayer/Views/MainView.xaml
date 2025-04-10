@@ -70,13 +70,13 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Uid="MainView/NavigationView/PlaylistItem" IsSelected="True">
                     <NavigationViewItem.Icon>
-                        <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe90b;"/>
+                        <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe90b;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
                 <NavigationViewItem x:Uid="MainView/NavigationView/MediaLibraryItem" IsEnabled="False">
                     <NavigationViewItem.Icon>
-                        <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe8f1;"/>
+                        <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe8f1;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
@@ -86,19 +86,19 @@
                     <NavigationViewItem.MenuItems>
                         <NavigationViewItem x:Uid="MainView/NavigationView/MyMusicItem">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe8d6;"/>
+                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe8d6;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
                         <NavigationViewItem x:Uid="MainView/NavigationView/MyVideosItem">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe8b2;"/>
+                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe8b2;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
                         <NavigationViewItem x:Uid="MainView/NavigationView/MyPicturesItem">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe8b9;"/>
+                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe8b9;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
                     </NavigationViewItem.MenuItems>
@@ -110,7 +110,7 @@
                     <NavigationViewItem.MenuItems>
                         <NavigationViewItem x:Uid="MainView/NavigationView/DiscsItem" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe958;"/>
+                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe958;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
                     </NavigationViewItem.MenuItems>
@@ -122,19 +122,19 @@
                     <NavigationViewItem.MenuItems>
                         <NavigationViewItem Content="mDNS Network Discovery" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe968;"/>
+                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe968;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
                         <NavigationViewItem Content="Network streams (SAP)" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe968;"/>
+                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe968;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
                         <NavigationViewItem Content="Universal Plug'n'Play" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe968;"/>
+                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe968;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
                     </NavigationViewItem.MenuItems>
@@ -146,19 +146,19 @@
                     <NavigationViewItem.MenuItems>
                         <NavigationViewItem Content="Podcasts" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe704;"/>
+                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe704;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
                         <NavigationViewItem Content="Jamendo Selections" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe704;"/>
+                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe704;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
                         <NavigationViewItem Content="Icecast Radio Directory" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource DefaultVlcOrangeColor}" Glyph="&#xe704;"/>
+                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe704;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
                     </NavigationViewItem.MenuItems>

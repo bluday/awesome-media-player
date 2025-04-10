@@ -13,13 +13,11 @@
             </ResourceDictionary.MergedDictionaries>
 
             <!-- Brushes -->
-            <SolidColorBrush x:Key="NavigationViewSelectionIndicatorForeground">#f48b00</SolidColorBrush>
             <SolidColorBrush x:Key="WindowCaptionBackground">Transparent</SolidColorBrush>
             <SolidColorBrush x:Key="WindowCaptionBackgroundDisabled">Transparent</SolidColorBrush>
             <SolidColorBrush x:Key="WindowCaptionForeground">White</SolidColorBrush>
             
             <!-- Colors -->
-            <Color x:Key="DefaultVlcOrangeColor">#f48b00</Color>
             <Color x:Key="SystemAccentColor">CornflowerBlue</Color>
             <Color x:Key="SystemAccentColorDark1">CornflowerBlue</Color>
             <Color x:Key="SystemAccentColorDark2">CornflowerBlue</Color>
