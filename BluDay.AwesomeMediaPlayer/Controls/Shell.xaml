@@ -20,16 +20,19 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <!-- Title bar -->
         <controls:TitleBar x:Name="AppTitleBar"
                            Icon="{x:Bind ViewModel.IconPath}"
                            TargetWindow="{x:Bind AppWindow}"
                            Title="{x:Bind ViewModel.Title}"/>
 
+        <!-- View content -->
         <ContentControl x:Name="ViewContentControl"
                         HorizontalContentAlignment="Stretch"
                         VerticalContentAlignment="Stretch"
                         Grid.Row="1"/>
 
+        <!-- Content dialog -->
         <ContentDialog CloseButtonText="Close"
                        DefaultButton="Primary"
                        IsSecondaryButtonEnabled="True"
