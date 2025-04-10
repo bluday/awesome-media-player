@@ -24,40 +24,7 @@
                                  OpenHelpWindowCommand="{Binding OpenHelpWindowCommand}"/>
         
         <!-- Navigation view header bar -->
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <!-- Selected navigation view title -->
-            <TextBlock Padding="16,8"
-                       Style="{ThemeResource NavigationViewItemHeaderTextStyle}"
-                       Text="My Music"
-                       VerticalAlignment="Center"/>
-
-            <Grid HorizontalAlignment="Right" Grid.Column="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="8"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="4"/>
-                </Grid.ColumnDefinitions>
-
-                <!-- List layout button -->
-                <Button Height="25" Padding="0" VerticalAlignment="Center" Width="25">
-                    <Viewbox Height="17" Width="17">
-                        <FontIcon Glyph="&#xe9a4;"/>
-                    </Viewbox>
-                </Button>
-
-                <!-- Search box -->
-                <AutoSuggestBox x:Uid="MainView/NavigationViewHeaderBar/AutoSuggestBox"
-                                MinWidth="200"
-                                VerticalAlignment="Center"
-                                Grid.Column="2"/>
-            </Grid>
-        </Grid>
+        <awesomeControls:NavigationViewHeaderBar Grid.Row="1"/>
 
         <!-- Navigation view -->
         <NavigationView x:Name="NavigationView"
@@ -67,6 +34,7 @@
                         IsPaneToggleButtonVisible="False"
                         IsSettingsVisible="False"
                         Grid.Row="2">
+            <!-- Menu items -->
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Uid="MainView/NavigationView/PlaylistItem" IsSelected="True">
                     <NavigationViewItem.Icon>
@@ -165,6 +133,7 @@
                 </NavigationViewItem>
             </NavigationView.MenuItems>
 
+            <!-- Footer items -->
             <NavigationView.FooterMenuItems>
                 <NavigationViewItem>
                     <NavigationViewItem.Template>
@@ -196,6 +165,7 @@
                 </NavigationViewItem>
             </NavigationView.FooterMenuItems>
 
+            <!-- View content control -->
             <Grid>
                 <ContentControl x:Name="ViewContentControl"
                                 HorizontalContentAlignment="Stretch"
