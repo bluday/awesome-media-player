@@ -28,11 +28,11 @@
 
         <!-- Navigation view -->
         <NavigationView x:Name="NavigationView"
-                        PaneDisplayMode="Left"
-                        OpenPaneLength="200"
                         IsBackButtonVisible="Collapsed"
                         IsPaneToggleButtonVisible="False"
                         IsSettingsVisible="False"
+                        OpenPaneLength="200"
+                        PaneDisplayMode="Left"
                         Grid.Row="2">
             <!-- Menu items -->
             <NavigationView.MenuItems>
