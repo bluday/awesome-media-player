@@ -215,10 +215,8 @@
         </NavigationView>
 
         <!-- Media control bar -->
-        <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
-              BorderThickness="0,1,0,0"
-              Grid.Row="3">
-            <awesomeControls:MediaControlBar CornerDragHandleVisibility="Visible"/>
-        </Grid>
+        <awesomeControls:MediaControlBar BorderThickness="0,1,0,0"
+                                         CornerDragHandleVisibility="Visible"
+                                         Grid.Row="3"/>
     </Grid>
 </UserControl>

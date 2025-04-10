@@ -8,7 +8,9 @@
              xmlns:toolkit="using:CommunityToolkit.WinUI"
              mc:Ignorable="d"
              MaxHeight="80">
-    <Grid Padding="4">
+    <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
+          BorderThickness="{x:Bind BorderThickness}"
+          Padding="4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="Auto"/>
