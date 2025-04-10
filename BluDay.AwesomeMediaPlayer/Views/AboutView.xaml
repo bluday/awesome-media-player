@@ -58,15 +58,8 @@
                                                                   Header5FontWeight="Bold"
                                                                   Header5Margin="0,16,0,8"
                                                                   FontSize="12"
-                                                                  ParagraphMargin="0,0,0,16">
-                        <communityToolkitUiControls:MarkdownTextBlock.Text>
-VLC media player is a free and open source media player, encoder, and streamer made by the volunteers of the [VideoLAN](https://www.videolan.org/) community.
-                        
-VLC uses its internal codecs, works on essentially every popular platform, and can read almost all files, CDs, DVDs, network streams, capture cards and other media formats!
-                        
-[Help and join us!](https://www.videolan.org/contribute.html)
-                        </communityToolkitUiControls:MarkdownTextBlock.Text>
-                    </communityToolkitUiControls:MarkdownTextBlock>
+                                                                  ParagraphMargin="0,0,0,16"
+                                                                  Text="{Binding Text}"/>
                 </Grid>
             </Grid>
         </Grid>
@@ -90,16 +83,26 @@ VLC uses its internal codecs, works on essentially every popular platform, and c
                     <Setter Property="HorizontalAlignment" Value="Center"/>
                     <Setter Property="VerticalAlignment" Value="Center"/>
                 </Style>
+
+                <Style TargetType="TextBlock">
+                    <Setter Property="TextDecorations" Value="Underline"/>
+                </Style>
             </Grid.Resources>
             
-            <!-- Author -->
-            <HyperlinkButton Content="Authors"/>
+            <!-- Authors -->
+            <HyperlinkButton>
+                <TextBlock Text="Authors"/>
+            </HyperlinkButton>
 
             <!-- License -->
-            <HyperlinkButton Content="License" Grid.Column="1"/>
+            <HyperlinkButton Grid.Column="1">
+                <TextBlock Text="License"/>
+            </HyperlinkButton>
             
             <!-- Credits -->
-            <HyperlinkButton Content="Credits" Grid.Column="2"/>
+            <HyperlinkButton Grid.Column="2">
+                <TextBlock Text="Credits"/>
+            </HyperlinkButton>
         </Grid>
     </Grid>
 </UserControl>

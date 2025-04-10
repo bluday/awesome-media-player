@@ -5,10 +5,20 @@
 /// </summary>
 public sealed partial class AboutViewModel : ViewModel
 {
+    #region Properties
+    /// <summary>
+    /// Gets the raw Markdown text.
+    /// </summary>
+    public string Text { get; }
+    #endregion
+
     /// <summary>
     /// Initializes a new instance of the <see cref="AboutViewModel"/> class.
     /// </summary>
-    public AboutViewModel(WeakReferenceMessenger messenger) : base(messenger) { }
+    public AboutViewModel(WeakReferenceMessenger messenger) : base(messenger)
+    {
+        Text = GetRawDefaultMarkdownText();
+    }
 
     /// <summary>
     /// Handles the link-clicked event by launching the provided URI.
@@ -19,5 +29,14 @@ public sealed partial class AboutViewModel : ViewModel
     public async Task OnLinkClickedAsync(LinkClickedEventArgs e)
     {
         await Launcher.LaunchUriAsync(new Uri(e.Link));
+    }
+
+    public static string GetRawDefaultMarkdownText()
+    {
+        return @"VLC media player is a free and open source media player, encoder, and streamer made by the volunteers of the [VideoLAN](https://www.videolan.org/) community.
+                        
+VLC uses its internal codecs, works on essentially every popular platform, and can read almost all files, CDs, DVDs, network streams, capture cards and other media formats!
+                        
+[Help and join us!](https://www.videolan.org/contribute.html)";
     }
 }
