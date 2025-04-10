@@ -159,4 +159,307 @@
   <data name="MainView.NavigationViewHeaderBar.AutoSuggestBox.PlaceholderText" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="MenuBar.MediaItem.Title" xml:space="preserve">
+    <value>Media</value>
+  </data>
+    <data name="MenuBar.OpenFileFlyoutItem.Text" xml:space="preserve">
+    <value>Open File...</value>
+  </data>
+    <data name="MenuBar.OpenMultipleFilesFlyoutItem.Text" xml:space="preserve">
+    <value>Open Multiple Files...</value>
+  </data>
+    <data name="MenuBar.OpenFolderFlyoutItem.Text" xml:space="preserve">
+    <value>Open Folder...</value>
+  </data>
+    <data name="MenuBar.OpenDiscFlyoutItem.Text" xml:space="preserve">
+    <value>Open Disc...</value>
+  </data>
+    <data name="MenuBar.OpenNetworkStreamFlyoutItem.Text" xml:space="preserve">
+    <value>Open Network Stream...</value>
+  </data>
+    <data name="MenuBar.OpenCaptureDeviceFlyoutItem.Text" xml:space="preserve">
+    <value>Open Capture Device...</value>
+  </data>
+    <data name="MenuBar.OpenLocationFromClipboardFlyoutItem.Text" xml:space="preserve">
+    <value>Open Location from clipboard</value>
+  </data>
+    <data name="MenuBar.OpenRecentMediaFlyoutItem.Text" xml:space="preserve">
+    <value>Open Recent Media</value>
+  </data>
+    <data name="MenuBar.File0Mp3FlyoutItem.Text" xml:space="preserve">
+    <value>file_0.mp3</value>
+  </data>
+    <data name="MenuBar.SavePlaylistToFileFlyoutItem.Text" xml:space="preserve">
+    <value>Save Playlist to File...</value>
+  </data>
+    <data name="MenuBar.ConvertSaveFlyoutItem.Text" xml:space="preserve">
+    <value>Convert / Save...</value>
+  </data>
+    <data name="MenuBar.StreamFlyoutItem.Text" xml:space="preserve">
+    <value>Stream...</value>
+  </data>
+    <data name="MenuBar.QuitAtEndOfPlaylistFlyoutItem.Text" xml:space="preserve">
+    <value>Quit at the end of playlist</value>
+  </data>
+    <data name="MenuBar.QuitFlyoutItem.Text" xml:space="preserve">
+    <value>Quit</value>
+  </data>
+  <data name="MenuBar.PlaybackItem.Title" xml:space="preserve">
+    <value>Playback</value>
+  </data>
+    <data name="MenuBar.TitleFlyoutItem.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+    <data name="MenuBar.TitleContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.ChapterFlyoutItem.Text" xml:space="preserve">
+    <value>Chapter</value>
+  </data>
+    <data name="MenuBar.ChapterContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.ProgramFlyoutItem.Text" xml:space="preserve">
+    <value>Program</value>
+  </data>
+    <data name="MenuBar.ProgramContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.CustomBookmarksFlyoutItem.Text" xml:space="preserve">
+    <value>Custom Bookmarks</value>
+  </data>
+    <data name="MenuBar.ManageBookmarksFlyoutItem.Text" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+    <data name="MenuBar.RendererFlyoutItem.Text" xml:space="preserve">
+    <value>Renderer</value>
+  </data>
+    <data name="MenuBar.RendererScanningFlyoutItem.Text" xml:space="preserve">
+    <value>Scanning...</value>
+  </data>
+    <data name="MenuBar.SpeedFlyoutItem.Text" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+    <data name="MenuBar.SpeedFasterFlyoutItem.Text" xml:space="preserve">
+    <value>Faster</value>
+  </data>
+    <data name="MenuBar.SpeedFasterFineFlyoutItem.Text" xml:space="preserve">
+    <value>Faster (fine)</value>
+  </data>
+    <data name="MenuBar.SpeedNormalFlyoutItem.Text" xml:space="preserve">
+    <value>Normal Speed</value>
+  </data>
+    <data name="MenuBar.SpeedSlowerFineFlyoutItem.Text" xml:space="preserve">
+    <value>Slower (fine)</value>
+  </data>
+    <data name="MenuBar.SpeedSlowerFlyoutItem.Text" xml:space="preserve">
+    <value>Slower</value>
+  </data>
+    <data name="MenuBar.JumpForwardFlyoutItem.Text" xml:space="preserve">
+    <value>Jump Forward</value>
+  </data>
+    <data name="MenuBar.JumpBackwardFlyoutItem.Text" xml:space="preserve">
+    <value>Jump Backward</value>
+  </data>
+    <data name="MenuBar.JumpToSpecificTimeFlyoutItem.Text" xml:space="preserve">
+    <value>Jump to Specific Time</value>
+  </data>
+    <data name="MenuBar.PlayFlyoutItem.Text" xml:space="preserve">
+    <value>Play</value>
+  </data>
+    <data name="MenuBar.StopFlyoutItem.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+    <data name="MenuBar.PreviousFlyoutItem.Text" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+    <data name="MenuBar.NextFlyoutItem.Text" xml:space="preserve">
+    <value>Next</value>
+  </data>
+    <data name="MenuBar.RecordFlyoutItem.Text" xml:space="preserve">
+    <value>Record</value>
+  </data>
+  <data name="MenuBar.AudioItem.Title" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+    <data name="MenuBar.AudioTrackFlyoutItem.Text" xml:space="preserve">
+    <value>Audio Track</value>
+  </data>
+    <data name="MenuBar.AudioTrackContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.AudioDeviceFlyoutItem.Text" xml:space="preserve">
+    <value>Audio Device</value>
+  </data>
+    <data name="MenuBar.AudioDeviceContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.StereoModeFlyoutItem.Text" xml:space="preserve">
+    <value>Stereo Mode</value>
+  </data>
+    <data name="MenuBar.StereoModeContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.VisualizationsFlyoutItem.Text" xml:space="preserve">
+    <value>Visualizations</value>
+  </data>
+    <data name="MenuBar.VisualizationsContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.IncreaseVolumeFlyoutItem.Text" xml:space="preserve">
+    <value>Increase Volume</value>
+  </data>
+    <data name="MenuBar.DecreaseVolumeFlyoutItem.Text" xml:space="preserve">
+    <value>Decrease Volume</value>
+  </data>
+    <data name="MenuBar.MuteFlyoutItem.Text" xml:space="preserve">
+    <value>Mute</value>
+  </data>
+  <data name="MenuBar.VideoItem.Title" xml:space="preserve">
+    <value>Video</value>
+  </data>
+    <data name="MenuBar.VideoTrackFlyoutItem.Text" xml:space="preserve">
+    <value>Video Track</value>
+  </data>
+    <data name="MenuBar.VideoTrackContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.FullscreenFlyoutItem.Text" xml:space="preserve">
+    <value>Fullscreen</value>
+  </data>
+    <data name="MenuBar.AlwaysFitWindowFlyoutItem.Text" xml:space="preserve">
+    <value>Always Fit Window</value>
+  </data>
+    <data name="MenuBar.SetAsWallpaperFlyoutItem.Text" xml:space="preserve">
+    <value>Set as Wallpaper</value>
+  </data>
+    <data name="MenuBar.ZoomFlyoutItem.Text" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+    <data name="MenuBar.ZoomContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.AspectRatioFlyoutItem.Text" xml:space="preserve">
+    <value>Aspect Ratio</value>
+  </data>
+    <data name="MenuBar.AspectRatioContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.CropFlyoutItem.Text" xml:space="preserve">
+    <value>Crop</value>
+  </data>
+    <data name="MenuBar.CropContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.DeinterlaceFlyoutItem.Text" xml:space="preserve">
+    <value>Deinterlace</value>
+  </data>
+    <data name="MenuBar.DeinterlaceContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.DeinterlaceModeFlyoutItem.Text" xml:space="preserve">
+    <value>Deinterlace mode</value>
+  </data>
+    <data name="MenuBar.DeinterlaceModeContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.TakeSnapshotFlyoutItem.Text" xml:space="preserve">
+    <value>Take Snapshot</value>
+  </data>
+  <data name="MenuBar.SubtitleItem.Title" xml:space="preserve">
+    <value>Subtitle</value>
+  </data>
+    <data name="MenuBar.AddSubtitleFileFlyoutItem.Text" xml:space="preserve">
+    <value>Add Subtitle File...</value>
+  </data>
+    <data name="MenuBar.SubTrackFlyoutItem.Text" xml:space="preserve">
+    <value>Sub Track</value>
+  </data>
+    <data name="MenuBar.SubTrackContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="MenuBar.ToolsItem.Title" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+    <data name="MenuBar.EffectsAndFiltersFlyoutItem.Text" xml:space="preserve">
+    <value>Effects and Filters</value>
+  </data>
+    <data name="MenuBar.TrackSynchronizationFlyoutItem.Text" xml:space="preserve">
+    <value>Track Synchronization</value>
+  </data>
+    <data name="MenuBar.MediaInformationFlyoutItem.Text" xml:space="preserve">
+    <value>Media Information</value>
+  </data>
+    <data name="MenuBar.CodecInformationFlyoutItem.Text" xml:space="preserve">
+    <value>Codec Information</value>
+  </data>
+    <data name="MenuBar.VLMConfigurationFlyoutItem.Text" xml:space="preserve">
+    <value>VLM Configuration</value>
+  </data>
+    <data name="MenuBar.ProgramGuideFlyoutItem.Text" xml:space="preserve">
+    <value>Program Guide</value>
+  </data>
+    <data name="MenuBar.MessagesFlyoutItem.Text" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+    <data name="MenuBar.PluginsAndExtensionsFlyoutItem.Text" xml:space="preserve">
+    <value>Plugins and Extensions</value>
+  </data>
+    <data name="MenuBar.CustomizeInterfaceFlyoutItem.Text" xml:space="preserve">
+    <value>Customize Interface...</value>
+  </data>
+    <data name="MenuBar.PreferencesFlyoutItem.Text" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="MenuBar.ViewItem.Title" xml:space="preserve">
+    <value>View</value>
+  </data>
+    <data name="MenuBar.PlaylistFlyoutItem.Text" xml:space="preserve">
+    <value>Playlist</value>
+  </data>
+    <data name="MenuBar.DockedPlaylistFlyoutItem.Text" xml:space="preserve">
+    <value>Docked Playlist</value>
+  </data>
+    <data name="MenuBar.PlaylistViewModeFlyoutItem.Text" xml:space="preserve">
+    <value>Playlist View Mode</value>
+  </data>
+    <data name="MenuBar.PlaylistViewModeContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.AlwaysOnTopFlyoutItem.Text" xml:space="preserve">
+    <value>Always on top</value>
+  </data>
+    <data name="MenuBar.MinimalInterfaceFlyoutItem.Text" xml:space="preserve">
+    <value>Minimal Interface</value>
+  </data>
+    <data name="MenuBar.FullscreenInterfaceFlyoutItem.Text" xml:space="preserve">
+    <value>Fullscreen Interface</value>
+  </data>
+    <data name="MenuBar.AdvancedControlsFlyoutItem.Text" xml:space="preserve">
+    <value>Advanced Controls</value>
+  </data>
+    <data name="MenuBar.StatusBarFlyoutItem.Text" xml:space="preserve">
+    <value>Status Bar</value>
+  </data>
+    <data name="MenuBar.AddInterfaceFlyoutItem.Text" xml:space="preserve">
+    <value>Add Interface</value>
+  </data>
+    <data name="MenuBar.AddInterfaceContentFlyoutItem.Text" xml:space="preserve">
+    <value>Content</value>
+  </data>
+    <data name="MenuBar.VLsubFlyoutItem.Text" xml:space="preserve">
+    <value>VLsub</value>
+  </data>
+  <data name="MenuBar.HelpItem.Title" xml:space="preserve">
+    <value>Help</value>
+  </data>
+    <data name="MenuBar.HelpFlyoutItem.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+    <data name="MenuBar.CheckForUpdatesFlyoutItem.Text" xml:space="preserve">
+    <value>Check for Updates...</value>
+  </data>
+    <data name="MenuBar.AboutFlyoutItem.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
 </root>
