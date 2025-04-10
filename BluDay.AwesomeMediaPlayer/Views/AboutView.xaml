@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
 
         <!-- Content container -->
-        <Grid Padding="16">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
@@ -35,7 +35,7 @@
             </Grid>
 
             <!-- Info container -->
-            <Grid Grid.Column="1">
+            <Grid Padding="8,0" Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -45,6 +45,7 @@
                 
                 <!-- Application name header -->
                 <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+                           Margin="0"
                            Text="Awesome Media Player"/>
 
                 <!-- Application version sub-header -->
@@ -53,14 +54,14 @@
                            Grid.Row="1"/>
 
                 <!-- Tab view container -->
-                <Grid Grid.Row="3">
+                <ScrollViewer Grid.Row="3">
                     <communityToolkitUiControls:MarkdownTextBlock Background="Transparent"
                                                                   Header5FontWeight="Bold"
                                                                   Header5Margin="0,16,0,8"
                                                                   FontSize="12"
                                                                   ParagraphMargin="0,0,0,16"
                                                                   Text="{Binding Text}"/>
-                </Grid>
+                </ScrollViewer>
             </Grid>
         </Grid>
         
