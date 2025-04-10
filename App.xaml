@@ -13,6 +13,10 @@
             </ResourceDictionary.MergedDictionaries>
 
             <!-- Brushes -->
+            <SolidColorBrush x:Key="AwesomeMenuBarBackgroundBrush"
+                             Color="{ThemeResource ControlFillColorTertiary}"
+                             Opacity="0.8"/>
+            
             <SolidColorBrush x:Key="WindowCaptionBackground">Transparent</SolidColorBrush>
             <SolidColorBrush x:Key="WindowCaptionBackgroundDisabled">Transparent</SolidColorBrush>
             <SolidColorBrush x:Key="WindowCaptionForeground">White</SolidColorBrush>
