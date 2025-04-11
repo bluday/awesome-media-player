@@ -28,5 +28,6 @@
 
 await new ServiceCollection()
     .Add(App.ConfigureServices)
+    .AddLogging(App.ConfigureLogging)
     .BuildServiceProvider()
     .CreateWinui3AppAsync<App>();

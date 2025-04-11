@@ -30,14 +30,14 @@ public sealed partial class App
     public static void ConfigureServices(IServiceCollection services)
     {
         services
-            .AddLogging(ConfigureLogging);
-
-        services
             .AddSingleton<WeakReferenceMessenger>();
 
         services
             .AddSingleton<App>()
             .AddSingleton<ResourceLoader>();
+
+        services
+            .AddSingleton<ViewDataTemplateSelector>();
 
         services
             .AddTransient<AboutWindow>()
