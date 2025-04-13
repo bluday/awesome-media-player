@@ -37,12 +37,9 @@ public sealed partial class App
             .AddSingleton<ResourceLoader>();
 
         services
-            .AddSingleton<ViewDataTemplateSelector>();
-
-        services
             .AddTransient<AboutWindow>()
             .AddTransient<HelpWindow>()
-            .AddTransient<Shell>();
+            .AddTransient<MainWindow>();
 
         services
             .AddDesktopClientServices();
