@@ -157,8 +157,8 @@
 
                         <interactivity:Interaction.Behaviors>
                             <interactivity:BehaviorCollection>
-                                <interactivity:EventTriggerBehavior EventName="PointerPressed">
-                                    <interactivity:InvokeCommandAction Command="{Binding ShowCurrentMediaInformationWindowCommand}"/>
+                                <interactivity:EventTriggerBehavior EventName="Tapped">
+                                    <interactivity:InvokeCommandAction Command="{Binding OpenCurrentMediaInformationWindowCommand}"/>
                                 </interactivity:EventTriggerBehavior>
                             </interactivity:BehaviorCollection>
                         </interactivity:Interaction.Behaviors>

@@ -121,7 +121,7 @@
     <value>Awesome Media Player</value>
   </data>
   <data name="CurrentMediaInformationWindow.Title" xml:space="preserve">
-    <value>Current media information</value>
+    <value>Current Media Information</value>
   </data>
   <data name="MainView.NavigationView.MyMusicItem.Content" xml:space="preserve">
     <value>My Music</value>

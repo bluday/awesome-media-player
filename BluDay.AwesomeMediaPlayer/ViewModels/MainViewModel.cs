@@ -11,6 +11,8 @@ public sealed partial class MainViewModel : ObservableObject
 
     private readonly Func<PreferencesWindow> _preferencesWindowFactory;
 
+    private readonly Func<CurrentMediaInformationWindow> _currentMediaInformationWindowFactory;
+
     #region Properties
     /// <summary>
     /// Gets the media library view model instance.
@@ -22,7 +24,7 @@ public sealed partial class MainViewModel : ObservableObject
     /// Initializes a new instance of the <see cref="MainViewModel"/> class.
     /// </summary>
     /// <param name="mediaLibraryViewModel">
-    /// A transient <see cref="MediaLibraryViewModel"/> instance.
+    /// A transient media library view model instance.
     /// </param>
     /// <param name="serviceProvider">
     /// The root service provider instance.
@@ -31,15 +33,16 @@ public sealed partial class MainViewModel : ObservableObject
         MediaLibraryViewModel mediaLibraryViewModel,
         IServiceProvider      serviceProvider)
     {
-        _aboutWindowFactory       = serviceProvider.GetRequiredService<AboutWindow>;
-        _helpWindowFactory        = serviceProvider.GetRequiredService<HelpWindow>;
-        _preferencesWindowFactory = serviceProvider.GetRequiredService<PreferencesWindow>;
+        _aboutWindowFactory                   = serviceProvider.GetRequiredService<AboutWindow>;
+        _helpWindowFactory                    = serviceProvider.GetRequiredService<HelpWindow>;
+        _preferencesWindowFactory             = serviceProvider.GetRequiredService<PreferencesWindow>;
+        _currentMediaInformationWindowFactory = serviceProvider.GetRequiredService<CurrentMediaInformationWindow>;
 
         MediaLibraryViewModel = mediaLibraryViewModel;
     }
 
     /// <summary>
-    /// Activates new about window instance and brings it to the foreground.
+    /// Activates a new <see cref="AboutWindow"/> instance and brings it to the foreground.
     /// </summary>
     [RelayCommand]
     public void OpenAboutWindow()
@@ -48,7 +51,7 @@ public sealed partial class MainViewModel : ObservableObject
     }
 
     /// <summary>
-    /// Activates new help window instance and brings it to the foreground.
+    /// Activates a new <see cref="HelpWindow"/> instance and brings it to the foreground.
     /// </summary>
     [RelayCommand]
     public void OpenHelpWindow()
@@ -57,7 +60,7 @@ public sealed partial class MainViewModel : ObservableObject
     }
 
     /// <summary>
-    /// Activates new preferences window instance and brings it to the foreground.
+    /// Activates a new <see cref="PreferencesWindow"/> instance and brings it to the foreground.
     /// </summary>
     [RelayCommand]
     public void OpenPreferencesWindow()
@@ -66,11 +69,12 @@ public sealed partial class MainViewModel : ObservableObject
     }
 
     /// <summary>
-    /// Launches a new application shell showing the current-media-information view.
+    /// Activates a new <see cref="CurrentMediaInformationWindow"/> instance and brings it to the
+    /// foreground.
     /// </summary>
     [RelayCommand]
-    public void ShowCurrentMediaInformationWindow()
+    public void OpenCurrentMediaInformationWindow()
     {
-        // TODO: Create and activate a new shell with a different configuration.
+        _currentMediaInformationWindowFactory().Activate();
     }
 }
