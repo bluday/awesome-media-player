@@ -9,6 +9,8 @@ public sealed partial class MainViewModel : ObservableObject
 
     private readonly Func<HelpWindow> _helpWindowFactory;
 
+    private readonly Func<PreferencesWindow> _preferencesWindowFactory;
+
     #region Properties
     /// <summary>
     /// Gets the media library view model instance.
@@ -29,14 +31,15 @@ public sealed partial class MainViewModel : ObservableObject
         MediaLibraryViewModel mediaLibraryViewModel,
         IServiceProvider      serviceProvider)
     {
-        _aboutWindowFactory = serviceProvider.GetRequiredService<AboutWindow>;
-        _helpWindowFactory  = serviceProvider.GetRequiredService<HelpWindow>;
+        _aboutWindowFactory       = serviceProvider.GetRequiredService<AboutWindow>;
+        _helpWindowFactory        = serviceProvider.GetRequiredService<HelpWindow>;
+        _preferencesWindowFactory = serviceProvider.GetRequiredService<PreferencesWindow>;
 
         MediaLibraryViewModel = mediaLibraryViewModel;
     }
 
     /// <summary>
-    /// Opens the about window.
+    /// Activates new about window instance and brings it to the foreground.
     /// </summary>
     [RelayCommand]
     public void OpenAboutWindow()
@@ -45,12 +48,21 @@ public sealed partial class MainViewModel : ObservableObject
     }
 
     /// <summary>
-    /// Opens the help window.
+    /// Activates new help window instance and brings it to the foreground.
     /// </summary>
     [RelayCommand]
     public void OpenHelpWindow()
     {
         _helpWindowFactory().Activate();
+    }
+
+    /// <summary>
+    /// Activates new preferences window instance and brings it to the foreground.
+    /// </summary>
+    [RelayCommand]
+    public void OpenPreferencesWindow()
+    {
+        _preferencesWindowFactory().Activate();
     }
 
     /// <summary>

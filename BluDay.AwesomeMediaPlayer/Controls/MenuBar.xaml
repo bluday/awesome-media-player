@@ -341,6 +341,7 @@
                             Icon="{communityToolkit:FontIcon Glyph=&#xe713;}"/>
 
             <MenuFlyoutItem x:Uid="MenuBar/PreferencesFlyoutItem"
+                            Command="{x:Bind OpenPreferencesWindowCommand}"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe713;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control" Key="P"/>

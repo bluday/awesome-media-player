@@ -477,4 +477,7 @@
   <data name="AboutWindow.Title" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="PreferencesWindow.Title" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
 </root>
