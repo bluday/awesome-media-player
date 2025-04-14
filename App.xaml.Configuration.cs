@@ -30,6 +30,9 @@ public sealed partial class App
     public static void ConfigureServices(IServiceCollection services)
     {
         services
+            .AddLogging(ConfigureLogging);
+
+        services
             .AddSingleton<WeakReferenceMessenger>();
 
         services
