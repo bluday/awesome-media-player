@@ -3,22 +3,14 @@
 /// <summary>
 /// Represents the view model class for the help view.
 /// </summary>
-public sealed partial class HelpViewModel : ViewModel
+public sealed partial class HelpViewModel
 {
     #region Properties
     /// <summary>
     /// Gets the raw Markdown text.
     /// </summary>
-    public string Text { get; }
+    public string Text { get; } = GetRawMarkdownText();
     #endregion
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="HelpViewModel"/> class.
-    /// </summary>
-    public HelpViewModel(WeakReferenceMessenger messenger) : base(messenger)
-    {
-        Text = GetRawMarkdownText();
-    }
 
     /// <summary>
     /// Handles the link-clicked event by launching the provided URI.

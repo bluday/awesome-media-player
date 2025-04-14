@@ -5,13 +5,11 @@ global using CommunityToolkit.WinUI.UI.Controls;
 global using BluDay.AwesomeMediaPlayer;
 global using BluDay.AwesomeMediaPlayer.Controls;
 global using BluDay.AwesomeMediaPlayer.ViewModels;
-global using BluDay.AwesomeMediaPlayer.Views;
 
 global using BluDay.Net.Abstractions.Handlers;
 global using BluDay.Net.Abstractions.Services;
 global using BluDay.Net.Common.Extensions;
-global using BluDay.Net.UI.Windowing;
-global using BluDay.Net.ViewModels;
+global using BluDay.Net.WinUI3.Abstractions.ViewModels;
 global using BluDay.Net.WinUI3.Common.Extensions;
 global using BluDay.Net.WinUI3.ComponentModel;
 

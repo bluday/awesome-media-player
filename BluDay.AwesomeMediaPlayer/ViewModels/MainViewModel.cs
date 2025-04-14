@@ -3,38 +3,36 @@
 /// <summary>
 /// Represents the view model class for the main view.
 /// </summary>
-public sealed partial class MainViewModel : ViewModel
+public sealed partial class MainViewModel
 {
-    private readonly IAppWindowService _windowService;
-
-    private readonly ResourceLoader _resourceLoader;
-
     private readonly Func<AboutWindow> _aboutWindowFactory;
 
     private readonly Func<HelpWindow> _helpWindowFactory;
 
+    #region Properties
+    /// <summary>
+    /// Gets the media library view model instance.
+    /// </summary>
+    public MediaLibraryViewModel MediaLibraryViewModel { get; }
+    #endregion
 
     /// <summary>
     /// Initializes a new instance of the <see cref="MainViewModel"/> class.
     /// </summary>
-    /// <param name="windowService">
-    /// The app window service instance.
+    /// <param name="mediaLibraryViewModel">
+    /// A transient <see cref="MediaLibraryViewModel"/> instance.
+    /// </param>
+    /// <param name="serviceProvider">
+    /// The root service provider instance.
     /// </param>
     public MainViewModel(
-        IAppWindowService      windowService,
-        ResourceLoader         resourceLoader,
-        WeakReferenceMessenger messenger,
-        IServiceProvider       serviceProvider
-    )
-        : base(messenger)
+        MediaLibraryViewModel mediaLibraryViewModel,
+        IServiceProvider      serviceProvider)
     {
-        _windowService = windowService;
-
-        _resourceLoader = resourceLoader;
-
         _aboutWindowFactory = serviceProvider.GetRequiredService<AboutWindow>;
+        _helpWindowFactory  = serviceProvider.GetRequiredService<HelpWindow>;
 
-        _helpWindowFactory = serviceProvider.GetRequiredService<HelpWindow>;
+        MediaLibraryViewModel = mediaLibraryViewModel;
     }
 
     /// <summary>

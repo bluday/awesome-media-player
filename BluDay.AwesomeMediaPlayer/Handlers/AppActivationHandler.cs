@@ -5,25 +5,23 @@
 /// </summary>
 public sealed class AppActivationHandler : IAppActivationHandler
 {
-    private readonly IAppWindowService _windowService;
+    private readonly Func<MainWindow> _mainWindowFactory;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AppActivationHandler"/> class.
     /// </summary>
-    /// <param name="windowService">
-    /// The service used to create and manage windows within the running app.
+    /// <param name="serviceProvider">
+    /// The root service provider instance.
     /// </param>
-    public AppActivationHandler(IAppWindowService windowService)
+    public AppActivationHandler(IServiceProvider serviceProvider)
     {
-        _windowService = windowService;
+        _mainWindowFactory = serviceProvider.GetRequiredService<MainWindow>;
     }
 
     /// <inheritdoc cref="IAppActivationHandler.ActivateAsync(object?)"/>
     public Task ActivateAsync(object? args)
     {
-        _windowService
-            .CreateWindow<Shell>()
-            .Activate();
+        _mainWindowFactory().Activate();
 
         return Task.CompletedTask;
     }

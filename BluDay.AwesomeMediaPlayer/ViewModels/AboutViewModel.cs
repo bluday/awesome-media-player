@@ -3,22 +3,14 @@
 /// <summary>
 /// Represents the view model class for the about view.
 /// </summary>
-public sealed partial class AboutViewModel : ViewModel
+public sealed partial class AboutViewModel
 {
     #region Properties
     /// <summary>
     /// Gets the raw Markdown text.
     /// </summary>
-    public string Text { get; }
+    public string Text { get; } = GetRawDefaultMarkdownText();
     #endregion
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="AboutViewModel"/> class.
-    /// </summary>
-    public AboutViewModel(WeakReferenceMessenger messenger) : base(messenger)
-    {
-        Text = GetRawDefaultMarkdownText();
-    }
 
     /// <summary>
     /// Handles the link-clicked event by launching the provided URI.

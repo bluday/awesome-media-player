@@ -3,13 +3,8 @@
 /// <summary>
 /// Represents the view model class for the media library view.
 /// </summary>
-public sealed partial class MediaLibraryViewModel : ViewModel
+public sealed partial class MediaLibraryViewModel
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MediaLibraryViewModel"/> class.
-    /// </summary>
-    public MediaLibraryViewModel(WeakReferenceMessenger messenger) : base(messenger) { }
-
     /// <summary>
     /// Handles the link-clicked event by launching the provided URI.
     /// </summary>

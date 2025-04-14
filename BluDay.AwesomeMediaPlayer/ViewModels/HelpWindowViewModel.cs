@@ -1,21 +1,21 @@
 ﻿namespace BluDay.AwesomeMediaPlayer.ViewModels;
 
 /// <summary>
-/// Represents the view model for the main window.
+/// Represents the view model class for the help window.
 /// </summary>
-public sealed partial class MainWindowViewModel : WindowViewModel
+public sealed partial class HelpWindowViewModel : WindowViewModel
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
+    /// Initializes a new instance of the <see cref="HelpWindowViewModel"/> class.
     /// </summary>
     /// <param name="resourceLoader">
     /// The application resource loader.
     /// </param>
-    public MainWindowViewModel(ResourceLoader resourceLoader)
+    public HelpWindowViewModel(ResourceLoader resourceLoader)
     {
         _defaultConfiguration = GetDefaultConfiguration(resourceLoader);
 
-        // TODO: Show main view.
+        // TODO: Show help view.
     }
 
     /// <summary>
@@ -32,10 +32,10 @@ public sealed partial class MainWindowViewModel : WindowViewModel
     {
         return new()
         {
-            Title                      = resourceLoader.GetString("MainWindow/Title"),
+            Title                      = "Help",
             ExtendsContentIntoTitleBar = true,
             IconPath                   = resourceLoader.GetString("AppIconPath/64x64"),
-            Size                       = new SizeInt32(1000, 800),
+            Size                       = new SizeInt32(600, 600),
             Alignment                  = ContentAlignment.MiddleCenter
         };
     }

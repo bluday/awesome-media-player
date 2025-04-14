@@ -9,6 +9,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:toolkit="using:CommunityToolkit.WinUI"
              xmlns:toolkitControls="using:CommunityToolkit.WinUI.Controls"
+             xmlns:views="using:BluDay.AwesomeMediaPlayer.Views"
              xmlns:viewModels="using:BluDay.AwesomeMediaPlayer.ViewModels"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
@@ -166,9 +167,7 @@
 
             <!-- View content control -->
             <Grid>
-                <ContentControl x:Name="ViewContentControl"
-                                HorizontalContentAlignment="Stretch"
-                                VerticalContentAlignment="Stretch"/>
+                <views:MediaLibraryView DataContext="{Binding MediaLibraryViewModel}"/>
 
                 <toolkitControls:PropertySizer Binding="{x:Bind NavigationView.OpenPaneLength, Mode=TwoWay}"
                                                HorizontalAlignment="Left"
