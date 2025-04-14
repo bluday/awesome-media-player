@@ -27,7 +27,8 @@
                            Title="{x:Bind ViewModel.Title}"/>
 
         <!-- View content -->
-        <ContentControl x:Name="ViewContentControl"
+        <ContentControl Content="{x:Bind CurrentViewModel}"
+                        ContentTemplateSelector="{x:Bind ViewDataTemplateSelector}"
                         HorizontalContentAlignment="Stretch"
                         VerticalContentAlignment="Stretch"
                         Grid.Row="1"/>
