@@ -5,6 +5,13 @@
 /// </summary>
 public sealed partial class MainWindowViewModel : WindowViewModel
 {
+    #region Properties
+    /// <summary>
+    /// Gets the current main view model instance.
+    /// </summary>
+    public MainViewModel MainViewModel { get; }
+    #endregion
+
     /// <summary>
     /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
     /// </summary>
@@ -14,19 +21,11 @@ public sealed partial class MainWindowViewModel : WindowViewModel
     /// <param name="resourceLoader">
     /// The application resource loader.
     /// </param>
-    /// <param name="viewTemplateSelector">
-    /// The data template selector singleton instance for selecting view control templates.
-    /// </param>
-    public MainWindowViewModel(
-        MainViewModel        mainViewModel,
-        ResourceLoader       resourceLoader,
-        ViewTemplateSelector viewTemplateSelector
-    )
-        : base(resourceLoader, viewTemplateSelector)
+    public MainWindowViewModel(MainViewModel mainViewModel, ResourceLoader resourceLoader)
     {
         _defaultConfiguration = GetDefaultConfiguration(resourceLoader);
 
-        CurrentViewModel = mainViewModel;
+        MainViewModel = mainViewModel;
     }
 
     /// <summary>
