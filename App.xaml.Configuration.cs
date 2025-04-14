@@ -37,15 +37,11 @@ public sealed partial class App
             .AddSingleton<ResourceLoader>();
 
         services
-            .AddTransient<AboutWindow>()
-            .AddTransient<HelpWindow>()
-            .AddTransient<MainWindow>();
-
-        services
             .AddDesktopClientServices();
 
         services
             .AddViews()
-            .AddViewModels();
+            .AddViewModels()
+            .AddWindows();
     }
 }
