@@ -5,6 +5,13 @@
 /// </summary>
 public sealed partial class HelpWindowViewModel : WindowViewModel
 {
+    #region Properties
+    /// <summary>
+    /// Gets the current help view model instance.
+    /// </summary>
+    public HelpViewModel HelpViewModel { get; }
+    #endregion
+
     /// <summary>
     /// Initializes a new instance of the <see cref="HelpWindowViewModel"/> class.
     /// </summary>
@@ -14,19 +21,11 @@ public sealed partial class HelpWindowViewModel : WindowViewModel
     /// <param name="resourceLoader">
     /// The application resource loader.
     /// </param>
-    /// <param name="viewTemplateSelector">
-    /// The data template selector singleton instance for selecting view control templates.
-    /// </param>
-    public HelpWindowViewModel(
-        HelpViewModel        helpViewModel,
-        ResourceLoader       resourceLoader,
-        ViewTemplateSelector viewTemplateSelector
-    )
-        : base(resourceLoader, viewTemplateSelector)
+    public HelpWindowViewModel(HelpViewModel helpViewModel, ResourceLoader resourceLoader)
     {
         _defaultConfiguration = GetDefaultConfiguration(resourceLoader);
 
-        CurrentViewModel = helpViewModel;
+        HelpViewModel = helpViewModel;
     }
 
     /// <summary>
