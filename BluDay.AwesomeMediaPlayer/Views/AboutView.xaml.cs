@@ -5,23 +5,16 @@ namespace BluDay.AwesomeMediaPlayer.Views;
 /// </summary>
 public sealed partial class AboutView : UserControl
 {
-    private readonly AboutViewModel _viewModel;
-
     /// <summary>
     /// Initializes a new instance of the <see cref="AboutView"/> class.
     /// </summary>
-    /// <param name="viewModel">
-    /// A transient <see cref="AboutViewModel"/> instance.
-    /// </param>
-    public AboutView(AboutViewModel viewModel)
-    {
-        DataContext = _viewModel = viewModel;
-
-        InitializeComponent();
-    }
+    public AboutView() => InitializeComponent();
 
     private async void MarkdownTextBlock_LinkClicked(object sender, LinkClickedEventArgs e)
     {
-        await _viewModel.OnLinkClickedAsync(e);
+        if (DataContext is AboutViewModel viewModel)
+        {
+            await viewModel.OnLinkClickedAsync(e);
+        }
     }
 }
