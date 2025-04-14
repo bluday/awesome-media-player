@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents the view model class for the help view.
 /// </summary>
-public sealed partial class HelpViewModel
+public sealed partial class HelpViewModel : ObservableObject
 {
     #region Properties
     /// <summary>

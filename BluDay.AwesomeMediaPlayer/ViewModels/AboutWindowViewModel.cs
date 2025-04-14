@@ -8,14 +8,25 @@ public sealed partial class AboutWindowViewModel : WindowViewModel
     /// <summary>
     /// Initializes a new instance of the <see cref="AboutWindowViewModel"/> class.
     /// </summary>
+    /// <param name="aboutViewModel">
+    /// The view model for the about view, as a transient.
+    /// </param>
     /// <param name="resourceLoader">
     /// The application resource loader.
     /// </param>
-    public AboutWindowViewModel(ResourceLoader resourceLoader)
+    /// <param name="viewTemplateSelector">
+    /// The data template selector singleton instance for selecting view control templates.
+    /// </param>
+    public AboutWindowViewModel(
+        AboutViewModel       aboutViewModel,
+        ResourceLoader       resourceLoader,
+        ViewTemplateSelector viewTemplateSelector
+    )
+        : base(resourceLoader, viewTemplateSelector)
     {
         _defaultConfiguration = GetDefaultConfiguration(resourceLoader);
 
-        // TODO: Show about view.
+        CurrentViewModel = aboutViewModel;
     }
 
     /// <summary>

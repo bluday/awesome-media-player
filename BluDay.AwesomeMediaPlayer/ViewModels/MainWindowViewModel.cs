@@ -8,14 +8,25 @@ public sealed partial class MainWindowViewModel : WindowViewModel
     /// <summary>
     /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
     /// </summary>
+    /// <param name="mainViewModel">
+    /// The view model for the main view, as a transient.
+    /// </param>
     /// <param name="resourceLoader">
     /// The application resource loader.
     /// </param>
-    public MainWindowViewModel(ResourceLoader resourceLoader)
+    /// <param name="viewTemplateSelector">
+    /// The data template selector singleton instance for selecting view control templates.
+    /// </param>
+    public MainWindowViewModel(
+        MainViewModel        mainViewModel,
+        ResourceLoader       resourceLoader,
+        ViewTemplateSelector viewTemplateSelector
+    )
+        : base(resourceLoader, viewTemplateSelector)
     {
         _defaultConfiguration = GetDefaultConfiguration(resourceLoader);
 
-        // TODO: Show main view.
+        CurrentViewModel = mainViewModel;
     }
 
     /// <summary>

@@ -8,14 +8,25 @@ public sealed partial class HelpWindowViewModel : WindowViewModel
     /// <summary>
     /// Initializes a new instance of the <see cref="HelpWindowViewModel"/> class.
     /// </summary>
+    /// <param name="helpViewModel">
+    /// The view model for the help view, as a transient.
+    /// </param>
     /// <param name="resourceLoader">
     /// The application resource loader.
     /// </param>
-    public HelpWindowViewModel(ResourceLoader resourceLoader)
+    /// <param name="viewTemplateSelector">
+    /// The data template selector singleton instance for selecting view control templates.
+    /// </param>
+    public HelpWindowViewModel(
+        HelpViewModel        helpViewModel,
+        ResourceLoader       resourceLoader,
+        ViewTemplateSelector viewTemplateSelector
+    )
+        : base(resourceLoader, viewTemplateSelector)
     {
         _defaultConfiguration = GetDefaultConfiguration(resourceLoader);
 
-        // TODO: Show help view.
+        CurrentViewModel = helpViewModel;
     }
 
     /// <summary>

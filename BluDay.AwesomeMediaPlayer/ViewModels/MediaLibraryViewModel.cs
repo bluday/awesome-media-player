@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents the view model class for the media library view.
 /// </summary>
-public sealed partial class MediaLibraryViewModel
+public sealed partial class MediaLibraryViewModel : ObservableObject
 {
     /// <summary>
     /// Handles the link-clicked event by launching the provided URI.

@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents the view model class for the main view.
 /// </summary>
-public sealed partial class MainViewModel
+public sealed partial class MainViewModel : ObservableObject
 {
     private readonly Func<AboutWindow> _aboutWindowFactory;
 

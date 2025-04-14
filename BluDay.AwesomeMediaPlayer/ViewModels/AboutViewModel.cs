@@ -3,7 +3,7 @@
 /// <summary>
 /// Represents the view model class for the about view.
 /// </summary>
-public sealed partial class AboutViewModel
+public sealed partial class AboutViewModel : ObservableObject
 {
     #region Properties
     /// <summary>
