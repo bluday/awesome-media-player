@@ -42,7 +42,7 @@ public sealed partial class HelpWindowViewModel : WindowViewModel
     {
         return new()
         {
-            Title                      = "Help",
+            Title                      = resourceLoader.GetString("HelpWindow/Title"),
             ExtendsContentIntoTitleBar = true,
             IconPath                   = resourceLoader.GetString("AppIconPath/64x64"),
             Size                       = new SizeInt32(600, 600),

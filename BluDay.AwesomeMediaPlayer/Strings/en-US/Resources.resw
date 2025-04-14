@@ -471,4 +471,10 @@
   <data name="AboutView.BottomTabBar.CreditsTextBlock.Text" xml:space="preserve">
     <value>Credits</value>
   </data>
+  <data name="HelpWindow.Title" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="AboutWindow.Title" xml:space="preserve">
+    <value>About</value>
+  </data>
 </root>

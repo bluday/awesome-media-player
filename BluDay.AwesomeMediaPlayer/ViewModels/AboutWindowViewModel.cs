@@ -42,7 +42,7 @@ public sealed partial class AboutWindowViewModel : WindowViewModel
     {
         return new()
         {
-            Title                      = "About",
+            Title                      = resourceLoader.GetString("AboutWindow/Title"),
             ExtendsContentIntoTitleBar = true,
             IconPath                   = resourceLoader.GetString("AppIconPath/64x64"),
             Size                       = new SizeInt32(750, 380),
