@@ -47,10 +47,5 @@ public sealed partial class App
         services
             .AddViews()
             .AddViewModels();
-
-        foreach (var service in services)
-        {
-            System.Diagnostics.Debug.WriteLine(service);
-        }
     }
 }
