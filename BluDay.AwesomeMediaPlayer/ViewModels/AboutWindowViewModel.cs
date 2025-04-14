@@ -5,6 +5,13 @@
 /// </summary>
 public sealed partial class AboutWindowViewModel : WindowViewModel
 {
+    #region Properties
+    /// <summary>
+    /// Gets the current about view model instance
+    /// </summary>
+    public AboutViewModel AboutViewModel { get; }
+    #endregion
+
     /// <summary>
     /// Initializes a new instance of the <see cref="AboutWindowViewModel"/> class.
     /// </summary>
@@ -14,19 +21,11 @@ public sealed partial class AboutWindowViewModel : WindowViewModel
     /// <param name="resourceLoader">
     /// The application resource loader.
     /// </param>
-    /// <param name="viewTemplateSelector">
-    /// The data template selector singleton instance for selecting view control templates.
-    /// </param>
-    public AboutWindowViewModel(
-        AboutViewModel       aboutViewModel,
-        ResourceLoader       resourceLoader,
-        ViewTemplateSelector viewTemplateSelector
-    )
-        : base(resourceLoader, viewTemplateSelector)
+    public AboutWindowViewModel(AboutViewModel aboutViewModel, ResourceLoader resourceLoader)
     {
         _defaultConfiguration = GetDefaultConfiguration(resourceLoader);
 
-        CurrentViewModel = aboutViewModel;
+        AboutViewModel = aboutViewModel;
     }
 
     /// <summary>

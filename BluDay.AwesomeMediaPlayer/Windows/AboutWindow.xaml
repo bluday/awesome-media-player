@@ -3,7 +3,8 @@
         x:DefaultBindMode="OneWay"
         mc:Ignorable="d"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:controls="using:BluDay.AwesomeMediaPlayer.Controls"
+        xmlns:awesomeControls="using:BluDay.AwesomeMediaPlayer.Controls"
+        xmlns:awesomeViews="using:BluDay.AwesomeMediaPlayer.Views"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -20,17 +21,17 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <controls:TitleBar x:Name="AppTitleBar"
-                           Icon="{x:Bind ViewModel.IconPath}"
-                           TargetWindow="{x:Bind AppWindow}"
-                           Title="{x:Bind ViewModel.Title}"/>
+        <!-- Title bar -->
+        <awesomeControls:TitleBar x:Name="AppTitleBar"
+                                  Icon="{x:Bind ViewModel.IconPath}"
+                                  TargetWindow="{x:Bind AppWindow}"
+                                  Title="{x:Bind ViewModel.Title}"/>
 
-        <ContentControl Content="{x:Bind CurrentViewModel}"
-                        ContentTemplateSelector="{x:Bind ViewDataTemplateSelector}"
-                        HorizontalContentAlignment="Stretch"
-                        VerticalContentAlignment="Stretch"
-                        Grid.Row="1"/>
+        <!-- About view -->
+        <awesomeViews:AboutView DataContext="{x:Bind ViewModel.AboutViewModel}"
+                                Grid.Row="1"/>
 
+        <!-- Content dialog -->
         <ContentDialog CloseButtonText="Close"
                        DefaultButton="Primary"
                        IsSecondaryButtonEnabled="True"
