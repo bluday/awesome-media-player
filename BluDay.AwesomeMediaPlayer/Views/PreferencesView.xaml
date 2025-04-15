@@ -16,6 +16,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
+        <!-- Header -->
         <TextBlock FontSize="24"
                    Margin="32,24,0,24"
                    Style="{StaticResource TitleTextBlockStyle}"

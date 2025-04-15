@@ -18,6 +18,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <!-- Content container -->
         <Grid CornerRadius="{ThemeResource ControlCornerRadius}">
             <ScrollViewer Grid.Row="0">
                 <communityToolkitUiControls:MarkdownTextBlock Background="#11000000"
@@ -31,6 +32,7 @@
             </ScrollViewer>
         </Grid>
 
+        <!-- Close button -->
         <Button Command="{Binding CloseWindowCommand}"
                 Content="Close"
                 HorizontalAlignment="Right"
