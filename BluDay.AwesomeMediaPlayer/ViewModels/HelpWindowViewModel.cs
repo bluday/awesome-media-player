@@ -25,7 +25,18 @@ public sealed partial class HelpWindowViewModel : WindowViewModel
     {
         _defaultConfiguration = GetDefaultConfiguration(resourceLoader);
 
+        helpViewModel.CloseWindowCommand = CloseWindowCommand;
+
         HelpViewModel = helpViewModel;
+    }
+
+    /// <summary>
+    /// Closes the current window.
+    /// </summary>
+    [RelayCommand]
+    public void CloseWindow()
+    {
+        Close();
     }
 
     /// <summary>

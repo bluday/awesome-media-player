@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<UserControl d:DataContext="viewModels:HelpViewModel"
+<UserControl d:DataContext="{d:DesignInstance Type=viewModels:HelpViewModel}"
              mc:Ignorable="d"
              x:Class="BluDay.AwesomeMediaPlayer.Views.HelpView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -31,6 +31,9 @@
             </ScrollViewer>
         </Grid>
 
-        <Button Content="Close" HorizontalAlignment="Right" Grid.Row="2"/>
+        <Button Command="{Binding CloseWindowCommand}"
+                Content="Close"
+                HorizontalAlignment="Right"
+                Grid.Row="2"/>
     </Grid>
 </UserControl>

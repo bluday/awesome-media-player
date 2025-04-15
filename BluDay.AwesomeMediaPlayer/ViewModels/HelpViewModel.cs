@@ -10,6 +10,11 @@ public sealed partial class HelpViewModel : ObservableObject
     /// Gets the raw Markdown text.
     /// </summary>
     public string Text { get; } = GetRawMarkdownText();
+
+    /// <summary>
+    /// Gets or sets the close window command.
+    /// </summary>
+    public ICommand? CloseWindowCommand { get; set; }
     #endregion
 
     /// <summary>
