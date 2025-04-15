@@ -12,6 +12,11 @@ public sealed partial class MainViewModel : ObservableObject
     /// Gets the media library view model instance.
     /// </summary>
     public MediaLibraryViewModel MediaLibraryViewModel { get; }
+
+    /// <summary>
+    /// Gets or sets the close window command.
+    /// </summary>
+    public ICommand? CloseWindowCommand { get; set; }
     #endregion
 
     /// <summary>

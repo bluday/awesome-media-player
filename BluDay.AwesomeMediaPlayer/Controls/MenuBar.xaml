@@ -88,6 +88,7 @@
             <MenuFlyoutItem x:Uid="MenuBar/QuitAtEndOfPlaylistFlyoutItem"/>
 
             <MenuFlyoutItem x:Uid="MenuBar/QuitFlyoutItem"
+                            Command="{x:Bind QuitCommand}"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe944;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control" Key="Q"/>

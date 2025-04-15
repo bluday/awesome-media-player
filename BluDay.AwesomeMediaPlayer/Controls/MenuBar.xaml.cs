@@ -26,6 +26,13 @@ public sealed partial class MenuBar : UserControl
         typeof(MenuBar),
         new PropertyMetadata(defaultValue: null)
     );
+
+    public static readonly DependencyProperty QuitCommandProperty = DependencyProperty.Register(
+        nameof(QuitCommand),
+        typeof(ICommand),
+        typeof(MenuBar),
+        new PropertyMetadata(defaultValue: null)
+    );
     #endregion
 
     #region Properties
@@ -54,6 +61,15 @@ public sealed partial class MenuBar : UserControl
     {
         get => (ICommand)GetValue(OpenPreferencesWindowCommandProperty);
         set => SetValue(OpenPreferencesWindowCommandProperty, value);
+    }
+
+    /// <summary>
+    /// Gets or sets the quit command.
+    /// </summary>
+    public ICommand QuitCommand
+    {
+        get => (ICommand)GetValue(QuitCommandProperty);
+        set => SetValue(QuitCommandProperty, value);
     }
     #endregion
 

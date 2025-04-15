@@ -23,7 +23,8 @@
         <!-- Menu bar -->
         <awesomeControls:MenuBar OpenAboutWindowCommand="{Binding OpenAboutWindowCommand}"
                                  OpenHelpWindowCommand="{Binding OpenHelpWindowCommand}"
-                                 OpenPreferencesWindowCommand="{Binding OpenPreferencesWindowCommand}"/>
+                                 OpenPreferencesWindowCommand="{Binding OpenPreferencesWindowCommand}"
+                                 QuitCommand="{Binding CloseWindowCommand}"/>
 
         <!-- Navigation view header bar -->
         <awesomeControls:NavigationViewHeaderBar Grid.Row="1"/>
