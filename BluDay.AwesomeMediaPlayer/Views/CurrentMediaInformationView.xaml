@@ -19,10 +19,15 @@
 
         <!-- Content container -->
         <Grid CornerRadius="{ThemeResource ControlCornerRadius}" Grid.Row="0">
-            <TextBlock HorizontalAlignment="Center" Text="{x:Bind}" VerticalAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Center"
+                       Text="{x:Bind}"
+                       VerticalAlignment="Center"/>
         </Grid>
 
         <!-- Close button -->
-        <Button Content="Close" HorizontalAlignment="Right" Grid.Row="2"/>
+        <Button Command="{Binding CloseWindowCommand}"
+                Content="Close"
+                HorizontalAlignment="Right"
+                Grid.Row="2"/>
     </Grid>
 </UserControl>

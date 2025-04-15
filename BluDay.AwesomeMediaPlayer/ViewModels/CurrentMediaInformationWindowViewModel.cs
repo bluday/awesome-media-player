@@ -27,7 +27,18 @@ public sealed partial class CurrentMediaInformationWindowViewModel : WindowViewM
     {
         _defaultConfiguration = GetDefaultConfiguration(resourceLoader);
 
+        currentMediaInformationViewModel.CloseWindowCommand = CloseWindowCommand;
+
         CurrentMediaInformationViewModel = currentMediaInformationViewModel;
+    }
+
+    /// <summary>
+    /// Closes the current window.
+    /// </summary>
+    [RelayCommand]
+    public void CloseWindow()
+    {
+        Close();
     }
 
     /// <summary>
