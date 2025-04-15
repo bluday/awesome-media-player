@@ -5,13 +5,7 @@
 /// </summary>
 public sealed partial class MainViewModel : ObservableObject
 {
-    private readonly Func<AboutWindow> _aboutWindowFactory;
-
-    private readonly Func<HelpWindow> _helpWindowFactory;
-
-    private readonly Func<PreferencesWindow> _preferencesWindowFactory;
-
-    private readonly Func<CurrentMediaInformationWindow> _currentMediaInformationWindowFactory;
+    private readonly ImplementationProvider<Window> _windowFactory;
 
     #region Properties
     /// <summary>
@@ -26,19 +20,25 @@ public sealed partial class MainViewModel : ObservableObject
     /// <param name="mediaLibraryViewModel">
     /// A transient media library view model instance.
     /// </param>
-    /// <param name="serviceProvider">
-    /// The root service provider instance.
+    /// <param name="windowFactory">
+    /// A window factory.
     /// </param>
     public MainViewModel(
-        MediaLibraryViewModel mediaLibraryViewModel,
-        IServiceProvider      serviceProvider)
+        MediaLibraryViewModel          mediaLibraryViewModel,
+        ImplementationProvider<Window> windowFactory)
     {
-        _aboutWindowFactory                   = serviceProvider.GetRequiredService<AboutWindow>;
-        _helpWindowFactory                    = serviceProvider.GetRequiredService<HelpWindow>;
-        _preferencesWindowFactory             = serviceProvider.GetRequiredService<PreferencesWindow>;
-        _currentMediaInformationWindowFactory = serviceProvider.GetRequiredService<CurrentMediaInformationWindow>;
+        _windowFactory = windowFactory;
 
         MediaLibraryViewModel = mediaLibraryViewModel;
+    }
+
+    private TWindow CreateWindow<TWindow>() where TWindow : Window
+    {
+        var window = (TWindow)_windowFactory.GetInstance(typeof(TWindow));
+
+        window.Activate();
+
+        return window;
     }
 
     /// <summary>
@@ -47,7 +47,7 @@ public sealed partial class MainViewModel : ObservableObject
     [RelayCommand]
     public void OpenAboutWindow()
     {
-        _aboutWindowFactory().Activate();
+        CreateWindow<AboutWindow>();
     }
 
     /// <summary>
@@ -56,7 +56,7 @@ public sealed partial class MainViewModel : ObservableObject
     [RelayCommand]
     public void OpenHelpWindow()
     {
-        _helpWindowFactory().Activate();
+        CreateWindow<HelpWindow>();
     }
 
     /// <summary>
@@ -65,7 +65,7 @@ public sealed partial class MainViewModel : ObservableObject
     [RelayCommand]
     public void OpenPreferencesWindow()
     {
-        _preferencesWindowFactory().Activate();
+        CreateWindow<PreferencesWindow>();
     }
 
     /// <summary>
@@ -75,6 +75,6 @@ public sealed partial class MainViewModel : ObservableObject
     [RelayCommand]
     public void OpenCurrentMediaInformationWindow()
     {
-        _currentMediaInformationWindowFactory().Activate();
+        CreateWindow<CurrentMediaInformationWindow>();
     }
 }

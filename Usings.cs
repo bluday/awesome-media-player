@@ -10,6 +10,7 @@ global using BluDay.AwesomeMediaPlayer.ViewModels;
 global using BluDay.Net.Abstractions.Handlers;
 global using BluDay.Net.Abstractions.Services;
 global using BluDay.Net.Common.Extensions;
+global using BluDay.Net.DependencyInjection;
 global using BluDay.Net.WinUI3.Abstractions.ViewModels;
 global using BluDay.Net.WinUI3.Common.Extensions;
 global using BluDay.Net.WinUI3.ComponentModel;

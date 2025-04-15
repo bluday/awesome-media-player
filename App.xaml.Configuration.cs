@@ -40,6 +40,9 @@ public sealed partial class App
             .AddSingleton<ResourceLoader>();
 
         services
+            .AddSingleton<ImplementationProvider<Window>>();
+
+        services
             .AddDesktopClientServices();
 
         services
