@@ -10,6 +10,7 @@
     <MenuBar Background="{StaticResource AwesomeMenuBarBackgroundBrush}" MinHeight="0">
         <!-- Media -->
         <MenuBarItem x:Uid="MenuBar/MediaItem">
+            <!-- Open file -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenFileFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe8e5;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -17,12 +18,14 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Open multiple files -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenMultipleFilesFlyoutItem">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control,Shift" Key="O"/>
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Open folder -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenFolderFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xf12b;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -30,6 +33,7 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Open disc -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenDiscFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe958;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -37,6 +41,7 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Open network stream -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenNetworkStreamFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe968;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -44,6 +49,7 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Open capture device -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenCaptureDeviceFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xf211;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -51,19 +57,22 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Open location from clipboard -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenLocationFromClipboardFlyoutItem">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control" Key="V"/>
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Open recent media -->
             <MenuFlyoutSubItem x:Uid="MenuBar/OpenRecentMediaFlyoutItem"
                                Icon="{communityToolkit:FontIcon Glyph=&#xe823;}">
                 <MenuFlyoutItem x:Uid="MenuBar/File0Mp3FlyoutItem"/>
             </MenuFlyoutSubItem>
 
             <MenuFlyoutSeparator/>
-
+'
+            <!-- Save playlist to file -->
             <MenuFlyoutItem x:Uid="MenuBar/SavePlaylistToFileFlyoutItem">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control" Key="Y"/>
@@ -76,6 +85,7 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Stream -->
             <MenuFlyoutItem x:Uid="MenuBar/StreamFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe93e;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -85,8 +95,10 @@
 
             <MenuFlyoutSeparator/>
 
+            <!-- Quit at the end of playlist -->
             <MenuFlyoutItem x:Uid="MenuBar/QuitAtEndOfPlaylistFlyoutItem"/>
 
+            <!-- Quit -->
             <MenuFlyoutItem x:Uid="MenuBar/QuitFlyoutItem"
                             Command="{x:Bind QuitCommand}"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe944;}">
@@ -330,7 +342,7 @@
             <MenuFlyoutItem x:Uid="MenuBar/MessagesFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe756;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
-                    <KeyboardAccelerator Modifiers="Control" Key="P"/>
+                    <KeyboardAccelerator Modifiers="Control" Key="M"/>
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
@@ -355,7 +367,7 @@
             <MenuFlyoutItem x:Uid="MenuBar/PlaylistFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe90b;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
-                    <KeyboardAccelerator Modifiers="Control" Key="P"/>
+                    <KeyboardAccelerator Modifiers="Control" Key="L"/>
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
