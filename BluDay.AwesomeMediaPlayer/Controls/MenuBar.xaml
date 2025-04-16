@@ -10,7 +10,7 @@
     <MenuBar Background="{StaticResource AwesomeMenuBarBackgroundBrush}" MinHeight="0">
         <!-- Media -->
         <MenuBarItem x:Uid="MenuBar/MediaItem">
-            <!-- Open file -->
+            <!-- Open file (Ctrl+O) -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenFileFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe8e5;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -18,14 +18,14 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
-            <!-- Open multiple files -->
+            <!-- Open multiple files (Ctrl+Shift+O) -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenMultipleFilesFlyoutItem">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control,Shift" Key="O"/>
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
-            <!-- Open folder -->
+            <!-- Open folder (Ctrl+F) -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenFolderFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xf12b;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -33,7 +33,7 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
-            <!-- Open disc -->
+            <!-- Open disc (Ctrl+D) -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenDiscFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe958;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -41,7 +41,7 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
-            <!-- Open network stream -->
+            <!-- Open network stream (Ctrl+N) -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenNetworkStreamFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe968;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -49,7 +49,7 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
-            <!-- Open capture device -->
+            <!-- Open capture device (Ctrl+C) -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenCaptureDeviceFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xf211;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -57,7 +57,7 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
-            <!-- Open location from clipboard -->
+            <!-- Open location from clipboard (Ctrl+V) -->
             <MenuFlyoutItem x:Uid="MenuBar/OpenLocationFromClipboardFlyoutItem">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control" Key="V"/>
@@ -71,21 +71,22 @@
             </MenuFlyoutSubItem>
 
             <MenuFlyoutSeparator/>
-'
-            <!-- Save playlist to file -->
+
+            <!-- Save playlist to file (Ctrl+Y) -->
             <MenuFlyoutItem x:Uid="MenuBar/SavePlaylistToFileFlyoutItem">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control" Key="Y"/>
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Convert / save (Ctrl+R) -->
             <MenuFlyoutItem x:Uid="MenuBar/ConvertSaveFlyoutItem">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control" Key="R"/>
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
-            <!-- Stream -->
+            <!-- Stream (Ctrl+S) -->
             <MenuFlyoutItem x:Uid="MenuBar/StreamFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe93e;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -98,7 +99,7 @@
             <!-- Quit at the end of playlist -->
             <MenuFlyoutItem x:Uid="MenuBar/QuitAtEndOfPlaylistFlyoutItem"/>
 
-            <!-- Quit -->
+            <!-- Quit (Ctrl+Q) -->
             <MenuFlyoutItem x:Uid="MenuBar/QuitFlyoutItem"
                             Command="{x:Bind QuitCommand}"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe944;}">
@@ -110,19 +111,24 @@
 
         <!-- Playback -->
         <MenuBarItem x:Uid="MenuBar/PlaybackItem">
+            <!-- Title -->
             <MenuFlyoutSubItem x:Uid="MenuBar/TitleFlyoutItem" IsEnabled="False">
                 <MenuFlyoutItem x:Uid="MenuBar/TitleContentFlyoutItem"/>
             </MenuFlyoutSubItem>
 
+            <!-- Chapter -->
             <MenuFlyoutSubItem x:Uid="MenuBar/ChapterFlyoutItem" IsEnabled="False">
                 <MenuFlyoutItem x:Uid="MenuBar/ChapterContentFlyoutItem"/>
             </MenuFlyoutSubItem>
 
+            <!-- Program -->
             <MenuFlyoutSubItem x:Uid="MenuBar/ProgramFlyoutItem" IsEnabled="False">
                 <MenuFlyoutItem x:Uid="MenuBar/ProgramContentFlyoutItem"/>
             </MenuFlyoutSubItem>
 
+            <!-- Custom bookmarks -->
             <MenuFlyoutSubItem x:Uid="MenuBar/CustomBookmarksFlyoutItem">
+                <!-- Manage bookmarks (Ctrl+B) -->
                 <MenuFlyoutItem x:Uid="MenuBar/ManageBookmarksFlyoutItem">
                     <MenuFlyoutItem.KeyboardAccelerators>
                         <KeyboardAccelerator Modifiers="Control" Key="B"/>
@@ -132,13 +138,16 @@
 
             <MenuFlyoutSeparator/>
 
+            <!-- Renderer -->
             <MenuFlyoutSubItem x:Uid="MenuBar/RendererFlyoutItem">
+                <!-- Renderer scanning -->
                 <MenuFlyoutItem x:Uid="MenuBar/RendererScanningFlyoutItem"
                                 IsEnabled="False"/>
             </MenuFlyoutSubItem>
 
             <MenuFlyoutSeparator/>
 
+            <!-- Speed -->
             <MenuFlyoutSubItem x:Uid="MenuBar/SpeedFlyoutItem">
                 <MenuFlyoutItem x:Uid="MenuBar/SpeedFasterFlyoutItem"/>
                 <MenuFlyoutItem x:Uid="MenuBar/SpeedFasterFineFlyoutItem"/>
@@ -149,12 +158,15 @@
 
             <MenuFlyoutSeparator/>
 
+            <!-- Jump forward -->
             <MenuFlyoutItem x:Uid="MenuBar/JumpForwardFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xed3d;}"/>
-            
+
+            <!-- Jump backward -->
             <MenuFlyoutItem x:Uid="MenuBar/JumpBackwardFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xed3c;}"/>
 
+            <!-- Jump to specific time (Ctrl+T) -->
             <MenuFlyoutItem x:Uid="MenuBar/JumpToSpecificTimeFlyoutItem">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control" Key="T"/>
@@ -163,6 +175,7 @@
 
             <MenuFlyoutSeparator/>
 
+            <!-- Play (Space) -->
             <MenuFlyoutItem x:Uid="MenuBar/PlayFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xf5b0;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -170,6 +183,7 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Stop (Ctrl+S) -->
             <MenuFlyoutItem x:Uid="MenuBar/StopFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xee95;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -177,6 +191,7 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Previous (Ctrl+Left) -->
             <MenuFlyoutItem x:Uid="MenuBar/PreviousFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xf8ac;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -184,6 +199,7 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Next (Ctrl+Right) -->
             <MenuFlyoutItem x:Uid="MenuBar/NextFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xf8ad;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -191,6 +207,7 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Record (Ctrl+R) -->
             <MenuFlyoutItem x:Uid="MenuBar/RecordFlyoutItem"
                             Icon="{communityToolkit:FontIcon Foreground=Red, Glyph=&#xe7c8;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -201,38 +218,46 @@
 
         <!-- Audio -->
         <MenuBarItem x:Uid="MenuBar/AudioItem">
+            <!-- Audio track -->
             <MenuFlyoutSubItem x:Uid="MenuBar/AudioTrackFlyoutItem">
                 <MenuFlyoutItem x:Uid="MenuBar/AudioTrackContentFlyoutItem"/>
             </MenuFlyoutSubItem>
 
+            <!-- Audio device -->
             <MenuFlyoutSubItem x:Uid="MenuBar/AudioDeviceFlyoutItem">
                 <MenuFlyoutItem x:Uid="MenuBar/AudioDeviceContentFlyoutItem"/>
             </MenuFlyoutSubItem>
 
+            <!-- Stereo mode -->
             <MenuFlyoutSubItem x:Uid="MenuBar/StereoModeFlyoutItem">
                 <MenuFlyoutItem x:Uid="MenuBar/StereoModeContentFlyoutItem"/>
             </MenuFlyoutSubItem>
 
             <MenuFlyoutSeparator/>
 
+            <!-- Visualizations -->
             <MenuFlyoutSubItem x:Uid="MenuBar/VisualizationsFlyoutItem">
                 <MenuFlyoutItem x:Uid="MenuBar/VisualizationsContentFlyoutItem"/>
             </MenuFlyoutSubItem>
 
             <MenuFlyoutSeparator/>
 
+            <!-- Increase volume -->
             <MenuFlyoutItem x:Uid="MenuBar/IncreaseVolumeFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe995;}"/>
 
+            <!-- Decrease volume -->
             <MenuFlyoutItem x:Uid="MenuBar/DecreaseVolumeFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe993;}"/>
 
+            <!-- Mute -->
             <MenuFlyoutItem x:Uid="MenuBar/MuteFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe74f;}"/>
         </MenuBarItem>
 
         <!-- Video -->
         <MenuBarItem x:Uid="MenuBar/VideoItem">
+            <!-- Video track -->
             <MenuFlyoutSubItem x:Uid="MenuBar/VideoTrackFlyoutItem"
                                IsEnabled="False">
                 <MenuFlyoutItem x:Uid="MenuBar/VideoTrackContentFlyoutItem"/>
@@ -240,29 +265,35 @@
 
             <MenuFlyoutSeparator/>
 
+            <!-- Fullscreen -->
             <MenuFlyoutItem x:Uid="MenuBar/FullscreenFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe740;}"/>
 
+            <!-- Always fit window -->
             <MenuFlyoutItem x:Uid="MenuBar/AlwaysFitWindowFlyoutItem"
                             IsEnabled="False"/>
 
+            <!-- Set as wallpaper -->
             <MenuFlyoutItem x:Uid="MenuBar/SetAsWallpaperFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe7b5;}"/>
 
             <MenuFlyoutSeparator/>
 
+            <!-- Zoom -->
             <MenuFlyoutSubItem x:Uid="MenuBar/ZoomFlyoutItem"
                                Icon="{communityToolkit:FontIcon Glyph=&#xe71e;}"
                                IsEnabled="False">
                 <MenuFlyoutItem x:Uid="MenuBar/ZoomContentFlyoutItem"/>
             </MenuFlyoutSubItem>
 
+            <!-- Aspect ratio -->
             <MenuFlyoutSubItem x:Uid="MenuBar/AspectRatioFlyoutItem"
                                Icon="{communityToolkit:FontIcon Glyph=&#xe799;}"
                                IsEnabled="False">
                 <MenuFlyoutItem x:Uid="MenuBar/AspectRatioContentFlyoutItem"/>
             </MenuFlyoutSubItem>
 
+            <!-- Crop -->
             <MenuFlyoutSubItem x:Uid="MenuBar/CropFlyoutItem"
                                Icon="{communityToolkit:FontIcon Glyph=&#xe7a8;}"
                                IsEnabled="False">
@@ -271,11 +302,13 @@
 
             <MenuFlyoutSeparator/>
 
+            <!-- Deinterlace -->
             <MenuFlyoutSubItem x:Uid="MenuBar/DeinterlaceFlyoutItem"
                                IsEnabled="False">
                 <MenuFlyoutItem x:Uid="MenuBar/DeinterlaceContentFlyoutItem"/>
             </MenuFlyoutSubItem>
 
+            <!-- Deinterlace mode -->
             <MenuFlyoutSubItem x:Uid="MenuBar/DeinterlaceModeFlyoutItem"
                                IsEnabled="False">
                 <MenuFlyoutItem x:Uid="MenuBar/DeinterlaceModeContentFlyoutItem"/>
@@ -283,6 +316,7 @@
 
             <MenuFlyoutSeparator/>
 
+            <!-- Take snapshot -->
             <MenuFlyoutItem x:Uid="MenuBar/TakeSnapshotFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe722;}"
                             IsEnabled="False"/>
@@ -290,9 +324,11 @@
 
         <!-- Subtitle -->
         <MenuBarItem x:Uid="MenuBar/SubtitleItem">
+            <!-- Add subtitle file -->
             <MenuFlyoutItem x:Uid="MenuBar/AddSubtitleFileFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe710;}"/>
             
+            <!-- Sub track -->
             <MenuFlyoutSubItem x:Uid="MenuBar/SubTrackFlyoutItem"
                                Icon="{communityToolkit:FontIcon Glyph=&#xed1e;}"
                                IsEnabled="False">
@@ -302,6 +338,7 @@
 
         <!-- Tools -->
         <MenuBarItem x:Uid="MenuBar/ToolsItem">
+            <!-- Effects and filters (Ctrl+E) -->
             <MenuFlyoutItem x:Uid="MenuBar/EffectsAndFiltersFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe9e9;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -309,8 +346,10 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Track synchronization -->
             <MenuFlyoutItem x:Uid="MenuBar/TrackSynchronizationFlyoutItem"/>
 
+            <!-- Media information (Ctrl+I) -->
             <MenuFlyoutItem x:Uid="MenuBar/MediaInformationFlyoutItem">
                 <MenuFlyoutItem.Icon>
                     <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe946;"/>
@@ -321,6 +360,7 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Codec information (Ctrl+J) -->
             <MenuFlyoutItem x:Uid="MenuBar/CodecInformationFlyoutItem">
                 <MenuFlyoutItem.Icon>
                     <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe946;"/>
@@ -331,14 +371,17 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- VLM configuration (Ctrl+Shift+W) -->
             <MenuFlyoutItem x:Uid="MenuBar/VLMConfigurationFlyoutItem">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control,Shift" Key="W"/>
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Process guide -->
             <MenuFlyoutItem x:Uid="MenuBar/ProgramGuideFlyoutItem"/>
 
+            <!-- Messages (Ctrl+M) -->
             <MenuFlyoutItem x:Uid="MenuBar/MessagesFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe756;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -346,13 +389,16 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Plugins and extensions -->
             <MenuFlyoutItem x:Uid="MenuBar/PluginsAndExtensionsFlyoutItem"/>
 
             <MenuFlyoutSeparator/>
 
+            <!-- Customize interface -->
             <MenuFlyoutItem x:Uid="MenuBar/CustomizeInterfaceFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe713;}"/>
 
+            <!-- Preferences (Ctrl+P) -->
             <MenuFlyoutItem x:Uid="MenuBar/PreferencesFlyoutItem"
                             Command="{x:Bind OpenPreferencesWindowCommand}"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe713;}">
@@ -364,6 +410,7 @@
 
         <!-- View -->
         <MenuBarItem x:Uid="MenuBar/ViewItem">
+            <!-- Playlist (Ctrl+L) -->
             <MenuFlyoutItem x:Uid="MenuBar/PlaylistFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe90b;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -371,24 +418,29 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Docked playlist -->
             <MenuFlyoutItem x:Uid="MenuBar/DockedPlaylistFlyoutItem"/>
 
+            <!-- Playlist view mode -->
             <MenuFlyoutSubItem x:Uid="MenuBar/PlaylistViewModeFlyoutItem">
                 <MenuFlyoutItem x:Uid="MenuBar/PlaylistViewModeContentFlyoutItem"/>
             </MenuFlyoutSubItem>
 
             <MenuFlyoutSeparator/>
 
+            <!-- Always on top -->
             <MenuFlyoutItem x:Uid="MenuBar/AlwaysOnTopFlyoutItem"/>
 
             <MenuFlyoutSeparator/>
 
+            <!-- Minimal interface (Ctrl+H) -->
             <MenuFlyoutItem x:Uid="MenuBar/MinimalInterfaceFlyoutItem">
                 <MenuFlyoutItem.KeyboardAccelerators>
                     <KeyboardAccelerator Modifiers="Control" Key="H"/>
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Fullscreen interface (F11) -->
             <MenuFlyoutItem x:Uid="MenuBar/FullscreenInterfaceFlyoutItem"
                             Icon="{communityToolkit:FontIcon Glyph=&#xe740;}">
                 <MenuFlyoutItem.KeyboardAccelerators>
@@ -396,23 +448,28 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Advanced controls -->
             <MenuFlyoutItem x:Uid="MenuBar/AdvancedControlsFlyoutItem"/>
 
+            <!-- Status bar -->
             <MenuFlyoutItem x:Uid="MenuBar/StatusBarFlyoutItem"/>
 
             <MenuFlyoutSeparator/>
-
+            
+            <!-- Add interface -->
             <MenuFlyoutSubItem x:Uid="MenuBar/AddInterfaceFlyoutItem">
                 <MenuFlyoutItem x:Uid="MenuBar/AddInterfaceContentFlyoutItem"/>
             </MenuFlyoutSubItem>
 
             <MenuFlyoutSeparator/>
 
+            <!-- VLsub -->
             <MenuFlyoutItem x:Uid="MenuBar/VLsubFlyoutItem"/>
         </MenuBarItem>
 
         <!-- Help -->
         <MenuBarItem x:Uid="MenuBar/HelpItem">
+            <!-- Help (F1) -->
             <MenuFlyoutItem x:Uid="MenuBar/HelpFlyoutItem"
                             Command="{x:Bind OpenHelpWindowCommand}">
                 <MenuFlyoutItem.Icon>
@@ -424,10 +481,12 @@
                 </MenuFlyoutItem.KeyboardAccelerators>
             </MenuFlyoutItem>
 
+            <!-- Check for updates -->
             <MenuFlyoutItem x:Uid="MenuBar/CheckForUpdatesFlyoutItem"/>
 
             <MenuFlyoutSeparator/>
 
+            <!-- About (Shift+F1) -->
             <MenuFlyoutItem x:Uid="MenuBar/AboutFlyoutItem"
                             Command="{x:Bind OpenAboutWindowCommand}">
                 <MenuFlyoutItem.Icon>
