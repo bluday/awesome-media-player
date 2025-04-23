@@ -9,12 +9,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         ExtendsContentIntoTitleBar="{x:Bind ViewModel.ExtendsContentIntoTitleBar}"
+        SystemBackdrop="{x:Bind ViewModel.SystemBackdrop}"
         Title="{x:Bind ViewModel.Title}">
-    <Window.SystemBackdrop>
-        <MicaBackdrop Kind="Base"/>
-    </Window.SystemBackdrop>
-
+    <!-- Root grid -->
     <Grid x:Name="RootGrid">
+        <!-- Row definitions -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
