@@ -33,6 +33,9 @@ public sealed partial class App
             .AddLogging(ConfigureLogging);
 
         services
+            .AddMemoryCache();
+
+        services
             .AddSingleton<WeakReferenceMessenger>();
 
         services
