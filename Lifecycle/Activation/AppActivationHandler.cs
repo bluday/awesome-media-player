@@ -21,9 +21,9 @@ public sealed class AppActivationHandler : IAppActivationHandler
     /// <inheritdoc cref="IAppActivationHandler.ActivateAsync(object?)"/>
     public Task ActivateAsync(object? args)
     {
-        var window = (MainWindow)_windowFactory.GetInstance(typeof(MainWindow));
-
-        window.Activate();
+        _windowFactory
+            .GetInstance<MainWindow>()
+            .Activate();
 
         return Task.CompletedTask;
     }
