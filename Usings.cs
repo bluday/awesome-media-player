@@ -25,6 +25,7 @@ global using Microsoft.UI.Xaml.Media;
 global using Microsoft.Windows.ApplicationModel.Resources;
 
 global using System;
+global using System.Diagnostics;
 global using System.Drawing;
 global using System.Threading.Tasks;
 global using System.Windows.Input;
