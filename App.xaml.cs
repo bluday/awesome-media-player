@@ -8,22 +8,15 @@ public sealed partial class App : Application
 {
     private readonly IAppActivationService _activationService;
 
-    private readonly ILogger _logger;
-
     /// <summary>
     /// Initializes a new instance of the <see cref="App"/> class.
     /// </summary>
     /// <param name="activationService">
     /// The app activation service.
     /// </param>
-    /// <param name="logger">
-    /// The logger instance.
-    /// </param>
-    public App(IAppActivationService activationService, ILogger<App> logger)
+    public App(IAppActivationService activationService)
     {
         _activationService = activationService;
-
-        _logger = logger;
 
         InitializeComponent();
     }
