@@ -43,14 +43,17 @@ public sealed partial class App
             .AddSingleton<ResourceLoader>();
 
         services
-            .AddSingleton<ImplementationProvider<Window>>();
-
-        services
             .AddDesktopClientServices();
 
         services
-            .AddViews()
-            .AddViewModels()
+            .AddViews();
+
+        services
+            .AddSingleton<ImplementationProvider<ObservableObject>>()
+            .AddViewModels();
+
+        services
+            .AddSingleton<ImplementationProvider<Window>>()
             .AddWindows();
     }
 }
