@@ -10,6 +10,7 @@ global using BluDay.AwesomeMediaPlayer.Domain.ViewModels;
 global using BluDay.Net.Abstractions.Handlers;
 global using BluDay.Net.Abstractions.Services;
 global using BluDay.Net.Common.Extensions;
+global using BluDay.Net.Services;
 global using BluDay.Net.DependencyInjection;
 global using BluDay.Net.WinUI3.Abstractions.ViewModels;
 global using BluDay.Net.WinUI3.Common.Extensions;
@@ -23,6 +24,8 @@ global using Microsoft.UI.Xaml;
 global using Microsoft.UI.Xaml.Controls;
 global using Microsoft.UI.Xaml.Media;
 global using Microsoft.Windows.ApplicationModel.Resources;
+
+global using Muxc = Microsoft.UI.Xaml;
 
 global using System;
 global using System.Diagnostics;

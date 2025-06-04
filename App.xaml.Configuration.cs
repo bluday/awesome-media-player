@@ -43,7 +43,11 @@ public sealed partial class App
             .AddSingleton<ResourceLoader>();
 
         services
-            .AddDesktopClientServices();
+            .TryAddAppActivationService()
+            .AddSingleton<IAppDialogService, AppDialogService>()
+            .AddSingleton<IAppNavigationService, AppNavigationService>()
+            .AddSingleton<IAppThemeService, AppThemeService>()
+            .AddSingleton<IAppWindowService, AppWindowService>();
 
         services
             .AddViews();
