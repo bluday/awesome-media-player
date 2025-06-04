@@ -23,8 +23,8 @@
         <!-- Title bar -->
         <awesomeControls:TitleBar x:Name="AppTitleBar"
                                   Icon="{x:Bind ViewModel.IconPath}"
-                                  TargetWindow="{x:Bind AppWindow}"
-                                  Title="{x:Bind ViewModel.Title}"/>
+                                  Title="{x:Bind ViewModel.Title}"
+                                  Grid.Row="0"/>
 
         <!-- About view -->
         <awesomeViews:AboutView DataContext="{x:Bind ViewModel.AboutViewModel}"

@@ -23,7 +23,6 @@
         <!-- Title bar -->
         <awesomeControls:TitleBar x:Name="AppTitleBar"
                                   Icon="{x:Bind ViewModel.IconPath}"
-                                  TargetWindow="{x:Bind AppWindow}"
                                   Title="{x:Bind ViewModel.Title}"/>
 
         <!-- Help view -->
