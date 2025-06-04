@@ -26,13 +26,15 @@ public sealed partial class App : Application
         _logger = logger;
 
 #if DEBUG
-        UnhandledException += (sender, e) =>
-        {
-            _logger.LogDebug($"{e.Exception}: {e.Message}");
-        };
+        UnhandledException += App_UnhandledException;
 #endif
 
         InitializeComponent();
+    }
+
+    private void App_UnhandledException(object sender, Muxc.UnhandledExceptionEventArgs e)
+    {
+        _logger.LogDebug(e.Exception.ToString());
     }
 
     /// <summary>
