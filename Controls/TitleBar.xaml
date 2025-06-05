@@ -6,84 +6,26 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Grid MaxHeight="48" MinHeight="32">
+    <!-- Root grid -->
+    <Grid Height="32">
+        <!-- Column definitions -->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <!-- Header and left-side content -->
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="8"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <!-- Application icon -->
+        <Image Height="16"
+               Margin="8,4"
+               Source="{x:Bind Icon}"
+               VerticalAlignment="Center"
+               Width="16"
+               Grid.Column="0"/>
 
-            <Grid Margin="{x:Bind HeaderMargin}"
-                  VerticalAlignment="Center"
-                  Visibility="{x:Bind HeaderVisibility}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="8"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="12"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-
-                <Image Height="16"
-                       Source="{x:Bind Icon}"
-                       VerticalAlignment="Center"
-                       Width="16"
-                       Grid.Column="1"
-                       Grid.Row="1"/>
-
-                <TextBlock FontSize="12"
-                           Text="{x:Bind Title}"
-                           VerticalAlignment="Center"
-                           Grid.Column="3"
-                           Grid.Row="1"/>
-            </Grid>
-
-            <ContentPresenter Content="{x:Bind LeftContent}" Grid.Column="2"/>
-        </Grid>
-
-        <!-- Middle or centered content -->
-        <Grid Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="8"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="8"/>
-            </Grid.ColumnDefinitions>
-
-            <ContentPresenter Content="{x:Bind MiddleContent}" Grid.Column="1"/>
-        </Grid>
-
-        <!-- Right-side content and native window action buttons spacer -->
-        <Grid Grid.Column="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="8"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <ContentPresenter Content="{x:Bind RightContent}" Grid.Column="1"/>
-
-            <!--
-            TODO: Replace the arbitrary width with the actual width of the container
-                  for the window action buttons, dynamically.
-            -->
-            <Border x:Name="NativeWindowActionButtonsSpacer"
-                    Width="138"
-                    VerticalAlignment="Center"
-                    Grid.Column="3"/>
-        </Grid>
+        <!-- Title -->
+        <TextBlock FontSize="12"
+                   Text="{x:Bind Title}"
+                   VerticalAlignment="Center"
+                   Grid.Column="1"/>
     </Grid>
 </UserControl>
