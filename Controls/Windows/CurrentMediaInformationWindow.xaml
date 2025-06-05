@@ -17,7 +17,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!-- Title bar -->
@@ -26,18 +25,24 @@
                                   Title="{x:Bind ViewModel.Title}"
                                   Grid.Row="0"/>
 
-        <!-- Current media information view -->
-        <awesomeViews:CurrentMediaInformationView DataContext="{x:Bind ViewModel.CurrentMediaInformationViewModel}"
-                                                  Grid.Row="1"/>
-
-        <!-- Content dialog -->
-        <ContentDialog CloseButtonText="Close"
-                       DefaultButton="Primary"
-                       IsSecondaryButtonEnabled="True"
-                       PrimaryButtonText="OK"
-                       Style="{ThemeResource DefaultContentDialogStyle}"
-                       Title="Hello!"
-                       XamlRoot="{x:Bind RootGrid.XamlRoot}"
-                       Grid.RowSpan="2"/>
+        <!-- Content -->
+        <Grid Padding="16" Grid.Row="1">
+            <!-- Row definitions -->
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Current media information view -->
+            <awesomeViews:CurrentMediaInformationGeneralView DataContext="{x:Bind ViewModel.CurrentMediaInformationGeneralViewModel}"
+                                                             Grid.Row="0"/>
+        
+            <!-- Close button -->
+            <Button Command="{x:Bind ViewModel.CloseCommand}"
+                    Content="Close"
+                    HorizontalAlignment="Right"
+                    Grid.Row="2"/>
+        </Grid>
     </Grid>
 </Window>

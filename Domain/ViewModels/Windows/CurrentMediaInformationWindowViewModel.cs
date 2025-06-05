@@ -9,40 +9,34 @@ public sealed partial class CurrentMediaInformationWindowViewModel : WindowViewM
     /// <summary>
     /// Gets the current current media information view model instance.
     /// </summary>
-    public CurrentMediaInformationViewModel CurrentMediaInformationViewModel { get; }
+    public CurrentMediaInformationGeneralViewModel CurrentMediaInformationGeneralViewModel { get; }
+
+    /// <summary>
+    /// Gets the command for the closing the window.
+    /// </summary>
+    public IRelayCommand CloseCommand { get; }
     #endregion
 
     #region Constructor
     /// <summary>
     /// Initializes a new instance of the <see cref="CurrentMediaInformationWindowViewModel"/> class.
     /// </summary>
-    /// <param name="currentMediaInformationViewModel">
+    /// <param name="currentMediaInformationGeneralViewModel">
     /// The view model for the current media information view, as a transient.
     /// </param>
     /// <param name="resourceLoader">
     /// The application resource loader.
     /// </param>
     public CurrentMediaInformationWindowViewModel(
-        CurrentMediaInformationViewModel currentMediaInformationViewModel,
-        ResourceLoader                   resourceLoader)
+        CurrentMediaInformationGeneralViewModel currentMediaInformationGeneralViewModel,
+        ResourceLoader                          resourceLoader)
     {
         DefaultAppWindowConfiguration = GetDefaultAppWindowConfiguration(resourceLoader);
         DefaultWindowConfiguration    = GetDefaultWindowConfiguration(resourceLoader);
 
-        currentMediaInformationViewModel.CloseWindowCommand = CloseWindowCommand;
+        CurrentMediaInformationGeneralViewModel = currentMediaInformationGeneralViewModel;
 
-        CurrentMediaInformationViewModel = currentMediaInformationViewModel;
-    }
-    #endregion
-
-    #region Commands
-    /// <summary>
-    /// Closes the current window.
-    /// </summary>
-    [RelayCommand]
-    public void CloseWindow()
-    {
-        Close();
+        CloseCommand = new RelayCommand(Close);
     }
     #endregion
 
