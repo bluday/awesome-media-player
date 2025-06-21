@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl mc:Ignorable="d"
+             x:Class="Amp.Controls.NavigationViewHeaderBar"
+             x:DefaultBindMode="OneWay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:communityToolkit="using:CommunityToolkit.WinUI"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Padding="0,4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Padding="16,0" Text="My Music" VerticalAlignment="Bottom"/>
+
+        <Grid HorizontalAlignment="Right" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="4"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="{communityToolkit:FontIcon FontSize=17, Glyph=&#xe9a4;}"
+                    Height="25"
+                    Padding="0"
+                    VerticalAlignment="Center"
+                    Width="25"/>
+            
+            <AutoSuggestBox x:Uid="MainView/NavigationViewHeaderBar/AutoSuggestBox"
+                            MinWidth="200"
+                            VerticalAlignment="Center"
+                            Grid.Column="2"/>
+        </Grid>
+    </Grid>
+</UserControl>
