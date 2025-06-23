@@ -59,7 +59,7 @@ public sealed partial class MainWindowViewModel : WindowViewModel, IApplicationR
         ApplyDefaultTitle();
         ApplyDefaultSystemBackdrop();
 
-        Resize(width: 1000, height: 800);
+        Resize(width: 1500, height: 1200);
 
         MoveToCenter();
 
@@ -73,6 +73,6 @@ public sealed partial class MainWindowViewModel : WindowViewModel, IApplicationR
 
     public override void ApplyDefaultTitle()
     {
-        Title = this.GetLocalizedString("MainWindow/Title");
+        Title = this.GetLocalizedString("General/AppDisplayName");
     }
 }

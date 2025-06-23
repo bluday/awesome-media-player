@@ -139,7 +139,7 @@
     <value>My Videos</value>
   </data>
   <data name="MainWindow.Title" xml:space="preserve">
-    <value>Awesome Media Player</value>
+    <value>Amp</value>
   </data>
   <data name="MainView.NavigationView.MediaLibraryItem.Content" xml:space="preserve">
     <value>Media Library</value>

@@ -34,7 +34,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="ms-resource:AppDisplayName"
+        DisplayName="ms-resource:General/AppDisplayName"
         BackgroundColor="transparent"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png" Description="Developed by BluDay.">
