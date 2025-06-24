@@ -1,7 +1,6 @@
 ﻿using BluDay.Net.WinUI3.Abstractions.ViewModels;
 using BluDay.Net.WinUI3.Common;
 using BluDay.Net.WinUI3.Extensions;
-using CommunityToolkit.Mvvm.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.Windows.ApplicationModel.Resources;
 using System;
@@ -39,15 +38,6 @@ public sealed partial class MainWindowViewModel : WindowViewModel, IApplicationR
         MainViewModel = mainViewModel;
     }
 
-    /// <summary>
-    /// Closes the window.
-    /// </summary>
-    [RelayCommand]
-    public void CloseWindow()
-    {
-        Close();
-    }
-
     public override void ApplyDefaultIcon()
     {
         IconPath = Path.Combine(AppContext.BaseDirectory, "Assets", "Icon-64.ico");
@@ -59,7 +49,7 @@ public sealed partial class MainWindowViewModel : WindowViewModel, IApplicationR
         ApplyDefaultTitle();
         ApplyDefaultSystemBackdrop();
 
-        Resize(width: 1500, height: 1200);
+        Resize(width: 1400, height: 1000);
 
         MoveToCenter();
 

@@ -34,7 +34,7 @@
         
         <views:CurrentMediaInformationGeneralPage Grid.Row="2"/>
         
-        <Button Command="{x:Bind ViewModel.CloseWindowCommand}"
+        <Button Command="{x:Bind ViewModel.CloseCommand}"
                 Content="Close"
                 HorizontalAlignment="Right"
                 Margin="16"

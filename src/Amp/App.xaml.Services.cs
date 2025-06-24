@@ -13,14 +13,11 @@ public sealed partial class App
 {
     public static void ConfigureServices(IServiceCollection services)
     {
-        services
-            .AddLogging(ConfigureLogging);
+        services.AddLogging(ConfigureLogging);
 
-        services
-            .AddMemoryCache();
+        services.AddMemoryCache();
 
-        services
-            .AddSingleton<WeakReferenceMessenger>();
+        services.AddSingleton<WeakReferenceMessenger>();
 
         services
             .AddSingleton<App>()
