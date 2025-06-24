@@ -13,26 +13,33 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Padding="16,0" Text="My Music" VerticalAlignment="Bottom"/>
+        <TextBlock FontWeight="SemiBold"
+                   Margin="12,6"
+                   MaxLines="1"
+                   Text="My Music"
+                   TextLineBounds="Tight"
+                   TextTrimming="CharacterEllipsis"
+                   TextWrapping="NoWrap"
+                   VerticalAlignment="Bottom"/>
 
         <Grid HorizontalAlignment="Right" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="8"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="4"/>
             </Grid.ColumnDefinitions>
 
             <Button Content="{communityToolkit:FontIcon FontSize=17, Glyph=&#xe9a4;}"
                     Height="25"
                     Padding="0"
                     VerticalAlignment="Center"
-                    Width="25"/>
+                    Width="25"
+                    Grid.Column="0"/>
             
             <AutoSuggestBox x:Uid="MainView/NavigationViewHeaderBar/AutoSuggestBox"
+                            Margin="8,0,4,0"
                             MinWidth="200"
                             VerticalAlignment="Center"
-                            Grid.Column="2"/>
+                            Grid.Column="1"/>
         </Grid>
     </Grid>
 </UserControl>
