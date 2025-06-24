@@ -44,7 +44,7 @@ public sealed partial class MainViewModel : ObservableObject
 
     private TWindow CreateWindow<TWindow>() where TWindow : Window
     {
-        var window = (TWindow)_windowFactory.GetInstance(typeof(TWindow));
+        TWindow window = _windowFactory.GetInstance<TWindow>();
 
         window.Activate();
 
