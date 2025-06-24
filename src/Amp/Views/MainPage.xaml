@@ -12,7 +12,7 @@
       xmlns:views="using:Amp.Views"
       xmlns:viewModels="using:Amp.ViewModels"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Grid>
+    <Grid IsTabStop="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -34,6 +34,47 @@
                         OpenPaneLength="200"
                         PaneDisplayMode="Left"
                         Grid.Row="2">
+            <NavigationView.Content>
+                <Grid>
+                    <views:MediaLibraryPage DataContext="{Binding MediaLibraryViewModel}"/>
+
+                    <toolkitControls:PropertySizer Binding="{x:Bind NavigationView.OpenPaneLength, Mode=TwoWay}"
+                                                   HorizontalAlignment="Left"
+                                                   Maximum="400"
+                                                   Minimum="200"/>
+                </Grid>
+            </NavigationView.Content>
+            
+            <NavigationView.FooterMenuItems>
+                <NavigationViewItem>
+                    <NavigationViewItem.Template>
+                        <ControlTemplate>
+                            <ContentPresenter Height="140"/>
+                        </ControlTemplate>
+                    </NavigationViewItem.Template>
+
+                    <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
+                          BorderThickness="1"
+                          CornerRadius="8"
+                          Height="120"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Width="120">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="https://www.halopedia.org/images/2/2e/Halo2-Volume1-OriginalSoundtrack.jpg"/>
+                        </Grid.Background>
+
+                        <interactivity:Interaction.Behaviors>
+                            <interactivity:BehaviorCollection>
+                                <interactivity:EventTriggerBehavior EventName="Tapped">
+                                    <interactivity:InvokeCommandAction Command="{Binding OpenCurrentMediaInformationWindowCommand}"/>
+                                </interactivity:EventTriggerBehavior>
+                            </interactivity:BehaviorCollection>
+                        </interactivity:Interaction.Behaviors>
+                    </Grid>
+                </NavigationViewItem>
+            </NavigationView.FooterMenuItems>
+            
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Uid="MainView/NavigationView/PlaylistItem" IsSelected="True">
                     <NavigationViewItem.Icon>
@@ -151,45 +192,6 @@
                 </NavigationViewItem>
                 -->
             </NavigationView.MenuItems>
-
-            <NavigationView.FooterMenuItems>
-                <NavigationViewItem>
-                    <NavigationViewItem.Template>
-                        <ControlTemplate>
-                            <ContentPresenter Height="140"/>
-                        </ControlTemplate>
-                    </NavigationViewItem.Template>
-
-                    <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
-                          BorderThickness="1"
-                          CornerRadius="8"
-                          Height="120"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center"
-                          Width="120">
-                        <Grid.Background>
-                            <ImageBrush ImageSource="https://www.halopedia.org/images/2/2e/Halo2-Volume1-OriginalSoundtrack.jpg"/>
-                        </Grid.Background>
-
-                        <interactivity:Interaction.Behaviors>
-                            <interactivity:BehaviorCollection>
-                                <interactivity:EventTriggerBehavior EventName="Tapped">
-                                    <interactivity:InvokeCommandAction Command="{Binding OpenCurrentMediaInformationWindowCommand}"/>
-                                </interactivity:EventTriggerBehavior>
-                            </interactivity:BehaviorCollection>
-                        </interactivity:Interaction.Behaviors>
-                    </Grid>
-                </NavigationViewItem>
-            </NavigationView.FooterMenuItems>
-
-            <Grid>
-                <views:MediaLibraryPage DataContext="{Binding MediaLibraryViewModel}"/>
-
-                <toolkitControls:PropertySizer Binding="{x:Bind NavigationView.OpenPaneLength, Mode=TwoWay}"
-                                               HorizontalAlignment="Left"
-                                               Maximum="400"
-                                               Minimum="200"/>
-            </Grid>
         </NavigationView>
 
         <controls:MediaControlBar BorderThickness="0,1,0,0"
