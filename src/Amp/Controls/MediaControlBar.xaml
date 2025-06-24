@@ -3,6 +3,7 @@
              x:Class="Amp.Controls.MediaControlBar"
              x:DefaultBindMode="OneWay"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:controls="using:Amp.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:toolkit="using:CommunityToolkit.WinUI"
@@ -97,8 +98,10 @@
                 </StackPanel>
 
                 <StackPanel>
-                    <!-- e8ee (All) -->
-                    <!-- f5e7 (Off) -->
+                    <!--
+                    * e8ee (All)
+                    * f5e7 (Off)
+                    -->
                     <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe8ed;}"/>
 
                     <!-- SystemAccentColor -->
@@ -107,11 +110,13 @@
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Right" Margin="8,0" Spacing="8" Grid.Column="2">
-                <!-- e992 (Volume0) -->
-                <!-- e993 (Volume1) -->
-                <!-- e994 (Volume2) -->
-                <!-- e995 (Volume3) -->
-                <!-- e74f (Mute) -->
+                <!--
+                * e992 (Volume0)
+                * e993 (Volume1)
+                * e994 (Volume2)
+                * e995 (Volume3)
+                * e74f (Mute)
+                -->
                 <Button Background="Transparent"
                         BorderBrush="Transparent"
                         Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe767;}"/>
@@ -125,29 +130,8 @@
             </StackPanel>
         </Grid>
 
-        <Path Fill="{ThemeResource ControlElevationBorderBrush}"
-              Height="10"
-              HorizontalAlignment="Right"
-              VerticalAlignment="Bottom"
-              Visibility="{x:Bind CornerDragHandleVisibility}"
-              Width="10"
-              Grid.Column="1"
-              Grid.Row="2">
-            <Path.Data>
-                <GeometryGroup>
-                    <!-- Column 0 -->
-                    <RectangleGeometry Rect="0,8,2,2"/>
-
-                    <!-- Column 1 -->
-                    <RectangleGeometry Rect="4,4,2,2"/>
-                    <RectangleGeometry Rect="4,8,2,2"/>
-
-                    <!-- Column 2 -->
-                    <RectangleGeometry Rect="8,0,2,2"/>
-                    <RectangleGeometry Rect="8,4,2,2"/>
-                    <RectangleGeometry Rect="8,8,2,2"/>
-                </GeometryGroup>
-            </Path.Data>
-        </Path>
+        <controls:WindowCornerDragHandle Visibility="{x:Bind CornerDragHandleVisibility}"
+                                         Grid.Column="1"
+                                         Grid.Row="2"/>
     </Grid>
 </UserControl>
