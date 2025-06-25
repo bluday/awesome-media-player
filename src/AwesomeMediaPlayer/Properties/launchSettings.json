@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Awwsome Media Player (Packaged)": {
+      "commandName": "MsixPackage"
+    }
+  }
+}
