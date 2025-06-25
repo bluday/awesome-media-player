@@ -1,21 +1,16 @@
 ﻿using BluDay.Net.WinUI3.Abstractions.ViewModels;
-using BluDay.Net.WinUI3.Common;
-using BluDay.Net.WinUI3.Extensions;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.Windows.ApplicationModel.Resources;
 using System;
-using System.IO;
 
 namespace AwesomeMediaPlayer.ViewModels;
 
 /// <summary>
 /// Represents the view model for the main window.
 /// </summary>
-public sealed partial class MainWindowViewModel : WindowViewModel, IApplicationResourceAware
+public sealed partial class MainWindowViewModel : WindowViewModel
 {
     private ResourceLoader _resourceLoader;
-
-    ResourceLoader IApplicationResourceAware.ResourceLoader => _resourceLoader;
 
     /// <summary>
     /// Gets the current main view model instance.
@@ -42,7 +37,7 @@ public sealed partial class MainWindowViewModel : WindowViewModel, IApplicationR
 
     public override void ApplyDefaultIcon()
     {
-        IconPath = Path.Combine(AppContext.BaseDirectory, "Assets", "Icon-64.ico");
+        IconPath = System.IO.Path.Combine(AppContext.BaseDirectory, "Assets", "Icon-64.ico");
     }
 
     public override void ApplyDefaultPreActivationConfiguration()
@@ -65,6 +60,6 @@ public sealed partial class MainWindowViewModel : WindowViewModel, IApplicationR
 
     public override void ApplyDefaultTitle()
     {
-        Title = this.GetLocalizedString("General/AppDisplayName");
+        Title = _resourceLoader.GetString("General/AppDisplayName");
     }
 }

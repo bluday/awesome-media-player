@@ -4,6 +4,7 @@ using BluDay.Net.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.UI.Xaml;
+using System;
 
 namespace AwesomeMediaPlayer;
 
@@ -12,34 +13,31 @@ namespace AwesomeMediaPlayer;
 /// </summary>
 public sealed partial class App : Application
 {
-    private ImplementationProvider<Window> _windowFactory;
+    private readonly Lazy<ImplementationProvider<Window>> _windowFactory;
 
-    private ILogger _logger;
+    private readonly Lazy<ILogger> _logger;
 
-    private IKeyedServiceProvider _rootServiceProvider;
+    private readonly IKeyedServiceProvider _rootServiceProvider;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="App"/> class.
     /// </summary>
     public App()
     {
-        _windowFactory = null!;
-
-        _logger = null!;
-
         _rootServiceProvider = new ServiceCollection()
             .AddLogging(ConfigureLogging)
             .Add(ConfigureServices)
             .BuildServiceProvider();
 
+        _windowFactory = new Lazy<ImplementationProvider<Window>>(
+            () => _rootServiceProvider.GetRequiredService<ImplementationProvider<Window>>()
+        );
+
+        _logger = new Lazy<ILogger>(
+            () => _rootServiceProvider.GetRequiredService<ILogger<App>>()
+        );
+
         InitializeComponent();
-    }
-
-    private void InitializeServices()
-    {
-        _logger = _rootServiceProvider.GetRequiredService<ILogger<App>>();
-
-        _windowFactory = _rootServiceProvider.GetRequiredService<ImplementationProvider<Window>>();
     }
 
     /// <summary>
@@ -50,10 +48,6 @@ public sealed partial class App : Application
     /// </param>
     protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
-        InitializeServices();
-
-        _windowFactory.GetInstance<MainWindow>().Activate();
-
-        _logger.LogInformation("Application launched.");
+        _windowFactory.Value.GetInstance<MainWindow>().Activate();
     }
 }

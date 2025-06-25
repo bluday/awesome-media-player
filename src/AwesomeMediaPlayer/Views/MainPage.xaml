@@ -12,10 +12,6 @@
       xmlns:views="using:AwesomeMediaPlayer.Views"
       xmlns:viewModels="using:AwesomeMediaPlayer.ViewModels"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Page.DataContext>
-        <viewModels:MainViewModel/>
-    </Page.DataContext>
-    
     <Grid IsTabStop="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -40,7 +36,7 @@
                         Grid.Row="2">
             <NavigationView.Content>
                 <Grid>
-                    <views:MediaLibraryPage ViewModel="{Binding MediaLibraryViewModel}"/>
+                    <views:MediaLibraryPage DataContext="{Binding MediaLibraryViewModel}"/>
 
                     <toolkitControls:PropertySizer Binding="{x:Bind NavigationView.OpenPaneLength, Mode=TwoWay}"
                                                    HorizontalAlignment="Left"
