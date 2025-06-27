@@ -22,6 +22,6 @@
                            Title="{x:Bind ViewModel.Title}"
                            Grid.Row="0"/>
 
-        <views:HelpPage Grid.Row="1"/>
+        <views:HelpView Grid.Row="1"/>
     </Grid>
 </Window>

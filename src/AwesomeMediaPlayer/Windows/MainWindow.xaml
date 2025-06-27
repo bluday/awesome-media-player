@@ -22,6 +22,6 @@
                            Title="{x:Bind ViewModel.Title}"
                            Grid.Row="0"/>
 
-        <views:MainPage Grid.Row="1"/>
+        <views:MainView Grid.Row="1"/>
     </Grid>
 </Window>

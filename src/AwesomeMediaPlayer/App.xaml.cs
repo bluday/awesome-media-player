@@ -1,9 +1,13 @@
 ﻿using AwesomeMediaPlayer.Windows;
 using BluDay.Net.DependencyInjection;
 using BluDay.Net.Extensions;
+using BluDay.Net.WinUI3.Extensions;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.UI.Xaml;
+using Microsoft.Windows.ApplicationModel.Resources;
 using System;
 
 namespace AwesomeMediaPlayer;
@@ -13,9 +17,9 @@ namespace AwesomeMediaPlayer;
 /// </summary>
 public sealed partial class App : Application
 {
-    private readonly Lazy<ImplementationProvider<Window>> _windowFactory;
+    private readonly ImplementationProvider<Window> _windowFactory;
 
-    private readonly Lazy<ILogger> _logger;
+    private readonly ILogger _logger;
 
     private readonly IKeyedServiceProvider _rootServiceProvider;
 
@@ -25,17 +29,11 @@ public sealed partial class App : Application
     public App()
     {
         _rootServiceProvider = new ServiceCollection()
-            .AddLogging(ConfigureLogging)
             .Add(ConfigureServices)
             .BuildServiceProvider();
 
-        _windowFactory = new Lazy<ImplementationProvider<Window>>(
-            () => _rootServiceProvider.GetRequiredService<ImplementationProvider<Window>>()
-        );
-
-        _logger = new Lazy<ILogger>(
-            () => _rootServiceProvider.GetRequiredService<ILogger<App>>()
-        );
+        _windowFactory = _rootServiceProvider.GetRequiredService<ImplementationProvider<Window>>();
+        _logger        = _rootServiceProvider.GetRequiredService<ILogger<App>>();
 
         InitializeComponent();
     }
@@ -48,6 +46,63 @@ public sealed partial class App : Application
     /// </param>
     protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
-        _windowFactory.Value.GetInstance<MainWindow>().Activate();
+        _windowFactory.GetInstance<MainWindow>().Activate();
+    }
+
+    /// <summary>
+    /// Configures the provided logging builder for the client.
+    /// </summary>
+    /// <param name="logging">
+    /// The logging builder instance.
+    /// </param>
+    /// <exception cref="ArgumentNullException">
+    /// Thrown if <paramref name="logging"/> is null.
+    /// </exception>
+    public static void ConfigureLogging(ILoggingBuilder logging)
+    {
+        ArgumentNullException.ThrowIfNull(logging);
+
+        logging
+            .AddConsole()
+            .AddDebug();
+
+        logging
+            .SetMinimumLevel(LogLevel.Debug);
+    }
+
+    /// <summary>
+    /// Configures the provided service descriptor collection with core services.
+    /// </summary>
+    /// <param name="services">
+    /// The service descriptor collection.
+    /// </param>
+    /// <exception cref="ArgumentNullException">
+    /// If <paramref name="services"/> is null.
+    /// </exception>
+    private void ConfigureServices(IServiceCollection services)
+    {
+        ArgumentNullException.ThrowIfNull(services);
+
+        services
+            .AddSingleton<App>()
+            .AddSingleton<ResourceLoader>();
+
+        services
+            .AddViews()
+            .AddViewModels()
+            .AddWindows();
+
+        services
+            .AddSingleton<ImplementationProvider<ObservableObject>>()
+            .AddSingleton<ImplementationProvider<Window>>();
+
+        services
+            .AddLogging(ConfigureLogging);
+
+        services
+            .AddMemoryCache();
+
+        services
+            .AddSingleton<WeakReferenceMessenger>();
     }
 }

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Page d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel}"
-      mc:Ignorable="d"
-      x:Class="AwesomeMediaPlayer.Views.MainPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:controls="using:AwesomeMediaPlayer.Controls"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:toolkit="using:CommunityToolkit.WinUI"
-      xmlns:toolkitControls="using:CommunityToolkit.WinUI.Controls"
-      xmlns:views="using:AwesomeMediaPlayer.Views"
-      xmlns:viewModels="using:AwesomeMediaPlayer.ViewModels"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<UserControl d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel}"
+             mc:Ignorable="d"
+             x:Class="AwesomeMediaPlayer.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:controls="using:AwesomeMediaPlayer.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:toolkit="using:CommunityToolkit.WinUI"
+             xmlns:toolkitControls="using:CommunityToolkit.WinUI.Controls"
+             xmlns:views="using:AwesomeMediaPlayer.Views"
+             xmlns:viewModels="using:AwesomeMediaPlayer.ViewModels"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid IsTabStop="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -36,7 +36,7 @@
                         Grid.Row="2">
             <NavigationView.Content>
                 <Grid>
-                    <views:MediaLibraryPage DataContext="{Binding MediaLibraryViewModel}"/>
+                    <views:MediaLibraryView DataContext="{Binding MediaLibraryViewModel}"/>
 
                     <toolkitControls:PropertySizer Binding="{x:Bind NavigationView.OpenPaneLength, Mode=TwoWay}"
                                                    HorizontalAlignment="Left"
@@ -198,4 +198,4 @@
                                   CornerDragHandleVisibility="Visible"
                                   Grid.Row="3"/>
     </Grid>
-</Page>
+</UserControl>

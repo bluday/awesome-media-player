@@ -4,9 +4,9 @@ using CommunityToolkit.WinUI.UI.Controls;
 namespace AwesomeMediaPlayer.Views;
 
 /// <summary>
-/// Interaction logic for HelpPage.xaml.
+/// Interaction logic for HelpView.xaml.
 /// </summary>
-public sealed partial class HelpPage : Microsoft.UI.Xaml.Controls.Page
+public sealed partial class HelpView : Microsoft.UI.Xaml.Controls.UserControl
 {
     /// <summary>
     /// Gets or sets the view model instance.
@@ -14,9 +14,9 @@ public sealed partial class HelpPage : Microsoft.UI.Xaml.Controls.Page
     public HelpViewModel ViewModel { get; set; } = null!;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="HelpPage"/> class.
+    /// Initializes a new instance of the <see cref="HelpView"/> class.
     /// </summary>
-    public HelpPage()
+    public HelpView()
     {
         InitializeComponent();
     }

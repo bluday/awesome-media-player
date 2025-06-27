@@ -32,7 +32,7 @@
             <SelectorBarItem Icon="{communityToolkit:FontIcon Glyph=&#xe9d2;}" Text="Statistics"/>
         </SelectorBar>
         
-        <views:CurrentMediaInformationGeneralPage Grid.Row="2"/>
+        <views:CurrentMediaInformationGeneralView Grid.Row="2"/>
         
         <Button Command="{x:Bind ViewModel.CloseCommand}"
                 Content="Close"

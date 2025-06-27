@@ -4,9 +4,9 @@ using CommunityToolkit.WinUI.UI.Controls;
 namespace AwesomeMediaPlayer.Views;
 
 /// <summary>
-/// Interaction logic for AboutPage.xaml.
+/// Interaction logic for AboutView.xaml.
 /// </summary>
-public sealed partial class AboutPage : Microsoft.UI.Xaml.Controls.Page
+public sealed partial class AboutView : Microsoft.UI.Xaml.Controls.UserControl
 {
     /// <summary>
     /// Gets or sets the view model instance.
@@ -14,9 +14,9 @@ public sealed partial class AboutPage : Microsoft.UI.Xaml.Controls.Page
     public AboutViewModel ViewModel { get; set; } = null!;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="AboutPage"/> class.
+    /// Initializes a new instance of the <see cref="AboutView"/> class.
     /// </summary>
-    public AboutPage()
+    public AboutView()
     {
         InitializeComponent();
     }
