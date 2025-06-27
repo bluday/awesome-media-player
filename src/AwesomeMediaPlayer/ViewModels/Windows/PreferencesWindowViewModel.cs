@@ -44,7 +44,7 @@ public sealed partial class PreferencesWindowViewModel : WindowViewModel
         ApplyDefaultTitle();
         ApplyDefaultSystemBackdrop();
 
-        Resize(width: 800, height: 700);
+        Resize(width: 1000, height: 1000);
 
         MoveToCenter();
 

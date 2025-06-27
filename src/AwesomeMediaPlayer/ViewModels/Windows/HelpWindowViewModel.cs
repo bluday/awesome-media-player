@@ -44,7 +44,7 @@ public sealed partial class HelpWindowViewModel : WindowViewModel
         ApplyDefaultTitle();
         ApplyDefaultSystemBackdrop();
 
-        Resize(width: 600, height: 60);
+        Resize(width: 800, height: 800);
 
         MoveToCenter();
 

@@ -22,6 +22,7 @@
                            Title="{x:Bind ViewModel.Title}"
                            Grid.Row="0"/>
 
-        <views:MainView Grid.Row="1"/>
+        <views:MainView DataContext="{x:Bind ViewModel.MainViewModel}"
+                        Grid.Row="1"/>
     </Grid>
 </Window>

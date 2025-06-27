@@ -46,7 +46,7 @@ public sealed partial class CurrentMediaInformationWindowViewModel : WindowViewM
         ApplyDefaultTitle();
         ApplyDefaultSystemBackdrop();
 
-        Resize(width: 800, height: 700);
+        Resize(width: 900, height: 900);
 
         MoveToCenter();
 

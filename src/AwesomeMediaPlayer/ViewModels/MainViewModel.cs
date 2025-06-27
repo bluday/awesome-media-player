@@ -3,6 +3,7 @@ using BluDay.Net.DependencyInjection;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.UI.Xaml;
+using System;
 using System.Windows.Input;
 
 namespace AwesomeMediaPlayer.ViewModels;
@@ -12,28 +13,46 @@ namespace AwesomeMediaPlayer.ViewModels;
 /// </summary>
 public sealed partial class MainViewModel : ObservableObject
 {
+    private readonly ImplementationProvider<Window> _windowFactory;
+
     /// <summary>
-    /// Gets or sets the window factory instance for creating other windows.
+    /// Gets the view model for the media library view.
     /// </summary>
-    public ImplementationProvider<Window>? WindowFactory { get; set; }
+    public MediaLibraryViewModel MediaLibraryViewModel { get; private set; }
 
     /// <summary>
     /// Gets or sets the close window command.
     /// </summary>
     public ICommand? CloseWindowCommand { get; set; }
 
-    private TWindow CreateWindow<TWindow>() where TWindow : Window
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MainViewModel"/> class using the view
+    /// model for the media library view.
+    /// </summary>
+    /// <param name="mediaLibraryViewModel">
+    /// The view model for the media library view.
+    /// </param>
+    /// <param name="windowFactory">
+    /// The window factory.
+    /// </param>
+    /// <exception cref="ArgumentNullException">
+    /// Thrown if <paramref name="mediaLibraryViewModel"/> is null.
+    /// </exception>
+    public MainViewModel(
+        MediaLibraryViewModel          mediaLibraryViewModel,
+        ImplementationProvider<Window> windowFactory)
     {
-        if (WindowFactory is not ImplementationProvider<Window> windowFactory)
-        {
-            throw new System.InvalidOperationException("Window factory must be set.");
-        }
+        ArgumentNullException.ThrowIfNull(mediaLibraryViewModel);
+        ArgumentNullException.ThrowIfNull(windowFactory);
 
-        var window = windowFactory.GetInstance<TWindow>();
+        _windowFactory = windowFactory;
 
-        window.Activate();
+        MediaLibraryViewModel = mediaLibraryViewModel;
+    }
 
-        return window;
+    private void CreateWindow<TWindow>() where TWindow : Window
+    {
+        _windowFactory.GetInstance<TWindow>().Activate();
     }
 
     /// <summary>
