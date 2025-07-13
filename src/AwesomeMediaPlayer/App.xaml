@@ -1,30 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application x:Class="AwesomeMediaPlayer.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             RequestedTheme="Light">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
-                
-                <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
 
-            <SolidColorBrush x:Key="AwesomeMenuBarBackgroundBrush"
-                             Color="{ThemeResource ControlFillColorTertiary}"
-                             Opacity="0.8"/>
-            
-            <SolidColorBrush x:Key="WindowCaptionBackground">Transparent</SolidColorBrush>
-            <SolidColorBrush x:Key="WindowCaptionBackgroundDisabled">Transparent</SolidColorBrush>
-            <SolidColorBrush x:Key="WindowCaptionForeground">White</SolidColorBrush>
-            
-            <Color x:Key="SystemAccentColor">CornflowerBlue</Color>
-            <Color x:Key="SystemAccentColorDark1">CornflowerBlue</Color>
-            <Color x:Key="SystemAccentColorDark2">CornflowerBlue</Color>
-            <Color x:Key="SystemAccentColorDark3">CornflowerBlue</Color>
-            <Color x:Key="SystemAccentColorLight1">CornflowerBlue</Color>
-            <Color x:Key="SystemAccentColorLight2">CornflowerBlue</Color>
-            <Color x:Key="SystemAccentColorLight3">CornflowerBlue</Color>
+                <ResourceDictionary Source="ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml"/>
+
+                <ResourceDictionary Source="/Resources/SystemAccentColorResources.xaml"/>
+                <ResourceDictionary Source="/Resources/WindowCaptionResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

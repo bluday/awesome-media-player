@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <UserControl d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel}"
              mc:Ignorable="d"
              x:Class="AwesomeMediaPlayer.Views.MainView"
@@ -16,16 +16,22 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
+        <controls:TitleBar Icon="{Binding TitleBarIcon}"
+                           Title="{Binding Title}"
+                           Grid.Row="0"/>
+
         <controls:MenuBar OpenAboutWindowCommand="{Binding OpenAboutWindowCommand}"
                           OpenHelpWindowCommand="{Binding OpenHelpWindowCommand}"
                           OpenPreferencesWindowCommand="{Binding OpenPreferencesWindowCommand}"
-                          QuitCommand="{Binding CloseWindowCommand}"/>
+                          QuitCommand="{Binding CloseWindowCommand}"
+                          Grid.Row="1"/>
 
-        <controls:NavigationViewHeaderBar Grid.Row="1"/>
+        <controls:NavigationViewHeaderBar Grid.Row="2"/>
 
         <NavigationView x:Name="NavigationView"
                         IsBackButtonVisible="Collapsed"
@@ -33,7 +39,7 @@
                         IsSettingsVisible="False"
                         OpenPaneLength="200"
                         PaneDisplayMode="Left"
-                        Grid.Row="2">
+                        Grid.Row="3">
             <NavigationView.Content>
                 <Grid>
                     <views:MediaLibraryView DataContext="{Binding MediaLibraryViewModel}"/>
@@ -44,7 +50,7 @@
                                                    Minimum="200"/>
                 </Grid>
             </NavigationView.Content>
-            
+
             <NavigationView.FooterMenuItems>
                 <NavigationViewItem>
                     <NavigationViewItem.Template>
@@ -74,128 +80,132 @@
                     </Grid>
                 </NavigationViewItem>
             </NavigationView.FooterMenuItems>
-            
+
             <NavigationView.MenuItems>
-                <NavigationViewItem x:Uid="MainView/NavigationView/PlaylistItem" IsSelected="True">
+                <NavigationViewItem Content="Playlist [00:00]" IsSelected="True">
                     <NavigationViewItem.Icon>
-                        <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe90b;"/>
+                        <FontIcon Glyph="&#xe90b;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
-                <NavigationViewItem x:Uid="MainView/NavigationView/MediaLibraryItem" IsEnabled="False">
+                <NavigationViewItem Content="Media Library" IsEnabled="False">
                     <NavigationViewItem.Icon>
-                        <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe8f1;"/>
+                        <FontIcon Glyph="&#xe8f1;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
                 <NavigationViewItemSeparator/>
 
-                <NavigationViewItem x:Uid="MainView/NavigationView/MyComputerItem"
+                <NavigationViewItem Content="My Computer"
                                     IsExpanded="True"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.Icon>
-                        <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe977;"/>
+                        <FontIcon Glyph="&#xe977;"/>
                     </NavigationViewItem.Icon>
-                    
+
                     <NavigationViewItem.MenuItems>
-                        <NavigationViewItem x:Uid="MainView/NavigationView/MyVideosItem">
+                        <NavigationViewItem Content="My Videos">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe8b2;"/>
-                            </NavigationViewItem.Icon>
-                        </NavigationViewItem>
-                        
-                        <NavigationViewItem x:Uid="MainView/NavigationView/MyMusicItem">
-                            <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe8d6;"/>
+                                <FontIcon Glyph="&#xe8b2;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
-                        <NavigationViewItem x:Uid="MainView/NavigationView/MyPicturesItem">
+                        <NavigationViewItem Content="My Music">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe8b9;"/>
+                                <FontIcon Glyph="&#xe8d6;"/>
+                            </NavigationViewItem.Icon>
+                        </NavigationViewItem>
+
+                        <NavigationViewItem Content="My Pictures">
+                            <NavigationViewItem.Icon>
+                                <FontIcon Glyph="&#xe8b9;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
 
-                <NavigationViewItem x:Uid="MainView/NavigationView/DevicesItem"
+                <NavigationViewItem Content="Devices"
                                     IsExpanded="False"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.Icon>
-                        <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe772;"/>
+                        <FontIcon Glyph="&#xe772;"/>
                     </NavigationViewItem.Icon>
-                    
+
                     <NavigationViewItem.MenuItems>
-                        <NavigationViewItem x:Uid="MainView/NavigationView/DiscsItem" IsEnabled="False">
+                        <NavigationViewItem Content="Discs" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe958;"/>
+                                <FontIcon Glyph="&#xe958;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
 
-                <!--
-                <NavigationViewItem x:Uid="MainView/NavigationView/LocalNetworkItem"
+                <NavigationViewItem Content="Local Network"
                                     IsExpanded="False"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.Icon>
-                        <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xec27;"/>
+                        <FontIcon Glyph="&#xec27;"/>
                     </NavigationViewItem.Icon>
-                    
+
                     <NavigationViewItem.MenuItems>
                         <NavigationViewItem Content="mDNS Network Discovery" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe968;"/>
+                                <FontIcon Glyph="&#xe968;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
                         <NavigationViewItem Content="Network streams (SAP)" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe968;"/>
+                                <FontIcon Glyph="&#xe968;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
                         <NavigationViewItem Content="Universal Plug'n'Play" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe968;"/>
+                                <FontIcon Glyph="&#xe968;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
 
-                <NavigationViewItem x:Uid="MainView/NavigationView/InternetItem"
+                <NavigationViewItem Content="Internet"
                                     IsExpanded="False"
                                     SelectsOnInvoked="False">
                     <NavigationViewItem.Icon>
-                        <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe774;"/>
+                        <FontIcon Glyph="&#xe774;"/>
                     </NavigationViewItem.Icon>
-                    
+
                     <NavigationViewItem.MenuItems>
                         <NavigationViewItem Content="Podcasts" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe704;"/>
+                                <FontIcon Glyph="&#xe704;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
                         <NavigationViewItem Content="Jamendo Selections" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe704;"/>
+                                <FontIcon Glyph="&#xe704;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
 
                         <NavigationViewItem Content="Icecast Radio Directory" IsEnabled="False">
                             <NavigationViewItem.Icon>
-                                <FontIcon Foreground="{ThemeResource SystemAccentColor}" Glyph="&#xe704;"/>
+                                <FontIcon Glyph="&#xe704;"/>
                             </NavigationViewItem.Icon>
                         </NavigationViewItem>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
-                -->
             </NavigationView.MenuItems>
+
+            <NavigationView.Resources>
+                <Style TargetType="FontIcon">
+                    <Setter Property="Foreground" Value="{ThemeResource SystemAccentColorLight1}"/>
+                </Style>
+            </NavigationView.Resources>
         </NavigationView>
 
         <controls:MediaControlBar BorderThickness="0,1,0,0"
                                   CornerDragHandleVisibility="Visible"
-                                  Grid.Row="3"/>
+                                  Grid.Row="4"/>
     </Grid>
 </UserControl>

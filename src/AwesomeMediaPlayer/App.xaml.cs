@@ -1,12 +1,12 @@
-﻿using AwesomeMediaPlayer.Windows;
-using BluDay.Net.DependencyInjection;
-using BluDay.Net.Extensions;
+﻿using AwesomeMediaPlayer.ViewModels;
+using AwesomeMediaPlayer.Views;
 using BluDay.Net.WinUI3.Extensions;
-using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Media;
 using Microsoft.Windows.ApplicationModel.Resources;
 using System;
 
@@ -17,10 +17,6 @@ namespace AwesomeMediaPlayer;
 /// </summary>
 public sealed partial class App : Application
 {
-    private readonly ImplementationProvider<Window> _windowFactory;
-
-    private readonly ILogger _logger;
-
     private readonly IKeyedServiceProvider _rootServiceProvider;
 
     /// <summary>
@@ -28,12 +24,11 @@ public sealed partial class App : Application
     /// </summary>
     public App()
     {
-        _rootServiceProvider = new ServiceCollection()
-            .Add(ConfigureServices)
-            .BuildServiceProvider();
+        ServiceCollection services = new();
 
-        _windowFactory = _rootServiceProvider.GetRequiredService<ImplementationProvider<Window>>();
-        _logger        = _rootServiceProvider.GetRequiredService<ILogger<App>>();
+        ConfigureServices(services);
+
+        _rootServiceProvider = services.BuildServiceProvider();
 
         InitializeComponent();
     }
@@ -46,7 +41,26 @@ public sealed partial class App : Application
     /// </param>
     protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
-        _windowFactory.GetInstance<MainWindow>().Activate();
+        var mainView      = _rootServiceProvider.GetRequiredService<MainView>();
+        var mainViewModel = _rootServiceProvider.GetRequiredService<MainViewModel>();
+
+        mainView.DataContext = mainViewModel;
+
+        Window mainWindow = new()
+        {
+            Content                    = mainView,
+            ExtendsContentIntoTitleBar = true,
+            Title                      = new ResourceLoader().GetString("General/AppDisplayName"),
+            SystemBackdrop             = new MicaBackdrop()
+        };
+
+        AppWindow appWindow = mainWindow.AppWindow;
+
+        appWindow.Resize(1600, 1200);
+
+        appWindow.MoveToCenter();
+
+        mainWindow.Activate();
     }
 
     /// <summary>
@@ -56,7 +70,7 @@ public sealed partial class App : Application
     /// The logging builder instance.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown if <paramref name="logging"/> is null.
+    /// Thrown if <paramref name="logging"/> is <c>null</c>.
     /// </exception>
     public static void ConfigureLogging(ILoggingBuilder logging)
     {
@@ -66,8 +80,7 @@ public sealed partial class App : Application
             .AddConsole()
             .AddDebug();
 
-        logging
-            .SetMinimumLevel(LogLevel.Debug);
+        logging.SetMinimumLevel(LogLevel.Debug);
     }
 
     /// <summary>
@@ -77,32 +90,34 @@ public sealed partial class App : Application
     /// The service descriptor collection.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// If <paramref name="services"/> is null.
+    /// If <paramref name="services"/> is <c>null</c>.
     /// </exception>
     private void ConfigureServices(IServiceCollection services)
     {
         ArgumentNullException.ThrowIfNull(services);
 
-        services
-            .AddSingleton<App>()
-            .AddSingleton<ResourceLoader>();
+        services.AddLogging(ConfigureLogging);
+
+        services.AddMemoryCache();
+
+        services.AddSingleton<WeakReferenceMessenger>();
+
+        services.AddSingleton<ResourceLoader>();
 
         services
-            .AddViews()
-            .AddViewModels()
-            .AddWindows();
+            .AddTransient<AboutView>()
+            .AddTransient<CurrentMediaInformationGeneralView>()
+            .AddTransient<HelpView>()
+            .AddTransient<MainView>()
+            .AddTransient<MediaLibraryView>()
+            .AddTransient<PreferencesView>();
 
         services
-            .AddSingleton<ImplementationProvider<ObservableObject>>()
-            .AddSingleton<ImplementationProvider<Window>>();
-
-        services
-            .AddLogging(ConfigureLogging);
-
-        services
-            .AddMemoryCache();
-
-        services
-            .AddSingleton<WeakReferenceMessenger>();
+            .AddTransient<AboutViewModel>()
+            .AddTransient<CurrentMediaInformationGeneralViewModel>()
+            .AddTransient<HelpViewModel>()
+            .AddTransient<MainViewModel>()
+            .AddTransient<MediaLibraryViewModel>()
+            .AddTransient<PreferencesViewModel>();
     }
 }

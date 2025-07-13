@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <UserControl d:DataContext="{d:DesignInstance Type=viewModels:AboutViewModel}"
              mc:Ignorable="d"
              x:Class="AwesomeMediaPlayer.Views.AboutView"
@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            
+
             <Grid Height="200" Width="200">
                 <Image Height="400"
                        HorizontalAlignment="Center"
@@ -39,7 +39,7 @@
                     <RowDefinition Height="16"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                
+
                 <TextBlock Style="{StaticResource TitleTextBlockStyle}"
                            Margin="0"
                            Text="Awesome Media Player"/>
@@ -54,11 +54,11 @@
                                                                   Header5Margin="0,16,0,8"
                                                                   FontSize="12"
                                                                   ParagraphMargin="0,0,0,16"
-                                                                  Text="{x:Bind ViewModel.Text}"/>
+                                                                  Text="{Binding Text}"/>
                 </ScrollViewer>
             </Grid>
         </Grid>
-        
+
         <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
               BorderThickness="0,1,0,0"
               Height="50"
@@ -80,18 +80,10 @@
                     <Setter Property="TextDecorations" Value="Underline"/>
                 </Style>
             </Grid.Resources>
-            
-            <HyperlinkButton>
-                <TextBlock x:Uid="AboutView/BottomTabBar/AuthorsTextBlock"/>
-            </HyperlinkButton>
 
-            <HyperlinkButton Grid.Column="1">
-                <TextBlock x:Uid="AboutView/BottomTabBar/LicenseTextBlock"/>
-            </HyperlinkButton>
-            
-            <HyperlinkButton Grid.Column="2">
-                <TextBlock x:Uid="AboutView/BottomTabBar/CreditsTextBlock"/>
-            </HyperlinkButton>
+            <HyperlinkButton Content="Authors" Grid.Column="0"/>
+            <HyperlinkButton Content="License" Grid.Column="1"/>
+            <HyperlinkButton Content="Credits" Grid.Column="2"/>
         </Grid>
     </Grid>
 </UserControl>

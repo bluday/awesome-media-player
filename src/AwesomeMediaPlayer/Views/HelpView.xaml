@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <UserControl d:DataContext="{d:DesignInstance Type=viewModels:HelpViewModel}"
              mc:Ignorable="d"
              x:Class="AwesomeMediaPlayer.Views.HelpView"
@@ -24,14 +24,13 @@
                                                               Header5FontWeight="Bold"
                                                               Header5Margin="0,16,0,8"
                                                               FontSize="12"
-                                                              LinkClicked="MarkdownTextBlock_LinkClicked"
                                                               Padding="8,4"
                                                               ParagraphMargin="0,0,0,16"
-                                                              Text="{x:Bind ViewModel.Text}"/>
+                                                              Text="{Binding Text}"/>
             </ScrollViewer>
         </Grid>
 
-        <Button Command="{x:Bind ViewModel.CloseWindowCommand}"
+        <Button Command="{Binding CloseWindowCommand}"
                 Content="Close"
                 HorizontalAlignment="Right"
                 Grid.Row="2"/>
