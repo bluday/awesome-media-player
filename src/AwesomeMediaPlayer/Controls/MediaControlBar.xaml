@@ -6,7 +6,7 @@
              xmlns:controls="using:AwesomeMediaPlayer.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:toolkit="using:CommunityToolkit.WinUI"
+             xmlns:communityToolkit="using:CommunityToolkit.WinUI"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              MaxHeight="80">
     <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
@@ -74,27 +74,27 @@
             
             <StackPanel Spacing="16">
                 <!-- f8ae (Pause) -->
-                <Button Content="{toolkit:FontIcon FontSize=20, Glyph=&#xf5b0;}"
+                <Button Content="{communityToolkit:FontIcon FontSize=20, Glyph=&#xf5b0;}"
                         Height="32"
                         Width="32"/>
 
                 <StackPanel>
                     <!-- eb9e (Rewind) -->
-                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xf8ac;}"/>
+                    <Button Content="{communityToolkit:FontIcon FontSize=15, Glyph=&#xf8ac;}"/>
 
                     <!-- e71a (Stop) -->
-                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe73b;}"/>
+                    <Button Content="{communityToolkit:FontIcon FontSize=15, Glyph=&#xe73b;}"/>
 
                     <!-- eb9d (FastForward) -->
-                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xf8ad;}"/>
+                    <Button Content="{communityToolkit:FontIcon FontSize=15, Glyph=&#xf8ad;}"/>
                 </StackPanel>
 
                 <StackPanel>
                     <!-- e73f (Back to windowed mode) -->
-                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe740;}"
+                    <Button Content="{communityToolkit:FontIcon FontSize=15, Glyph=&#xe740;}"
                             IsEnabled="False"/>
 
-                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe9e9;}"/>
+                    <Button Content="{communityToolkit:FontIcon FontSize=15, Glyph=&#xe9e9;}"/>
                 </StackPanel>
 
                 <StackPanel>
@@ -102,10 +102,10 @@
                     * e8ee (All)
                     * f5e7 (Off)
                     -->
-                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe8ed;}"/>
+                    <Button Content="{communityToolkit:FontIcon FontSize=15, Glyph=&#xe8ed;}"/>
 
                     <!-- SystemAccentColor -->
-                    <Button Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe8b1;}"/>
+                    <Button Content="{communityToolkit:FontIcon FontSize=15, Glyph=&#xe8b1;}"/>
                 </StackPanel>
             </StackPanel>
 
@@ -119,7 +119,7 @@
                 -->
                 <Button Background="Transparent"
                         BorderBrush="Transparent"
-                        Content="{toolkit:FontIcon FontSize=15, Glyph=&#xe767;}"/>
+                        Content="{communityToolkit:FontIcon FontSize=15, Glyph=&#xe767;}"/>
 
                 <TextBlock FontSize="12"
                            HorizontalAlignment="Center"

@@ -6,7 +6,7 @@
              xmlns:communityToolkit="using:CommunityToolkit.WinUI"
              xmlns:communityToolkitControls="using:CommunityToolkit.WinUI.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+             xmlns:xamlInteractivity="using:Microsoft.Xaml.Interactivity"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="using:AwesomeMediaPlayer.ViewModels"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
@@ -496,13 +496,13 @@
                 </communityToolkitControls:SettingsExpander>
                 
                 <HyperlinkButton Content="Reset preferences">
-                    <interactivity:Interaction.Behaviors>
-                        <interactivity:BehaviorCollection>
-                            <interactivity:EventTriggerBehavior EventName="Click">
-                                <interactivity:InvokeCommandAction/>
-                            </interactivity:EventTriggerBehavior>
-                        </interactivity:BehaviorCollection>
-                    </interactivity:Interaction.Behaviors>
+                    <xamlInteractivity:Interaction.Behaviors>
+                        <xamlInteractivity:BehaviorCollection>
+                            <xamlInteractivity:EventTriggerBehavior EventName="Click">
+                                <xamlInteractivity:InvokeCommandAction/>
+                            </xamlInteractivity:EventTriggerBehavior>
+                        </xamlInteractivity:BehaviorCollection>
+                    </xamlInteractivity:Interaction.Behaviors>
                 </HyperlinkButton>
 
                 <HyperlinkButton Content="Send feedback"
