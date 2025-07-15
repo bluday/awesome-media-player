@@ -31,7 +31,7 @@
                           QuitCommand="{Binding CloseWindowCommand}"
                           Grid.Row="1"/>
 
-        <controls:NavigationViewHeaderBar Grid.Row="2"/>
+        <controls:NavigationViewHeaderBar Padding="0,4" Grid.Row="2"/>
 
         <NavigationView x:Name="NavigationView"
                         IsBackButtonVisible="Collapsed"

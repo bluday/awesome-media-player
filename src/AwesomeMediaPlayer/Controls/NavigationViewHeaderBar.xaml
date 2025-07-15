@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <UserControl mc:Ignorable="d"
              x:Class="AwesomeMediaPlayer.Controls.NavigationViewHeaderBar"
              x:DefaultBindMode="OneWay"
@@ -7,7 +7,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Grid Padding="0,4">
+    <Grid Padding="{x:Bind Padding}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
@@ -28,16 +28,17 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Content="{communityToolkit:FontIcon FontSize=17, Glyph=&#xe9a4;}"
+            <Button Content="{communityToolkit:FontIcon FontSize=17,
+                                                        Glyph=&#xe9a4;}"
                     Height="25"
                     Padding="0"
                     VerticalAlignment="Center"
                     Width="25"
                     Grid.Column="0"/>
-            
-            <AutoSuggestBox x:Uid="MainView/NavigationViewHeaderBar/AutoSuggestBox"
-                            Margin="8,0,4,0"
+
+            <AutoSuggestBox Margin="8,0,4,0"
                             MinWidth="200"
+                            PlaceholderText="Search"
                             VerticalAlignment="Center"
                             Grid.Column="1"/>
         </Grid>

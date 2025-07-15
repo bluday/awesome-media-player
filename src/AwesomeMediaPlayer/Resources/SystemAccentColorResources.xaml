@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Color x:Key="SystemAccentColor">#0038eb</Color>
+    <Color x:Key="SystemAccentColor">#6495ed</Color>
 
-    <Color x:Key="SystemAccentColorDark1">#0032d4</Color>
-    <Color x:Key="SystemAccentColorDark2">#002dbc</Color>
-    <Color x:Key="SystemAccentColorDark3">#0027a5</Color>
+    <Color x:Key="SystemAccentColorDark1">#5a86d5</Color>
+    <Color x:Key="SystemAccentColorDark2">#5077be</Color>
+    <Color x:Key="SystemAccentColorDark3">#4668a6</Color>
 
-    <Color x:Key="SystemAccentColorLight1">#1a4ced</Color>
-    <Color x:Key="SystemAccentColorLight2">#3360ef</Color>
-    <Color x:Key="SystemAccentColorLight3">#4d74f1</Color>
+    <Color x:Key="SystemAccentColorLight1">#74a0ef</Color>
+    <Color x:Key="SystemAccentColorLight2">#83aaf1</Color>
+    <Color x:Key="SystemAccentColorLight3">#93b5f2</Color>
 </ResourceDictionary>
