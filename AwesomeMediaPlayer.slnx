@@ -3,10 +3,8 @@
         <Platform Name="x64"/>
     </Configurations>
 
-    <Folder Name="/Source/">
-        <Project Path="src/AwesomeMediaPlayer/AwesomeMediaPlayer.csproj">
-            <Platform Solution="*|x64" Project="x64"/>
-            <Deploy/>
-        </Project>
-    </Folder>
+    <Project Path="AwesomeMediaPlayer/AwesomeMediaPlayer.csproj">
+        <Platform Project="x64"/>
+        <Deploy/>
+    </Project>
 </Solution>
