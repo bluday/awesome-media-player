@@ -7,7 +7,7 @@ using System;
 using System.IO;
 using System.Windows.Input;
 
-namespace AwesomeMediaPlayer.ViewModels;
+namespace AwesomeMediaPlayer.Data.ViewModels;
 
 /// <summary>
 /// Represents the view model for the main view.
@@ -19,7 +19,9 @@ public sealed partial class MainViewModel : ObservableObject
     /// <summary>
     /// The absolute path for the title bar icon.
     /// </summary>
-    public static readonly string TitleBarIconPath = Path.Combine(AppContext.BaseDirectory, "Assets", "Icon-64.ico");
+    public static readonly string TitleBarIconPath = Path.Combine(
+        AppContext.BaseDirectory, "Assets", "Icon-64.ico"
+    );
 
     /// <summary>
     /// Gets or sets the close window command.

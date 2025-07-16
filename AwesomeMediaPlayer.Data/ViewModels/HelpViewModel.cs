@@ -1,11 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.WinUI.UI.Controls;
-using System;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using Windows.System;
 
-namespace AwesomeMediaPlayer.ViewModels;
+namespace AwesomeMediaPlayer.Data.ViewModels;
 
 /// <summary>
 /// Represents the view model for the help view.
@@ -15,27 +11,7 @@ public sealed partial class HelpViewModel : ObservableObject
     /// <summary>
     /// Gets the raw Markdown text.
     /// </summary>
-    public string Text { get; } = GetRawMarkdownText();
-
-    /// <summary>
-    /// Gets or sets the close window command.
-    /// </summary>
-    public ICommand? CloseWindowCommand { get; set; }
-
-    /// <summary>
-    /// Handles the link-clicked event by launching the provided URI.
-    /// </summary>
-    /// <param name="e">
-    /// Contains the link that was clicked.
-    /// </param>
-    public async Task OnLinkClickedAsync(LinkClickedEventArgs e)
-    {
-        await Launcher.LaunchUriAsync(new Uri(e.Link));
-    }
-
-    public static string GetRawMarkdownText()
-    {
-        return @"# Welcome to VLC media player Help
+    public string Text { get; } = @"# Welcome to VLC media player Help
 
 ##### Documentation
 
@@ -66,5 +42,9 @@ You might then get (and give) help on the [Forums](https://forum.videolan.org/),
 You can help the VideoLAN project giving some of your time to help the community, to design skins, to
 translate the documentation, to test and to code. You can also give funds
 and material to help us. And of course, you can promote VLC media player.";
-    }
+
+    /// <summary>
+    /// Gets or sets the close window command.
+    /// </summary>
+    public ICommand? CloseWindowCommand { get; set; }
 }

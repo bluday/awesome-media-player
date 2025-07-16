@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace AwesomeMediaPlayer.ViewModels;
+namespace AwesomeMediaPlayer.Data.ViewModels;
 
 /// <summary>
 /// Represents the view model for the current-media-information view.

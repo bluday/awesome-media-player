@@ -1,4 +1,4 @@
-﻿using AwesomeMediaPlayer.ViewModels;
+﻿using AwesomeMediaPlayer.Data.ViewModels;
 using AwesomeMediaPlayer.Views;
 using BluDay.Net.WinUI3.Extensions;
 using CommunityToolkit.Mvvm.Messaging;
@@ -6,7 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Media;
 using Microsoft.Windows.ApplicationModel.Resources;
 using System;
 
@@ -51,7 +50,7 @@ public sealed partial class App : Application
             Content                    = mainView,
             ExtendsContentIntoTitleBar = true,
             Title                      = new ResourceLoader().GetString("General/AppDisplayName"),
-            SystemBackdrop             = new MicaBackdrop()
+            SystemBackdrop             = new Microsoft.UI.Xaml.Media.MicaBackdrop()
         };
 
         AppWindow appWindow = mainWindow.AppWindow;
@@ -63,16 +62,7 @@ public sealed partial class App : Application
         mainWindow.Activate();
     }
 
-    /// <summary>
-    /// Configures the provided logging builder for the client.
-    /// </summary>
-    /// <param name="logging">
-    /// The logging builder instance.
-    /// </param>
-    /// <exception cref="ArgumentNullException">
-    /// Thrown if <paramref name="logging"/> is <c>null</c>.
-    /// </exception>
-    public static void ConfigureLogging(ILoggingBuilder logging)
+    private static void ConfigureLogging(ILoggingBuilder logging)
     {
         ArgumentNullException.ThrowIfNull(logging);
 
@@ -80,29 +70,25 @@ public sealed partial class App : Application
             .AddConsole()
             .AddDebug();
 
-        logging.SetMinimumLevel(LogLevel.Debug);
+        logging
+            .SetMinimumLevel(LogLevel.Debug);
     }
 
-    /// <summary>
-    /// Configures the provided service descriptor collection with core services.
-    /// </summary>
-    /// <param name="services">
-    /// The service descriptor collection.
-    /// </param>
-    /// <exception cref="ArgumentNullException">
-    /// If <paramref name="services"/> is <c>null</c>.
-    /// </exception>
-    private void ConfigureServices(IServiceCollection services)
+    private static void ConfigureServices(IServiceCollection services)
     {
         ArgumentNullException.ThrowIfNull(services);
 
-        services.AddLogging(ConfigureLogging);
+        services
+            .AddLogging(ConfigureLogging);
 
-        services.AddMemoryCache();
+        services
+            .AddSingleton<WeakReferenceMessenger>();
 
-        services.AddSingleton<WeakReferenceMessenger>();
+        services
+            .AddMemoryCache();
 
-        services.AddSingleton<ResourceLoader>();
+        services
+            .AddSingleton<ResourceLoader>();
 
         services
             .AddTransient<AboutView>()

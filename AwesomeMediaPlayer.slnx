@@ -2,9 +2,17 @@
     <Configurations>
         <Platform Name="x64"/>
     </Configurations>
-
+    
     <Project Path="AwesomeMediaPlayer/AwesomeMediaPlayer.csproj">
         <Platform Project="x64"/>
         <Deploy/>
+    </Project>
+
+    <Project Path="AwesomeMediaPlayer.Core/AwesomeMediaPlayer.Core.csproj">
+        <Platform Project="x64"/>
+    </Project>
+
+    <Project Path="AwesomeMediaPlayer.Data/AwesomeMediaPlayer.Data.csproj">
+        <Platform Project="x64"/>
     </Project>
 </Solution>
