@@ -29,11 +29,10 @@
     -->
 
     <!--
-    $HOME\.nuget\packages\microsoft.windowsappsdk\1.7.250606001\lib\uap10.0\Microsoft.UI\Themes\generic.xaml
-
-    <Thickness x:Key="MenuBarItemButtonPadding">10,2,10,2</Thickness>
-    <Thickness x:Key="MenuBarItemMargin">4</Thickness>
+        $HOME\.nuget\packages\microsoft.windowsappsdk\1.7.250606001\lib\uap10.0\Microsoft.UI\Themes\generic.xaml
     -->
-
     <x:Double x:Key="MenuBarHeight">0</x:Double>
+
+    <Thickness x:Key="MenuBarItemButtonPadding">10,4,10,4</Thickness>
+    <Thickness x:Key="MenuBarItemMargin">4</Thickness>
 </ResourceDictionary>

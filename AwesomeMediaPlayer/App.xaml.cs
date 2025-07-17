@@ -1,10 +1,8 @@
 ﻿using AwesomeMediaPlayer.Data.ViewModels;
 using AwesomeMediaPlayer.Views;
-using BluDay.Net.WinUI3.Extensions;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.Windows.ApplicationModel.Resources;
 using System;
@@ -45,19 +43,9 @@ public sealed partial class App : Application
 
         mainView.DataContext = mainViewModel;
 
-        Window mainWindow = new()
-        {
-            Content                    = mainView,
-            ExtendsContentIntoTitleBar = true,
-            Title                      = new ResourceLoader().GetString("General/AppDisplayName"),
-            SystemBackdrop             = new Microsoft.UI.Xaml.Media.MicaBackdrop()
-        };
+        Window mainWindow = new() { Content = mainView };
 
-        AppWindow appWindow = mainWindow.AppWindow;
-
-        appWindow.Resize(1600, 1200);
-
-        appWindow.MoveToCenter();
+        mainView.ConfigureWindow(mainWindow);
 
         mainWindow.Activate();
     }

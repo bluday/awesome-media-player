@@ -22,7 +22,9 @@
                    TextWrapping="NoWrap"
                    VerticalAlignment="Bottom"/>
 
-        <Grid HorizontalAlignment="Right" Grid.Column="1">
+        <Grid HorizontalAlignment="Right"
+              VerticalAlignment="Bottom"
+              Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
@@ -30,16 +32,16 @@
 
             <Button Content="{communityToolkit:FontIcon FontSize=17,
                                                         Glyph=&#xe9a4;}"
-                    Height="25"
+                    Height="24"
                     Padding="0"
-                    VerticalAlignment="Center"
-                    Width="25"
+                    VerticalAlignment="Bottom"
+                    Width="24"
                     Grid.Column="0"/>
 
-            <AutoSuggestBox Margin="8,0,4,0"
+            <AutoSuggestBox Margin="4,0"
                             MinWidth="200"
                             PlaceholderText="Search"
-                            VerticalAlignment="Center"
+                            VerticalAlignment="Bottom"
                             Grid.Column="1"/>
         </Grid>
     </Grid>

@@ -41,7 +41,7 @@ public sealed partial class MainViewModel : ObservableObject
     /// <summary>
     /// Gets the title for the view.
     /// </summary>
-    public string? Title { get; private set; }
+    public string? Title => _resourceLoader.GetString("General/AppDisplayName");
 
     /// <summary>
     /// Gets the icon image source for the title bar.
@@ -81,7 +81,7 @@ public sealed partial class MainViewModel : ObservableObject
     /// </summary>
     public void ApplyLocalizedContent()
     {
-        Title = _resourceLoader.GetString("General/AppDisplayName");
+        OnPropertyChanged(nameof(Title));
     }
 
     /// <summary>
