@@ -38,8 +38,8 @@
                     Width="24"
                     Grid.Column="0"/>
 
-            <AutoSuggestBox Margin="4,0"
-                            MinWidth="200"
+            <AutoSuggestBox Margin="8,0"
+                            MinWidth="300"
                             PlaceholderText="Search"
                             VerticalAlignment="Bottom"
                             Grid.Column="1"/>

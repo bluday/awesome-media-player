@@ -30,26 +30,6 @@ public sealed partial class App : Application
         InitializeComponent();
     }
 
-    /// <summary>
-    /// Invoked when the application is launched.
-    /// </summary>
-    /// <param name="e">
-    /// Details about the launch request and process.
-    /// </param>
-    protected override void OnLaunched(LaunchActivatedEventArgs e)
-    {
-        var mainView      = _rootServiceProvider.GetRequiredService<MainView>();
-        var mainViewModel = _rootServiceProvider.GetRequiredService<MainViewModel>();
-
-        mainView.DataContext = mainViewModel;
-
-        Window mainWindow = new() { Content = mainView };
-
-        mainView.ConfigureWindow(mainWindow);
-
-        mainWindow.Activate();
-    }
-
     private static void ConfigureLogging(ILoggingBuilder logging)
     {
         ArgumentNullException.ThrowIfNull(logging);
@@ -93,5 +73,25 @@ public sealed partial class App : Application
             .AddTransient<MainViewModel>()
             .AddTransient<MediaLibraryViewModel>()
             .AddTransient<PreferencesViewModel>();
+    }
+
+    /// <summary>
+    /// Invoked when the application is launched.
+    /// </summary>
+    /// <param name="e">
+    /// Details about the launch request and process.
+    /// </param>
+    protected override void OnLaunched(LaunchActivatedEventArgs e)
+    {
+        var mainView      = _rootServiceProvider.GetRequiredService<MainView>();
+        var mainViewModel = _rootServiceProvider.GetRequiredService<MainViewModel>();
+
+        mainView.DataContext = mainViewModel;
+
+        Window mainWindow = new() { Content = mainView };
+
+        mainView.ConfigureWindow(mainWindow);
+
+        mainWindow.Activate();
     }
 }
