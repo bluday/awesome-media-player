@@ -13,11 +13,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.6"/>
-		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0"/>
-		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4188"/>
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250606001"/>
-		<Manifest Include="$(ApplicationManifest)"/>
+		<ProjectReference Include="..\AwesomeMediaPlayer.Infrastructure\AwesomeMediaPlayer.Infrastructure.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.6" />
+		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4188" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250606001" />
+		<Manifest Include="$(ApplicationManifest)" />
 	</ItemGroup>
 </Project>

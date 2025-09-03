@@ -1,3 +1,5 @@
+using AwesomeMediaPlayer.Data.ViewModels;
+
 namespace AwesomeMediaPlayer.Views;
 
 /// <summary>
@@ -5,6 +7,11 @@ namespace AwesomeMediaPlayer.Views;
 /// </summary>
 public sealed partial class CurrentMediaInformationGeneralView : Microsoft.UI.Xaml.Controls.UserControl
 {
+    /// <summary>
+    /// Gets the current view model instance.
+    /// </summary>
+    public CurrentMediaInformationGeneralViewModel ViewModel => (CurrentMediaInformationGeneralViewModel)DataContext;
+
     /// <summary>
     /// Initializes a new instance of the <see cref="CurrentMediaInformationGeneralView"/> class.
     /// </summary>

@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://github.com/bluday/awesome-media-player">
-    <img alt="Logo" height="100" src="/AwesomeMediaPlayer/Assets/StoreLogo.scale-400.png" width="100"/>
+    <img alt="Logo" height="100" src="src/AwesomeMediaPlayer/Assets/StoreLogo.scale-400.png" width="100"/>
   </a>
   <h3 align="center">Awesome Media Player</h3>
   <p align="center">
@@ -14,10 +14,10 @@
 
 ## Screenshots
 
-![Screenshot 1](/Screenshots/Screenshot%200%20(2025-04-10).png?raw=true")
-![Screenshot 2](/Screenshots/Screenshot%201%20(2025-04-10).png?raw=true")
-![Screenshot 3](/Screenshots/Screenshot%202%20(2025-04-10).png?raw=true")
-![Screenshot 4](/Screenshots/Screenshot%203%20(2025-04-10).png?raw=true")
+![Screenshot 0](/assets/screenshots/Screenshot%200%20(2025-04-10).png?raw=true")
+![Screenshot 1](/assets/screenshots/Screenshot%201%20(2025-04-10).png?raw=true")
+![Screenshot 2](/assets/screenshots/Screenshot%202%20(2025-04-10).png?raw=true")
+![Screenshot 3](/assets/screenshots/Screenshot%203%20(2025-04-10).png?raw=true")
 
 ## Contributing
 
