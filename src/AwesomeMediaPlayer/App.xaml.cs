@@ -1,4 +1,4 @@
-﻿using AwesomeMediaPlayer.Windows;
+﻿using AwesomeMediaPlayer.UI.Windows;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.Extensions.DependencyInjection;

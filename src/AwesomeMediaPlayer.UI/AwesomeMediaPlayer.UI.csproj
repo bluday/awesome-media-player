@@ -3,7 +3,7 @@
 		<LangVersion>preview</LangVersion>
 		<Nullable>enable</Nullable>
 		<Platforms>x64</Platforms>
-		<RootNamespace>AwesomeMediaPlayer.Data</RootNamespace>
+		<RootNamespace>AwesomeMediaPlayer.UI</RootNamespace>
 		<RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
 		<SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetFramework>net9.0-windows10.0.26100.0</TargetFramework>
@@ -13,15 +13,22 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\AwesomeMediaPlayer.Data\AwesomeMediaPlayer.Data.csproj" />
 		<ProjectReference Include="..\AwesomeMediaPlayer.Infrastructure\AwesomeMediaPlayer.Infrastructure.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" Version="8.2.250402" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.250402" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.Sizers" Version="8.2.250402" />
+		<PackageReference Include="CommunityToolkit.WinUI.Extensions" Version="8.2.250402" />
+		<PackageReference Include="CommunityToolkit.WinUI.UI.Controls.Markdown" Version="7.1.2" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.8" />
 		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4188" />
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250606001" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="3.0.0" />
 		<Manifest Include="$(ApplicationManifest)" />
 	</ItemGroup>
 </Project>

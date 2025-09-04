@@ -1,9 +1,9 @@
 ﻿using AwesomeMediaPlayer.Data.ViewModels;
 using AwesomeMediaPlayer.Data.ViewModels.Windows;
-using AwesomeMediaPlayer.Extensions;
+using AwesomeMediaPlayer.Infrastructure.Extensions;
 using AwesomeMediaPlayer.Infrastructure.Resources;
-using AwesomeMediaPlayer.Views;
-using AwesomeMediaPlayer.Windows;
+using AwesomeMediaPlayer.UI.Views;
+using AwesomeMediaPlayer.UI.Windows;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 using System;

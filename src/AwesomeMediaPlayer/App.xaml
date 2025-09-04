@@ -7,9 +7,9 @@
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
 
-                <ResourceDictionary Source="/Resources/SystemAccentColorResources.xaml"/>
-                <ResourceDictionary Source="/Resources/WindowCaptionResources.xaml"/>
-                <ResourceDictionary Source="/Styles/CompactMenuBarStyle.xaml"/>
+                <ResourceDictionary Source="/AwesomeMediaPlayer.UI/Resources/SystemAccentColorResources.xaml"/>
+                <ResourceDictionary Source="/AwesomeMediaPlayer.UI/Resources/WindowCaptionResources.xaml"/>
+                <ResourceDictionary Source="/AwesomeMediaPlayer.UI/Styles/CompactMenuBarStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
