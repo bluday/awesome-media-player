@@ -45,7 +45,7 @@
                            Text="Awesome Media Player"/>
 
                 <TextBlock Style="{StaticResource SubtitleTextBlockStyle}"
-                           Text="1.0a Futanari"
+                           Text="1.0a Vetinari"
                            Grid.Row="1"/>
 
                 <ScrollViewer Grid.Row="3">
