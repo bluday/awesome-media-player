@@ -13,7 +13,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\AwesomeMediaPlayer.Data\AwesomeMediaPlayer.Data.csproj" />
 		<ProjectReference Include="..\AwesomeMediaPlayer.Infrastructure\AwesomeMediaPlayer.Infrastructure.csproj" />
 	</ItemGroup>
 

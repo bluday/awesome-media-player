@@ -8,7 +8,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="using:AwesomeMediaPlayer.UI.Views"
-             xmlns:viewModels="using:AwesomeMediaPlayer.Data.ViewModels"
+             xmlns:viewModels="using:AwesomeMediaPlayer.UI.ViewModels"
              xmlns:xamlInteractivity="using:Microsoft.Xaml.Interactivity"
              d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel}"
              mc:Ignorable="d">

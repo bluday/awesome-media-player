@@ -19,10 +19,6 @@
 ![Screenshot 2](/assets/screenshots/Screenshot%202%20(2025-04-10).png?raw=true")
 ![Screenshot 3](/assets/screenshots/Screenshot%203%20(2025-04-10).png?raw=true")
 
-## Contributing
-
-Feel free to submit pull requests!
-
 ## License
 
 [MIT](/LICENSE.txt)

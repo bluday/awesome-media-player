@@ -1,9 +1,9 @@
-using AwesomeMediaPlayer.Data.ViewModels.Windows;
-using AwesomeMediaPlayer.Infrastructure.Extensions;
-using AwesomeMediaPlayer.Infrastructure.UI;
+using AwesomeMediaPlayer.UI.ViewModels.Windows;
+using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
-using System;
+using Microsoft.UI.Xaml.Media;
+using Windows.Graphics;
 
 namespace AwesomeMediaPlayer.UI.Windows;
 
@@ -18,20 +18,11 @@ public sealed partial class MainWindow : Window
     public MainWindowViewModel ViewModel { get; }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="MainWindow"/> class using the specified,
-    /// corresponding view model instance.
+    /// Initializes a new instance of the <see cref="MainWindow"/> class.
     /// </summary>
-    /// <param name="viewModel">
-    /// The view model instance.
-    /// </param>
-    /// <exception cref="ArgumentNullException">
-    /// Thrown if <paramref name="viewModel"/> is <c>null</c>.
-    /// </exception>
-    public MainWindow(MainWindowViewModel viewModel)
+    public MainWindow()
     {
-        ArgumentNullException.ThrowIfNull(viewModel);
-
-        ViewModel = viewModel;
+        ViewModel = Ioc.Default.GetRequiredService<MainWindowViewModel>();
 
         InitializeComponent();
     }
@@ -40,17 +31,25 @@ public sealed partial class MainWindow : Window
     {
         ExtendsContentIntoTitleBar = true;
 
-        SystemBackdrop = new Microsoft.UI.Xaml.Media.MicaBackdrop();
+        SystemBackdrop = new MicaBackdrop();
 
         if (ViewModel is MainWindowViewModel viewModel)
         {
-            viewModel.BackdropKind = BackdropKind.Mica;
-
             viewModel.ExtendsContentIntoTitleBar = ExtendsContentIntoTitleBar;
+            viewModel.SystemBackdrop             = SystemBackdrop;
         }
 
-        AppWindow.Resize(width: 1600, height: 1200);
+        SizeInt32 size = new(1600, 1200);
 
-        AppWindow.MoveToCenter();
+        RectInt32 workArea = DisplayArea
+            .GetFromWindowId(AppWindow.Id, DisplayAreaFallback.Primary)
+            .WorkArea;
+
+        AppWindow.Resize(size);
+
+        AppWindow.Move(new PointInt32(
+            (workArea.Width - size.Width) / 2,
+            (workArea.Height - size.Height) / 2
+        ));
     }
 }

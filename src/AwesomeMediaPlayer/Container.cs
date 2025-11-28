@@ -1,35 +1,50 @@
-﻿using AwesomeMediaPlayer.Data.ViewModels;
-using AwesomeMediaPlayer.Data.ViewModels.Windows;
-using AwesomeMediaPlayer.Infrastructure.Extensions;
+﻿using AwesomeMediaPlayer.UI.ViewModels;
+using AwesomeMediaPlayer.UI.ViewModels.Windows;
 using AwesomeMediaPlayer.Infrastructure.Resources;
-using AwesomeMediaPlayer.UI.Views;
-using AwesomeMediaPlayer.UI.Windows;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.Extensions.DependencyInjection;
-using System;
+using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace AwesomeMediaPlayer;
 
 /// <summary>
-/// Provides dependency injection container setup for the application.
+/// Represents the DI (Dependency Injection) container for the application.
 /// </summary>
-public static class Container
+public class Container
 {
-    /// <summary>
-    /// Configures and registers service descriptors required by the application.
-    /// </summary>
-    /// <param name="services">
-    /// The service collection to which services will be added.
-    /// </param>
-    /// <exception cref="ArgumentNullException">
-    /// Thrown if <paramref name="services"/> is <c>null</c>.
-    /// </exception>
-    public static void ConfigureServices(IServiceCollection services)
-    {
-        ArgumentNullException.ThrowIfNull(services);
+    private readonly ServiceProvider _rootServiceProvider;
 
+    public ServiceProvider RootServiceProvider => _rootServiceProvider;
+
+    public IReadOnlyList<ServiceDescriptor> RegisteredServices { get; }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Container"/> class.
+    /// </summary>
+    public Container()
+    {
+        ServiceCollection services = new();
+
+        ConfigureServices(services);
+
+        _rootServiceProvider = services.BuildServiceProvider();
+
+        RegisteredServices = services.AsReadOnly();
+    }
+
+    private static void ConfigureLogging(ILoggingBuilder logging)
+    {
+        logging.AddConsole();
+        logging.AddDebug();
+
+        logging.SetMinimumLevel(LogLevel.Debug);
+    }
+
+    private static void ConfigureServices(IServiceCollection services)
+    {
         services
-            .AddLogging(Logging.ConfigureLogging);
+            .AddLogging(ConfigureLogging);
 
         services
             .AddSingleton<WeakReferenceMessenger>();
@@ -39,17 +54,6 @@ public static class Container
 
         services
             .AddSingleton<ILocalizedStringProvider, LocalizedStringProvider>();
-
-        services
-            .AddFactoryAsSingleton<MainWindow>();
-
-        services
-            .AddTransient<AboutView>()
-            .AddTransient<CurrentMediaInformationGeneralView>()
-            .AddTransient<HelpView>()
-            .AddTransient<MainView>()
-            .AddTransient<MediaLibraryView>()
-            .AddTransient<PreferencesView>();
 
         services
             .AddTransient<AboutViewModel>()
@@ -66,18 +70,8 @@ public static class Container
             .AddTransient<MainViewTitleBarViewModel>();
     }
 
-    /// <summary>
-    /// Creates a new DI container instance with pre-configured services.
-    /// </summary>
-    /// <returns>
-    /// The created service provider instance for the root scope of the DI container.
-    /// </returns>
-    public static ServiceProvider Create()
+    public IServiceScope CreateScope()
     {
-        ServiceCollection services = new();
-
-        ConfigureServices(services);
-
-        return services.BuildServiceProvider();
+        return _rootServiceProvider.CreateScope();
     }
 }

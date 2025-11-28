@@ -3,7 +3,7 @@ using System;
 using Windows.Foundation;
 using Windows.Graphics;
 
-namespace AwesomeMediaPlayer.Infrastructure.Extensions;
+namespace AwesomeMediaPlayer.Extensions;
 
 /// <summary>
 /// Provides extension methods for <see cref="FrameworkElement"/> instances.
@@ -31,16 +31,18 @@ public static class FrameworkElementExtensions
         ArgumentNullException.ThrowIfNull(source);
 
         Rect rect = source
-            .TransformToVisual(visual: null)
-            .TransformBounds(new Rect(0, 0, source.ActualWidth, source.ActualHeight));
+            .TransformToVisual(null)
+            .TransformBounds(
+                new Rect(0, 0, source.ActualWidth, source.ActualHeight)
+            );
 
         scale = scale < 0 ? 1 : scale;
 
         return new RectInt32(
-            _X: (int)(rect.X * scale),
-            _Y: (int)(rect.Y * scale),
-            _Width:  (int)(rect.Width  * scale),
-            _Height: (int)(rect.Height * scale)
+            (int)(rect.X * scale),
+            (int)(rect.Y * scale),
+            (int)(rect.Width * scale),
+            (int)(rect.Height * scale)
         );
     }
 }

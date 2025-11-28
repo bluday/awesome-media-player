@@ -2,7 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
 
-namespace AwesomeMediaPlayer.Infrastructure.Extensions;
+namespace AwesomeMediaPlayer.Extensions;
 
 /// <summary>
 /// Provides extension methods for registering concrete types and view models in an <see cref="IServiceCollection"/>.

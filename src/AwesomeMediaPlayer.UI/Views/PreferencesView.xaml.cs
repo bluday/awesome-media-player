@@ -1,4 +1,4 @@
-using AwesomeMediaPlayer.Data.ViewModels;
+using AwesomeMediaPlayer.UI.ViewModels;
 
 namespace AwesomeMediaPlayer.UI.Views;
 
