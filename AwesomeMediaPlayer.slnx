@@ -3,22 +3,20 @@
         <Platform Name="x64" />
     </Configurations>
     
-    <Folder Name="/Source/">
-        <Project Path="src/AwesomeMediaPlayer/AwesomeMediaPlayer.csproj">
-            <Platform Project="x64" />
-            <Deploy />
-        </Project>
+    <Project Path="AwesomeMediaPlayer/AwesomeMediaPlayer.csproj">
+        <Platform Project="x64" />
+        <Deploy />
+    </Project>
 
-        <Project Path="src/AwesomeMediaPlayer.Core/AwesomeMediaPlayer.Core.csproj">
-            <Platform Project="x64" />
-        </Project>
+    <Project Path="AwesomeMediaPlayer.Core/AwesomeMediaPlayer.Core.csproj">
+        <Platform Project="x64" />
+    </Project>
 
-        <Project Path="src/AwesomeMediaPlayer.Infrastructure/AwesomeMediaPlayer.Infrastructure.csproj">
-            <Platform Project="x64" />
-        </Project>
-        
-        <Project Path="src/AwesomeMediaPlayer.UI/AwesomeMediaPlayer.UI.csproj">
-            <Platform Project="x64" />
-        </Project>
-    </Folder>
+    <Project Path="AwesomeMediaPlayer.Infrastructure/AwesomeMediaPlayer.Infrastructure.csproj">
+        <Platform Project="x64" />
+    </Project>
+    
+    <Project Path="AwesomeMediaPlayer.UI/AwesomeMediaPlayer.UI.csproj">
+        <Platform Project="x64" />
+    </Project>
 </Solution>
