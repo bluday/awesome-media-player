@@ -1,4 +1,4 @@
-﻿namespace AwesomeMediaPlayer.Infrastructure.Resources;
+﻿namespace AwesomeMediaPlayer.Infrastructure.Localization;
 
 /// <summary>
 /// Defines a contract for providing localized string resources.

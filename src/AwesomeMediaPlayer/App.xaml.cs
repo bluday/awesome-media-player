@@ -1,4 +1,6 @@
-﻿using AwesomeMediaPlayer.UI.Windows;
+﻿using AwesomeMediaPlayer.UI.ViewModels.Windows;
+using AwesomeMediaPlayer.UI.Windows;
+using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.UI.Xaml;
 
 namespace AwesomeMediaPlayer;
@@ -10,13 +12,15 @@ public sealed partial class App : Application
 {
     private MainWindow? _mainWindow;
 
-    private readonly Container _container = new();
+    private readonly IContainer _container;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="App"/> class.
     /// </summary>
     public App()
     {
+        _container = new Container();
+
         InitializeComponent();
     }
 
@@ -28,11 +32,13 @@ public sealed partial class App : Application
     /// </param>
     protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
-        _mainWindow = new MainWindow();
+        _mainWindow = new MainWindow()
+        {
+            ViewModel = Ioc.Default.GetRequiredService<MainWindowViewModel>()
+        };
 
         _mainWindow.ViewModel.ApplyLocalizedContent();
 
-        _mainWindow.ApplyDefaultConfiguration();
         _mainWindow.Activate();
     }
 }

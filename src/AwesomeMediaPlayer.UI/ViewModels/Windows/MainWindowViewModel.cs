@@ -1,4 +1,4 @@
-﻿using AwesomeMediaPlayer.Infrastructure.Resources;
+﻿using AwesomeMediaPlayer.Infrastructure.Localization;
 
 namespace AwesomeMediaPlayer.UI.ViewModels.Windows;
 

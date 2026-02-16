@@ -3,7 +3,7 @@ using System;
 using Windows.Foundation;
 using Windows.Graphics;
 
-namespace AwesomeMediaPlayer.Extensions;
+namespace AwesomeMediaPlayer.UI.Common.Extensions;
 
 /// <summary>
 /// Provides extension methods for <see cref="FrameworkElement"/> instances.
@@ -41,7 +41,7 @@ public static class FrameworkElementExtensions
         return new RectInt32(
             (int)(rect.X * scale),
             (int)(rect.Y * scale),
-            (int)(rect.Width * scale),
+            (int)(rect.Width  * scale),
             (int)(rect.Height * scale)
         );
     }

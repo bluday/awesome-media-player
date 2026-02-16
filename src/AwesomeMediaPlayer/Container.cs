@@ -1,38 +1,37 @@
-﻿using AwesomeMediaPlayer.Infrastructure.Resources;
+﻿using AwesomeMediaPlayer.Infrastructure.Localization;
 using AwesomeMediaPlayer.UI.ViewModels;
 using AwesomeMediaPlayer.UI.ViewModels.Windows;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
+using System;
 
 namespace AwesomeMediaPlayer;
 
 /// <summary>
-/// Represents the DI (Dependency Injection) container for the client, providing access
-/// to the root service provider, a collection of all registered services, and a method
-/// to create new service scopes for service resolution.
+/// A wrapper for <see cref="ServiceProvider"/>, providing additional information about the
+/// container, such as registered service descriptors, active scopes, and whether the
+/// container has been disposed of.
 /// </summary>
-internal sealed class Container
+public sealed partial class Container : IContainer
 {
+    #region Fields
     private readonly ServiceProvider _rootServiceProvider;
+    #endregion
 
+    #region Properties
     /// <summary>
     /// Gets the <see cref="ServiceProvider"/> instance for the root scope of the container.
     /// </summary>
-    internal IKeyedServiceProvider RootServiceProvider => _rootServiceProvider;
+    public IKeyedServiceProvider RootServiceProvider => _rootServiceProvider;
+    #endregion
 
-    /// <summary>
-    /// Gets a read-only collection of all service descriptors that have been registered
-    /// witin the container, providing information about the available services.
-    /// </summary>
-    internal IReadOnlyCollection<ServiceDescriptor> RegisteredServices { get; }
-
+    #region Constructor
     /// <summary>
     /// Initializes a new instance of the <see cref="Container"/> class.
     /// </summary>
-    internal Container()
+    public Container()
     {
         ServiceCollection services = new();
 
@@ -40,11 +39,11 @@ internal sealed class Container
 
         _rootServiceProvider = services.BuildServiceProvider();
 
-        RegisteredServices = services.AsReadOnly();
-
         Ioc.Default.ConfigureServices(_rootServiceProvider);
     }
+    #endregion
 
+    #region Methods
     private static void ConfigureLogging(ILoggingBuilder logging)
     {
         logging.AddConsole();
@@ -55,31 +54,24 @@ internal sealed class Container
 
     private static void ConfigureServices(IServiceCollection services)
     {
-        services
-            .AddLogging(ConfigureLogging);
+        services.AddLogging(ConfigureLogging);
 
-        services
-            .AddSingleton<WeakReferenceMessenger>();
+        services.AddSingleton<WeakReferenceMessenger>();
 
-        services
-            .AddMemoryCache();
+        services.AddMemoryCache();
 
-        services
-            .AddSingleton<ILocalizedStringProvider, LocalizedStringProvider>();
+        services.AddSingleton<ILocalizedStringProvider, LocalizedStringProvider>();
 
-        services
-            .AddTransient<AboutViewModel>()
-            .AddTransient<CurrentMediaInformationGeneralViewModel>()
-            .AddTransient<HelpViewModel>()
-            .AddTransient<MainViewModel>()
-            .AddTransient<MediaLibraryViewModel>()
-            .AddTransient<PreferencesViewModel>();
+        services.AddTransient<AboutViewModel>();
+        services.AddTransient<CurrentMediaInformationGeneralViewModel>();
+        services.AddTransient<HelpViewModel>();
+        services.AddTransient<MainViewModel>();
+        services.AddTransient<MediaLibraryViewModel>();
+        services.AddTransient<PreferencesViewModel>();
 
-        services
-            .AddTransient<MainWindowViewModel>();
+        services.AddTransient<MainWindowViewModel>();
 
-        services
-            .AddTransient<MainViewTitleBarViewModel>();
+        services.AddTransient<MainViewTitleBarViewModel>();
     }
 
     /// <summary>
@@ -89,8 +81,12 @@ internal sealed class Container
     /// <returns>
     /// An instance of <see cref="IServiceScope"/> representing the new scope.
     /// </returns>
-    internal IServiceScope CreateScope()
+    /// <exception cref="InvalidOperationException">
+    /// Throws if the current instance has been disposed of.
+    /// </exception>
+    public IServiceScope CreateScope()
     {
         return _rootServiceProvider.CreateScope();
     }
+    #endregion
 }

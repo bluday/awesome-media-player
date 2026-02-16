@@ -1,7 +1,7 @@
 ﻿using Microsoft.Windows.ApplicationModel.Resources;
 using System;
 
-namespace AwesomeMediaPlayer.Infrastructure.Resources;
+namespace AwesomeMediaPlayer.Infrastructure.Localization;
 
 /// <summary>
 /// Repesents a provider for localized string resources used within the application.

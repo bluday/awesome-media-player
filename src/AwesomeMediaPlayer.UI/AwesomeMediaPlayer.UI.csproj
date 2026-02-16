@@ -11,6 +11,9 @@
 		<UseWinUI>true</UseWinUI>
 		<WindowsSdkPackageVersion>10.0.26100.38</WindowsSdkPackageVersion>
 	</PropertyGroup>
+	<ItemGroup>
+	  <AdditionalFiles Include="NativeMethods.txt" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\AwesomeMediaPlayer.Infrastructure\AwesomeMediaPlayer.Infrastructure.csproj" />
@@ -18,16 +21,20 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-		<PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" Version="8.2.250402" />
-		<PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.250402" />
-		<PackageReference Include="CommunityToolkit.WinUI.Controls.Sizers" Version="8.2.250402" />
-		<PackageReference Include="CommunityToolkit.WinUI.Extensions" Version="8.2.250402" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" Version="8.2.251219" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.251219" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.Sizers" Version="8.2.251219" />
+		<PackageReference Include="CommunityToolkit.WinUI.Extensions" Version="8.2.251219" />
 		<PackageReference Include="CommunityToolkit.WinUI.UI.Controls.Markdown" Version="7.1.2" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.8" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.3" />
+		<PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.269">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
-		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4188" />
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250606001" />
-		<PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="3.0.0" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7705" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260209005" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="3.0.1" />
 		<Manifest Include="$(ApplicationManifest)" />
 	</ItemGroup>
 </Project>

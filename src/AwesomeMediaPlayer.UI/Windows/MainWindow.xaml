@@ -8,13 +8,18 @@
         xmlns:views="using:AwesomeMediaPlayer.UI.Views"
         x:DefaultBindMode="OneWay"
         mc:Ignorable="d">
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="Base"/>
+    </Window.SystemBackdrop>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <controls:TitleBar Title="{x:Bind ViewModel.TitleBar.Title}"
+        <controls:TitleBar x:Name="titleBar"
+                           Title="{x:Bind ViewModel.TitleBar.Title}"
                            Grid.Row="0"
                            Icon="{x:Bind ViewModel.TitleBar.IconUri.AbsolutePath}"/>
 
