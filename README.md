@@ -12,10 +12,10 @@
 
 ## Screenshots
 
-![](/Screenshot%200%20(2025-04-10).png?raw=true")
-![](/Screenshot%201%20(2025-04-10).png?raw=true")
-![](/Screenshot%202%20(2025-04-10).png?raw=true")
-![](/Screenshot%203%20(2025-04-10).png?raw=true")
+![](/assets/screenshots/screenshot_0_2025-04-10.png?raw=true")
+![](/assets/screenshots/screenshot_1_2025-04-10.png?raw=true")
+![](/assets/screenshots/screenshot_2_2025-04-10.png?raw=true")
+![](/assets/screenshots/screenshot_3_2025-04-10.png?raw=true")
 
 ## License
 
