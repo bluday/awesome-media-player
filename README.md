@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/bluday/awesome-media-player">
-    <img alt="Logo" height="100" src="AwesomeMediaPlayer/Assets/StoreLogo.scale-400.png" width="100"/>
+    <img alt="Logo" height="100" src="/assets/icons/logo.png" width="100"/>
   </a>
   <h3 align="center">Awesome Media Player</h3>
   <p align="center">
