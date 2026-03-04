@@ -4,7 +4,7 @@
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
 		<Authors>BluDay</Authors>
-		<Copyright>© BluDay 2025</Copyright>
+		<Copyright>© BluDay 2026</Copyright>
 		<Description>Developed by BluDay.</Description>
 		<EnableMsixTooling>true</EnableMsixTooling>
 		<LangVersion>preview</LangVersion>
@@ -26,9 +26,6 @@
 	
 	<ItemGroup>
 		<ProjectReference Include="..\AwesomeMediaPlayer.Infrastructure\AwesomeMediaPlayer.Infrastructure.csproj" />
-	</ItemGroup>
-	
-	<ItemGroup>
 		<ProjectReference Include="..\AwesomeMediaPlayer.UI\AwesomeMediaPlayer.UI.csproj" />
 	</ItemGroup>
 	

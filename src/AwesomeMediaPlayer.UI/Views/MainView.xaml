@@ -7,8 +7,8 @@
              xmlns:controls="using:AwesomeMediaPlayer.UI.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:views="using:AwesomeMediaPlayer.UI.Views"
              xmlns:viewModels="using:AwesomeMediaPlayer.UI.ViewModels"
+             xmlns:views="using:AwesomeMediaPlayer.UI.Views"
              xmlns:xamlInteractivity="using:Microsoft.Xaml.Interactivity"
              d:DataContext="{d:DesignInstance Type=viewModels:MainViewModel}"
              mc:Ignorable="d">
@@ -27,7 +27,8 @@
                           OpenPreferencesWindowCommand="{Binding OpenPreferencesWindowCommand}"
                           QuitCommand="{Binding CloseWindowCommand}"/>
 
-        <controls:NavigationViewHeaderBar Grid.Row="2" Padding="0,4"/>
+        <controls:NavigationViewHeaderBar Grid.Row="2"
+                                          Padding="0,4"/>
 
         <NavigationView x:Name="NavigationView"
                         Grid.Row="3"
@@ -51,7 +52,6 @@
                 </Grid>
             </NavigationView.Content>
 
-            <!--
             <NavigationView.FooterMenuItems>
                 <NavigationViewItem>
                     <NavigationViewItem.Template>
@@ -60,13 +60,13 @@
                         </ControlTemplate>
                     </NavigationViewItem.Template>
 
-                    <Grid BorderBrush="{ThemeResource ControlElevationBorderBrush}"
-                          BorderThickness="1"
-                          CornerRadius="8"
+                    <Grid Width="120"
                           Height="120"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Center"
-                          Width="120">
+                          BorderBrush="{ThemeResource ControlElevationBorderBrush}"
+                          BorderThickness="1"
+                          CornerRadius="8">
                         <Grid.Background>
                             <ImageBrush ImageSource="https://www.halopedia.org/images/2/2e/Halo2-Volume1-OriginalSoundtrack.jpg"/>
                         </Grid.Background>
@@ -81,7 +81,6 @@
                     </Grid>
                 </NavigationViewItem>
             </NavigationView.FooterMenuItems>
-            -->
 
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Playlist [00:00]"
@@ -103,7 +102,8 @@
                                             Icon="{communityToolkit:FontIcon Glyph=&#xe8b2;}"
                                             IsEnabled="False"/>
 
-                        <NavigationViewItem Content="My Music" Icon="{communityToolkit:FontIcon Glyph=&#xe8d6;}"/>
+                        <NavigationViewItem Content="My Music"
+                                            Icon="{communityToolkit:FontIcon Glyph=&#xe8d6;}"/>
 
                         <NavigationViewItem Content="My Pictures"
                                             Icon="{communityToolkit:FontIcon Glyph=&#xe8b9;}"

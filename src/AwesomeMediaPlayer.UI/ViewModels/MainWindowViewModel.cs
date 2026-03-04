@@ -1,6 +1,7 @@
 ﻿using AwesomeMediaPlayer.Infrastructure.Localization;
+using System;
 
-namespace AwesomeMediaPlayer.UI.ViewModels.Windows;
+namespace AwesomeMediaPlayer.UI.ViewModels;
 
 /// <summary>
 /// Represents the view model for the main window.
@@ -10,23 +11,20 @@ public sealed partial class MainWindowViewModel : WindowViewModel
     private readonly ILocalizedStringProvider _localizedStringProvider;
 
     /// <summary>
-    /// Gets the view model for the title bar control.
-    /// </summary>
-    public MainViewTitleBarViewModel TitleBar { get; }
-
-    /// <summary>
     /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class using
-    /// the resource provider for localized strings, and a cache service for resolving
-    /// cached view model instances.
+    /// the specified dependencies.
     /// </summary>
     /// <param name="localizedStringProvider">
     /// The resource provider used to access localized strings.
     /// </param>
+    /// <exception cref="ArgumentNullException">
+    /// Throws if any of the parameters are <c>null</c>.
+    /// </exception>
     public MainWindowViewModel(ILocalizedStringProvider localizedStringProvider)
     {
-        _localizedStringProvider = localizedStringProvider;
+        ArgumentNullException.ThrowIfNull(localizedStringProvider);
 
-        TitleBar = MainViewTitleBarViewModel.Create();
+        _localizedStringProvider = localizedStringProvider;
     }
 
     /// <summary>
@@ -34,11 +32,7 @@ public sealed partial class MainWindowViewModel : WindowViewModel
     /// </summary>
     public void ApplyLocalizedContent()
     {
-        MainViewTitleBarViewModel titleBar = TitleBar;
-
-        titleBar.Subtitle = _localizedStringProvider.GetString("Common/Preview");
-        titleBar.Title    = _localizedStringProvider.GetString("General/AppDisplayName");
-
-        OnPropertyChanged(nameof(TitleBar));
+        Subtitle = _localizedStringProvider.GetString("Common/Preview");
+        Title    = _localizedStringProvider.GetString("General/AppDisplayName");
     }
 }

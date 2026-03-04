@@ -1,5 +1,5 @@
-using AwesomeMediaPlayer.UI.Common.Extensions;
-using AwesomeMediaPlayer.UI.ViewModels.Windows;
+using AwesomeMediaPlayer.UI.ViewModels;
+using AwesomeMediaPlayer.UI.Infrastructure.Extensions;
 using Microsoft.UI;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
@@ -10,7 +10,7 @@ using Windows.UI;
 namespace AwesomeMediaPlayer.UI.Windows;
 
 /// <summary>
-/// Interaction logic for MainWindow.xaml.
+/// An empty window that can be used on its own or navigated to within a Frame.
 /// </summary>
 public sealed partial class MainWindow : Window
 {
@@ -45,26 +45,39 @@ public sealed partial class MainWindow : Window
     public bool HasClosed { get; private set; }
 
     /// <summary>
-    /// Gets or sets the view model instance associated with this window type.
+    /// Gets the view model instance.
     /// </summary>
-    public MainWindowViewModel? ViewModel { get; set; }
+    public MainWindowViewModel ViewModel { get; }
     #endregion
 
     #region Constructor
     /// <summary>
-    /// Initializes a new instance of the <see cref="MainWindow"/> class.
+    /// Initializes a new instance of the <see cref="MainWindow"/> class
+    /// using the specified dependencies.
     /// </summary>
-    public MainWindow()
+    /// <param name="viewModel">
+    /// The view model instance for the window.
+    /// </param>
+    /// <exception cref="ArgumentNullException">
+    /// Throws if any of the parameters are <c>null</c>.
+    /// </exception>
+    public MainWindow(MainWindowViewModel viewModel)
     {
-        _displayWorkArea = DisplayArea
-            .GetFromWindowId(AppWindow.Id, DisplayAreaFallback.None)
-            .WorkArea;
+        ArgumentNullException.ThrowIfNull(viewModel);
+
+        _displayWorkArea = this.GetDisplayArea().WorkArea;
 
         _dpiScaleFactor = this.GetCurrentDpiScaleFactor();
 
+        ViewModel = viewModel;
+
+        Title = viewModel.Title;
+
+        SystemBackdrop = new Microsoft.UI.Xaml.Media.MicaBackdrop();
+
         ExtendsContentIntoTitleBar = true;
 
-        SetTitleBar(titleBar);
+        SetTitleBar(TitleBar);
 
         ConfigureNativeWindow();
         ConfigureNativeTitleBar();
@@ -102,7 +115,7 @@ public sealed partial class MainWindow : Window
         Color buttonForegroundColor;
         Color hoverPressedBackgroundColor;
 
-        titleBar.ButtonBackgroundColor = Colors.Transparent;
+        titleBar.ButtonBackgroundColor         = Colors.Transparent;
         titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
         titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
 
@@ -119,11 +132,11 @@ public sealed partial class MainWindow : Window
             buttonForegroundColor = Colors.White;
         }
 
-        titleBar.ButtonHoverBackgroundColor = hoverPressedBackgroundColor;
+        titleBar.ButtonHoverBackgroundColor   = hoverPressedBackgroundColor;
         titleBar.ButtonPressedBackgroundColor = hoverPressedBackgroundColor;
 
-        titleBar.ButtonForegroundColor = buttonForegroundColor;
-        titleBar.ButtonHoverForegroundColor = buttonForegroundColor;
+        titleBar.ButtonForegroundColor        = buttonForegroundColor;
+        titleBar.ButtonHoverForegroundColor   = buttonForegroundColor;
         titleBar.ButtonPressedForegroundColor = buttonForegroundColor;
     }
 
@@ -132,7 +145,7 @@ public sealed partial class MainWindow : Window
     /// </summary>
     public void ConfigureNativeTitleBar()
     {
-        AppWindow.SetIcon("ms-appx:///Assets/Icon-64.ico");
+        AppWindow.SetIcon(AwesomeMediaPlayer.Infrastructure.Constants.Icons.IconPath);
     }
 
     /// <summary>
@@ -149,20 +162,13 @@ public sealed partial class MainWindow : Window
             appWindow.SetPresenter(presenter);
         }
 
-        if (ViewModel is MainWindowViewModel viewModel)
-        {
-            viewModel.ExtendsContentIntoTitleBar = ExtendsContentIntoTitleBar;
-            viewModel.SystemBackdrop             = SystemBackdrop;
-        }
-
         int scaledHeight = GetScaledMinimumHeight();
-        int scaledWidth = GetScaledMinimumWidth();
+        int scaledWidth  = GetScaledMinimumWidth();
 
         presenter.PreferredMinimumWidth  = scaledWidth;
         presenter.PreferredMinimumHeight = scaledHeight;
 
         appWindow.Resize(scaledWidth, scaledHeight);
-        appWindow.MoveToCenter();
     }
     #endregion
 
@@ -170,6 +176,11 @@ public sealed partial class MainWindow : Window
     private void Window_Closed(object sender, WindowEventArgs args)
     {
         HasClosed = true;
+    }
+
+    private void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
+    {
+        RefreshTitleBarColors(LayoutRoot.RequestedTheme);
     }
     #endregion
 }

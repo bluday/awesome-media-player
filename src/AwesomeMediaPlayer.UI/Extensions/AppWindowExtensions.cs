@@ -3,7 +3,7 @@ using System;
 using System.Drawing;
 using Windows.Graphics;
 
-namespace AwesomeMediaPlayer.UI.Common.Extensions;
+namespace AwesomeMediaPlayer.UI.Infrastructure.Extensions;
 
 /// <summary>
 /// Provides extension methods for <see cref="AppWindow"/> instances.
@@ -17,7 +17,7 @@ public static class AppWindowExtensions
     /// An <see cref="AppWindow"/> instance, representing the targeted window to move.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown when <paramref name="source"/> is <c>null</c>.
+    /// Thrown if <paramref name="source"/> is <c>null</c>.
     /// </exception>
     public static void MoveToCenter(this AppWindow source)
     {
@@ -36,7 +36,7 @@ public static class AppWindowExtensions
     /// A <see cref="DisplayArea"/> instance, representing the targeted display area.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown when any of the parameters are <c>null</c>.
+    /// Thrown if any of the parameters are <c>null</c>.
     /// </exception>
     public static void MoveToCenter(this AppWindow source, DisplayArea displayArea)
     {
@@ -62,7 +62,7 @@ public static class AppWindowExtensions
     /// The new height value, in pixels.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown when <paramref name="source"/> is <c>null</c>.
+    /// Thrown if <paramref name="source"/> is <c>null</c>.
     /// </exception>
     public static void Resize(this AppWindow source, int width, int height)
     {
@@ -82,7 +82,7 @@ public static class AppWindowExtensions
     /// A <see cref="Size"/> struct with the new width and height values.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown when <paramref name="source"/> is <c>null</c>.
+    /// Thrown if <paramref name="source"/> is <c>null</c>.
     /// </exception>
     public static void Resize(this AppWindow source, Size size)
     {
@@ -102,7 +102,7 @@ public static class AppWindowExtensions
     /// The targeted <see cref="AppWindow"/> instance to resize.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown when <paramref name="source"/> is <c>null</c>.
+    /// Thrown if <paramref name="source"/> is <c>null</c>.
     /// </exception>
     public static void Restore(this AppWindow source)
     {

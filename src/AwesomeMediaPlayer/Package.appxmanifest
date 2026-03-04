@@ -15,7 +15,7 @@
   <mp:PhoneIdentity PhoneProductId="eceb345a-8f2b-49f2-bc39-86e9058744ec" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Amp</DisplayName>
+    <DisplayName>Awesome Media Player</DisplayName>
     <PublisherDisplayName>BluDay</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
