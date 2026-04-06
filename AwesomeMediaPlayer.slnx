@@ -1,26 +1,56 @@
 <Solution>
     <Configurations>
+        <BuildType Name="Debug"/>
+        <BuildType Name="Release"/>
+
+        <Platform Name="ARM64" />
         <Platform Name="x64" />
     </Configurations>
+
+    <Folder Name="/Assets/Icons/">
+        <File Path="assets/icons/icon_1024.png"/>
+        <File Path="assets/icons/icon_64.ico"/>
+    </Folder>
+
+    <Folder Name="/Git/">
+        <File Path=".gitignore"/>
+        <File Path="LICENSE"/>
+        <File Path="README.md"/>
+    </Folder>
+    
+    <Folder Name="/Solution/">
+        <File Path=".editorconfig"/>
+        <File Path="Directory.Build.props"/>
+    </Folder>
     
     <Folder Name="/Source/">
         <Project Path="src/AwesomeMediaPlayer/AwesomeMediaPlayer.csproj">
-            <Platform Project="x64" />
+            <Platform Solution="Debug|ARM64" Project="ARM64" />
+            <Platform Solution="Debug|x64" Project="x64" />
+            <Platform Solution="Release|ARM64" Project="ARM64" />
+            <Platform Solution="Release|x64" Project="x64" />
             <Deploy />
         </Project>
 
         <Project Path="src/AwesomeMediaPlayer.Core/AwesomeMediaPlayer.Core.csproj">
-            <Platform Project="x64" />
+            <Platform Solution="Debug|ARM64" Project="ARM64" />
+            <Platform Solution="Debug|x64" Project="x64" />
+            <Platform Solution="Release|ARM64" Project="ARM64" />
+            <Platform Solution="Release|x64" Project="x64" />
         </Project>
 
         <Project Path="src/AwesomeMediaPlayer.Infrastructure/AwesomeMediaPlayer.Infrastructure.csproj">
-            <Platform Project="x64" />
+            <Platform Solution="Debug|ARM64" Project="ARM64" />
+            <Platform Solution="Debug|x64" Project="x64" />
+            <Platform Solution="Release|ARM64" Project="ARM64" />
+            <Platform Solution="Release|x64" Project="x64" />
         </Project>
         
         <Project Path="src/AwesomeMediaPlayer.UI/AwesomeMediaPlayer.UI.csproj">
-            <Platform Project="x64" />
+            <Platform Solution="Debug|ARM64" Project="ARM64" />
+            <Platform Solution="Debug|x64" Project="x64" />
+            <Platform Solution="Release|ARM64" Project="ARM64" />
+            <Platform Solution="Release|x64" Project="x64" />
         </Project>
     </Folder>
-
-    <Folder Name="/Tests/"></Folder>
 </Solution>

@@ -1,8 +1,6 @@
-﻿using AwesomeMediaPlayer.Configuration;
-using AwesomeMediaPlayer.UI.Windows;
-using CommunityToolkit.Mvvm.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection;
+﻿using AwesomeMediaPlayer.UI.Windows;
 using Microsoft.UI.Xaml;
+using System;
 
 namespace AwesomeMediaPlayer;
 
@@ -11,37 +9,41 @@ namespace AwesomeMediaPlayer;
 /// </summary>
 public partial class App : Application
 {
-    private readonly ServiceProvider _rootServiceProvider = CreateContainer();
+    #region Instance fields
+    private readonly Func<MainWindow> _mainWindowFactory;
+    #endregion
 
+    #region Constructor
     /// <summary>
-    /// Initializes a new instance of the <see cref="App"/> class.
+    /// Initializes a new instance of the <see cref="App"/> class using
+    /// the specified dependencies.
     /// </summary>
-    public App()
+    /// <param name="mainWindowFactory">
+    /// A factory for creating <see cref="MainWindow"/> instances with.
+    /// </param>
+    /// <exception cref="ArgumentNullException">
+    /// Throws if any of the parameters are <c>null</c>.
+    /// </exception>
+    public App(Func<MainWindow> mainWindowFactory)
     {
+        ArgumentNullException.ThrowIfNull(mainWindowFactory);
+
+        _mainWindowFactory = mainWindowFactory;
+
         InitializeComponent();
     }
+    #endregion
 
-    private static ServiceProvider CreateContainer()
-    {
-        ServiceCollection services = [];
-
-        ServiceConfiguration.Configure(services);
-
-        ServiceProvider rootServiceProvider = services.BuildServiceProvider();
-
-        Ioc.Default.ConfigureServices(rootServiceProvider);
-
-        return rootServiceProvider;
-    }
-
+    #region Instance methods
     /// <summary>
     /// Invoked when the application is launched.
     /// </summary>
-    /// <param name="args">
+    /// <param name="e">
     /// Details about the launch request and process.
     /// </param>
-    protected override void OnLaunched(LaunchActivatedEventArgs args)
+    protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
-        _rootServiceProvider.GetRequiredService<MainWindow>().Activate();
+        _mainWindowFactory().Activate();
     }
+    #endregion
 }

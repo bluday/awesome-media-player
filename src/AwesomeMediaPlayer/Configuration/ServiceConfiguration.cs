@@ -1,4 +1,5 @@
-﻿using AwesomeMediaPlayer.Infrastructure.Localization;
+﻿using AwesomeMediaPlayer.Infrastructure.Extensions;
+using AwesomeMediaPlayer.Infrastructure.Localization;
 using AwesomeMediaPlayer.UI.ViewModels;
 using AwesomeMediaPlayer.UI.Windows;
 using CommunityToolkit.Mvvm.Messaging;
@@ -34,7 +35,7 @@ internal static class ServiceConfiguration
 
         services.AddSingleton<ILocalizedStringProvider, LocalizedStringProvider>();
 
-        services.AddTransient<MainWindow>();
+        services.AddTransientWithFactory<MainWindow>();
 
         services.AddTransient<AboutViewModel>();
         services.AddTransient<CurrentMediaInformationGeneralViewModel>();

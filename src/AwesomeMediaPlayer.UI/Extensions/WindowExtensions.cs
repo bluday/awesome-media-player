@@ -6,7 +6,7 @@ using Windows.Win32;
 using Windows.Win32.Foundation;
 using WinRT.Interop;
 
-namespace AwesomeMediaPlayer.UI.Infrastructure.Extensions;
+namespace AwesomeMediaPlayer.UI.Extensions;
 
 /// <summary>
 /// Provides extension methods for <see cref="Window"/> instances.
@@ -20,7 +20,7 @@ public static class WindowExtensions
     public const int DEFAULT_DPI_SCALE = 96;
     #endregion
 
-    #region Methods
+    #region Static methods
     /// <summary>
     /// Focuses on the window programmatically.
     /// </summary>

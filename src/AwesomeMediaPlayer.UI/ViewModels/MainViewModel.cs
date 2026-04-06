@@ -20,7 +20,7 @@ public sealed partial class MainViewModel : ObservableObject
     /// The absolute path for the title bar icon.
     /// </summary>
     public static readonly string TitleBarIconPath = Path.Combine(
-        AppContext.BaseDirectory, "Assets", "Icon-64.ico"
+        AppContext.BaseDirectory, "Assets", "icon_64.ico"
     );
 
     /// <summary>

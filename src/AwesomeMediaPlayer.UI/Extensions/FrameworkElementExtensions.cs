@@ -3,7 +3,7 @@ using System;
 using Windows.Foundation;
 using Windows.Graphics;
 
-namespace AwesomeMediaPlayer.UI.Infrastructure.Extensions;
+namespace AwesomeMediaPlayer.UI.Extensions;
 
 /// <summary>
 /// Provides extension methods for <see cref="FrameworkElement"/> instances.
@@ -17,14 +17,14 @@ public static class FrameworkElementExtensions
     public const double DEFAULT_BOUNDING_BOX_SCALE_FACTOR = 1.0;
 
     /// <summary>
-    /// The "FilledIconUri" string literal.
+    /// The "FilledIconGlyph" string literal.
     /// </summary>
-    public const string FilledIconUri = "FilledIconUri";
+    public const string FilledIconGlyph = "FilledIconGlyph";
 
     /// <summary>
-    /// The "RegularIconUri" string literal.
+    /// The "RegularIconGlyph" string literal.
     /// </summary>
-    public const string RegularIconUri = "RegularIconUri";
+    public const string RegularIconGlyph = "RegularIconGlyph";
 
     /// <summary>
     /// The "TargetPage" string literal.
@@ -34,22 +34,22 @@ public static class FrameworkElementExtensions
 
     #region Attached properties
     /// <summary>
-    /// Identifies the <see cref="FilledIconUri"/> attached property.
+    /// Identifies the <see cref="FilledIconGlyph"/> attached property.
     /// </summary>
-    public static readonly DependencyProperty FilledIconUriProperty = DependencyProperty.RegisterAttached(
-        nameof(FilledIconUri),
-        typeof(Uri),
-        typeof(FrameworkElement),
+    public static readonly DependencyProperty FilledIconGlyphProperty = DependencyProperty.RegisterAttached(
+        nameof(FilledIconGlyph),
+        typeof(string),
+        typeof(FrameworkElementExtensions),
         new PropertyMetadata(defaultValue: null)
     );
 
     /// <summary>
-    /// Identifies the <see cref="RegularIconUri"/> attached property.
+    /// Identifies the <see cref="RegularIconGlyph"/> attached property.
     /// </summary>
-    public static readonly DependencyProperty RegularIconUriProperty = DependencyProperty.RegisterAttached(
-        RegularIconUri,
-        typeof(Uri),
-        typeof(FrameworkElement),
+    public static readonly DependencyProperty RegularIconGlyphProperty = DependencyProperty.RegisterAttached(
+        nameof(RegularIconGlyph),
+        typeof(string),
+        typeof(FrameworkElementExtensions),
         new PropertyMetadata(defaultValue: null)
     );
 
@@ -57,42 +57,42 @@ public static class FrameworkElementExtensions
     /// Identifies the <see cref="TargetPage"/> attached property.
     /// </summary>
     public static readonly DependencyProperty TargetPageProperty = DependencyProperty.RegisterAttached(
-        TargetPage,
+        nameof(TargetPage),
         typeof(Type),
-        typeof(FrameworkElement),
+        typeof(FrameworkElementExtensions),
         new PropertyMetadata(defaultValue: null)
     );
     #endregion
 
     #region Attached property getters and setters
     /// <summary>
-    /// Gets the <see cref="Uri"/> for the filled icon from the
+    /// Gets the <see cref="string"/> for the filled icon from the
     /// specified element.
     /// </summary>
     /// <param name="element">
     /// The targeted element to get the image source from.
     /// </param>
     /// <returns>
-    /// The set <see cref="Uri"/> or <c>null</c>.
+    /// The set <see cref="string"/> or <c>null</c>.
     /// </returns>
-    public static Uri? GetFilledIconUri(UIElement element)
+    public static string? GetFilledIconGlyph(UIElement element)
     {
-        return element.GetValue(FilledIconUriProperty) as Uri;
+        return element.GetValue(FilledIconGlyphProperty) as string;
     }
 
     /// <summary>
-    /// Gets the <see cref="Uri"/> for the regular icon from the
+    /// Gets the <see cref="string"/> for the regular icon from the
     /// specified element.
     /// </summary>
     /// <param name="element">
     /// The targeted element to get the image source from.
     /// </param>
     /// <returns>
-    /// The set <see cref="Uri"/> or <c>null</c>.
+    /// The set <see cref="string"/> or <c>null</c>.
     /// </returns>
-    public static Uri? GetRegularIconUri(UIElement element)
+    public static string? GetRegularIconGlyph(UIElement element)
     {
-        return element.GetValue(RegularIconUriProperty) as Uri;
+        return element.GetValue(RegularIconGlyphProperty) as string;
     }
 
     /// <summary>
@@ -118,14 +118,9 @@ public static class FrameworkElementExtensions
     /// <param name="value">
     /// The SVG image source.
     /// </param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws if <paramref name="element"/> is <c>null</c>.
-    /// </exception>
-    public static void SetFilledIconUri(UIElement element, Uri value)
+    public static void SetFilledIconGlyph(UIElement element, string? value)
     {
-        ArgumentNullException.ThrowIfNull(element);
-
-        element.SetValue(FilledIconUriProperty, value);
+        element.SetValue(FilledIconGlyphProperty, value);
     }
 
     /// <summary>
@@ -137,14 +132,9 @@ public static class FrameworkElementExtensions
     /// <param name="value">
     /// The SVG image source.
     /// </param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws if <paramref name="element"/> is <c>null</c>.
-    /// </exception>
-    public static void SetRegularIconUri(UIElement element, Uri value)
+    public static void SetRegularIconGlyph(UIElement element, string? value)
     {
-        ArgumentNullException.ThrowIfNull(element);
-
-        element.SetValue(RegularIconUriProperty, value);
+        element.SetValue(RegularIconGlyphProperty, value);
     }
 
     /// <summary>
@@ -156,18 +146,13 @@ public static class FrameworkElementExtensions
     /// <param name="value">
     /// The targeted page type.
     /// </param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws if <paramref name="element"/> is <c>null</c>.
-    /// </exception>
-    public static void SetTargetPage(UIElement element, Type value)
+    public static void SetTargetPage(UIElement element, Type? value)
     {
-        ArgumentNullException.ThrowIfNull(element);
-
         element.SetValue(TargetPageProperty, value);
     }
     #endregion
 
-    #region Extension methods
+    #region Static methods
     /// <summary>
     /// Computes the bounding box of the element in screen coordinates and returns
     /// it as an integer rectangle.

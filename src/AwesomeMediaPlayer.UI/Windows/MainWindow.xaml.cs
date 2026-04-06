@@ -1,5 +1,5 @@
 using AwesomeMediaPlayer.UI.ViewModels;
-using AwesomeMediaPlayer.UI.Infrastructure.Extensions;
+using AwesomeMediaPlayer.UI.Extensions;
 using Microsoft.UI;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;

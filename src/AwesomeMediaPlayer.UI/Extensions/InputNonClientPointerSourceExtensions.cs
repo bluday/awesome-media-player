@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using Windows.Graphics;
 
-namespace AwesomeMediaPlayer.UI.Infrastructure.Extensions;
+namespace AwesomeMediaPlayer.UI.Extensions;
 
 /// <summary>
 /// Provides extension methods for <see cref="InputPointerSource"/> instances.
 /// </summary>
 public static class InputNonClientPointerSourceExtensions
 {
+    #region Static methods
     /// <summary>
     /// Clears and sets the specified rects for the specified region in the
     /// non-client area of the window.
@@ -37,4 +38,5 @@ public static class InputNonClientPointerSourceExtensions
         source.ClearRegionRects(region);
         source.SetRegionRects(region, [.. rects]);
     }
+    #endregion
 }

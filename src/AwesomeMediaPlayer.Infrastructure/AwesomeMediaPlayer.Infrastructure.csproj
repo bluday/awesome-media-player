@@ -2,23 +2,21 @@
 	<PropertyGroup>
 		<LangVersion>preview</LangVersion>
 		<Nullable>enable</Nullable>
-		<Platforms>x64</Platforms>
 		<RootNamespace>AwesomeMediaPlayer.Infrastructure</RootNamespace>
-		<RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
 		<SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
-		<TargetFramework>net9.0-windows10.0.26100.0</TargetFramework>
-		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+        <TargetFramework>net9.0-windows10.0.26100.0</TargetFramework>
+        <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
 		<UseWinUI>true</UseWinUI>
-		<WindowsSdkPackageVersion>10.0.26100.38</WindowsSdkPackageVersion>
+        <WindowsSdkPackageVersion>10.0.26100.56</WindowsSdkPackageVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.3" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.5" />
 		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
-		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7705" />
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260209005" />
-		<PackageReference Include="System.Drawing.Common" Version="10.0.3" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.1721" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260317003" />
+		<PackageReference Include="System.Drawing.Common" Version="10.0.5" />
 		<Manifest Include="$(ApplicationManifest)" />
 	</ItemGroup>
 </Project>

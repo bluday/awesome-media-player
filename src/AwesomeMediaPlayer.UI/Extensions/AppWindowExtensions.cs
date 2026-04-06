@@ -3,13 +3,14 @@ using System;
 using System.Drawing;
 using Windows.Graphics;
 
-namespace AwesomeMediaPlayer.UI.Infrastructure.Extensions;
+namespace AwesomeMediaPlayer.UI.Extensions;
 
 /// <summary>
 /// Provides extension methods for <see cref="AppWindow"/> instances.
 /// </summary>
 public static class AppWindowExtensions
 {
+    #region Static methods
     /// <summary>
     /// Moves the window to the center of its current display area.
     /// </summary>
@@ -21,6 +22,8 @@ public static class AppWindowExtensions
     /// </exception>
     public static void MoveToCenter(this AppWindow source)
     {
+        ArgumentNullException.ThrowIfNull(source);
+
         source.MoveToCenter(
             DisplayArea.GetFromWindowId(source.Id, DisplayAreaFallback.Primary)
         );
@@ -92,12 +95,8 @@ public static class AppWindowExtensions
     }
 
     /// <summary>
-    /// Restores the window on the desktop from the taskbar.
+    /// Restores the window if it uses an overlapped presenter.
     /// </summary>
-    /// <remarks>
-    /// This only works if the window uses a presenter of type <see cref="OverlappedPresenter"/>,
-    /// and will short circuit if it uses any other type of presenter.
-    /// </remarks>
     /// <param name="source">
     /// The targeted <see cref="AppWindow"/> instance to resize.
     /// </param>
@@ -108,6 +107,10 @@ public static class AppWindowExtensions
     {
         ArgumentNullException.ThrowIfNull(source);
 
-        (source.Presenter as OverlappedPresenter)?.Restore();
+        if (source.Presenter.Kind is AppWindowPresenterKind.Overlapped)
+        {
+            ((OverlappedPresenter)source.Presenter).Restore();
+        }
     }
+    #endregion
 }
