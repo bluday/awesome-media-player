@@ -6,10 +6,10 @@ using Microsoft.Extensions.Hosting;
 using System;
 
 using IHost host = Host.CreateDefaultBuilder()
-    .UseWinUI3Application<App>()
     .UseContentRoot(AppContext.BaseDirectory)
     .ConfigureLogging(LoggingConfiguration.Configure)
     .ConfigureServices(ServiceConfiguration.Configure)
+    .UseWinUI3Application<App>()
     .Build();
 
 Ioc.Default.ConfigureServices(host.Services);
