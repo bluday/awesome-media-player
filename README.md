@@ -1,21 +1,21 @@
 <div align="center">
-  <a href="https://github.com/bluday/awesome-media-player">
-    <img alt="Logo" height="100" src="/assets/icons/logo.png" width="100"/>
-  </a>
-  <h3 align="center">Awesome Media Player</h3>
-  <p align="center">
-    A WinUI 3 lookalike of the classic <a href="https://www.videolan.org"><i>VLC</i></a> Win32 app.
-  </p>
+
+<img alt="Logo" height="100" src="./assets/icons/logo_1024x1024.png"/>
+  
+<h3>Awesome Media Player</h3>
+
+A WinUI 3 lookalike of the classic [_VLC_](https://www.videolan.org) Win32 app.
+
 </div>
 
-> ⚠️ *Note: This application is currently in early development and does not yet include functional features.*
+> *This application is currently in early development and does not yet include functional features.*
 
 ## Screenshots
 
-![](/assets/screenshots/screenshot_0_2025-04-10.png?raw=true")
-![](/assets/screenshots/screenshot_1_2025-04-10.png?raw=true")
-![](/assets/screenshots/screenshot_2_2025-04-10.png?raw=true")
-![](/assets/screenshots/screenshot_3_2025-04-10.png?raw=true")
+![](./assets/screenshots/screenshot_0_2025-04-10.png?raw=true")
+![](./assets/screenshots/screenshot_1_2025-04-10.png?raw=true")
+![](./assets/screenshots/screenshot_2_2025-04-10.png?raw=true")
+![](./assets/screenshots/screenshot_3_2025-04-10.png?raw=true")
 
 ## License
 
