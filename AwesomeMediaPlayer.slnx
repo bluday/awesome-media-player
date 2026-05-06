@@ -8,8 +8,8 @@
     </Configurations>
 
     <Folder Name="/Assets/Icons/">
-        <File Path="assets/icons/icon_1024.png"/>
-        <File Path="assets/icons/icon_64.ico"/>
+        <File Path="assets/icons/logo_1024x1024.png"/>
+        <File Path="assets/icons/logo_64x64.ico"/>
     </Folder>
 
     <Folder Name="/Git/">

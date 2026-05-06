@@ -12,11 +12,11 @@ A WinUI 3 lookalike of the classic [_VLC_](https://www.videolan.org) Win32 app.
 
 ## Screenshots
 
-![](./assets/screenshots/screenshot_0_2025-04-10.png?raw=true")
-![](./assets/screenshots/screenshot_1_2025-04-10.png?raw=true")
-![](./assets/screenshots/screenshot_2_2025-04-10.png?raw=true")
-![](./assets/screenshots/screenshot_3_2025-04-10.png?raw=true")
+![Screenshot 1](./assets/screenshots/screenshot_0_2025-04-10.png?raw=true")
+![Screenshot 2](./assets/screenshots/screenshot_1_2025-04-10.png?raw=true")
+![Screenshot 3](./assets/screenshots/screenshot_2_2025-04-10.png?raw=true")
+![Screenshot 4](./assets/screenshots/screenshot_3_2025-04-10.png?raw=true")
 
 ## License
 
-[MIT](/LICENSE.txt)
+[MIT](./LICENSE.txt)
