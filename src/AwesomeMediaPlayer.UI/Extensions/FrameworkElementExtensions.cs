@@ -12,27 +12,27 @@ public static class FrameworkElementExtensions
 {
     #region Constants
     /// <summary>
-    /// The default bounding box scale factor.
+    /// Specifies the default bounding box scale factor.
     /// </summary>
-    public const double DEFAULT_BOUNDING_BOX_SCALE_FACTOR = 1.0;
+    public const double DefaultBoundingBoxScaleFactor = 1.0;
 
     /// <summary>
-    /// The "FilledIconGlyph" string literal.
+    /// Specifies the "FilledIconGlyph" string literal.
     /// </summary>
-    public const string FilledIconGlyph = "FilledIconGlyph";
+    public const string FilledIconGlyph = nameof(FilledIconGlyph);
 
     /// <summary>
-    /// The "RegularIconGlyph" string literal.
+    /// Specifies the "RegularIconGlyph" string literal.
     /// </summary>
-    public const string RegularIconGlyph = "RegularIconGlyph";
+    public const string RegularIconGlyph = nameof(RegularIconGlyph);
 
     /// <summary>
-    /// The "TargetPage" string literal.
+    /// Specifies the "TargetPage" string literal.
     /// </summary>
-    public const string TargetPage = "TargetPage";
+    public const string TargetPage = nameof(TargetPage);
     #endregion
 
-    #region Attached properties
+    #region Dependency properties
     /// <summary>
     /// Identifies the <see cref="FilledIconGlyph"/> attached property.
     /// </summary>
@@ -64,7 +64,7 @@ public static class FrameworkElementExtensions
     );
     #endregion
 
-    #region Attached property getters and setters
+    #region Dependency property getters and setters
     /// <summary>
     /// Gets the <see cref="string"/> for the filled icon from the
     /// specified element.
@@ -161,7 +161,7 @@ public static class FrameworkElementExtensions
     {
         ArgumentNullException.ThrowIfNull(source);
 
-        return source.GetBoundingBox(DEFAULT_BOUNDING_BOX_SCALE_FACTOR);
+        return source.GetBoundingBox(DefaultBoundingBoxScaleFactor);
     }
 
     /// <summary>
