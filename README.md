@@ -1,14 +1,11 @@
 <div align="center">
-
-<img alt="Logo" height="100" src="./assets/icons/logo_1024x1024.png"/>
-  
-<h3>Awesome Media Player</h3>
-
-A WinUI 3 lookalike of the classic [_VLC_](https://www.videolan.org) Win32 app.
-
+    <img alt="Logo" height="128" src="./assets/icons/logo_1024x1024.png"/>
+    <h1>Awesome Media Player</h1>
+    <h4>A WinUI 3 lookalike of the classic <i>VLC</i> Win32 app.</h4>
 </div>
 
-> *This application is currently in early development and does not yet include functional features.*
+> [!NOTE]
+> _This application is currently in early development and does not yet include functional features._
 
 ## Screenshots
 
