@@ -1,7 +1,11 @@
 <div align="center">
-    <img alt="Logo" height="128" src="./assets/icons/logo_1024x1024.png"/>
-    <h1>Awesome Media Player</h1>
-    <h4>A WinUI 3 lookalike of the classic <i>VLC</i> Win32 app.</h4>
+
+<img alt="Logo" height="128" src="./assets/icons/logo_1024x1024.png"/>
+
+# Awesome Media Player
+
+#### A WinUI 3 lookalike of the classic _VLC_ Win32 app.
+    
 </div>
 
 > [!NOTE]
