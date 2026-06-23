@@ -9,7 +9,7 @@ using System;
 namespace AwesomeMediaPlayer.Configuration;
 
 /// <summary>
-/// Provides a method for configuring and registering client-specific services.
+/// Provides a method for configuring and registering services.
 /// </summary>
 internal static class ServiceConfiguration
 {
@@ -17,11 +17,10 @@ internal static class ServiceConfiguration
     /// Registers configured services to the specified service collection.
     /// </summary>
     /// <param name="services">
-    /// The service descriptor collection to register all of the configured
-    /// client services to.
+    /// The service descriptor collection to configure.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Throws if <paramref name="services"/> is <c>null</c>.
+    /// Thrown when <paramref name="services"/> is <c>null</c>.
     /// </exception>
     internal static void Configure(IServiceCollection services)
     {
@@ -37,12 +36,13 @@ internal static class ServiceConfiguration
 
         services.AddTransientWithFactory<MainWindow>();
 
-        services.AddTransient<AboutViewModel>();
-        services.AddTransient<CurrentMediaInformationGeneralViewModel>();
-        services.AddTransient<HelpViewModel>();
-        services.AddTransient<MainViewModel>();
-        services.AddTransient<MainWindowViewModel>();
-        services.AddTransient<MediaLibraryViewModel>();
-        services.AddTransient<PreferencesViewModel>();
+        services
+            .AddTransient<AboutViewModel>()
+            .AddTransient<CurrentMediaInformationGeneralViewModel>()
+            .AddTransient<HelpViewModel>()
+            .AddTransient<MainViewModel>()
+            .AddTransient<MainWindowViewModel>()
+            .AddTransient<MediaLibraryViewModel>()
+            .AddTransient<PreferencesViewModel>();
     }
 }

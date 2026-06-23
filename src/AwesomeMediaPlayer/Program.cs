@@ -1,7 +1,6 @@
 ﻿using AwesomeMediaPlayer;
 using AwesomeMediaPlayer.Configuration;
 using AwesomeMediaPlayer.UI.Extensions;
-using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 
@@ -12,6 +11,6 @@ using IHost host = Host.CreateDefaultBuilder()
     .UseWinUI3Application<App>()
     .Build();
 
-Ioc.Default.ConfigureServices(host.Services);
+host.ConfigureCommunityToolkitIoc();
 
 await host.RunAsync();

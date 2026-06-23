@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
+        <DefineConstants>USES_COMMUNITY_TOOLKIT_MVVM</DefineConstants>
         <LangVersion>preview</LangVersion>
         <Nullable>enable</Nullable>
         <RootNamespace>AwesomeMediaPlayer.UI</RootNamespace>

@@ -37,7 +37,7 @@ public static class ServiceCollectionExtensions
     /// The current <see cref="IServiceCollection"/> instance.
     /// </returns>
     /// <exception cref="ArgumentNullException">
-    /// Throws if <paramref name="source"/> is <c>null</c>.
+    /// Thrown when <paramref name="source"/> is <c>null</c>.
     /// </exception>
     public static IServiceCollection AddTransientWithFactory<TService, TImplementation>(
         this IServiceCollection source

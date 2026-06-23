@@ -59,7 +59,7 @@ public sealed partial class MainWindow : Window
     /// The view model instance for the window.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Throws if any of the parameters are <c>null</c>.
+    /// Thrown when any of the parameters are <c>null</c>.
     /// </exception>
     public MainWindow(MainWindowViewModel viewModel)
     {

@@ -18,7 +18,7 @@ public sealed partial class MainWindowViewModel : WindowViewModel
     /// The resource provider used to access localized strings.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Throws if any of the parameters are <c>null</c>.
+    /// Thrown when any of the parameters are <c>null</c>.
     /// </exception>
     public MainWindowViewModel(ILocalizedStringProvider localizedStringProvider)
     {

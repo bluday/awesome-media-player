@@ -19,10 +19,10 @@ public partial class App : Application
     /// the specified dependencies.
     /// </summary>
     /// <param name="mainWindowFactory">
-    /// A factory for creating <see cref="MainWindow"/> instances with.
+    /// The <see cref="MainWindow"/> factory.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Throws if any of the parameters are <c>null</c>.
+    /// Thrown when any of the parameters are <c>null</c>.
     /// </exception>
     public App(Func<MainWindow> mainWindowFactory)
     {
