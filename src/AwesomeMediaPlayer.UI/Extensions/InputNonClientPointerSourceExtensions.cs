@@ -6,11 +6,11 @@ using Windows.Graphics;
 namespace AwesomeMediaPlayer.UI.Extensions;
 
 /// <summary>
-/// Provides extension methods for <see cref="InputPointerSource"/> instances.
+/// Provides extension methods for <see cref="InputNonClientPointerSource"/>
+/// instances.
 /// </summary>
 public static class InputNonClientPointerSourceExtensions
 {
-    #region Static methods
     /// <summary>
     /// Clears and sets the specified rects for the specified region in the
     /// non-client area of the window.
@@ -25,12 +25,13 @@ public static class InputNonClientPointerSourceExtensions
     /// The calculated rectangles to set for the specified region.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown if <paramref name="source"/> is <c>null</c>.
+    /// Thrown when <paramref name="source"/> or <paramref name="rects"/>
+    /// is <see langword="null"/>.
     /// </exception>
     public static void ReplaceRegionRects(
         this InputNonClientPointerSource source,
-        NonClientRegionKind region,
-        IEnumerable<RectInt32> rects)
+        NonClientRegionKind              region,
+        IEnumerable<RectInt32>           rects)
     {
         ArgumentNullException.ThrowIfNull(source);
         ArgumentNullException.ThrowIfNull(rects);
@@ -38,5 +39,4 @@ public static class InputNonClientPointerSourceExtensions
         source.ClearRegionRects(region);
         source.SetRegionRects(region, [.. rects]);
     }
-    #endregion
 }

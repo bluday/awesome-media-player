@@ -15,41 +15,44 @@ public static class AppWindowExtensions
     /// Moves the window to the center of its current display area.
     /// </summary>
     /// <param name="source">
-    /// An <see cref="AppWindow"/> instance, representing the targeted window to move.
+    /// An <see cref="AppWindow"/> instance, representing the targeted
+    /// window to move.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown if <paramref name="source"/> is <c>null</c>.
+    /// Thrown when <paramref name="source"/> is <see langword="null"/>.
     /// </exception>
     public static void MoveToCenter(this AppWindow source)
     {
         ArgumentNullException.ThrowIfNull(source);
 
-        source.MoveToCenter(
-            DisplayArea.GetFromWindowId(source.Id, DisplayAreaFallback.Primary)
-        );
+        var displayArea = DisplayArea.GetFromWindowId(source.Id, DisplayAreaFallback.Primary);
+
+        source.MoveToCenter(displayArea);
     }
 
     /// <summary>
     /// Moves the window to the center of the specified display area.
     /// </summary>
     /// <param name="source">
-    /// An <see cref="AppWindow"/> instance, representing the targeted window to move.
+    /// An <see cref="AppWindow"/> instance, representing the targeted
+    /// window to move.
     /// </param>
     /// <param name="displayArea">
-    /// A <see cref="DisplayArea"/> instance, representing the targeted display area.
+    /// A <see cref="DisplayArea"/> instance, representing the targeted
+    /// display area.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown if any of the parameters are <c>null</c>.
+    /// Thrown when any parameter is <see langword="null"/>.
     /// </exception>
     public static void MoveToCenter(this AppWindow source, DisplayArea displayArea)
     {
         ArgumentNullException.ThrowIfNull(source);
         ArgumentNullException.ThrowIfNull(displayArea);
 
-        source.Move(new PointInt32(
-            (displayArea.WorkArea.Width  - source.Size.Width)  / 2,
-            (displayArea.WorkArea.Height - source.Size.Height) / 2
-        ));
+        int x = (displayArea.WorkArea.Width  - source.Size.Width)  / 2;
+        int y = (displayArea.WorkArea.Height - source.Size.Height) / 2;
+
+        source.Move(new PointInt32(x, y));
     }
 
     /// <summary>
@@ -65,7 +68,7 @@ public static class AppWindowExtensions
     /// The new height value, in pixels.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown if <paramref name="source"/> is <c>null</c>.
+    /// Thrown when <paramref name="source"/> is <see langword="null"/>.
     /// </exception>
     public static void Resize(this AppWindow source, int width, int height)
     {
@@ -75,17 +78,18 @@ public static class AppWindowExtensions
     }
 
     /// <summary>
-    /// Resizes the window using the width and height values from the specified
-    /// <see cref="Size"/> instance.
+    /// Resizes the window using the width and height values from the
+    /// specified <see cref="Size"/> instance.
     /// </summary>
     /// <param name="source">
     /// The targeted <see cref="AppWindow"/> instance to resize.
     /// </param>
     /// <param name="size">
-    /// A <see cref="Size"/> struct with the new width and height values.
+    /// A <see cref="Size"/> struct with the new width and height
+    /// values.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown if <paramref name="source"/> is <c>null</c>.
+    /// Thrown when <paramref name="source"/> is <see langword="null"/>.
     /// </exception>
     public static void Resize(this AppWindow source, Size size)
     {
@@ -101,15 +105,15 @@ public static class AppWindowExtensions
     /// The targeted <see cref="AppWindow"/> instance to resize.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown if <paramref name="source"/> is <c>null</c>.
+    /// Thrown when <paramref name="source"/> is <see langword="null"/>.
     /// </exception>
     public static void Restore(this AppWindow source)
     {
         ArgumentNullException.ThrowIfNull(source);
 
-        if (source.Presenter.Kind is AppWindowPresenterKind.Overlapped)
+        if (source.Presenter is OverlappedPresenter presenter)
         {
-            ((OverlappedPresenter)source.Presenter).Restore();
+            presenter.Restore();
         }
     }
     #endregion

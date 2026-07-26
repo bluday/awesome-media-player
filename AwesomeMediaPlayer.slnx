@@ -23,20 +23,14 @@
     </Folder>
     
     <Folder Name="/Source/">
+        <Project Path="src/AwesomeMediaPlayer.UI/AwesomeMediaPlayer.UI.csproj">
+            <Platform Solution="*|ARM64" Project="ARM64" />
+            <Platform Solution="*|x64" Project="x64" />
+        </Project>
         <Project Path="src/AwesomeMediaPlayer/AwesomeMediaPlayer.csproj">
             <Platform Solution="*|ARM64" Project="ARM64" />
             <Platform Solution="*|x64" Project="x64" />
             <Deploy />
-        </Project>
-
-        <Project Path="src/AwesomeMediaPlayer.Infrastructure/AwesomeMediaPlayer.Infrastructure.csproj">
-            <Platform Solution="*|ARM64" Project="ARM64" />
-            <Platform Solution="*|x64" Project="x64" />
-        </Project>
-        
-        <Project Path="src/AwesomeMediaPlayer.UI/AwesomeMediaPlayer.UI.csproj">
-            <Platform Solution="*|ARM64" Project="ARM64" />
-            <Platform Solution="*|x64" Project="x64" />
         </Project>
     </Folder>
 </Solution>

@@ -1,34 +1,25 @@
 ﻿using AwesomeMediaPlayer.UI.Windows;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
-using System;
 
 namespace AwesomeMediaPlayer;
 
 /// <summary>
-/// Interaction logic for App.xaml.
+/// Provides application-specific behavior to supplement the base class.
 /// </summary>
-public partial class App : Application
+public sealed partial class App : Application
 {
     #region Instance fields
-    private readonly Func<MainWindow> _mainWindowFactory;
+    private readonly ServiceProvider _rootServiceProvider;
     #endregion
 
     #region Constructor
     /// <summary>
-    /// Initializes a new instance of the <see cref="App"/> class using
-    /// the specified dependencies.
+    /// Initializes a new instance of the <see cref="App"/> class.
     /// </summary>
-    /// <param name="mainWindowFactory">
-    /// The <see cref="MainWindow"/> factory.
-    /// </param>
-    /// <exception cref="ArgumentNullException">
-    /// Thrown when any of the parameters are <c>null</c>.
-    /// </exception>
-    public App(Func<MainWindow> mainWindowFactory)
+    public App()
     {
-        ArgumentNullException.ThrowIfNull(mainWindowFactory);
-
-        _mainWindowFactory = mainWindowFactory;
+        _rootServiceProvider = ServiceProviderFactory.Create();
 
         InitializeComponent();
     }
@@ -43,7 +34,10 @@ public partial class App : Application
     /// </param>
     protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
-        _mainWindowFactory().Activate();
+        MainWindow window = new();
+
+        window.ApplyConfiguration();
+        window.Activate();
     }
     #endregion
 }

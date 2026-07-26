@@ -1,4 +1,4 @@
-﻿using AwesomeMediaPlayer.Infrastructure.Localization;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 
 namespace AwesomeMediaPlayer.UI.ViewModels;
@@ -6,33 +6,23 @@ namespace AwesomeMediaPlayer.UI.ViewModels;
 /// <summary>
 /// Represents the view model for the main window.
 /// </summary>
-public sealed partial class MainWindowViewModel : WindowViewModel
+public sealed partial class MainWindowViewModel : ObservableObject
 {
-    private readonly ILocalizedStringProvider _localizedStringProvider;
+    /// <summary>
+    /// Gets or sets the URI for the title bar icon.
+    /// </summary>
+    [ObservableProperty]
+    public partial Uri? IconUri { get; set; }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class using
-    /// the specified dependencies.
+    /// Gets or sets the subtitle for the title bar control.
     /// </summary>
-    /// <param name="localizedStringProvider">
-    /// The resource provider used to access localized strings.
-    /// </param>
-    /// <exception cref="ArgumentNullException">
-    /// Thrown when any of the parameters are <c>null</c>.
-    /// </exception>
-    public MainWindowViewModel(ILocalizedStringProvider localizedStringProvider)
-    {
-        ArgumentNullException.ThrowIfNull(localizedStringProvider);
-
-        _localizedStringProvider = localizedStringProvider;
-    }
+    [ObservableProperty]
+    public partial string? Subtitle { get; set; }
 
     /// <summary>
-    /// Applies localized content.
+    /// Gets or sets the title for the title bar control.
     /// </summary>
-    public void ApplyLocalizedContent()
-    {
-        Subtitle = _localizedStringProvider.GetString("Common/Preview");
-        Title    = _localizedStringProvider.GetString("General/AppDisplayName");
-    }
+    [ObservableProperty]
+    public partial string? Title { get; set; }
 }

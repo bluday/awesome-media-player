@@ -5,7 +5,6 @@
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
 		<Authors>BluDay</Authors>
 		<Copyright>© BluDay 2026</Copyright>
-        <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
 		<Description>Developed by BluDay.</Description>
 		<EnableMsixTooling>true</EnableMsixTooling>
 		<LangVersion>preview</LangVersion>
@@ -23,21 +22,19 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<ProjectReference Include="..\AwesomeMediaPlayer.Infrastructure\AwesomeMediaPlayer.Infrastructure.csproj" />
 		<ProjectReference Include="..\AwesomeMediaPlayer.UI\AwesomeMediaPlayer.UI.csproj" />
 	</ItemGroup>
 	
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
-		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="10.0.5" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.5" />
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.5" />
-		<PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.5" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.5" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.5" />
-		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
-		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.1721" />
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260317003" />
+		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="10.0.10" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.10" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.10" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.10" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.10" />
+		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.3.1" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.2526" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="2.3.1" />
 		<Manifest Include="$(ApplicationManifest)" />
 	</ItemGroup>
 	

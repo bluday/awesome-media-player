@@ -1,11 +1,12 @@
-using AwesomeMediaPlayer.UI.ViewModels;
 using AwesomeMediaPlayer.UI.Extensions;
-using Microsoft.UI;
+using AwesomeMediaPlayer.UI.ViewModels;
+using AwesomeMediaPlayer.UI.Windowing;
+using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
+using Microsoft.Windows.ApplicationModel.Resources;
 using System;
-using Windows.Graphics;
-using Windows.UI;
+using System.IO;
 
 namespace AwesomeMediaPlayer.UI.Windows;
 
@@ -16,142 +17,59 @@ public sealed partial class MainWindow : Window
 {
     #region Constants
     /// <summary>
-    /// Reduction factor applied when a scaled dimension value exceeds the
-    /// display work area.
+    /// The minimum height, in pixels.
     /// </summary>
-    public const double DISPLAY_WORK_AREA_OVERFLOW_REDUCTION_FACTOR = 0.9;
+    public const int MinimumHeight = 768;
 
     /// <summary>
-    /// The minimum height in pixels, unscaled.
+    /// The minimum width, in pixels.
     /// </summary>
-    public const int MINIMUM_UNSCALED_HEIGHT = 768;
-
-    /// <summary>
-    /// The minimum width in pixels, unscaled.
-    /// </summary>
-    public const int MINIMUM_UNSCALED_WIDTH = 1024;
+    public const int MinimumWidth = 1024;
     #endregion
 
-    #region Fields
-    private readonly double _dpiScaleFactor;
-
-    private readonly RectInt32 _displayWorkArea;
+    #region Static fields
+    /// <summary>
+    /// The absolute path for the title bar icon.
+    /// </summary>
+    public static readonly string IconPath = Path.Combine(
+        AppContext.BaseDirectory,
+        "Assets",
+        "icon_64.ico"
+    );
     #endregion
 
-    #region Properties
+    #region Instance properties
     /// <summary>
-    /// Gets a value indicating whether the window has been closed.
-    /// </summary>
-    public bool HasClosed { get; private set; }
-
-    /// <summary>
-    /// Gets the view model instance.
+    /// Gets the view model.
     /// </summary>
     public MainWindowViewModel ViewModel { get; }
     #endregion
 
     #region Constructor
     /// <summary>
-    /// Initializes a new instance of the <see cref="MainWindow"/> class
-    /// using the specified dependencies.
+    /// Initializes a new instance of the <see cref="MainWindow"/> class.
     /// </summary>
-    /// <param name="viewModel">
-    /// The view model instance for the window.
-    /// </param>
-    /// <exception cref="ArgumentNullException">
-    /// Thrown when any of the parameters are <c>null</c>.
-    /// </exception>
-    public MainWindow(MainWindowViewModel viewModel)
+    public MainWindow()
     {
-        ArgumentNullException.ThrowIfNull(viewModel);
-
-        _displayWorkArea = this.GetDisplayArea().WorkArea;
-
-        _dpiScaleFactor = this.GetCurrentDpiScaleFactor();
-
-        ViewModel = viewModel;
-
-        Title = viewModel.Title;
-
-        SystemBackdrop = new Microsoft.UI.Xaml.Media.MicaBackdrop();
-
         ExtendsContentIntoTitleBar = true;
 
-        SetTitleBar(TitleBar);
+        ViewModel = Ioc.Default.GetRequiredService<MainWindowViewModel>();
 
-        ConfigureNativeWindow();
-        ConfigureNativeTitleBar();
+        SetTitleBar(TitleBar);
 
         InitializeComponent();
     }
     #endregion
 
-    #region Methods
-    private int GetScaledMinimumHeight()
+    #region Event handlers
+    private void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
     {
-        return (int)Math.Min(
-            MINIMUM_UNSCALED_HEIGHT * _dpiScaleFactor,
-            _displayWorkArea.Height * DISPLAY_WORK_AREA_OVERFLOW_REDUCTION_FACTOR
-        );
+        RefreshTitleBarColors(LayoutRoot.RequestedTheme);
     }
+    #endregion
 
-    private int GetScaledMinimumWidth()
-    {
-        return (int)Math.Min(
-            MINIMUM_UNSCALED_WIDTH * _dpiScaleFactor,
-            _displayWorkArea.Width * DISPLAY_WORK_AREA_OVERFLOW_REDUCTION_FACTOR
-        );
-    }
-
-    private void RefreshTitleBarColors(ElementTheme elementTheme)
-    {
-        if (!AppWindowTitleBar.IsCustomizationSupported())
-        {
-            return;
-        }
-
-        AppWindowTitleBar titleBar = AppWindow.TitleBar;
-
-        Color buttonForegroundColor;
-        Color hoverPressedBackgroundColor;
-
-        titleBar.ButtonBackgroundColor         = Colors.Transparent;
-        titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
-        titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
-
-        if (elementTheme is ElementTheme.Light)
-        {
-            hoverPressedBackgroundColor = Color.FromArgb(0xFF, 0xDD, 0xDD, 0xDD);
-
-            buttonForegroundColor = Colors.Black;
-        }
-        else
-        {
-            hoverPressedBackgroundColor = Color.FromArgb(0xFF, 0x33, 0x33, 0x33);
-
-            buttonForegroundColor = Colors.White;
-        }
-
-        titleBar.ButtonHoverBackgroundColor   = hoverPressedBackgroundColor;
-        titleBar.ButtonPressedBackgroundColor = hoverPressedBackgroundColor;
-
-        titleBar.ButtonForegroundColor        = buttonForegroundColor;
-        titleBar.ButtonHoverForegroundColor   = buttonForegroundColor;
-        titleBar.ButtonPressedForegroundColor = buttonForegroundColor;
-    }
-
-    /// <summary>
-    /// Configures the underlying, native title bar for the window.
-    /// </summary>
-    public void ConfigureNativeTitleBar()
-    {
-        AppWindow.SetIcon(AwesomeMediaPlayer.Infrastructure.Constants.Icons.IconPath);
-    }
-
-    /// <summary>
-    /// Configures the underlying native window.
-    /// </summary>
-    public void ConfigureNativeWindow()
+    #region Instance methods
+    private void ConfigureAppWindow()
     {
         AppWindow appWindow = AppWindow;
 
@@ -162,25 +80,47 @@ public sealed partial class MainWindow : Window
             appWindow.SetPresenter(presenter);
         }
 
-        int scaledHeight = GetScaledMinimumHeight();
-        int scaledWidth  = GetScaledMinimumWidth();
+        double dpiScaleFactor = this.GetCurrentDpiScaleFactor();
 
-        presenter.PreferredMinimumWidth  = scaledWidth;
-        presenter.PreferredMinimumHeight = scaledHeight;
+        int scaledMinimumHeight = (int)(MinimumHeight * dpiScaleFactor);
+        int scaledMinimumWidth  = (int)(MinimumWidth  * dpiScaleFactor);
 
-        appWindow.Resize(scaledWidth, scaledHeight);
-    }
-    #endregion
+        presenter.PreferredMinimumWidth  = scaledMinimumWidth;
+        presenter.PreferredMinimumHeight = scaledMinimumHeight;
 
-    #region Event handlers
-    private void Window_Closed(object sender, WindowEventArgs args)
-    {
-        HasClosed = true;
+        appWindow.Resize(scaledMinimumWidth, scaledMinimumHeight);
+        appWindow.MoveToCenter();
+        appWindow.SetIcon(IconPath);
     }
 
-    private void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
+    private void RefreshTitleBarColors(ElementTheme elementTheme)
     {
-        RefreshTitleBarColors(LayoutRoot.RequestedTheme);
+        if (elementTheme is ElementTheme.Light)
+        {
+            AppWindowConfigurator.ApplyLightTitleBarColors(AppWindow);
+        }
+        else
+        {
+            AppWindowConfigurator.ApplyDarkTitleBarColors(AppWindow);
+        }
+    }
+
+    /// <inheritdoc/>
+    public void ApplyConfiguration()
+    {
+        ConfigureAppWindow();
+
+        if (ViewModel is not MainWindowViewModel viewModel)
+        {
+            return;
+        }
+
+        viewModel.IconUri = new Uri(IconPath);
+
+        ResourceLoader resourceLoader = new();
+
+        viewModel.Subtitle = resourceLoader.GetString("Common/Preview");
+        viewModel.Title    = resourceLoader.GetString("General/AppDisplayName");
     }
     #endregion
 }

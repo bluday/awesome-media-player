@@ -1,7 +1,4 @@
-﻿using AwesomeMediaPlayer.Infrastructure.Extensions;
-using AwesomeMediaPlayer.Infrastructure.Localization;
-using AwesomeMediaPlayer.UI.ViewModels;
-using AwesomeMediaPlayer.UI.Windows;
+﻿using AwesomeMediaPlayer.UI.ViewModels;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -20,7 +17,7 @@ internal static class ServiceConfiguration
     /// The service descriptor collection to configure.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown when <paramref name="services"/> is <c>null</c>.
+    /// Thrown when <paramref name="services"/> is <see langword="null"/>.
     /// </exception>
     internal static void Configure(IServiceCollection services)
     {
@@ -31,10 +28,6 @@ internal static class ServiceConfiguration
         services.AddMemoryCache();
 
         services.AddSingleton<IMessenger>(WeakReferenceMessenger.Default);
-
-        services.AddSingleton<ILocalizedStringProvider, LocalizedStringProvider>();
-
-        services.AddTransientWithFactory<MainWindow>();
 
         services
             .AddTransient<AboutViewModel>()

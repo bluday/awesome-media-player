@@ -1,17 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System.Windows.Input;
+using CommunityToolkit.Mvvm.Input;
 
 namespace AwesomeMediaPlayer.UI.ViewModels;
 
-/// <summary>
-/// Represents the view model for the help view.
-/// </summary>
-public sealed partial class HelpViewModel : ObservableObject
-{
-    /// <summary>
-    /// Gets the raw Markdown text.
-    /// </summary>
-    public string Text { get; } = @"# Welcome to VLC media player Help
+/*
+# Welcome to VLC media player Help
 
 ##### Documentation
 
@@ -41,10 +34,29 @@ You might then get (and give) help on the [Forums](https://forum.videolan.org/),
 
 You can help the VideoLAN project giving some of your time to help the community, to design skins, to
 translate the documentation, to test and to code. You can also give funds
-and material to help us. And of course, you can promote VLC media player.";
+and material to help us. And of course, you can promote VLC media player.
+*/
 
+/// <summary>
+/// Represents the view model for the help view.
+/// </summary>
+public sealed partial class HelpViewModel : ObservableObject
+{
+    #region Instance methods
     /// <summary>
-    /// Gets or sets the close window command.
+    /// Gets the <i>Markdown</i>-formatted text.
     /// </summary>
-    public ICommand? CloseWindowCommand { get; set; }
+    public string? Text { get; }
+    #endregion
+
+    #region Relay commands
+    /// <summary>
+    /// Closes the current window.
+    /// </summary>
+    [RelayCommand]
+    public void CloseWindow()
+    {
+        // TODO: Send a message for closing the main window.
+    }
+    #endregion
 }

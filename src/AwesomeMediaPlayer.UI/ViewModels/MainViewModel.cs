@@ -1,11 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Media.Imaging;
-using Microsoft.Windows.ApplicationModel.Resources;
 using System;
-using System.IO;
-using System.Windows.Input;
 
 namespace AwesomeMediaPlayer.UI.ViewModels;
 
@@ -14,74 +9,40 @@ namespace AwesomeMediaPlayer.UI.ViewModels;
 /// </summary>
 public sealed partial class MainViewModel : ObservableObject
 {
-    private ResourceLoader _resourceLoader;
-
-    /// <summary>
-    /// The absolute path for the title bar icon.
-    /// </summary>
-    public static readonly string TitleBarIconPath = Path.Combine(
-        AppContext.BaseDirectory, "Assets", "icon_64.ico"
-    );
-
-    /// <summary>
-    /// Gets or sets the close window command.
-    /// </summary>
-    public ICommand? CloseWindowCommand { get; set; }
-
+    #region Instance properties
     /// <summary>
     /// Gets the view model for the media library view.
     /// </summary>
-    public MediaLibraryViewModel MediaLibraryViewModel { get; private set; }
+    public MediaLibraryViewModel MediaLibraryViewModel { get; }
+    #endregion
 
+    #region Constructor
     /// <summary>
-    /// Gets the subtitle for the view.
-    /// </summary>
-    public string? Subtitle { get; private set; }
-
-    /// <summary>
-    /// Gets the title for the view.
-    /// </summary>
-    public string? Title => _resourceLoader.GetString("General/AppDisplayName");
-
-    /// <summary>
-    /// Gets the icon image source for the title bar.
-    /// </summary>
-    public ImageSource? TitleBarIcon { get; private set; }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="MainViewModel"/> class using the view
-    /// model for the media library view.
+    /// Initializes a new instance of the <see cref="MainViewModel"/>
+    /// class using the specified media library view model.
     /// </summary>
     /// <param name="mediaLibraryViewModel">
     /// The view model for the media library view.
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown if <paramref name="mediaLibraryViewModel"/> is <c>null</c>.
+    /// Thrown if <paramref name="mediaLibraryViewModel"/> is <see langword="null"/>.
     /// </exception>
     public MainViewModel(MediaLibraryViewModel mediaLibraryViewModel)
     {
         ArgumentNullException.ThrowIfNull(mediaLibraryViewModel);
 
-        _resourceLoader = new ResourceLoader();
-
         MediaLibraryViewModel = mediaLibraryViewModel;
-
-        ApplyLocalizedContent();
-
-        UpdateTitleBarIcon();
     }
+    #endregion
 
-    private void UpdateTitleBarIcon()
-    {
-        TitleBarIcon = new BitmapImage(new Uri(TitleBarIconPath));
-    }
-
+    #region Relay commands
     /// <summary>
-    /// Updates properties and fields with localized strings and content.
+    /// Closes the current window.
     /// </summary>
-    public void ApplyLocalizedContent()
+    [RelayCommand]
+    public void CloseWindow()
     {
-        OnPropertyChanged(nameof(Title));
+        // TODO: Send a message for closing the main window.
     }
 
     /// <summary>
@@ -90,25 +51,7 @@ public sealed partial class MainViewModel : ObservableObject
     [RelayCommand]
     public void OpenAboutWindow()
     {
-        return;
-    }
-
-    /// <summary>
-    /// Creates a new window displays the help view.
-    /// </summary>
-    [RelayCommand]
-    public void OpenHelpWindow()
-    {
-        return;
-    }
-
-    /// <summary>
-    /// Creates a new window displays the preferences view.
-    /// </summary>
-    [RelayCommand]
-    public void OpenPreferencesWindow()
-    {
-        return;
+        // TODO: Send a message for opening the about window.
     }
 
     /// <summary>
@@ -117,6 +60,25 @@ public sealed partial class MainViewModel : ObservableObject
     [RelayCommand]
     public void OpenCurrentMediaInformationWindow()
     {
-        return;
+        // TODO: Send a message for opening the current-media-information window.
     }
+
+    /// <summary>
+    /// Creates a new window displays the help view.
+    /// </summary>
+    [RelayCommand]
+    public void OpenHelpWindow()
+    {
+        // TODO: Send a message for opening the help window.
+    }
+
+    /// <summary>
+    /// Creates a new window displays the preferences view.
+    /// </summary>
+    [RelayCommand]
+    public void OpenPreferencesWindow()
+    {
+        // TODO: Send a message for opening the preferences window.
+    }
+    #endregion
 }
