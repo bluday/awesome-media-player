@@ -56,7 +56,7 @@ public sealed partial class HelpViewModel : ObservableObject
     [RelayCommand]
     public void CloseWindow()
     {
-        // TODO: Send a message for closing the main window.
+        // TODO: Send a message for closing the help window.
     }
     #endregion
 }
