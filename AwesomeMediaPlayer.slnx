@@ -1,10 +1,8 @@
 <Solution>
     <Configurations>
-
         <Platform Name="ARM64" />
         <Platform Name="x64" />
     </Configurations>
-    <Folder Name="/Assets/" />
 
     <Folder Name="/Assets/Icons/">
         <File Path="assets/icons/logo_1024x1024.png" />
