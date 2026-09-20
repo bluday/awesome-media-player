@@ -1,7 +1,26 @@
 <Project>
     <PropertyGroup>
+        <Authors>BluDay</Authors>
+        <Copyright>© BluDay 2026</Copyright>
+        <Description>Developed by BluDay.</Description>
+        <Product>Awesome Media Player</Product>
+        <RepositoryUrl>https://github.com/bluday/awesome-media-player</RepositoryUrl>
+        <Title>$(Product)</Title>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <LangVersion>14.0</LangVersion>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup>
         <Platforms>ARM64;x64</Platforms>
         <PlatformTarget>x64</PlatformTarget>
         <RuntimeIdentifiers>win-arm64;win-x64</RuntimeIdentifiers>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssetsIconsLinkPath>Assets/Icons</AssetsIconsLinkPath>
+        <AssetsIconsPath>$(MSBuildThisFileDirectory)/assets/icons</AssetsIconsPath>
     </PropertyGroup>
 </Project>

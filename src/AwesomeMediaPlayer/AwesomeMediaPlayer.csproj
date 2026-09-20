@@ -1,21 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<ApplicationIcon>Assets\icon_64.ico</ApplicationIcon>
+        <ApplicationIcon>$(AssetsIconsPath)\logo_64x64.ico</ApplicationIcon>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-		<Authors>BluDay</Authors>
-		<Copyright>© BluDay 2026</Copyright>
-		<Description>Developed by BluDay.</Description>
 		<EnableMsixTooling>true</EnableMsixTooling>
-		<LangVersion>preview</LangVersion>
-		<Nullable>enable</Nullable>
 		<OutputType>WinExe</OutputType>
-		<RepositoryUrl>https://github.com/bluday/awesome-media-player</RepositoryUrl>
 		<RootNamespace>AwesomeMediaPlayer</RootNamespace>
 		<SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
         <TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
         <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
-        <Title>Awesome Media Player</Title>
         <UseWinUI>true</UseWinUI>
         <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
         <WindowsSdkPackageVersion>10.0.26100.56</WindowsSdkPackageVersion>
@@ -57,7 +50,8 @@
 	</PropertyGroup>
 
     <ItemGroup>
-        <Content Include="Assets\**\*.*">
+        <Content Include="$(AssetsIconsPath)\logo_64x64.ico">
+            <Link>$(AssetsIconsLinkPath)\%(Filename)%(Extension)</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
