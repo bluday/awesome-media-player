@@ -34,7 +34,8 @@ public sealed partial class MainWindow : Window
     public static readonly string IconPath = Path.Combine(
         AppContext.BaseDirectory,
         "Assets",
-        "icon_64.ico"
+        "Icons",
+        "logo_64x64.ico"
     );
     #endregion
 
