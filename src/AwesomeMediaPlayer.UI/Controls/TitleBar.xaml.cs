@@ -5,10 +5,11 @@ using Microsoft.UI.Xaml.Media;
 namespace AwesomeMediaPlayer.UI.Controls;
 
 /// <summary>
-/// Represents an app window title bar.
+/// Represents a title bar control.
 /// </summary>
 public sealed partial class TitleBar : UserControl
 {
+    #region Dependency properties
     /// <summary>
     /// Identifies the <see cref="BackButtonVisibility"> dependency property.
     /// </summary>
@@ -68,9 +69,11 @@ public sealed partial class TitleBar : UserControl
         typeof(TitleBar),
         new PropertyMetadata(defaultValue: string.Empty)
     );
+    #endregion
 
+    #region Instance properties
     /// <summary>
-    /// Gets the root element on the middle.
+    /// Gets or sets the root element on the middle.
     /// </summary>
     public FrameworkElement? MiddleContent
     {
@@ -97,7 +100,7 @@ public sealed partial class TitleBar : UserControl
     }
 
     /// <summary>
-    /// Gets the icon image source.
+    /// Gets or sets the icon.
     /// </summary>
     public ImageSource? Icon
     {
@@ -106,11 +109,8 @@ public sealed partial class TitleBar : UserControl
     }
 
     /// <summary>
-    /// Gets or sets the subtitle.
+    /// Gets or sets the subtitle text.
     /// </summary>
-    /// <remarks>
-    /// Usually consists of short, inline text like "Beta" and "Preview".
-    /// </remarks>
     public string Subtitle
     {
         get => (string)GetValue(SubtitleProperty);
@@ -118,17 +118,16 @@ public sealed partial class TitleBar : UserControl
     }
 
     /// <summary>
-    /// Gets or sets the title.
+    /// Gets or sets the title text.
     /// </summary>
-    /// <remarks>
-    /// Usually is set to the displayable name of an application.
-    /// </remarks>
     public string Title
     {
         get => (string)GetValue(TitleProperty);
         set => SetValue(TitleProperty, value);
     }
+    #endregion
 
+    #region Instance constructor
     /// <summary>
     /// Initializes a new instance of the <see cref="TitleBar"/> class.
     /// </summary>
@@ -136,4 +135,5 @@ public sealed partial class TitleBar : UserControl
     {
         InitializeComponent();
     }
+    #endregion
 }

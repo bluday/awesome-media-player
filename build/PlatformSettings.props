@@ -1,0 +1,7 @@
+<Project>
+    <PropertyGroup>
+        <Platforms>ARM64;x64</Platforms>
+        <PlatformTarget>x64</PlatformTarget>
+        <RuntimeIdentifiers>win-arm64;win-x64</RuntimeIdentifiers>
+    </PropertyGroup>
+</Project>

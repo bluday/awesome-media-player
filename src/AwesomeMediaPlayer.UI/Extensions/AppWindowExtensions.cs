@@ -1,6 +1,8 @@
 ﻿using Microsoft.UI.Windowing;
+
 using System;
 using System.Drawing;
+
 using Windows.Graphics;
 
 namespace AwesomeMediaPlayer.UI.Extensions;
@@ -25,9 +27,9 @@ public static class AppWindowExtensions
     {
         ArgumentNullException.ThrowIfNull(source);
 
-        var displayArea = DisplayArea.GetFromWindowId(source.Id, DisplayAreaFallback.Primary);
+        var area = DisplayArea.GetFromWindowId(source.Id, DisplayAreaFallback.Primary);
 
-        source.MoveToCenter(displayArea);
+        source.MoveToCenter(area);
     }
 
     /// <summary>
@@ -37,20 +39,20 @@ public static class AppWindowExtensions
     /// An <see cref="AppWindow"/> instance, representing the targeted
     /// window to move.
     /// </param>
-    /// <param name="displayArea">
+    /// <param name="area">
     /// A <see cref="DisplayArea"/> instance, representing the targeted
     /// display area.
     /// </param>
     /// <exception cref="ArgumentNullException">
     /// Thrown when any parameter is <see langword="null"/>.
     /// </exception>
-    public static void MoveToCenter(this AppWindow source, DisplayArea displayArea)
+    public static void MoveToCenter(this AppWindow source, DisplayArea area)
     {
         ArgumentNullException.ThrowIfNull(source);
-        ArgumentNullException.ThrowIfNull(displayArea);
+        ArgumentNullException.ThrowIfNull(area);
 
-        int x = (displayArea.WorkArea.Width  - source.Size.Width)  / 2;
-        int y = (displayArea.WorkArea.Height - source.Size.Height) / 2;
+        int x = (area.WorkArea.Width  - source.Size.Width)  / 2;
+        int y = (area.WorkArea.Height - source.Size.Height) / 2;
 
         source.Move(new PointInt32(x, y));
     }

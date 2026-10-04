@@ -1,6 +1,8 @@
 using AwesomeMediaPlayer.UI.ViewModels;
-using CommunityToolkit.Mvvm.DependencyInjection;
+
 using Microsoft.UI.Xaml.Controls;
+
+using System;
 
 namespace AwesomeMediaPlayer.UI.Views;
 
@@ -13,17 +15,25 @@ public sealed partial class MediaLibraryView : UserControl
     /// <summary>
     /// Gets the view model.
     /// </summary>
-    public MediaLibraryViewModel ViewModel { get; set; }
+    public MediaLibraryViewModel ViewModel { get; }
     #endregion
 
-    #region Constructor
+    #region Instance constructor
     /// <summary>
     /// Initializes a new instance of the <see cref="MediaLibraryView"/>
-    /// class.
+    /// class using the specified view model.
     /// </summary>
-    public MediaLibraryView()
+    /// <param name="viewModel">
+    /// The view model.
+    /// </param>
+    /// <exception cref="ArgumentNullException">
+    /// Thrown when <paramref name="viewModel"/> is <see langword="null"/>.
+    /// </exception>
+    public MediaLibraryView(MediaLibraryViewModel viewModel)
     {
-        ViewModel = Ioc.Default.GetRequiredService<MediaLibraryViewModel>();
+        ArgumentNullException.ThrowIfNull(viewModel);
+
+        ViewModel = viewModel;
 
         InitializeComponent();
     }

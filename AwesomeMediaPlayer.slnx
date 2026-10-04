@@ -5,8 +5,16 @@
     </Configurations>
 
     <Folder Name="/Assets/Icons/">
-        <File Path="assets/icons/logo_1024x1024.png" />
-        <File Path="assets/icons/logo_64x64.ico" />
+        <File Path="assets/icons/icon.png" />
+        <File Path="assets/icons/window/icon.ico" />
+    </Folder>
+
+    <Folder Name="/Build/">
+        <File Path="build/AssetPaths.props" />
+        <File Path="build/CsharpLanguageSettings.props" />
+        <File Path="build/PackageMetadata.props" />
+        <File Path="build/PlatformSettings.props" />
+        <File Path="Directory.Build.props" />
     </Folder>
 
     <Folder Name="/Git/">
@@ -14,12 +22,11 @@
         <File Path="LICENSE" />
         <File Path="README.md" />
     </Folder>
-    
+
     <Folder Name="/Solution/">
         <File Path=".editorconfig" />
-        <File Path="Directory.Build.props" />
     </Folder>
-    
+
     <Folder Name="/Source/">
         <Project Path="src/AwesomeMediaPlayer.UI/AwesomeMediaPlayer.UI.csproj">
             <Platform Solution="*|ARM64" Project="ARM64" />

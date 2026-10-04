@@ -1,6 +1,8 @@
 using AwesomeMediaPlayer.UI.ViewModels;
-using CommunityToolkit.Mvvm.DependencyInjection;
+
 using Microsoft.UI.Xaml.Controls;
+
+using System;
 
 namespace AwesomeMediaPlayer.UI.Views;
 
@@ -16,14 +18,22 @@ public sealed partial class AboutView : UserControl
     public AboutViewModel ViewModel { get; }
     #endregion
 
-    #region Constructor
+    #region Instance constructor
     /// <summary>
     /// Initializes a new instance of the <see cref="AboutView"/>
-    /// class.
+    /// class using the specified view model.
     /// </summary>
-    public AboutView()
+    /// <param name="viewModel">
+    /// The view model.
+    /// </param>
+    /// <exception cref="ArgumentNullException">
+    /// Thrown when <paramref name="viewModel"/> is <see langword="null"/>.
+    /// </exception>
+    public AboutView(AboutViewModel viewModel)
     {
-        ViewModel = Ioc.Default.GetRequiredService<AboutViewModel>();
+        ArgumentNullException.ThrowIfNull(viewModel);
+
+        ViewModel = viewModel;
 
         InitializeComponent();
     }

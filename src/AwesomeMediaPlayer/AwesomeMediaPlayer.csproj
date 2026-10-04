@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-        <ApplicationIcon>$(AssetsIconsPath)\logo_64x64.ico</ApplicationIcon>
+        <ApplicationIcon>$(DefaultApplicationIconPath)</ApplicationIcon>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
 		<EnableMsixTooling>true</EnableMsixTooling>
@@ -13,6 +13,10 @@
         <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
         <WindowsSdkPackageVersion>10.0.26100.56</WindowsSdkPackageVersion>
 	</PropertyGroup>
+
+    <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+        <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+    </PropertyGroup>
 	
 	<ItemGroup>
 		<ProjectReference Include="..\AwesomeMediaPlayer.UI\AwesomeMediaPlayer.UI.csproj" />
@@ -31,27 +35,13 @@
 		<Manifest Include="$(ApplicationManifest)" />
 	</ItemGroup>
 	
-	<!-- 
-	Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
-	Tools extension to be activated for this project even if the Windows App SDK Nuget
-	package has not yet been restored.
-	-->
 	<ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
 		<ProjectCapability Include="Msix" />
 	</ItemGroup>
 	
-	<!-- 
-	Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
-	Explorer "Package and Publish" context menu entry to be enabled for this project even if 
-	the Windows App SDK Nuget package has not yet been restored.
-	-->
-	<PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-		<HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
-	</PropertyGroup>
-
     <ItemGroup>
-        <Content Include="$(AssetsIconsPath)\logo_64x64.ico">
-            <Link>$(AssetsIconsLinkPath)\%(Filename)%(Extension)</Link>
+        <Content Include="$(WindowIconsDirectoryPath)icon.ico">
+            <Link>$(WindowIconsDirectoryLinkPath)\%(Filename)%(Extension)</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>

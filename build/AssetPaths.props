@@ -1,0 +1,11 @@
+<Project>
+    <PropertyGroup>
+        <IconAssetsDirectoryLinkPath>Assets\Icons</IconAssetsDirectoryLinkPath>
+        <IconAssetsDirectoryPath>$(MSBuildThisFileDirectory)..\assets\icons\</IconAssetsDirectoryPath>
+
+        <WindowIconsDirectoryLinkPath>$(IconAssetsDirectoryLinkPath)\Window</WindowIconsDirectoryLinkPath>
+        <WindowIconsDirectoryPath>$(IconAssetsDirectoryPath)window\</WindowIconsDirectoryPath>
+
+        <DefaultApplicationIconPath>$(WindowIconsDirectoryPath)icon.ico</DefaultApplicationIconPath>
+    </PropertyGroup>
+</Project>

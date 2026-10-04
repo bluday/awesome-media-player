@@ -1,0 +1,10 @@
+<Project>
+    <PropertyGroup>
+        <Authors>BluDay</Authors>
+        <Copyright>© BluDay 2026</Copyright>
+        <Description>Developed by BluDay.</Description>
+        <Product>Awesome Media Player</Product>
+        <RepositoryUrl>https://github.com/bluday/awesome-media-player</RepositoryUrl>
+        <Title>$(Product)</Title>
+    </PropertyGroup>
+</Project>

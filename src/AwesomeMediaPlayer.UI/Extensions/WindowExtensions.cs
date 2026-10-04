@@ -1,9 +1,12 @@
 ﻿using Microsoft.UI.Input;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
+
 using System;
+
 using Windows.Win32;
 using Windows.Win32.Foundation;
+
 using WinRT.Interop;
 
 namespace AwesomeMediaPlayer.UI.Extensions;
@@ -14,10 +17,7 @@ namespace AwesomeMediaPlayer.UI.Extensions;
 public static class WindowExtensions
 {
     #region Constants
-    /// <summary>
-    /// The standard or user-default screen DPI value.
-    /// </summary>
-    public const int DefaultDpiScale = 96;
+    private const int DefaultDpiScale = 96;
     #endregion
 
     #region Static methods
@@ -69,7 +69,9 @@ public static class WindowExtensions
     {
         ArgumentNullException.ThrowIfNull(source);
 
-        uint value = PInvoke.GetDpiForWindow((HWND)WindowNative.GetWindowHandle(source));
+        var hwnd = (HWND)WindowNative.GetWindowHandle(source);
+
+        uint value = PInvoke.GetDpiForWindow(hwnd);
 
         return (double)value / DefaultDpiScale;
     }
@@ -102,18 +104,18 @@ public static class WindowExtensions
     /// <param name="source">
     /// The targeted <see cref="Window"/> instance.
     /// </param>
-    /// <param name="displayAreaFallback">
+    /// <param name="fallback">
     /// The fallback <see cref="DisplayArea"/> to use if the window has no associated
     /// display area.
     /// </param>
     /// <exception cref="ArgumentNullException">
     /// Thrown when <paramref name="source"/> is <see langword="null"/>.
     /// </exception>
-    public static DisplayArea GetDisplayArea(this Window source, DisplayAreaFallback displayAreaFallback)
+    public static DisplayArea GetDisplayArea(this Window source, DisplayAreaFallback fallback)
     {
         ArgumentNullException.ThrowIfNull(source);
 
-        return DisplayArea.GetFromWindowId(source.AppWindow.Id, displayAreaFallback);
+        return DisplayArea.GetFromWindowId(source.AppWindow.Id, fallback);
     }
 
     /// <summary>

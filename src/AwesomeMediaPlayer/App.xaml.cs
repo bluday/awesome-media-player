@@ -1,4 +1,5 @@
-﻿using AwesomeMediaPlayer.UI.Windows;
+﻿using AwesomeMediaPlayer.Configuration;
+
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
 
@@ -10,17 +11,15 @@ namespace AwesomeMediaPlayer;
 public sealed partial class App : Application
 {
     #region Instance fields
-    private readonly ServiceProvider _rootServiceProvider;
+    private readonly ServiceProvider _rootServiceProvider = ServiceConfiguration.BuildServiceProvider();
     #endregion
 
-    #region Constructor
+    #region Instance constructor
     /// <summary>
     /// Initializes a new instance of the <see cref="App"/> class.
     /// </summary>
     public App()
     {
-        _rootServiceProvider = ServiceProviderFactory.Create();
-
         InitializeComponent();
     }
     #endregion
@@ -34,10 +33,9 @@ public sealed partial class App : Application
     /// </param>
     protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
-        MainWindow window = new();
+        var mainWindow = _rootServiceProvider.GetRequiredService<MainWindow>();
 
-        window.ApplyConfiguration();
-        window.Activate();
+        mainWindow.Activate();
     }
     #endregion
 }

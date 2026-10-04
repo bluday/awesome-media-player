@@ -1,5 +1,7 @@
 ﻿using Microsoft.UI.Xaml;
+
 using System;
+
 using Windows.Foundation;
 using Windows.Graphics;
 
@@ -11,10 +13,7 @@ namespace AwesomeMediaPlayer.UI.Extensions;
 public static class FrameworkElementExtensions
 {
     #region Constants
-    /// <summary>
-    /// The default bounding box scale factor.
-    /// </summary>
-    public const double DefaultBoundingBoxScaleFactor = 1.0;
+    private const double DefaultBoundingBoxScaleFactor = 1.0;
     #endregion
 
     #region Static methods
@@ -50,20 +49,22 @@ public static class FrameworkElementExtensions
     {
         ArgumentNullException.ThrowIfNull(source);
 
-        Rect transformedRect = source
-            .TransformToVisual(null)
-            .TransformBounds(new Rect(
-                x: 0,
-                y: 0,
-                source.ActualWidth,
-                source.ActualHeight
-            ));
+        Rect rect = new(
+            x: 0,
+            y: 0,
+            source.ActualWidth,
+            source.ActualHeight
+        );
+
+        rect = source
+            .TransformToVisual(visual: null)
+            .TransformBounds(rect);
 
         return new(
-            (int)transformedRect.X,
-            (int)transformedRect.Y,
-            (int)(transformedRect.Width  * scaleFactor),
-            (int)(transformedRect.Height * scaleFactor)
+            (int)rect.X,
+            (int)rect.Y,
+            (int)(rect.Width  * scaleFactor),
+            (int)(rect.Height * scaleFactor)
         );
     }
     #endregion

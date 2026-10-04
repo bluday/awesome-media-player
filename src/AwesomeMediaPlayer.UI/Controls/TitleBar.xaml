@@ -43,11 +43,14 @@
 
             <TextBlock Text="{x:Bind Title}"/>
 
-            <TextBlock Foreground="{ThemeResource TextFillColorTertiaryBrush}" Text="{x:Bind Subtitle}"/>
+            <TextBlock Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                       Text="{x:Bind Subtitle}"/>
         </StackPanel>
 
-        <ContentPresenter Grid.Column="1" Content="{x:Bind MiddleContent}"/>
+        <ContentPresenter Grid.Column="1"
+                          Content="{x:Bind MiddleContent}"/>
 
-        <Border Grid.Column="2" Width="138"/>
+        <Border Grid.Column="2"
+                Width="138"/>
     </Grid>
 </UserControl>
